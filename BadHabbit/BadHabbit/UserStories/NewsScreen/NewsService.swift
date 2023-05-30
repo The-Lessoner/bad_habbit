@@ -27,7 +27,7 @@ final class NewsService: NewsServiceProtocol {
                                        "from": "2023-05-23",
                                        "to": "2023-05-24",
                                        "page": "1",
-                                       "pageSize": "1",
+                                       "pageSize": "20",
                                        "sortBy": "publishedAt"])
         
         let parser = NewsModelParser()

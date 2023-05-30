@@ -7,12 +7,26 @@
 
 import Foundation
 
-final class NewsViewModel: ExampleViewModelProtocol {
+protocol NewsViewModelProtocol: AnyObject {
+    var error: Observable<Error?>? { get set }
+    var exampleText: Observable<ArticleResponse?>? { get set }
+    var rowCount: Int? { get }
+    
+    func loadData()
+    func title(forRowAtIndex index: Int) -> String?
+}
+
+final class NewsViewModel: NewsViewModelProtocol {
     
     var error: Observable<Error?>?
-    var exampleText: Observable<String?>?
+    var exampleText: Observable<ArticleResponse?>?
     
+    private var response: ArticleResponse?
     private let newsService: NewsServiceProtocol
+    
+    var rowCount: Int? {
+        response?.articles.count
+    }
     
     init(newsService: NewsServiceProtocol) {
         self.newsService = newsService
@@ -25,11 +39,16 @@ final class NewsViewModel: ExampleViewModelProtocol {
             switch result {
             case .success(let model):
                 self.error?(nil)
-                self.exampleText?(model.articles[0].description)
+                response = model
+                self.exampleText?(model)
             case .failure(let error):
                 self.error?(error)
                 self.exampleText?(nil)
             }
         }
+    }
+    
+    func title(forRowAtIndex index: Int) -> String? {
+        response?.articles[index].description
     }
 }

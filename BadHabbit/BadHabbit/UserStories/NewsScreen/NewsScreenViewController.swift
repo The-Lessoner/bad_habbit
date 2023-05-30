@@ -9,12 +9,11 @@ import UIKit
 
 final class NewsScreenViewController: UIViewController {
     
-    private let viewModel: ExampleViewModelProtocol
+    private let viewModel: NewsViewModelProtocol
     
-    let textLabel = UILabel()
     let errorLabel = UILabel()
     
-    init(viewModel: ExampleViewModelProtocol) {
+    init(viewModel: NewsViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -48,17 +47,11 @@ extension NewsScreenViewController {
         return loadDataButton
     }
     
-    private func textLabelConfigure() {
-        textLabel.textColor = .systemBlue
-        textLabel.translatesAutoresizingMaskIntoConstraints = false
-        textLabel.numberOfLines = 0
-        textLabel.textAlignment = .justified
-    }
-    
     private func errorLabelConfigure() {
         errorLabel.textColor = .systemRed
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
         errorLabel.numberOfLines = 0
+        errorLabel.textAlignment = .justified
     }
     
     private func setupUI() {
@@ -73,25 +66,16 @@ extension NewsScreenViewController {
             loadDataButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
         
-        textLabelConfigure()
-        view.addSubview(textLabel)
-        
         let safeArea = view.safeAreaLayoutGuide
-        NSLayoutConstraint.activate([
-            textLabel.topAnchor.constraint(equalTo: safeArea.topAnchor),
-            textLabel.bottomAnchor.constraint(lessThanOrEqualTo: safeArea.bottomAnchor),
-            textLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15.0),
-            textLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15.0)
-        ])
         
         errorLabelConfigure()
         view.addSubview(errorLabel)
         
         NSLayoutConstraint.activate([
-            errorLabel.topAnchor.constraint(equalTo: textLabel.bottomAnchor, constant: 15.0),
-            errorLabel.centerXAnchor.constraint(equalTo: textLabel.centerXAnchor, constant: 0.0),
-            errorLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15.0),
-            errorLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15.0)
+            errorLabel.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            errorLabel.bottomAnchor.constraint(lessThanOrEqualTo: safeArea.bottomAnchor),
+            errorLabel.leadingAnchor.constraint(equalTo:safeArea.leadingAnchor, constant: 15.0),
+            errorLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -15.0)
         ])
     }
     
@@ -106,10 +90,21 @@ extension NewsScreenViewController {
         viewModel.loadData()
     }
     
+    private func addTableView() {
+        let tableView = UITableView(frame: view.safeAreaLayoutGuide.layoutFrame)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "TVcell")
+        tableView.dataSource = self
+        
+        view.addSubview(tableView)
+    }
+    
     private func bindVM() {
         viewModel.exampleText = { [weak self] text in
+            guard let text = text else { return }
+            
             DispatchQueue.main.async {
-                self?.textLabel.text = text
+                self?.addTableView()
             }
         }
         
@@ -119,4 +114,20 @@ extension NewsScreenViewController {
             }
         }
     }
+}
+
+extension NewsScreenViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.rowCount ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TVcell", for: indexPath)
+        
+        cell.textLabel?.text = viewModel.title(forRowAtIndex: indexPath.row)
+        
+        return cell
+    }
+    
+    
 }
