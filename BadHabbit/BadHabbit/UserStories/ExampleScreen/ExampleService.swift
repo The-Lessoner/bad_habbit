@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ExampleServiceProtocol {
-    func loadExampleData(completion: (Result<ExampleModel, Error>) -> Void)
+    func loadExampleData(completion: @escaping (Result<ExampleModel, Error>) -> Void)
 }
 
 final class ExampleService: ExampleServiceProtocol {
@@ -19,7 +19,7 @@ final class ExampleService: ExampleServiceProtocol {
         self.requestExecutor = requestExecutor
     }
     
-    func loadExampleData(completion: (Result<ExampleModel, Error>) -> Void) {
+    func loadExampleData(completion: @escaping (Result<ExampleModel, Error>) -> Void) {
         let request = Request(
             path: "/exampleData",
             params: ["random": true]

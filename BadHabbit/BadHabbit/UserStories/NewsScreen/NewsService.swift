@@ -13,9 +13,9 @@ protocol NewsServiceProtocol {
 
 final class NewsService: NewsServiceProtocol {
     
-    private let requestExecutor: NewsRequestExecutorProtocol
+    private let requestExecutor: RequestExecutorProtocol
     
-    init(requestExecutor: NewsRequestExecutorProtocol) {
+    init(requestExecutor: RequestExecutorProtocol) {
         self.requestExecutor = requestExecutor
     }
     
@@ -32,9 +32,6 @@ final class NewsService: NewsServiceProtocol {
         
         let parser = NewsModelParser()
         
-//        requestExecutor.perform(request: request,
-//                                parser: parser,
-//                                completion: completion)
         requestExecutor.perform(request: request, parser: parser) { response in
             completion(response)
         }

@@ -8,7 +8,5 @@
 import UIKit
 
 struct Article: Decodable {
-//    let title: String?
     let description: String?
-//    let url: String?
 }

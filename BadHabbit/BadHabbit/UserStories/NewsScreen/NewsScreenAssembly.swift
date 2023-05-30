@@ -9,14 +9,14 @@ import UIKit
 
 class NewsScreenAssembly: ViewAssembly {
     
-    private let viewModelAssembly: NewsViewModelAssembly
+    private let viewModelAssembly: ViewModelAssembly
     
-    init(viewModelAssembly: NewsViewModelAssembly) {
+    init(viewModelAssembly: ViewModelAssembly) {
         self.viewModelAssembly = viewModelAssembly
     }
     
     func assembleView() -> UIViewController {
-        let viewModel = viewModelAssembly.resolveExampleViewModel()
+        let viewModel = viewModelAssembly.resolveNewsViewModel()
         let vc = NewsScreenViewController(viewModel: viewModel)
         return vc
     }

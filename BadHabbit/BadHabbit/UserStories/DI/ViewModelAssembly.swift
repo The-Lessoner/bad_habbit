@@ -9,6 +9,7 @@ import Foundation
 
 protocol ViewModelAssemblyProtocol {
     func resolveExampleViewModel() -> ExampleViewModelProtocol
+    func resolveNewsViewModel() -> ExampleViewModelProtocol
 }
 
 class ViewModelAssembly: ViewModelAssemblyProtocol {
@@ -21,5 +22,9 @@ class ViewModelAssembly: ViewModelAssemblyProtocol {
     
     func resolveExampleViewModel() -> ExampleViewModelProtocol {
         ExampleViewModel(exampleService: serviceAssembly.resolveExampleService())
+    }
+    
+    func resolveNewsViewModel() -> ExampleViewModelProtocol {
+        NewsViewModel(newsService: serviceAssembly.resolveNewsService())
     }
 }
