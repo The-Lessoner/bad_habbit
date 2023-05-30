@@ -41,10 +41,6 @@ class RequestExecutor: RequestExecutorProtocol {
         parser: Parser,
         completion: @escaping (Result<Parser.Response, Error>) -> Void
     ) {
-        var urlComponents = request.urlComponents()
-        urlComponents.scheme = config.scheme
-        urlComponents.host = config.host
-        
         guard let url = url(for: request)
         else {
             completion(.failure(NetworkError.urlError))

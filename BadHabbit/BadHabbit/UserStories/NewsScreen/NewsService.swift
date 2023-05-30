@@ -25,15 +25,15 @@ final class NewsService: NewsServiceProtocol {
                                        "language": "en",
                                        "q": "Apple Inc",
                                        "from": "2023-05-23",
-                                      "to": "2023-05-24",
+                                       "to": "2023-05-24",
                                        "page": "1",
                                        "pageSize": "1",
                                        "sortBy": "publishedAt"])
         
         let parser = NewsModelParser()
         
-        requestExecutor.perform(request: request, parser: parser) { response in
-            completion(response)
-        }
+        requestExecutor.perform(request: request,
+                                parser: parser,
+                                completion: completion)
     }
 }

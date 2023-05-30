@@ -8,5 +8,10 @@
 import Foundation
 
 struct ArticleResponse: Decodable {
+    
+    struct Article: Decodable {
+        let description: String?
+    }
+    
     var articles: [Article]
 }
