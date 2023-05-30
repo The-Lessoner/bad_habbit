@@ -9,6 +9,7 @@ import Foundation
 
 protocol ViewModelAssemblyProtocol {
     func resolveExampleViewModel() -> ExampleViewModelProtocol
+    func secondResolveExampleViewModel() -> SecondScreenViewModelProtocol
 }
 
 class ViewModelAssembly: ViewModelAssemblyProtocol {
@@ -21,5 +22,8 @@ class ViewModelAssembly: ViewModelAssemblyProtocol {
     
     func resolveExampleViewModel() -> ExampleViewModelProtocol {
         ExampleViewModel(exampleService: serviceAssembly.resolveExampleService())
+    }
+    func secondResolveExampleViewModel() -> SecondScreenViewModelProtocol {
+        SecondScreenViewModel(exampleService: serviceAssembly.secondResolveExampleService() as! SecondScreenService)
     }
 }

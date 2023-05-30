@@ -9,6 +9,7 @@ import Foundation
 
 protocol ServiceAssemblyProtocol {
     func resolveExampleService() -> ExampleServiceProtocol
+    func secondResolveExampleService() -> SecondScreenServiceProtocol
 }
 
 class ServiceAssembly: ServiceAssemblyProtocol {
@@ -21,5 +22,8 @@ class ServiceAssembly: ServiceAssemblyProtocol {
     
     func resolveExampleService() -> ExampleServiceProtocol {
         ExampleService(requestExecutor: requestExecutor)
+    }
+    func secondResolveExampleService() -> SecondScreenServiceProtocol {
+        SecondScreenService(requestExecutor: requestExecutor)
     }
 }
