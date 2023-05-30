@@ -18,7 +18,6 @@
 		61BA17242A23F6B000CB7FAD /* ProtocolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA17232A23F6B000CB7FAD /* ProtocolType.swift */; };
 		61BA17282A240D4700CB7FAD /* ArticleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA17272A240D4700CB7FAD /* ArticleResponse.swift */; };
 		61BA172A2A24BDE100CB7FAD /* NewsRequestExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA17292A24BDE100CB7FAD /* NewsRequestExecutor.swift */; };
-		61BA172C2A24D19900CB7FAD /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA172B2A24D19900CB7FAD /* NSNotificationName.swift */; };
 		E58D1BAD2A1CFF2C00137CC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BAC2A1CFF2C00137CC6 /* AppDelegate.swift */; };
 		E58D1BAF2A1CFF2C00137CC6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BAE2A1CFF2C00137CC6 /* SceneDelegate.swift */; };
 		E58D1BB62A1CFF2E00137CC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E58D1BB52A1CFF2E00137CC6 /* Assets.xcassets */; };
@@ -52,7 +51,6 @@
 		61BA17232A23F6B000CB7FAD /* ProtocolType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolType.swift; sourceTree = "<group>"; };
 		61BA17272A240D4700CB7FAD /* ArticleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleResponse.swift; sourceTree = "<group>"; };
 		61BA17292A24BDE100CB7FAD /* NewsRequestExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRequestExecutor.swift; sourceTree = "<group>"; };
-		61BA172B2A24D19900CB7FAD /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 		E58D1BA92A1CFF2C00137CC6 /* BadHabbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BadHabbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E58D1BAC2A1CFF2C00137CC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E58D1BAE2A1CFF2C00137CC6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 				61BA17112A23E41300CB7FAD /* NewsScreenViewController.swift */,
 				61BA171B2A23EE1C00CB7FAD /* Article.swift */,
 				61BA17272A240D4700CB7FAD /* ArticleResponse.swift */,
-				61BA172B2A24D19900CB7FAD /* NSNotificationName.swift */,
 				61BA171F2A23EF8B00CB7FAD /* NewsModelParser.swift */,
 			);
 			path = NewsScreen;
@@ -336,7 +333,6 @@
 				E58D1BE02A1D086600137CC6 /* RequestExecutor.swift in Sources */,
 				E58D1BC92A1D022000137CC6 /* MainTabBarAssembly.swift in Sources */,
 				E58D1BE62A1D0AEA00137CC6 /* ResponseParserProtocol.swift in Sources */,
-				61BA172C2A24D19900CB7FAD /* NSNotificationName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

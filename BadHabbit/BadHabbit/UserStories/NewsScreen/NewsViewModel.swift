@@ -10,11 +10,7 @@ import Foundation
 final class NewsViewModel: ExampleViewModelProtocol {
     
     var error: Observable<Error?>?
-    var exampleText: Observable<String?>? {
-        didSet {
-            NotificationCenter.default.post(name: NSNotification.Name.textChanged, object: nil)
-        }
-    }
+    var exampleText: Observable<String?>?
     
     private let newsService: NewsServiceProtocol
     

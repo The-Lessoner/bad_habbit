@@ -23,22 +23,11 @@ final class NewsScreenViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(updateTextLabel(with:)),
-                                               name: NSNotification.Name.textChanged,
-                                               object: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
         bindVM()
-    }
-    
-    @objc private func updateTextLabel(with notify: NSNotification) {
-//        textLabel.update
     }
     
     deinit {
@@ -47,7 +36,7 @@ final class NewsScreenViewController: UIViewController {
 }
 
 extension NewsScreenViewController {
-    private func loadDataButton() -> UIButton {
+    private func loadDataButtonConfigure() -> UIButton {
         let loadDataButton = UIButton()
         loadDataButton.translatesAutoresizingMaskIntoConstraints = false
         loadDataButton.setTitle("Load news", for: .normal)
@@ -59,21 +48,21 @@ extension NewsScreenViewController {
         return loadDataButton
     }
     
-    private func testLabel() -> UIButton {
-        let loadDataButton = UIButton()
-        loadDataButton.translatesAutoresizingMaskIntoConstraints = false
-        loadDataButton.setTitle("Load news", for: .normal)
-        loadDataButton.backgroundColor = .systemGreen
-        
-        loadDataButton.addTarget(self, action: #selector(loadButtonTapped), for: .touchUpInside)
-        loadDataButton.tag = 1
-        
-        return loadDataButton
+    private func textLabelConfigure() {
+        textLabel.textColor = .systemBlue
+        textLabel.translatesAutoresizingMaskIntoConstraints = false
+        textLabel.numberOfLines = 0
+        textLabel.textAlignment = .justified
     }
     
+    private func errorLabelConfigure() {
+        errorLabel.textColor = .systemRed
+        errorLabel.translatesAutoresizingMaskIntoConstraints = false
+        errorLabel.numberOfLines = 0
+    }
     
     private func setupUI() {
-        let loadDataButton = loadDataButton()
+        let loadDataButton = loadDataButtonConfigure()
         view.addSubview(loadDataButton)
         
         NSLayoutConstraint.activate([
@@ -84,24 +73,18 @@ extension NewsScreenViewController {
             loadDataButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
         
+        textLabelConfigure()
         view.addSubview(textLabel)
-        textLabel.textColor = .systemBlue
-        textLabel.translatesAutoresizingMaskIntoConstraints = false
-        textLabel.numberOfLines = 0
         
-        let margins = view.layoutMargins
-        let a = margins.top
-        
+        let safeArea = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
-            textLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: a),
-            textLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            textLabel.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            textLabel.bottomAnchor.constraint(lessThanOrEqualTo: safeArea.bottomAnchor),
             textLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15.0),
             textLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15.0)
         ])
         
-        errorLabel.textColor = .systemRed
-        errorLabel.translatesAutoresizingMaskIntoConstraints = false
-        errorLabel.numberOfLines = 0
+        errorLabelConfigure()
         view.addSubview(errorLabel)
         
         NSLayoutConstraint.activate([
