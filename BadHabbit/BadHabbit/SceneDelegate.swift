@@ -14,12 +14,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private lazy var serviceAssembly = ServiceAssembly(
         requestExecutor: RequestExecutorMock(requestResponseData: "{\"text\":\"Random Mocked text\"}".data(using: .utf8) ?? .init())
     )
+    private lazy var newsServiceAssembly = NewsServiceAssembly(
+        requestExecutor: NewsRequestExecutor(config: NewsRequestExecutor.Config(scheme: ProtocolType.https.rawValue, host: "newsapi.org"))
+    )
         
     private lazy var viewModelAssembly = ViewModelAssembly(serviceAssembly: serviceAssembly)
+    private lazy var newsViewModelAssembly = NewsViewModelAssembly(serviceAssembly: newsServiceAssembly)
     
     private lazy var rootTabBarAssembler: MainTabBarAssembly = {
         MainTabBarAssembly(
-            exampleScreenAssembly: ExampleScreenAssembly(viewModelAssembly: viewModelAssembly)
+            exampleScreenAssembly: ExampleScreenAssembly(viewModelAssembly: viewModelAssembly),
+            newsScreenAssembly: NewsScreenAssembly(viewModelAssembly: newsViewModelAssembly)
         )
     }()
 
@@ -33,6 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = rootTabBarAssembler.assemble()
+        window.backgroundColor = .white
         
         self.window = window
         window.makeKeyAndVisible()

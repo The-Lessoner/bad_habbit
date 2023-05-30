@@ -8,5 +8,7 @@
 import Foundation
 
 enum NetworkError: Error {
+    case urlError
+    case dataError
     case parseError
 }
