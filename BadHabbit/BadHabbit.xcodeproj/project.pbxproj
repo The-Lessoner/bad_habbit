@@ -26,7 +26,6 @@
 		E58D1BEF2A1D125B00137CC6 /* ViewModelAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BEE2A1D125B00137CC6 /* ViewModelAssembly.swift */; };
 		E58D1BF12A1D133200137CC6 /* ServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BF02A1D133200137CC6 /* ServiceAssembly.swift */; };
 		E58D1BF42A1D142E00137CC6 /* RequestExecutorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BF32A1D142E00137CC6 /* RequestExecutorMock.swift */; };
-		F65374672A24B2880096FCE9 /* RequestExecutorSeondScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65374662A24B2880096FCE9 /* RequestExecutorSeondScreen.swift */; };
 		F67D629F2A1EAB4700C98CCF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D629E2A1EAB4700C98CCF /* SecondViewController.swift */; };
 		F67D62A12A1EB00A00C98CCF /* SecondViewControllerAssemly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D62A02A1EB00A00C98CCF /* SecondViewControllerAssemly.swift */; };
 		F67D62A32A1EB0AB00C98CCF /* SecondScreenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D62A22A1EB0AB00C98CCF /* SecondScreenService.swift */; };
@@ -57,7 +56,6 @@
 		E58D1BEE2A1D125B00137CC6 /* ViewModelAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelAssembly.swift; sourceTree = "<group>"; };
 		E58D1BF02A1D133200137CC6 /* ServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
 		E58D1BF32A1D142E00137CC6 /* RequestExecutorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExecutorMock.swift; sourceTree = "<group>"; };
-		F65374662A24B2880096FCE9 /* RequestExecutorSeondScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExecutorSeondScreen.swift; sourceTree = "<group>"; };
 		F67D629E2A1EAB4700C98CCF /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		F67D62A02A1EB00A00C98CCF /* SecondViewControllerAssemly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewControllerAssemly.swift; sourceTree = "<group>"; };
 		F67D62A22A1EB0AB00C98CCF /* SecondScreenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenService.swift; sourceTree = "<group>"; };
@@ -205,7 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				E58D1BF32A1D142E00137CC6 /* RequestExecutorMock.swift */,
-				F65374662A24B2880096FCE9 /* RequestExecutorSeondScreen.swift */,
 			);
 			path = NetworkKitMock;
 			sourceTree = "<group>";
@@ -309,7 +306,6 @@
 				E58D1BD42A1D042400137CC6 /* ExampleScreenViewController.swift in Sources */,
 				E58D1BEA2A1D0BD900137CC6 /* NetworkError.swift in Sources */,
 				E58D1BF42A1D142E00137CC6 /* RequestExecutorMock.swift in Sources */,
-				F65374672A24B2880096FCE9 /* RequestExecutorSeondScreen.swift in Sources */,
 				F67D62A32A1EB0AB00C98CCF /* SecondScreenService.swift in Sources */,
 				F67D629F2A1EAB4700C98CCF /* SecondViewController.swift in Sources */,
 				E58D1BD22A1D041A00137CC6 /* ExampleViewModel.swift in Sources */,

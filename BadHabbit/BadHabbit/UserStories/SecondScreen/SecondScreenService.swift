@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SecondScreenServiceProtocol {
-    func loadExampleData(completion: (Result<SecondScreenModel, Error>) -> Void)
+    func loadExampleData(completion: @escaping (Result<SecondScreenModel, Error>) -> Void)
 }
 
 final class SecondScreenService: SecondScreenServiceProtocol {
@@ -19,7 +19,7 @@ final class SecondScreenService: SecondScreenServiceProtocol {
         self.requestExecutor = requestExecutor
     }
     
-    func loadExampleData(completion: (Result<SecondScreenModel, Error>) -> Void) {
+    func loadExampleData(completion: @ escaping (Result<SecondScreenModel, Error>) -> Void) {
         let request = Request(
             path: "https://www.hackingwithswift.com/samples/petitions-1.json",
             params: ["results": [Petition].self]
