@@ -81,8 +81,8 @@ extension NewsScreenViewController {
     
     @objc
     private func loadButtonTapped() {
-        DispatchQueue.main.async {
-            self.loadDataButton.removeFromSuperview()
+        DispatchQueue.main.async { [weak self] in
+            self?.loadDataButton.removeFromSuperview()
         }
         
         viewModel.loadData()
@@ -98,8 +98,8 @@ extension NewsScreenViewController {
     }
     
     private func bindVM() {
-        viewModel.exampleText = { [weak self] text in
-            guard text != nil else { return }
+        viewModel.response = { [weak self] data in
+            guard data != nil else { return }
             
             DispatchQueue.main.async {
                 self?.addTableView()

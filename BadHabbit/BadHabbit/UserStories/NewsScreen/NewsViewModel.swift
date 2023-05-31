@@ -9,7 +9,7 @@ import Foundation
 
 protocol NewsViewModelProtocol: AnyObject {
     var error: Observable<Error?>? { get set }
-    var exampleText: Observable<ArticleResponse?>? { get set }
+    var response: Observable<ArticleResponse?>? { get set }
     var rowCount: Int? { get }
     
     func loadData()
@@ -19,13 +19,13 @@ protocol NewsViewModelProtocol: AnyObject {
 final class NewsViewModel: NewsViewModelProtocol {
     
     var error: Observable<Error?>?
-    var exampleText: Observable<ArticleResponse?>?
+    var response: Observable<ArticleResponse?>?
     
-    private var response: ArticleResponse?
+    private var articleResponse: ArticleResponse?
     private let newsService: NewsServiceProtocol
     
     var rowCount: Int? {
-        response?.articles.count
+        articleResponse?.articles.count
     }
     
     init(newsService: NewsServiceProtocol) {
@@ -39,16 +39,16 @@ final class NewsViewModel: NewsViewModelProtocol {
             switch result {
             case .success(let model):
                 self.error?(nil)
-                response = model
-                self.exampleText?(model)
+                articleResponse = model
+                self.response?(articleResponse)
             case .failure(let error):
                 self.error?(error)
-                self.exampleText?(nil)
+                self.response?(nil)
             }
         }
     }
     
     func title(forRowAtIndex index: Int) -> String? {
-        response?.articles[index].description
+        articleResponse?.articles[index].description
     }
 }
