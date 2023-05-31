@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum ProtocolType: String {
+enum UrlScheme: String {
     case https = "https"
 }

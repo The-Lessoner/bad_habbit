@@ -10,8 +10,8 @@ import UIKit
 final class NewsScreenViewController: UIViewController {
     
     private let viewModel: NewsViewModelProtocol
-    
-    let errorLabel = UILabel()
+    private let loadDataButton = UIButton()
+    private lazy var errorLabel = UILabel()
     
     init(viewModel: NewsViewModelProtocol) {
         self.viewModel = viewModel
@@ -36,13 +36,11 @@ final class NewsScreenViewController: UIViewController {
 
 extension NewsScreenViewController {
     private func loadDataButtonConfigure() -> UIButton {
-        let loadDataButton = UIButton()
         loadDataButton.translatesAutoresizingMaskIntoConstraints = false
         loadDataButton.setTitle("Load news", for: .normal)
         loadDataButton.backgroundColor = .systemGreen
         
         loadDataButton.addTarget(self, action: #selector(loadButtonTapped), for: .touchUpInside)
-        loadDataButton.tag = 1
         
         return loadDataButton
     }
@@ -55,13 +53,15 @@ extension NewsScreenViewController {
     }
     
     private func setupUI() {
+        view.backgroundColor = .white
+        
         let loadDataButton = loadDataButtonConfigure()
         view.addSubview(loadDataButton)
         
         NSLayoutConstraint.activate([
             loadDataButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15.0),
             loadDataButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15.0),
-            loadDataButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.06, constant: 0),
+            loadDataButton.heightAnchor.constraint(equalToConstant: 50.0),
             loadDataButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             loadDataButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
@@ -81,10 +81,8 @@ extension NewsScreenViewController {
     
     @objc
     private func loadButtonTapped() {
-        if let button = view.viewWithTag(1) {
-            DispatchQueue.main.async {
-                button.removeFromSuperview()
-            }
+        DispatchQueue.main.async {
+            self.loadDataButton.removeFromSuperview()
         }
         
         viewModel.loadData()
@@ -101,7 +99,7 @@ extension NewsScreenViewController {
     
     private func bindVM() {
         viewModel.exampleText = { [weak self] text in
-            guard let text = text else { return }
+            guard text != nil else { return }
             
             DispatchQueue.main.async {
                 self?.addTableView()

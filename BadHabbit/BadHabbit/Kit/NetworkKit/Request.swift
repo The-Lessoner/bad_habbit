@@ -30,11 +30,9 @@ struct Request {
         
         let queryItems = urlQueryItems()
         
-        guard !queryItems.isEmpty else {
-            return urlComponents
+        if !queryItems.isEmpty {
+            urlComponents.queryItems = queryItems
         }
-        
-        urlComponents.queryItems = queryItems
         
         return urlComponents
     }

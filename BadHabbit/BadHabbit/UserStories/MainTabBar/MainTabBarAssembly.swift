@@ -22,6 +22,8 @@ final class MainTabBarAssembly {
     
     func assemble() -> UIViewController {
         let tabVC = UITabBarController()
+        tabVC.tabBar.tintColor = .orange
+        tabVC.tabBar.unselectedItemTintColor = .gray
         
         let exampleVC = exampleScreenAssembly.assembleView()
         exampleVC.tabBarItem.title = "Example"

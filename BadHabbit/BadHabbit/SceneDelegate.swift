@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         requestExecutor: RequestExecutorMock(requestResponseData: "{\"text\":\"Random Mocked text\"}".data(using: .utf8) ?? .init())
     )
     private lazy var newsServiceAssembly = ServiceAssembly(
-        requestExecutor: RequestExecutor(config: RequestExecutor.Config(scheme: ProtocolType.https.rawValue, host: "newsapi.org"))
+        requestExecutor: RequestExecutor(config: RequestExecutor.Config(scheme: UrlScheme.https.rawValue, host: "newsapi.org"))
     )
         
     private lazy var viewModelAssembly = ViewModelAssembly(serviceAssembly: serviceAssembly)
@@ -38,7 +38,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = rootTabBarAssembler.assemble()
-        window.backgroundColor = .white
         
         self.window = window
         window.makeKeyAndVisible()
