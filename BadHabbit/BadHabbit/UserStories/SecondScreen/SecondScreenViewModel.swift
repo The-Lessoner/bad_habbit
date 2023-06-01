@@ -12,6 +12,7 @@ protocol SecondScreenViewModelProtocol: AnyObject {
     var petitonsCount: Int? { get }
     
     func loadData()
+    func bind(observer: @escaping Observable<[Petition]?>)
     func getTitle(for index: Int) -> String?
 }
 
@@ -48,5 +49,9 @@ final class SecondScreenViewModel: SecondScreenViewModelProtocol {
                 self.exampleText?(nil)
             }
         }
+    }
+    
+    func bind(observer: @escaping ([Petition]?) -> Void) {
+        exampleText = observer
     }
 }
