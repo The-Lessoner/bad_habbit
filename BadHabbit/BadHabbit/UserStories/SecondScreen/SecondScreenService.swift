@@ -22,8 +22,7 @@ final class SecondScreenService: SecondScreenServiceProtocol {
     func loadExampleData(completion: @escaping(Result<SecondScreenModel, Error>) -> Void) {
         let request = Request(
             path: Constants.APIDetails.APIPath,
-            params: ["id":"2722358",
-                     "type":"petition"]
+            params: [:]
         )
         
         let parser = SecondScreenModelParser()
