@@ -51,6 +51,7 @@ class RequestExecutor: RequestExecutorProtocol {
             
             if let error = error {
                 completion(.failure(error))
+                return
             }
             
             guard let data = data else {
