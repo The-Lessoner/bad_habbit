@@ -26,7 +26,7 @@ final class SecondScreenViewModel: SecondScreenViewModelProtocol {
         petitions?.count
     }
     
-    init(exampleService: SecondScreenService) {
+    init(exampleService: SecondScreenServiceProtocol) {
         self.exampleService = exampleService
     }
     
