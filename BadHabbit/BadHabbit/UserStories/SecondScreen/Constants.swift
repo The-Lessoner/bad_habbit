@@ -6,8 +6,8 @@
 //
 struct Constants {
     struct APIDetails {
-        static let APIScheme = "https"
-        static let APIHost = "www.hackingwithswift.com"
-        static let APIPath = "/samples/petitions-1.json"
+        static let scheme = "https"
+        static let host = "www.hackingwithswift.com"
+        static let path = "/samples/petitions-1.json"
     }
 }

@@ -19,9 +19,9 @@ final class SecondScreenService: SecondScreenServiceProtocol {
         self.requestExecutor = requestExecutor
     }
     
-    func loadExampleData(completion: @escaping(Result<SecondScreenModel, Error>) -> Void) {
+    func loadExampleData(completion: @escaping (Result<SecondScreenModel, Error>) -> Void) {
         let request = Request(
-            path: Constants.APIDetails.APIPath,
+            path: Constants.APIDetails.path,
             params: [:]
         )
         

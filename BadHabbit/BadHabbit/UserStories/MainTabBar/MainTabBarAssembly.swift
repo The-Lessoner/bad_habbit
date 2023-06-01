@@ -22,7 +22,7 @@ final class MainTabBarAssembly {
         let exampleVC = exampleScreenAssembly.assembleView()
         
         lazy var serviceAssemblySecondScreen = ServiceAssembly(
-            requestExecutor: RequestExecutor(config: RequestExecutor.Config(scheme: Constants.APIDetails.APIScheme, host: Constants.APIDetails.APIHost) )
+            requestExecutor: RequestExecutor(config: RequestExecutor.Config(scheme: Constants.APIDetails.scheme, host: Constants.APIDetails.host) )
         )
         lazy var viewModelSecondScreenAssembly = ViewModelAssembly(serviceAssembly: serviceAssemblySecondScreen)
         let secondVC = SecondViewControllerAssembly(viewModelAssembly: viewModelSecondScreenAssembly).assembleView()

@@ -42,14 +42,19 @@ class RequestExecutor: RequestExecutorProtocol {
         completion: @escaping (Result<Parser.Response, Error>) -> Void
     ) {
         
-        guard let url = getUrl(for: request) else { return }
+        guard let url = getUrl(for: request) else {
+            completion(.failure(NetworkError.urlError))
+            return
+        }
         let urlSession = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let data = data else { return }
+            guard let data = data else {
+                completion(.failure(NetworkError.dataError))
+                return
+            }
             
             do {
                 let response = try parser.parse(data)
                 completion(.success(response))
-                
             } catch {
                 completion(.failure(error))
             }

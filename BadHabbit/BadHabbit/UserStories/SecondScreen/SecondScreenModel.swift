@@ -10,7 +10,8 @@ import Foundation
 struct SecondScreenModel: Decodable {
     var results: [Petition]
 }
-struct Petition: Decodable{
+
+struct Petition: Decodable {
     let title: String
 }
 

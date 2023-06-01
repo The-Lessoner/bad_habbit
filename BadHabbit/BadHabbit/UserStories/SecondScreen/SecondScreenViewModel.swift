@@ -9,8 +9,10 @@ protocol SecondScreenViewModelProtocol: AnyObject {
     var error: Observable<Error?>? { get set }
     var exampleText: Observable<[Petition]?>? { get set }
     var petitions: [Petition]? { get }
-
+    var petitonsCount: Int? { get }
+    
     func loadData()
+    func getTitle(for index: Int) -> String?
 }
 
 final class SecondScreenViewModel: SecondScreenViewModelProtocol {
@@ -20,9 +22,16 @@ final class SecondScreenViewModel: SecondScreenViewModelProtocol {
     
     private let exampleService: SecondScreenServiceProtocol
     var petitions: [Petition]?
+    var petitonsCount: Int? {
+        petitions?.count
+    }
     
     init(exampleService: SecondScreenService) {
         self.exampleService = exampleService
+    }
+    
+    func getTitle(for index: Int) -> String? {
+        petitions?[index].title
     }
     
     func loadData() {

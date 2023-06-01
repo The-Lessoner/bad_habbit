@@ -28,7 +28,7 @@ final class SecondViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     deinit {
-        print("deinit)")
+        print("deinit")
     }
 }
 
@@ -78,13 +78,13 @@ extension SecondViewController {
         }
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.petitions?.count ?? 0
+    func tableView (_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.petitonsCount ?? 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView (_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = viewModel.petitions?[indexPath.row].title ?? ""
+        cell.textLabel?.text = viewModel.getTitle(for: indexPath.row)
         return cell
     }
 }
