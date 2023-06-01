@@ -19,11 +19,10 @@ final class MainTabBarAssembly {
     
     func assemble() -> UIViewController {
         let tabVC = UITabBarController()
-        tabVC.tabBar.backgroundColor = .white
         let exampleVC = exampleScreenAssembly.assembleView()
         
         lazy var serviceAssemblySecondScreen = ServiceAssembly(
-            requestExecutor: RequestExecutor(config: RequestExecutor.Config(baseURL: "https://www.hackingwithswift.com/samples/petitions-1.json") )
+            requestExecutor: RequestExecutor(config: RequestExecutor.Config(scheme: Constants.APIDetails.APIScheme, host: Constants.APIDetails.APIHost) )
         )
         lazy var viewModelSecondScreenAssembly = ViewModelAssembly(serviceAssembly: serviceAssemblySecondScreen)
         let secondVC = SecondViewControllerAssembly(viewModelAssembly: viewModelSecondScreenAssembly).assembleView()
@@ -38,10 +37,11 @@ final class MainTabBarAssembly {
             ],
             animated: true
         )
+        tabVC.tabBar.unselectedItemTintColor = .gray
         let appearance = UITabBarItem.appearance()
-        
         let attributes = [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 14)]
         appearance.setTitleTextAttributes(attributes as [NSAttributedString.Key : Any], for: .normal)
+        
         return tabVC
     }
 }

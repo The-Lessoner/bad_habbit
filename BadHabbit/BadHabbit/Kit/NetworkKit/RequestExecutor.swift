@@ -18,7 +18,8 @@ protocol RequestExecutorProtocol {
 class RequestExecutor: RequestExecutorProtocol {
     
     struct Config {
-        let baseURL: String
+        let scheme: String
+        let host: String
     }
     
     private let config: Config
@@ -27,30 +28,32 @@ class RequestExecutor: RequestExecutorProtocol {
         self.config = config
     }
     
+    private func getUrl(for request: Request) -> URL? {
+        var components = URLComponents()
+        components.scheme = config.scheme
+        components.host = config.host
+        components.path = request.path
+        return components.url
+    }
+    
     func perform<Parser: ResponseParserProtocol>(
         request: Request,
         parser: Parser,
         completion: @escaping (Result<Parser.Response, Error>) -> Void
     ) {
-        if let url = URL(string: request.path) {
-            let urlSession = URLSession.shared.dataTask(with: url) {(data, response, error) in
-                if let error = error {
-                    completion(.failure(error))
-                }
-                guard let data = data else {
-                    return
-                }
-                
-                do {
-                    let response = try parser.parse(data)
-                    completion(.success(response))
-                    
-                } catch {
-                    completion(.failure(error))
-                }
-            }
-            urlSession.resume()
-        }
         
+        guard let url = getUrl(for: request) else { return }
+        let urlSession = URLSession.shared.dataTask(with: url) {(data, response, error) in
+            guard let data = data else { return }
+            
+            do {
+                let response = try parser.parse(data)
+                completion(.success(response))
+                
+            } catch {
+                completion(.failure(error))
+            }
+        }
+        urlSession.resume()
     }
 }

@@ -19,10 +19,11 @@ final class SecondScreenService: SecondScreenServiceProtocol {
         self.requestExecutor = requestExecutor
     }
     
-    func loadExampleData(completion: @ escaping (Result<SecondScreenModel, Error>) -> Void) {
+    func loadExampleData(completion: @escaping(Result<SecondScreenModel, Error>) -> Void) {
         let request = Request(
-            path: "https://www.hackingwithswift.com/samples/petitions-1.json",
-            params: ["results": [Petition].self]
+            path: Constants.APIDetails.APIPath,
+            params: ["id":"2722358",
+                     "type":"petition"]
         )
         
         let parser = SecondScreenModelParser()

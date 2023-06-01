@@ -32,6 +32,7 @@
 		F67D62A52A1EB17000C98CCF /* SecondScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D62A42A1EB17000C98CCF /* SecondScreenModel.swift */; };
 		F67D62A72A1EB29D00C98CCF /* SecondScreenModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D62A62A1EB29D00C98CCF /* SecondScreenModelParser.swift */; };
 		F67D62A92A1EB43C00C98CCF /* SecondScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D62A82A1EB43C00C98CCF /* SecondScreenViewModel.swift */; };
+		F6D3BDB42A277A8F00A68C80 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D3BDB32A277A8F00A68C80 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		F67D62A42A1EB17000C98CCF /* SecondScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenModel.swift; sourceTree = "<group>"; };
 		F67D62A62A1EB29D00C98CCF /* SecondScreenModelParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenModelParser.swift; sourceTree = "<group>"; };
 		F67D62A82A1EB43C00C98CCF /* SecondScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenViewModel.swift; sourceTree = "<group>"; };
+		F6D3BDB32A277A8F00A68C80 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 				F67D629E2A1EAB4700C98CCF /* SecondViewController.swift */,
 				F67D62A42A1EB17000C98CCF /* SecondScreenModel.swift */,
 				F67D62A62A1EB29D00C98CCF /* SecondScreenModelParser.swift */,
+				F6D3BDB32A277A8F00A68C80 /* Constants.swift */,
 			);
 			path = SecondScreen;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				E58D1BE02A1D086600137CC6 /* RequestExecutor.swift in Sources */,
 				E58D1BC92A1D022000137CC6 /* MainTabBarAssembly.swift in Sources */,
 				E58D1BE62A1D0AEA00137CC6 /* ResponseParserProtocol.swift in Sources */,
+				F6D3BDB42A277A8F00A68C80 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

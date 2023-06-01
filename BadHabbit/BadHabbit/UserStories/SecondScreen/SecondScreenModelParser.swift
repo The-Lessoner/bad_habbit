@@ -12,11 +12,11 @@ final class SecondScreenModelParser: ResponseParserProtocol {
     
     func parse(_ data: Data) throws -> SecondScreenModel {
     
-        guard let json = try? JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [String: Any]
-        else {
-            throw NetworkError.parseError
-        }
-        return SecondScreenModel(dictionary: json)
+        guard let response = try? JSONDecoder().decode(SecondScreenModel.self, from: data) else {
+                    throw NetworkError.parseError
+                }
+
+        return SecondScreenModel(results: response.results)
     }
     
 }
