@@ -98,14 +98,14 @@ extension NewsScreenViewController {
     }
     
     private func bindVM() {
-        viewModel.response = { [weak self] _ in
+        viewModel.response = { [weak self] response in
+            guard let _ = response else { return }
             self?.addTableView()
         }
         
         viewModel.error = { [weak self] error in
-            DispatchQueue.main.async {
-                self?.errorLabel.text = error?.localizedDescription
-            }
+            guard let error = error else { return }
+            self?.errorLabel.text = error.localizedDescription
         }
     }
 }

@@ -45,7 +45,9 @@ final class NewsViewModel: NewsViewModelProtocol {
                 }
             case .failure(let error):
                 self.response?(nil)
-                self.error?(error)
+                DispatchQueue.main.async {
+                    self.error?(error)
+                }
             }
         }
     }
