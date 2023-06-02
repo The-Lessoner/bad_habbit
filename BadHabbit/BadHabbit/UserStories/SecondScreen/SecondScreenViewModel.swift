@@ -52,6 +52,7 @@ final class SecondScreenViewModel: SecondScreenViewModelProtocol {
             }
         }
     }
+    
     func bind() {
         DispatchQueue.main.async { [weak self] in
             self?.exampleText?(self?.petitions)
