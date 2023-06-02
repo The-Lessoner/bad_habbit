@@ -12,6 +12,7 @@ protocol SecondScreenViewModelProtocol: AnyObject {
     var petitonsCount: Int? { get }
     
     func loadData()
+    func bind()
     func getTitle(for index: Int) -> String?
 }
 
@@ -21,7 +22,11 @@ final class SecondScreenViewModel: SecondScreenViewModelProtocol {
     var exampleText: Observable<[Petition]?>?
     
     private let exampleService: SecondScreenServiceProtocol
-    var petitions: [Petition]?
+    var petitions: [Petition]? {
+        didSet {
+            bind()
+        }
+    }
     var petitonsCount: Int? {
         petitions?.count
     }
@@ -42,15 +47,14 @@ final class SecondScreenViewModel: SecondScreenViewModelProtocol {
             case .success(let model):
                 self.error?(nil)
                 petitions = model.results
-                DispatchQueue.main.async { [weak self] in
-                    self?.exampleText?(self?.petitions)
-                }
             case .failure(let error):
                 self.error?(error)
-                DispatchQueue.main.async { [weak self] in
-                    self?.exampleText?(nil)
-                }
             }
+        }
+    }
+    func bind() {
+        DispatchQueue.main.async { [weak self] in
+            self?.exampleText?(self?.petitions)
         }
     }
 }

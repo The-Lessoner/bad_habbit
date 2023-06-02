@@ -70,7 +70,7 @@ extension SecondViewController {
     }
     
     private func bindVM() {
-        self.viewModel.exampleText = { [weak self] (_) in
+        viewModel.exampleText = { [weak self] (_) in
             self?.tableView.reloadData()
         }
     }
