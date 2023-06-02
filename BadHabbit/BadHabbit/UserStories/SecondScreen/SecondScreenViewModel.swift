@@ -4,13 +4,12 @@
 //
 //  Created by Halina Kurylchykava on 25.05.23.
 //
-
+import Foundation
 protocol SecondScreenViewModelProtocol: AnyObject {
     var error: Observable<Error?>? { get set }
     var exampleText: Observable<[Petition]?>? { get set }
     var petitions: [Petition]? { get }
     var petitonsCount: Int? { get }
-    var reloadTableView: (() -> Void)? { get set }
     
     func loadData()
     func getTitle(for index: Int) -> String?
@@ -20,14 +19,9 @@ final class SecondScreenViewModel: SecondScreenViewModelProtocol {
     
     var error: Observable<Error?>?
     var exampleText: Observable<[Petition]?>?
-    var reloadTableView: (() -> Void)?
     
     private let exampleService: SecondScreenServiceProtocol
-    var petitions: [Petition]? {
-        didSet {
-            reloadTableView?()
-        }
-    }
+    var petitions: [Petition]?
     var petitonsCount: Int? {
         petitions?.count
     }
@@ -48,10 +42,14 @@ final class SecondScreenViewModel: SecondScreenViewModelProtocol {
             case .success(let model):
                 self.error?(nil)
                 petitions = model.results
-                self.exampleText?(petitions)
+                DispatchQueue.main.async { [weak self] in
+                    self?.exampleText?(self?.petitions)
+                }
             case .failure(let error):
                 self.error?(error)
-                self.exampleText?(nil)
+                DispatchQueue.main.async { [weak self] in
+                    self?.exampleText?(nil)
+                }
             }
         }
     }

@@ -70,10 +70,8 @@ extension SecondViewController {
     }
     
     private func bindVM() {
-        self.viewModel.reloadTableView = { [weak self] in
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
+        self.viewModel.exampleText = { [weak self] (_) in
+            self?.tableView.reloadData()
         }
     }
     
