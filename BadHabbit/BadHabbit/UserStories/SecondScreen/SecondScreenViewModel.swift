@@ -10,7 +10,7 @@ protocol SecondScreenViewModelProtocol: AnyObject {
     var exampleText: Observable<[Petition]?>? { get set }
     var petitions: [Petition]? { get }
     var petitonsCount: Int? { get }
-    var reloadTableView: (() -> Void)? { get set}
+    var reloadTableView: (() -> Void)? { get set }
     
     func loadData()
     func getTitle(for index: Int) -> String?
