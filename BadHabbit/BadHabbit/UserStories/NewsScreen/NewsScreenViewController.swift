@@ -98,12 +98,8 @@ extension NewsScreenViewController {
     }
     
     private func bindVM() {
-        viewModel.response = { [weak self] data in
-            guard data != nil else { return }
-            
-            DispatchQueue.main.async {
-                self?.addTableView()
-            }
+        viewModel.response = { [weak self] _ in
+            self?.addTableView()
         }
         
         viewModel.error = { [weak self] error in

@@ -47,20 +47,21 @@ class RequestExecutor: RequestExecutorProtocol {
             return
         }
         
-        URLSession.shared.dataTask(with: url) { data, _, error in
+        URLSession.shared.dataTask(with: url) { data, response, error in
             
             if let error = error {
                 completion(.failure(error))
                 return
             }
             
-            guard let data = data else {
-                completion(.failure(NetworkError.dataError))
+            if let urlResponse = response as? HTTPURLResponse, urlResponse.statusCode >= 400 {
+                let description = HTTPURLResponse.localizedString(forStatusCode: urlResponse.statusCode)
+                completion(.failure(NetworkError.dataError(description)))
                 return
             }
             
             do {
-                let response = try parser.parse(data)
+                let response = try parser.parse(data!)
                 completion(.success(response))
             } catch {
                 completion(.failure(error))
