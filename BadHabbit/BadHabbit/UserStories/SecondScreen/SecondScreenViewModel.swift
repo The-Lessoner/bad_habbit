@@ -10,9 +10,9 @@ protocol SecondScreenViewModelProtocol: AnyObject {
     var exampleText: Observable<[Petition]?>? { get set }
     var petitions: [Petition]? { get }
     var petitonsCount: Int? { get }
+    var reloadTableView: (() -> Void)? { get set}
     
     func loadData()
-    func bind(observer: @escaping Observable<[Petition]?>)
     func getTitle(for index: Int) -> String?
 }
 
@@ -20,9 +20,14 @@ final class SecondScreenViewModel: SecondScreenViewModelProtocol {
     
     var error: Observable<Error?>?
     var exampleText: Observable<[Petition]?>?
+    var reloadTableView: (() -> Void)?
     
     private let exampleService: SecondScreenServiceProtocol
-    var petitions: [Petition]?
+    var petitions: [Petition]? {
+        didSet {
+            reloadTableView?()
+        }
+    }
     var petitonsCount: Int? {
         petitions?.count
     }
@@ -49,9 +54,5 @@ final class SecondScreenViewModel: SecondScreenViewModelProtocol {
                 self.exampleText?(nil)
             }
         }
-    }
-    
-    func bind(observer: @escaping ([Petition]?) -> Void) {
-        exampleText = observer
     }
 }
