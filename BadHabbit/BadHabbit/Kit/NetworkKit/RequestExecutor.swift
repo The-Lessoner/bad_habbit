@@ -46,7 +46,8 @@ class RequestExecutor: RequestExecutorProtocol {
             completion(.failure(NetworkError.urlError))
             return
         }
-        let urlSession = URLSession.shared.dataTask(with: url) {(data, response, error) in
+        
+        let urlSession = URLSession.shared.dataTask(with: url) {(data, _, error) in
             guard let data = data else {
                 completion(.failure(NetworkError.dataError))
                 return

@@ -24,6 +24,6 @@ class ViewModelAssembly: ViewModelAssemblyProtocol {
         ExampleViewModel(exampleService: serviceAssembly.resolveExampleService())
     }
     func secondResolveExampleViewModel() -> SecondScreenViewModelProtocol {
-        SecondScreenViewModel(exampleService: serviceAssembly.secondResolveExampleService() as! SecondScreenService)
+        SecondScreenViewModel(exampleService: serviceAssembly.secondResolveExampleService())
     }
 }

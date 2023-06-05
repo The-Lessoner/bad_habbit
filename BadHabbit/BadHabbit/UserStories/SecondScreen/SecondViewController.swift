@@ -10,7 +10,7 @@ import UIKit
 final class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private let viewModel: SecondScreenViewModelProtocol
-    private var tableView = UITableView()
+    private lazy var errorLabel = UILabel()
     
     init(viewModel: SecondScreenViewModelProtocol) {
         self.viewModel = viewModel
@@ -34,7 +34,6 @@ final class SecondViewController: UIViewController, UITableViewDelegate, UITable
 
 extension SecondViewController {
     private func setupUI() {
-        let safeArea = view.safeAreaLayoutGuide
         let loadDataButton = UIButton()
         loadDataButton.translatesAutoresizingMaskIntoConstraints = false
         loadDataButton.setTitleColor(.black, for: .normal)
@@ -50,11 +49,23 @@ extension SecondViewController {
             loadDataButton.heightAnchor.constraint(equalToConstant: 50.0),
             loadDataButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 70.0),
         ])
-        
+        errorLabel.textColor = .systemRed
+        errorLabel.translatesAutoresizingMaskIntoConstraints = false
+        errorLabel.numberOfLines = 0
+        view.addSubview(errorLabel)
+        NSLayoutConstraint.activate([
+            errorLabel.topAnchor.constraint(equalTo: loadDataButton.bottomAnchor, constant: 15),
+            errorLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            errorLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
+        ])
+    }
+    
+    private func createTableView() {
+        let safeArea = view.safeAreaLayoutGuide
+        let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
-        tableView.delegate = self
         
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
@@ -70,8 +81,14 @@ extension SecondViewController {
     }
     
     private func bindVM() {
-        viewModel.exampleText = { [weak self] (_) in
-            self?.tableView.reloadData()
+        viewModel.exampleText = { [weak self] petitions in
+            guard let _ = petitions else { return }
+            self?.createTableView()
+        }
+        
+        viewModel.error = { [weak self] error in
+            guard let error = error else { return }
+            self?.errorLabel.text = error.localizedDescription
         }
     }
     

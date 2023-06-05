@@ -8,11 +8,9 @@ import Foundation
 protocol SecondScreenViewModelProtocol: AnyObject {
     var error: Observable<Error?>? { get set }
     var exampleText: Observable<[Petition]?>? { get set }
-    var petitions: [Petition]? { get }
     var petitonsCount: Int? { get }
     
     func loadData()
-    func bind()
     func getTitle(for index: Int) -> String?
 }
 
@@ -22,11 +20,7 @@ final class SecondScreenViewModel: SecondScreenViewModelProtocol {
     var exampleText: Observable<[Petition]?>?
     
     private let exampleService: SecondScreenServiceProtocol
-    var petitions: [Petition]? {
-        didSet {
-            bind()
-        }
-    }
+    var petitions: [Petition]?
     var petitonsCount: Int? {
         petitions?.count
     }
@@ -47,15 +41,15 @@ final class SecondScreenViewModel: SecondScreenViewModelProtocol {
             case .success(let model):
                 self.error?(nil)
                 petitions = model.results
+                DispatchQueue.main.async {
+                    self.exampleText?(self.petitions)
+                }
             case .failure(let error):
-                self.error?(error)
+                self.exampleText?(nil)
+                DispatchQueue.main.async {
+                    self.error?(error)
+                }
             }
-        }
-    }
-    
-    func bind() {
-        DispatchQueue.main.async { [weak self] in
-            self?.exampleText?(self?.petitions)
         }
     }
 }
