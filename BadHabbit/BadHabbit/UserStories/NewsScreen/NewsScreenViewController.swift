@@ -81,8 +81,8 @@ extension NewsScreenViewController {
     
     @objc
     private func loadButtonTapped() {
-        DispatchQueue.main.async { [weak self] in
-            self?.loadDataButton.removeFromSuperview()
+        DispatchQueue.main.async {
+            self.loadDataButton.removeFromSuperview()
         }
         
         viewModel.loadData()
