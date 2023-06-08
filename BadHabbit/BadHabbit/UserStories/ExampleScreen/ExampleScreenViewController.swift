@@ -48,7 +48,7 @@ extension ExampleScreenViewController {
             loadDataButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15.0),
             loadDataButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15.0),
             loadDataButton.heightAnchor.constraint(equalToConstant: 50.0),
-            loadDataButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0.0),
+            loadDataButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0.0)
         ])
         
         view.addSubview(textLabel)

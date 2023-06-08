@@ -39,8 +39,8 @@ final class MainTabBarAssembly {
         )
         tabVC.tabBar.unselectedItemTintColor = .gray
         let appearance = UITabBarItem.appearance()
-        let attributes = [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 14)]
-        appearance.setTitleTextAttributes(attributes as [NSAttributedString.Key : Any], for: .normal)
+        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]
+        appearance.setTitleTextAttributes(attributes as [NSAttributedString.Key: Any], for: .normal)
         
         return tabVC
     }

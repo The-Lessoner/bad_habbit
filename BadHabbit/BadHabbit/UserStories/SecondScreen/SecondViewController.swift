@@ -47,7 +47,7 @@ extension SecondViewController {
             loadDataButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
             loadDataButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
             loadDataButton.heightAnchor.constraint(equalToConstant: 50.0),
-            loadDataButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 70.0),
+            loadDataButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 70.0)
         ])
         errorLabel.textColor = .systemRed
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -72,7 +72,7 @@ extension SecondViewController {
             tableView.rightAnchor.constraint(equalTo: safeArea.rightAnchor, constant: 0),
             tableView.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: 0),
             tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: 0),
-            tableView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 70.0),
+            tableView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 70.0)
         ])
     }
     
@@ -81,8 +81,7 @@ extension SecondViewController {
     }
     
     private func bindVM() {
-        viewModel.exampleText = { [weak self] petitions in
-            guard let _ = petitions else { return }
+        viewModel.exampleText = { [weak self] _ in
             self?.createTableView()
         }
         
@@ -102,7 +101,3 @@ extension SecondViewController {
         return cell
     }
 }
-
-
-
-

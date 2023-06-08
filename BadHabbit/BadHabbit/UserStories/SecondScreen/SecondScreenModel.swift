@@ -14,4 +14,3 @@ struct SecondScreenModel: Decodable {
 struct Petition: Decodable {
     let title: String
 }
-

@@ -34,7 +34,7 @@ final class SecondScreenViewModel: SecondScreenViewModelProtocol {
     }
     
     func loadData() {
-        exampleService.loadExampleData() { [weak self] result in
+        exampleService.loadExampleData { [weak self] result in
             guard let self else { return }
             
             switch result {
