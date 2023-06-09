@@ -9,4 +9,3 @@ struct Request {
     let path: String
     let params: [AnyHashable: Any]
 }
-
