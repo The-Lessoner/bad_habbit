@@ -1,0 +1,36 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+opt_out_usage
+
+default_platform(:ios)
+
+platform :ios do
+
+  desc "Set initial version number"
+  lane :initial_version_number do
+  
+    increment_version_number(
+    version_number: "1.0.0")
+  end
+  
+  
+  desc "Get current version number"
+  lane :current_version_number do
+  
+    puts get_version_number
+  end
+ 
+end
