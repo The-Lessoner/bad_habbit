@@ -18,19 +18,17 @@ opt_out_usage
 default_platform(:ios)
 
 platform :ios do
-
-  desc "Set initial version number"
-  lane :initial_version_number do
-  
-    increment_version_number(
-    version_number: "1.0.0")
-  end
-  
-  
-  desc "Get current version number"
-  lane :current_version_number do
-  
-    puts get_version_number
-  end
- 
+    desc “Generate .ipa file”
+    lane :build do
+        build_app(
+            scheme: "SettingsTest",
+            silent: true,
+            clean: true,
+            output_directory: "./build",
+            output_name: "SettingsTest.ipa",
+            export_method: "development"
+            # Uncomment the line if you want to use Xcode’s Automatically Manage Signing feature
+            # xcargs: "-allowProvisioningUpdates"
+        )
+    end
 end
