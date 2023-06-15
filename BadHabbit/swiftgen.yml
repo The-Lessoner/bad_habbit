@@ -10,12 +10,12 @@ output_dir: BadHabbit
 ## Generate constants for your localized strings.
 ##   Be sure that SwiftGen only parses ONE locale (typically Base.lproj, or en.lproj, or whichever your development region is); otherwise it will generate the same keys multiple times.
 ##   SwiftGen will parse all `.strings` files found in that folder.
-# strings:
-#   inputs:
-#     - Resources/Base.lproj
-#   outputs:
-#     - templateName: structured-swift5
-#       output: Strings+Generated.swift
+strings:
+  inputs:
+    - SupportFiles/Base.lproj
+  outputs:
+    - templateName: structured-swift5
+      output: Strings+Generated.swift
 
 
 ## Generate constants for your Assets Catalogs, including constants for images, colors, ARKit resources, etc.
@@ -55,3 +55,32 @@ xcassets:
 ##
 ## For more info, use `swiftgen config doc` to open the full documentation on GitHub.
 ## https://github.com/SwiftGen/SwiftGen/tree/6.6.2/Documentation/
+
+
+## Colors template
+## This will generate a enum ColorName with one case per color listed in the text file passed as argument.
+## The path to colors file must be updated
+# colors:
+#   inputs: path/to/colors-file.txt
+#   outputs:
+#     templateName: swift5
+#     output: Colors.swift
+
+
+## Fonts template
+## This will recursively go through the specified directory, finding any typeface files (TTF, OTF, …), defining a struct FontFamily for each family, and an enum nested under that family that will represent the font styles.
+## The path to fonts file must be updated
+# fonts:
+#   inputs: /path/to/font/dir
+#   outputs:
+#     templateName: swift5
+#     output: Fonts.swift
+
+## JSON template
+##This will parse the given file, or when given a directory, recursively search for JSON and YAML files. It will define an enum for each file (and documents in a file where needed), and type-safe constants for the content of the file.
+## The path to json file must be updated
+# json:
+#   inputs: path/to/json/dir-or-file
+#   outputs:
+#     templateName: runtime-swift5
+#     output: JSON.swift
