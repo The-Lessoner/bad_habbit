@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372F03E231465F74E9E647DD /* Pods_BadHabbit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */; };
 		E58D1BAD2A1CFF2C00137CC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BAC2A1CFF2C00137CC6 /* AppDelegate.swift */; };
 		E58D1BAF2A1CFF2C00137CC6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BAE2A1CFF2C00137CC6 /* SceneDelegate.swift */; };
 		E58D1BB62A1CFF2E00137CC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E58D1BB52A1CFF2E00137CC6 /* Assets.xcassets */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		77FC42E518800866EDC7473A /* Pods-BadHabbit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadHabbit.debug.xcconfig"; path = "Target Support Files/Pods-BadHabbit/Pods-BadHabbit.debug.xcconfig"; sourceTree = "<group>"; };
+		82255F197739D3932E47D930 /* Pods-BadHabbit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadHabbit.release.xcconfig"; path = "Target Support Files/Pods-BadHabbit/Pods-BadHabbit.release.xcconfig"; sourceTree = "<group>"; };
 		E58D1BA92A1CFF2C00137CC6 /* BadHabbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BadHabbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E58D1BAC2A1CFF2C00137CC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E58D1BAE2A1CFF2C00137CC6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +53,7 @@
 		E58D1BEE2A1D125B00137CC6 /* ViewModelAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelAssembly.swift; sourceTree = "<group>"; };
 		E58D1BF02A1D133200137CC6 /* ServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
 		E58D1BF32A1D142E00137CC6 /* RequestExecutorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExecutorMock.swift; sourceTree = "<group>"; };
+		EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BadHabbit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +61,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372F03E231465F74E9E647DD /* Pods_BadHabbit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F8062058E6710BFF5E557EE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77FC42E518800866EDC7473A /* Pods-BadHabbit.debug.xcconfig */,
+				82255F197739D3932E47D930 /* Pods-BadHabbit.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E58D1BA02A1CFF2C00137CC6 = {
 			isa = PBXGroup;
 			children = (
 				E58D1BAB2A1CFF2C00137CC6 /* BadHabbit */,
 				E58D1BAA2A1CFF2C00137CC6 /* Products */,
+				7F8062058E6710BFF5E557EE /* Pods */,
+				FBB8119D4F423E33D72AFCB8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,6 +211,14 @@
 			path = NetworkKitMock;
 			sourceTree = "<group>";
 		};
+		FBB8119D4F423E33D72AFCB8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -201,6 +226,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E58D1BBD2A1CFF2E00137CC6 /* Build configuration list for PBXNativeTarget "BadHabbit" */;
 			buildPhases = (
+				5143C3AABB4F39A1B4930A27 /* [CP] Check Pods Manifest.lock */,
 				E58D1BA52A1CFF2C00137CC6 /* Sources */,
 				E58D1BA62A1CFF2C00137CC6 /* Frameworks */,
 				E58D1BA72A1CFF2C00137CC6 /* Resources */,
@@ -261,6 +287,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5143C3AABB4F39A1B4930A27 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BadHabbit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F637B9BB2A31DEDE000DE6D3 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -436,6 +484,7 @@
 		};
 		E58D1BBE2A1CFF2E00137CC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77FC42E518800866EDC7473A /* Pods-BadHabbit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -462,6 +511,7 @@
 		};
 		E58D1BBF2A1CFF2E00137CC6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82255F197739D3932E47D930 /* Pods-BadHabbit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
