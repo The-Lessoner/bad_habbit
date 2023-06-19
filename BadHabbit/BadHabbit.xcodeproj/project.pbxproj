@@ -326,7 +326,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen\n";
+			shellScript = "if [[ -f ${PODS_ROOT}/SwiftGen/bin/swiftgen ]]; then\n  ${PODS_ROOT}/SwiftGen/bin/swiftgen\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
 		};
 		F637B9BB2A31DEDE000DE6D3 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
