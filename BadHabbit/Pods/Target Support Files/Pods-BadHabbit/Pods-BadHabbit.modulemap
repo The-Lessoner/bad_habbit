@@ -1,6 +1,0 @@
-framework module Pods_BadHabbit {
-  umbrella header "Pods-BadHabbit-umbrella.h"
-
-  export *
-  module * { export * }
-}
