@@ -22,14 +22,17 @@ final class MainTabBarAssembly {
         
         let exampleVC = exampleScreenAssembly.assembleView()
         exampleVC.tabBarItem.title = "Example"
+        let signInVC = SignInViewController()
+        signInVC.tabBarItem.title = "Sign In"
         
         tabVC.setViewControllers(
             [
-                exampleVC
+                exampleVC,
+                signInVC
             ],
             animated: true
         )
-        
+        tabVC.tabBar.unselectedItemTintColor = .blue
         return tabVC
     }
 }
