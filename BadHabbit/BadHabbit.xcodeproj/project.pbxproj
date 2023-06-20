@@ -28,6 +28,7 @@
 		E58D1BF42A1D142E00137CC6 /* RequestExecutorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BF32A1D142E00137CC6 /* RequestExecutorMock.swift */; };
 		F6444C1C2A3D9F9B00B52AB4 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6444C1B2A3D9F9B00B52AB4 /* SignInViewController.swift */; };
 		F6B97B4D2A3FAD200060D26A /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6B97B4C2A3FAD1F0060D26A /* AuthenticationServices.framework */; };
+		F6EF62862A419F570018D96E /* KeyChainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF62852A419F570018D96E /* KeyChainItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		F6444C192A3D048700B52AB4 /* BadHabbit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BadHabbit.entitlements; sourceTree = "<group>"; };
 		F6444C1B2A3D9F9B00B52AB4 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		F6B97B4C2A3FAD1F0060D26A /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		F6EF62852A419F570018D96E /* KeyChainItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				F6444C1B2A3D9F9B00B52AB4 /* SignInViewController.swift */,
+				F6EF62852A419F570018D96E /* KeyChainItem.swift */,
 			);
 			path = SignInScreen;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				E58D1BDE2A1D082400137CC6 /* ExampleService.swift in Sources */,
 				E58D1BE22A1D08B300137CC6 /* Request.swift in Sources */,
 				E58D1BD42A1D042400137CC6 /* ExampleScreenViewController.swift in Sources */,
+				F6EF62862A419F570018D96E /* KeyChainItem.swift in Sources */,
 				E58D1BEA2A1D0BD900137CC6 /* NetworkError.swift in Sources */,
 				E58D1BF42A1D142E00137CC6 /* RequestExecutorMock.swift in Sources */,
 				E58D1BD22A1D041A00137CC6 /* ExampleViewModel.swift in Sources */,

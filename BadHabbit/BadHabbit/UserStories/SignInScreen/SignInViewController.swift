@@ -10,24 +10,38 @@ import AuthenticationServices
 
 class SignInViewController: UIViewController {
     private let userIdentifierLabel = UILabel()
-    private  let givenNameLabel = UILabel()
+    private let givenNameLabel = UILabel()
     private let familyNameLabel = UILabel()
     private let emailLabel = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupAuthorizationButton()
+        setupUI()
     }
 }
 
 extension SignInViewController {
-    private func setupAuthorizationButton() {
+    private func setupUI() {
         view.backgroundColor = .white
         let authorizationButton = ASAuthorizationAppleIDButton()
         authorizationButton.frame = CGRect(x: 0, y: 0, width: 250, height: 50)
         authorizationButton.center = view.center
         view.addSubview(authorizationButton)
         authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
+
+        let signOutButton = UIButton()
+        signOutButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(signOutButton)
+        NSLayoutConstraint.activate([
+            signOutButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15.0),
+            signOutButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15.0),
+            signOutButton.heightAnchor.constraint(equalToConstant: 50.0),
+            signOutButton.topAnchor.constraint(equalTo: authorizationButton.bottomAnchor, constant: 15.0)
+
+        ])
+        signOutButton.backgroundColor = .orange
+        signOutButton.setTitle("Sign out", for: .normal)
+        signOutButton.addTarget(self, action: #selector(signOutButtonPressed), for: .touchUpInside)
     }
 
     private func setupUserLables() {
@@ -66,7 +80,6 @@ extension SignInViewController {
             emailLabel.heightAnchor.constraint(equalToConstant: 50.0),
             emailLabel.topAnchor.constraint(equalTo: familyNameLabel.bottomAnchor, constant: 15.0)
         ])
-
     }
 
     private func showUserData(userIdentifier: String, givenName: String?, familyName: String?, email: String?) {
@@ -98,6 +111,7 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
             let userIdentifier = appleIDCredential.user
             let fullName = appleIDCredential.fullName
             let email = appleIDCredential.email
+            saveUserInKeychain(userIdentifier)
             showUserData(userIdentifier: userIdentifier, givenName: fullName?.givenName, familyName: fullName?.familyName, email: email)
         case let passwordCredential as ASPasswordCredential:
             let username = passwordCredential.user
@@ -107,6 +121,23 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
         default:
             break
         }
+    }
+    
+    private func saveUserInKeychain(_ userIdentifier: String) {
+        do {
+            try KeychainItem(service: "com.the-lessoner.badHabbit", account: "userIdentifier").saveItem(userIdentifier)
+        } catch {
+            print("Unable to save userIdentifier to keychain.")
+        }
+    }
+
+    @objc
+    func signOutButtonPressed() {
+        KeychainItem.deleteUserIdentifierFromKeychain()
+        userIdentifierLabel.text = ""
+        givenNameLabel.text = ""
+        familyNameLabel.text = ""
+        emailLabel.text = ""
     }
 
     private func showPasswordCredentialAlert(username: String, password: String) {
