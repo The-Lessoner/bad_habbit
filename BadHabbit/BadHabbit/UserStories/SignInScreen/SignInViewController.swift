@@ -9,10 +9,10 @@ import UIKit
 import AuthenticationServices
 
 class SignInViewController: UIViewController {
-    let userIdentifierLabel = UILabel()
-    let givenNameLabel = UILabel()
-    let familyNameLabel = UILabel()
-    let emailLabel = UILabel()
+    private let userIdentifierLabel = UILabel()
+    private  let givenNameLabel = UILabel()
+    private let familyNameLabel = UILabel()
+    private let emailLabel = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,10 +102,8 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
         case let passwordCredential as ASPasswordCredential:
             let username = passwordCredential.user
             let password = passwordCredential.password
+            showPasswordCredentialAlert(username: username, password: password)
 
-            DispatchQueue.main.async {
-                self.showPasswordCredentialAlert(username: username, password: password)
-            }
         default:
             break
         }
@@ -113,9 +111,7 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
 
     private func showPasswordCredentialAlert(username: String, password: String) {
         let message = "The app has received your selected credential from the keychain. \n\n Username: \(username)\n Password: \(password)"
-        let alertController = UIAlertController(title: "Credential Received",
-                                                message: message,
-                                                preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Credential Received", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
