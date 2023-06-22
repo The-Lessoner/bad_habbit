@@ -1,0 +1,22 @@
+input_dir: BadHabbit
+output_dir: BadHabbit
+
+
+## Generate a Swift enum L10n that will map all your Localizable.strings and Localizable.stringsdict (or other tables) keys to a static let constant
+strings:
+  inputs:
+    - SupportFiles/Base.lproj
+  outputs:
+    - templateName: structured-swift5
+      output: Strings+Generated.swift
+
+
+## Generate constants for your Assets Catalogs, including constants for images, colors, ARKit resources, etc.
+xcassets:
+  inputs:
+    - SupportFiles/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      params:
+        forceProvidesNamespaces: true
+      output: XCAssets+Generated.swift
