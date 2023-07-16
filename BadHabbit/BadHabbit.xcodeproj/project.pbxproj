@@ -27,6 +27,8 @@
 		E58D1BEF2A1D125B00137CC6 /* ViewModelAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BEE2A1D125B00137CC6 /* ViewModelAssembly.swift */; };
 		E58D1BF12A1D133200137CC6 /* ServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BF02A1D133200137CC6 /* ServiceAssembly.swift */; };
 		E58D1BF42A1D142E00137CC6 /* RequestExecutorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BF32A1D142E00137CC6 /* RequestExecutorMock.swift */; };
+		F64555992A61743A0070947C /* SignInAppleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555982A61743A0070947C /* SignInAppleViewController.swift */; };
+		F645559D2A62D13E0070947C /* SFProDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F645559C2A62D13E0070947C /* SFProDisplay-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,9 @@
 		E58D1BF02A1D133200137CC6 /* ServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
 		E58D1BF32A1D142E00137CC6 /* RequestExecutorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExecutorMock.swift; sourceTree = "<group>"; };
 		EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BadHabbit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F64555982A61743A0070947C /* SignInAppleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleViewController.swift; sourceTree = "<group>"; };
+		F645559A2A62B93C0070947C /* BadHabbitDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BadHabbitDebug.entitlements; sourceTree = "<group>"; };
+		F645559C2A62D13E0070947C /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +103,7 @@
 		E58D1BAB2A1CFF2C00137CC6 /* BadHabbit */ = {
 			isa = PBXGroup;
 			children = (
+				F645559A2A62B93C0070947C /* BadHabbitDebug.entitlements */,
 				E58D1BAC2A1CFF2C00137CC6 /* AppDelegate.swift */,
 				E58D1BAE2A1CFF2C00137CC6 /* SceneDelegate.swift */,
 				E58D1BCA2A1D02D100137CC6 /* DI */,
@@ -111,6 +117,7 @@
 		E58D1BC02A1D000000137CC6 /* DesignKit */ = {
 			isa = PBXGroup;
 			children = (
+				F645559B2A62D0F20070947C /* Fonts */,
 			);
 			path = DesignKit;
 			sourceTree = "<group>";
@@ -146,6 +153,7 @@
 		E58D1BC52A1D01AB00137CC6 /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
+				F64555972A6173F40070947C /* SingnInAppleScreen */,
 				E58D1BED2A1D124C00137CC6 /* DI */,
 				E58D1BC72A1D020F00137CC6 /* MainTabBar */,
 				E58D1BCE2A1D037E00137CC6 /* ExampleScreen */,
@@ -208,6 +216,22 @@
 				E58D1BF32A1D142E00137CC6 /* RequestExecutorMock.swift */,
 			);
 			path = NetworkKitMock;
+			sourceTree = "<group>";
+		};
+		F64555972A6173F40070947C /* SingnInAppleScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F64555982A61743A0070947C /* SignInAppleViewController.swift */,
+			);
+			path = SingnInAppleScreen;
+			sourceTree = "<group>";
+		};
+		F645559B2A62D0F20070947C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F645559C2A62D13E0070947C /* SFProDisplay-Bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		FBB8119D4F423E33D72AFCB8 /* Frameworks */ = {
@@ -280,6 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F645559D2A62D13E0070947C /* SFProDisplay-Bold.ttf in Resources */,
 				E58D1BB92A1CFF2E00137CC6 /* LaunchScreen.storyboard in Resources */,
 				E58D1BB62A1CFF2E00137CC6 /* Assets.xcassets in Resources */,
 			);
@@ -382,6 +407,7 @@
 				E58D1BE22A1D08B300137CC6 /* Request.swift in Sources */,
 				E58D1BD42A1D042400137CC6 /* ExampleScreenViewController.swift in Sources */,
 				E58D1BEA2A1D0BD900137CC6 /* NetworkError.swift in Sources */,
+				F64555992A61743A0070947C /* SignInAppleViewController.swift in Sources */,
 				E58D1BF42A1D142E00137CC6 /* RequestExecutorMock.swift in Sources */,
 				E58D1BD22A1D041A00137CC6 /* ExampleViewModel.swift in Sources */,
 				E58D1BAF2A1CFF2C00137CC6 /* SceneDelegate.swift in Sources */,
@@ -525,6 +551,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BadHabbit/BadHabbitDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8WG6LW4XNB;
@@ -535,7 +562,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -566,7 +593,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
