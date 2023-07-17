@@ -47,7 +47,7 @@ extension SignInAppleViewController {
         view.addSubview(titleLabel)
         titleLabel.textColor = .black
         titleLabel.font = UIFont(name: "SFProDisplay-Bold", size: 24)
-        var paragraphStyle = NSMutableParagraphStyle()
+        let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.26
         titleLabel.attributedText = NSMutableAttributedString(string: "habit hero", attributes: [NSAttributedString.Key.kern: -0.41, NSAttributedString.Key.paragraphStyle: paragraphStyle])
         titleLabel.text = titleLabel.text?.uppercased()
@@ -57,24 +57,24 @@ extension SignInAppleViewController {
     }
 
     private func setupTitleLabelConstraints() {
-        titleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(82)
-            $0.leading.trailing.equalToSuperview().inset(16)
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(82)
+            make.leading.trailing.equalToSuperview().inset(16)
         }
     }
 
     private func setupImageLogoConstraints() {
-        imageLogo.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.centerY.equalToSuperview().offset(-35)
-            $0.size.equalTo(196)
+        imageLogo.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().offset(-35)
+            make.size.equalTo(196)
         }
     }
 
     private func setupImageMountainsConstraints() {
-        imageMountains.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(399)
-            $0.bottom.leading.trailing.equalToSuperview()
+        imageMountains.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(399)
+            make.bottom.leading.trailing.equalToSuperview()
         }
     }
 
@@ -87,10 +87,10 @@ extension SignInAppleViewController {
     }
 
     private func setupAuthorizationButtonConstraints() {
-        authorizationButton.snp.makeConstraints {
-            $0.bottom.equalToSuperview().inset(54)
-            $0.height.equalTo(50)
-            $0.leading.trailing.equalToSuperview().inset(16)
+        authorizationButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(54)
+            make.height.equalTo(50)
+            make.leading.trailing.equalToSuperview().inset(16)
         }
     }
 
