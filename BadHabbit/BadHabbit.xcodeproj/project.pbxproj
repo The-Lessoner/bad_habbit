@@ -30,6 +30,9 @@
 		E58D1BB92A1CFF2E00137CC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E58D1BB72A1CFF2E00137CC6 /* LaunchScreen.storyboard */; };
 		E58D1BCC2A1D02E100137CC6 /* StoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BCB2A1D02E100137CC6 /* StoryAssembly.swift */; };
 		E58D1BEF2A1D125B00137CC6 /* StoriesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BEE2A1D125B00137CC6 /* StoriesAssembly.swift */; };
+		E59E8A342A78E85400ABD1DA /* DropDownViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59E8A332A78E85400ABD1DA /* DropDownViewPresenter.swift */; };
+		E59E8A372A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59E8A362A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift */; };
+		E59E8A392A790C7100ABD1DA /* DropDownViewPresenterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59E8A382A790C7100ABD1DA /* DropDownViewPresenterConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,9 @@
 		E58D1BBA2A1CFF2E00137CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E58D1BCB2A1D02E100137CC6 /* StoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryAssembly.swift; sourceTree = "<group>"; };
 		E58D1BEE2A1D125B00137CC6 /* StoriesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesAssembly.swift; sourceTree = "<group>"; };
+		E59E8A332A78E85400ABD1DA /* DropDownViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownViewPresenter.swift; sourceTree = "<group>"; };
+		E59E8A362A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownViewPresenterAssembly.swift; sourceTree = "<group>"; };
+		E59E8A382A790C7100ABD1DA /* DropDownViewPresenterConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownViewPresenterConfig.swift; sourceTree = "<group>"; };
 		EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BadHabbit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,6 +92,7 @@
 		E5109B472A6AD904008B74D3 /* DesignKit */ = {
 			isa = PBXGroup;
 			children = (
+				E59E8A352A78E85B00ABD1DA /* DropDownViewPresenter */,
 				E5109B6C2A6D4726008B74D3 /* BaseViewController */,
 				E5109B4B2A6AD9A4008B74D3 /* DesignKitAssembly.swift */,
 				E5109B632A6AE6F7008B74D3 /* GlobalCoordinator */,
@@ -166,6 +173,7 @@
 				E58D1BAA2A1CFF2C00137CC6 /* Products */,
 				7F8062058E6710BFF5E557EE /* Pods */,
 				FBB8119D4F423E33D72AFCB8 /* Frameworks */,
+				E59E8A322A78E80700ABD1DA /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,13 +207,6 @@
 			path = PersistenceKit;
 			sourceTree = "<group>";
 		};
-		E58D1BC32A1D008400137CC6 /* NetworkKit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NetworkKit;
-			sourceTree = "<group>";
-		};
 		E58D1BC42A1D00D100137CC6 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,7 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				E5109B472A6AD904008B74D3 /* DesignKit */,
-				E58D1BC32A1D008400137CC6 /* NetworkKit */,
 				E58D1BC22A1D001A00137CC6 /* PersistenceKit */,
 			);
 			path = Kit;
@@ -249,6 +249,23 @@
 				E58D1BEE2A1D125B00137CC6 /* StoriesAssembly.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		E59E8A322A78E80700ABD1DA /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		E59E8A352A78E85B00ABD1DA /* DropDownViewPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				E59E8A362A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift */,
+				E59E8A332A78E85400ABD1DA /* DropDownViewPresenter.swift */,
+				E59E8A382A790C7100ABD1DA /* DropDownViewPresenterConfig.swift */,
+			);
+			path = DropDownViewPresenter;
 			sourceTree = "<group>";
 		};
 		FBB8119D4F423E33D72AFCB8 /* Frameworks */ = {
@@ -416,11 +433,14 @@
 				E5109B672A6D3DAE008B74D3 /* CanPresentView.swift in Sources */,
 				E5109B4E2A6ADA99008B74D3 /* AlertConfiguration.swift in Sources */,
 				E58D1BCC2A1D02E100137CC6 /* StoryAssembly.swift in Sources */,
+				E59E8A342A78E85400ABD1DA /* DropDownViewPresenter.swift in Sources */,
 				E5109B532A6ADB4A008B74D3 /* CommonTypeAliases.swift in Sources */,
 				E5109B6E2A6D4733008B74D3 /* BaseViewController.swift in Sources */,
+				E59E8A372A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift in Sources */,
 				E5109B5F2A6AE4CB008B74D3 /* AlertController.swift in Sources */,
 				E5109B502A6ADABF008B74D3 /* AlertAction.swift in Sources */,
 				E58D1BEF2A1D125B00137CC6 /* StoriesAssembly.swift in Sources */,
+				E59E8A392A790C7100ABD1DA /* DropDownViewPresenterConfig.swift in Sources */,
 				E5109B652A6AE70D008B74D3 /* GlobalCoordinator.swift in Sources */,
 				E5109B4C2A6AD9A4008B74D3 /* DesignKitAssembly.swift in Sources */,
 				E5109B692A6D4269008B74D3 /* FillingPersonalDataRouter.swift in Sources */,
@@ -579,7 +599,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -610,7 +630,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
