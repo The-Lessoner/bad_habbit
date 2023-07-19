@@ -32,15 +32,11 @@ extension SignUpViewController {
         configureWelcomLabel()
         configureAppNameLabel()
         configureLogoImageView()
-        configurePhraseLabel()
-        configureStartButton()
         
         addSubviews([backgroundImageView,
                      welcomeLabel,
                      appNameLabel,
-                     logoImageView,
-                     phraseLabel,
-                     startButton
+                     logoImageView
                     ],
                     toSuperview: view)
         
@@ -56,6 +52,13 @@ extension SignUpViewController {
     private func configureBackgroundImageView() {
         backgroundImageView = UIImageView(image: UIImage(named: "mountains"))
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        configurePhraseLabel()
+        configureStartButton()
+        
+        addSubviews([phraseLabel,
+                     startButton],
+                    toSuperview: backgroundImageView)
     }
     
     private func configureWelcomLabel() {
@@ -155,15 +158,17 @@ extension SignUpViewController {
         let safeArea = view.safeAreaLayoutGuide
         
         backgroundImageView.snp.makeConstraints { make in
-            let heightMultiplayer: CGFloat = 445/844
+            let heightMultiplier: CGFloat = 445 / 844
 
-            make.height.equalToSuperview().multipliedBy(heightMultiplayer)
+            make.height.equalToSuperview().multipliedBy(heightMultiplier)
             make.bottom.equalToSuperview()
             make.leading.trailing.equalTo(safeArea)
         }
         
         welcomeLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(82)
+            let topDistance: CGFloat = 82 / 844
+            
+            make.top.equalTo(view.snp.bottom).multipliedBy(topDistance)
             make.centerX.equalTo(safeArea)
         }
         
@@ -181,18 +186,21 @@ extension SignUpViewController {
         }
         
         phraseLabel.snp.makeConstraints { make in
-            make.top.equalTo(backgroundImageView.snp.bottom).inset(248)
+            let topDistance: CGFloat = 248 / 445
+            
+            make.top.equalTo(backgroundImageView.snp.bottom).multipliedBy(topDistance)
             make.leading.trailing.equalTo(safeArea).inset(16)
             make.centerX.equalTo(safeArea)
         }
         
         startButton.snp.makeConstraints { make in
-            let heightMultiplayer: CGFloat = 50/844
+            let heightMultiplier: CGFloat = 50/445
+            let bottomMultiplier: CGFloat = 341/445
 
-            make.height.equalToSuperview().multipliedBy(heightMultiplayer)
+            make.height.equalToSuperview().multipliedBy(heightMultiplier)
             make.leading.trailing.equalTo(safeArea).inset(16)
             make.centerX.equalTo(safeArea)
-            make.bottom.equalTo(safeArea).inset(20)
+            make.top.equalTo(backgroundImageView.snp.bottom).multipliedBy(bottomMultiplier)
         }
     }
 }
