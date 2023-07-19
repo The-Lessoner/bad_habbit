@@ -66,7 +66,7 @@ extension SignUpViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
 
         let attributes: [NSAttributedString.Key: Any] = [
-             .kern: 0.41,
+             .kern: -0.41,
              .font: UIFont(name: FontName.SFProDisplayMedium.rawValue, size: 16.0)!]
         let text = NSAttributedString(string: "ДОБРО ПОЖАЛОВАТЬ В", attributes: attributes)
         label.attributedText = text
@@ -81,7 +81,7 @@ extension SignUpViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
 
         let attributes: [NSAttributedString.Key: Any] = [
-             .kern: 0.41,
+             .kern: -0.41,
              .font: UIFont(name: FontName.SFProDisplayBold.rawValue, size: 24.0)!]
         let text = NSAttributedString(string: "HABIT HERO", attributes: attributes)
         label.attributedText = text
@@ -104,7 +104,7 @@ extension SignUpViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
 
         let attributes: [NSAttributedString.Key: Any] = [
-             .kern: 0.41,
+             .kern: -0.41,
              .font: UIFont(name: FontName.interExtraBold.rawValue, size: 15.0)!]
         let text = NSAttributedString(string: "ЛОГО", attributes: attributes)
         label.attributedText = text
@@ -119,7 +119,7 @@ extension SignUpViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
 
         let attributes: [NSAttributedString.Key: Any] = [
-             .kern: 0.41,
+             .kern: -0.41,
              .font: UIFont(name: FontName.SFProDisplayMedium.rawValue, size: 14.0)!]
         let phrase =
 """
