@@ -55,12 +55,10 @@ extension SignUpViewController {
     
     private func configureBackgroundImageView() {
         backgroundImageView = UIImageView(image: UIImage(named: "mountains"))
-        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func configureWelcomLabel() {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
@@ -80,7 +78,6 @@ extension SignUpViewController {
     
     private func configureAppNameLabel() {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
@@ -100,7 +97,6 @@ extension SignUpViewController {
     
     private func configureLogoImageView() {
         logoImageView = UIImageView(image: UIImage(named: "logo"))
-        logoImageView.translatesAutoresizingMaskIntoConstraints = false
         
         configureLogoLabel()
         logoImageView.addSubview(logoLabel)
@@ -108,7 +104,6 @@ extension SignUpViewController {
     
     private func configureLogoLabel() {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .left
@@ -127,7 +122,6 @@ extension SignUpViewController {
     
     private func configurePhraseLabel() {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
@@ -145,7 +139,7 @@ extension SignUpViewController {
 """
 НЕ ЗАПОЛНЯЮТ ПУСТОТУ,  ОНИ ЕЕ СОЗДАЮТ!
 НЕ ЗАПОЛНЯЮТ ПУСТОТУ,  ОНИ ЕЕ СОЗДАЮТ!
-тут какая-то фраза
+ТУТ КАКАЯ-ТО ФРАЗА
 """
         
         label.attributedText = NSAttributedString(string: phrase, attributes: attributes)
@@ -161,7 +155,6 @@ extension SignUpViewController {
         buttonConfiguration.baseBackgroundColor = UIColor(hexNumber: 0x090909)
         
         let button = UIButton(configuration: buttonConfiguration)
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
         
         startButton = button
@@ -193,11 +186,13 @@ extension SignUpViewController {
         }
         
         logoImageView.snp.makeConstraints { make in
-            make.centerX.centerY.equalTo(safeArea)
+            make.centerX.equalTo(safeArea)
+            make.centerY.equalTo(safeArea).offset(-35)
+            make.size.equalTo(196)
         }
         
         logoLabel.snp.makeConstraints { make in
-            make.centerX.centerY.equalTo(safeArea)
+            make.centerX.centerY.equalTo(logoImageView)
         }
         
         phraseLabel.snp.makeConstraints { make in
