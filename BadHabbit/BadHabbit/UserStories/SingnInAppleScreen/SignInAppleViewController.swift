@@ -49,7 +49,12 @@ extension SignInAppleViewController {
         titleLabel.font = UIFont(name: "SFProDisplay-Bold", size: 24)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.26
-        titleLabel.attributedText = NSMutableAttributedString(string: "habit hero", attributes: [NSAttributedString.Key.kern: -0.41, NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        let quote = "habit hero"
+        let attributes: [NSAttributedString.Key: Any]  = [ 
+            .kern: -0.41,
+            .paragraphStyle: paragraphStyle
+        ]
+        titleLabel.attributedText = NSMutableAttributedString(string: quote, attributes: attributes)
         titleLabel.text = titleLabel.text?.uppercased()
         titleLabel.textAlignment = .center
         setupTitleLabelConstraints()
@@ -73,7 +78,8 @@ extension SignInAppleViewController {
 
     private func setupImageMountainsConstraints() {
         imageMountains.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(399)
+            let multiplier: CGFloat = 445/844
+            make.height.equalToSuperview().multipliedBy(multiplier)
             make.bottom.leading.trailing.equalToSuperview()
         }
     }
