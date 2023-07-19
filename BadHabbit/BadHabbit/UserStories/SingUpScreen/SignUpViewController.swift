@@ -62,7 +62,7 @@ extension SignUpViewController {
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
-        paragraphStyle.lineHeightMultiple = 1.3
+        paragraphStyle.lineHeightMultiple = 1.09
 
         let attributes: [NSAttributedString.Key: Any] = [
              .kern: -0.41,
@@ -81,7 +81,7 @@ extension SignUpViewController {
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
-        paragraphStyle.lineHeightMultiple = 1.3
+        paragraphStyle.lineHeightMultiple = 1.09
 
         let stringAttributes: [NSAttributedString.Key: Any] = [
              .kern: -0.41,
@@ -125,7 +125,7 @@ extension SignUpViewController {
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
-        paragraphStyle.lineHeightMultiple = 1.5
+        paragraphStyle.lineHeightMultiple = 1.26
         paragraphStyle.lineBreakMode = .byWordWrapping
 
         let attributes: [NSAttributedString.Key: Any] = [
@@ -176,7 +176,7 @@ extension SignUpViewController {
         }
         
         welcomeLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeArea.snp.top).inset(20)
+            make.top.equalTo(safeArea).inset(35)
             make.centerX.equalTo(safeArea)
         }
         
@@ -186,9 +186,11 @@ extension SignUpViewController {
         }
         
         logoImageView.snp.makeConstraints { make in
+            let multiplayer: CGFloat = 196 / 390
+            
             make.centerX.equalTo(safeArea)
             make.centerY.equalTo(safeArea).offset(-35)
-            make.size.equalTo(196)
+            make.size.equalTo(safeArea.snp.width).multipliedBy(multiplayer)
         }
         
         logoLabel.snp.makeConstraints { make in
