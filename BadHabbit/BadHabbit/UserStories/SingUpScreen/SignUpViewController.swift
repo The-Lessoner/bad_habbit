@@ -32,11 +32,15 @@ extension SignUpViewController {
         configureWelcomLabel()
         configureAppNameLabel()
         configureLogoImageView()
+        configurePhraseLabel()
+        configureStartButton()
         
         addSubviews([backgroundImageView,
                      welcomeLabel,
                      appNameLabel,
-                     logoImageView
+                     logoImageView,
+                     phraseLabel,
+                     startButton
                     ],
                     toSuperview: view)
         
@@ -52,26 +56,24 @@ extension SignUpViewController {
     private func configureBackgroundImageView() {
         backgroundImageView = UIImageView(image: UIImage(named: "mountains"))
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        configurePhraseLabel()
-        configureStartButton()
-        
-        addSubviews([phraseLabel,
-                     startButton],
-                    toSuperview: backgroundImageView)
     }
     
     private func configureWelcomLabel() {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        paragraphStyle.lineHeightMultiple = 1.3
 
         let attributes: [NSAttributedString.Key: Any] = [
              .kern: -0.41,
-             .font: UIFont(name: FontName.SFProDisplayMedium.rawValue, size: 16.0)!]
-        let text = NSAttributedString(string: "ДОБРО ПОЖАЛОВАТЬ В", attributes: attributes)
-        label.attributedText = text
-        label.textAlignment = .center
-        label.textColor = UIColor(hexNumber: 0x000000)
+             .font: UIFont(name: FontName.SFProDisplayMedium.rawValue, size: 16.0)!,
+             .foregroundColor: UIColor(hexNumber: 0x000000),
+             .paragraphStyle: paragraphStyle
+        ]
+        
+        label.attributedText = NSAttributedString(string: "ДОБРО ПОЖАЛОВАТЬ В", attributes: attributes)
 
         welcomeLabel = label
     }
@@ -79,14 +81,19 @@ extension SignUpViewController {
     private func configureAppNameLabel() {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        paragraphStyle.lineHeightMultiple = 1.3
 
-        let attributes: [NSAttributedString.Key: Any] = [
+        let stringAttributes: [NSAttributedString.Key: Any] = [
              .kern: -0.41,
-             .font: UIFont(name: FontName.SFProDisplayBold.rawValue, size: 24.0)!]
-        let text = NSAttributedString(string: "HABIT HERO", attributes: attributes)
-        label.attributedText = text
-        label.textAlignment = .center
-        label.textColor = .black
+             .font: UIFont(name: FontName.SFProDisplayBold.rawValue, size: 24.0)!,
+             .foregroundColor: UIColor.black,
+             .paragraphStyle: paragraphStyle
+        ]
+        
+        label.attributedText = NSAttributedString(string: "HABIT HERO", attributes: stringAttributes)
 
         appNameLabel = label
     }
@@ -102,25 +109,38 @@ extension SignUpViewController {
     private func configureLogoLabel() {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .left
 
         let attributes: [NSAttributedString.Key: Any] = [
              .kern: -0.41,
-             .font: UIFont(name: FontName.interExtraBold.rawValue, size: 15.0)!]
-        let text = NSAttributedString(string: "ЛОГО", attributes: attributes)
-        label.attributedText = text
-        label.textAlignment = .left
-        label.textColor = UIColor(hexNumber: 0xFFFFFF)
-
+             .font: UIFont(name: FontName.interExtraBold.rawValue, size: 15.0)!,
+             .foregroundColor: UIColor(hexNumber: 0xFFFFFF),
+             .paragraphStyle: paragraphStyle
+        ]
+        
+        label.attributedText = NSAttributedString(string: "ЛОГО", attributes: attributes)
+        
         logoLabel = label
     }
     
     private func configurePhraseLabel() {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        paragraphStyle.lineHeightMultiple = 1.5
+        paragraphStyle.lineBreakMode = .byWordWrapping
 
         let attributes: [NSAttributedString.Key: Any] = [
              .kern: -0.41,
-             .font: UIFont(name: FontName.SFProDisplayMedium.rawValue, size: 14.0)!]
+             .font: UIFont(name: FontName.SFProDisplayMedium.rawValue, size: 14.0)!,
+             .foregroundColor: UIColor.black,
+             .paragraphStyle: paragraphStyle
+        ]
+        
         let phrase =
 """
 НЕ ЗАПОЛНЯЮТ ПУСТОТУ,  ОНИ ЕЕ СОЗДАЮТ!
@@ -128,10 +148,7 @@ extension SignUpViewController {
 тут какая-то фраза
 """
         
-        let text = NSAttributedString(string: phrase, attributes: attributes)
-        label.attributedText = text
-        label.textAlignment = .center
-        label.textColor = UIColor(hexNumber: 0x000000)
+        label.attributedText = NSAttributedString(string: phrase, attributes: attributes)
         label.numberOfLines = 0
 
         phraseLabel = label
@@ -166,9 +183,7 @@ extension SignUpViewController {
         }
         
         welcomeLabel.snp.makeConstraints { make in
-            let topDistance: CGFloat = 82 / 844
-            
-            make.top.equalTo(view.snp.bottom).multipliedBy(topDistance)
+            make.top.equalTo(safeArea.snp.top).inset(20)
             make.centerX.equalTo(safeArea)
         }
         
@@ -186,21 +201,15 @@ extension SignUpViewController {
         }
         
         phraseLabel.snp.makeConstraints { make in
-            let topDistance: CGFloat = 248 / 445
-            
-            make.top.equalTo(backgroundImageView.snp.bottom).multipliedBy(topDistance)
+            make.bottom.equalTo(startButton.snp.top).inset(-30)
             make.leading.trailing.equalTo(safeArea).inset(16)
             make.centerX.equalTo(safeArea)
         }
         
         startButton.snp.makeConstraints { make in
-            let heightMultiplier: CGFloat = 50/445
-            let bottomMultiplier: CGFloat = 341/445
-
-            make.height.equalToSuperview().multipliedBy(heightMultiplier)
+            make.height.equalTo(50)
             make.leading.trailing.equalTo(safeArea).inset(16)
-            make.centerX.equalTo(safeArea)
-            make.top.equalTo(backgroundImageView.snp.bottom).multipliedBy(bottomMultiplier)
+            make.bottom.equalTo(safeArea.snp.bottom).inset(20)
         }
     }
 }
