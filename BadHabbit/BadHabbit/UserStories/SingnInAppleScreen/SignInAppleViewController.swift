@@ -37,7 +37,6 @@ extension SignInAppleViewController {
         let image = UIImage(named: imageName)
         let imageView = UIImageView(image: image)
         view.addSubview(imageView)
-
         return imageView
     }
 
@@ -62,13 +61,13 @@ extension SignInAppleViewController {
         let safeArea = view.safeAreaLayoutGuide
 
         titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(82)
+            make.top.equalTo(safeArea).inset(35)
             make.leading.trailing.equalToSuperview().inset(16)
         }
 
         imageLogo.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-35)
+            make.centerX.equalTo(safeArea)
+            make.centerY.equalTo(safeArea).offset(-35)
             make.size.equalTo(196)
         }
 
