@@ -9,11 +9,11 @@ import UIKit
 import SnapKit
 import AuthenticationServices
 
-class SignInAppleViewController: UIViewController {
-    private var authorizationButton: ASAuthorizationAppleIDButton!
-    private var imageLogo: UIImageView!
-    private var imageMountains: UIImageView!
-    private var titleLabel: UILabel!
+final class SignInAppleViewController: UIViewController {
+    private lazy var authorizationButton = ASAuthorizationAppleIDButton()
+    private lazy var titleLabel = UILabel()
+    private lazy var imageLogo = UIImageView()
+    private lazy var imageMountains = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,18 +41,16 @@ extension SignInAppleViewController {
     }
 
     private func createTitleLabel() {
-        titleLabel = UILabel()
         view.addSubview(titleLabel)
         titleLabel.textColor = .black
-        titleLabel.font = UIFont(name: "SFProDisplay-Bold", size: 24)
+        titleLabel.font = UIFont(name: Font.SFProDisplayBold.rawValue, size: 24)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.26
-        let quote = "habit hero"
         let attributes: [NSAttributedString.Key: Any]  = [
             .kern: -0.41,
             .paragraphStyle: paragraphStyle
         ]
-        titleLabel.attributedText = NSMutableAttributedString(string: quote, attributes: attributes)
+        titleLabel.attributedText = NSMutableAttributedString(string: appTitle, attributes: attributes)
         titleLabel.text = titleLabel.text?.uppercased()
         titleLabel.textAlignment = .center
     }
@@ -61,8 +59,8 @@ extension SignInAppleViewController {
         let safeArea = view.safeAreaLayoutGuide
 
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeArea).inset(35)
-            make.leading.trailing.equalToSuperview().inset(16)
+            make.top.equalTo(safeArea).inset(TitleLabelConstraints.top)
+            make.leading.trailing.equalToSuperview().inset(TitleLabelConstraints.leading)
         }
 
         imageLogo.snp.makeConstraints { make in
@@ -78,16 +76,15 @@ extension SignInAppleViewController {
         }
 
         authorizationButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeArea).inset(20)
-            make.height.equalTo(50)
-            make.leading.trailing.equalTo(safeArea).inset(16)
+            make.bottom.equalTo(safeArea).inset(ButtonConstraints.bottom)
+            make.height.equalTo(ButtonConstraints.eight)
+            make.leading.trailing.equalTo(safeArea).inset(ButtonConstraints.leading)
         }
     }
 
     private func createAuthorizationButton() {
-        authorizationButton = ASAuthorizationAppleIDButton()
         view.addSubview(authorizationButton)
-        authorizationButton.layer.cornerRadius = 12
+        authorizationButton.layer.cornerRadius = buttonCornerRadius
         authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
     }
 
