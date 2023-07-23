@@ -44,14 +44,7 @@ extension SignInAppleViewController {
         view.addSubview(titleLabel)
         titleLabel.textColor = .black
         titleLabel.font = UIFont(name: Font.SFProDisplayBold.rawValue, size: 24)
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineHeightMultiple = 1.26
-        let attributes: [NSAttributedString.Key: Any]  = [
-            .kern: -0.41,
-            .paragraphStyle: paragraphStyle
-        ]
-        titleLabel.attributedText = NSMutableAttributedString(string: appTitle, attributes: attributes)
-        titleLabel.text = titleLabel.text?.uppercased()
+        titleLabel.text = appTitle.uppercased()
         titleLabel.textAlignment = .center
     }
 
