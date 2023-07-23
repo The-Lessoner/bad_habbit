@@ -14,7 +14,8 @@
 		614BA94D2A674B46004231A3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA94C2A674B46004231A3 /* Color.swift */; };
 		61AE3EFF2A6DCC9D00B607E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61AE3F012A6DCC9D00B607E1 /* Localizable.strings */; };
 		61CEF96E2A67739600744ADA /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61CEF96D2A67739600744ADA /* SF-Pro-Display-Bold.otf */; };
-		61CEF9702A6779EE00744ADA /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61CEF96F2A6779EE00744ADA /* Inter-VariableFont_slnt,wght.ttf */; };
+		61CEF9702A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61CEF96F2A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf */; };
+		61F4745F2A6DEC5A002246E7 /* StartButtonConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F4745E2A6DEC5A002246E7 /* StartButtonConstraints.swift */; };
 		E58D1BAD2A1CFF2C00137CC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BAC2A1CFF2C00137CC6 /* AppDelegate.swift */; };
 		E58D1BAF2A1CFF2C00137CC6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BAE2A1CFF2C00137CC6 /* SceneDelegate.swift */; };
 		E58D1BB62A1CFF2E00137CC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E58D1BB52A1CFF2E00137CC6 /* Assets.xcassets */; };
@@ -43,7 +44,8 @@
 		614BA94C2A674B46004231A3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		61AE3F022A6DCCAD00B607E1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		61CEF96D2A67739600744ADA /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
-		61CEF96F2A6779EE00744ADA /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
+		61CEF96F2A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular_ExtraBold.ttf"; sourceTree = "<group>"; };
+		61F4745E2A6DEC5A002246E7 /* StartButtonConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonConstraints.swift; sourceTree = "<group>"; };
 		77FC42E518800866EDC7473A /* Pods-BadHabbit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadHabbit.debug.xcconfig"; path = "Target Support Files/Pods-BadHabbit/Pods-BadHabbit.debug.xcconfig"; sourceTree = "<group>"; };
 		82255F197739D3932E47D930 /* Pods-BadHabbit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadHabbit.release.xcconfig"; path = "Target Support Files/Pods-BadHabbit/Pods-BadHabbit.release.xcconfig"; sourceTree = "<group>"; };
 		E58D1BA92A1CFF2C00137CC6 /* BadHabbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BadHabbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +98,7 @@
 				614BA9492A674A1C004231A3 /* FontName.swift */,
 				614BA9472A6749F5004231A3 /* SF-Pro-Display-Medium.otf */,
 				61CEF96D2A67739600744ADA /* SF-Pro-Display-Bold.otf */,
-				61CEF96F2A6779EE00744ADA /* Inter-VariableFont_slnt,wght.ttf */,
+				61CEF96F2A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -153,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				614BA94B2A674B1C004231A3 /* Colors */,
-				614BA9462A6749EA004231A3 /* Fonts */,
+				61F4745E2A6DEC5A002246E7 /* StartButtonConstraints.swift */,
 			);
 			path = DesignKit;
 			sourceTree = "<group>";
@@ -183,6 +185,7 @@
 				E58D1BB52A1CFF2E00137CC6 /* Assets.xcassets */,
 				E58D1BB72A1CFF2E00137CC6 /* LaunchScreen.storyboard */,
 				61AE3F012A6DCC9D00B607E1 /* Localizable.strings */,
+				614BA9462A6749EA004231A3 /* Fonts */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -328,7 +331,7 @@
 			files = (
 				614BA9482A6749F5004231A3 /* SF-Pro-Display-Medium.otf in Resources */,
 				61AE3EFF2A6DCC9D00B607E1 /* Localizable.strings in Resources */,
-				61CEF9702A6779EE00744ADA /* Inter-VariableFont_slnt,wght.ttf in Resources */,
+				61CEF9702A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf in Resources */,
 				E58D1BB92A1CFF2E00137CC6 /* LaunchScreen.storyboard in Resources */,
 				61CEF96E2A67739600744ADA /* SF-Pro-Display-Bold.otf in Resources */,
 				E58D1BB62A1CFF2E00137CC6 /* Assets.xcassets in Resources */,
@@ -427,6 +430,7 @@
 				E58D1BD02A1D03A900137CC6 /* ExampleScreenAssembly.swift in Sources */,
 				E58D1BF12A1D133200137CC6 /* ServiceAssembly.swift in Sources */,
 				E58D1BE42A1D0AAD00137CC6 /* ExampleModel.swift in Sources */,
+				61F4745F2A6DEC5A002246E7 /* StartButtonConstraints.swift in Sources */,
 				E58D1BEF2A1D125B00137CC6 /* ViewModelAssembly.swift in Sources */,
 				614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */,
 				E58D1BAD2A1CFF2C00137CC6 /* AppDelegate.swift in Sources */,

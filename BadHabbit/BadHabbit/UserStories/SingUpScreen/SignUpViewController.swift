@@ -8,14 +8,14 @@
 import UIKit
 import SnapKit
 
-class SignUpViewController: UIViewController {
-    private var backgroundImageView: UIImageView!
-    private var welcomeLabel: UILabel!
-    private var appNameLabel: UILabel!
-    private var logoImageView: UIImageView!
-    private var logoLabel: UILabel!
-    private var phraseLabel: UILabel!
-    private var startButton: UIButton!
+final class SignUpViewController: UIViewController {
+    private lazy var backgroundImageView = UIImageView()
+    private lazy var welcomeLabel = UILabel()
+    private lazy var appNameLabel = UILabel()
+    private lazy var logoImageView = UIImageView()
+    private lazy var logoLabel = UILabel()
+    private lazy var phraseLabel = UILabel()
+    private lazy var startButton = UIButton()
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,139 +26,80 @@ class SignUpViewController: UIViewController {
 
 extension SignUpViewController {
     private func setupUI() {
-        view.backgroundColor = UIColor(hexNumber: 0xCFCFCF)
+        configureBackground()
         
-        configureBackgroundImageView()
-        configureWelcomLabel()
-        configureAppNameLabel()
-        configureLogoImageView()
-        configurePhraseLabel()
-        configureStartButton()
-        
-        addSubviews([backgroundImageView,
-                     welcomeLabel,
-                     appNameLabel,
-                     logoImageView,
-                     phraseLabel,
-                     startButton
-                    ],
-                    toSuperview: view)
+        addWelcomeLabel()
+        addAppNameLabel()
+        addLogoImageView()
+        addPhraseLabel()
+        addStartButton()
         
         setupViewConstraints()
     }
     
-    private func addSubviews(_ views: [UIView], toSuperview superview: UIView) {
-        views.forEach { subview in
-            superview.addSubview(subview)
-        }
+    private func configureBackground() {
+        view.backgroundColor = UIColor(hexNumber: 0xCFCFCF)
+        
+        view.addSubview(backgroundImageView)
+        backgroundImageView.image = UIImage(named: "mountains")
     }
     
-    private func configureBackgroundImageView() {
-        backgroundImageView = UIImageView(image: UIImage(named: "mountains"))
+    private func addWelcomeLabel() {
+        view.addSubview(welcomeLabel)
+        
+        welcomeLabel.text = String(localized: "welcomeLabelText").uppercased()
+        welcomeLabel.font = UIFont(name: FontName.SFProDisplayMedium.rawValue, size: 16.0)
+        welcomeLabel.textAlignment = .center
+        welcomeLabel.textColor = .black
     }
     
-    private func configureWelcomLabel() {
-        let label = UILabel()
-        
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .center
-        paragraphStyle.lineHeightMultiple = 1.09
+    private func addAppNameLabel() {
+        view.addSubview(appNameLabel)
 
-        let attributes: [NSAttributedString.Key: Any] = [
-             .kern: -0.41,
-             .font: UIFont(name: FontName.SFProDisplayMedium.rawValue, size: 16.0)!,
-             .foregroundColor: UIColor(hexNumber: 0x000000),
-             .paragraphStyle: paragraphStyle
-        ]
-        
-        label.attributedText = NSAttributedString(
-            string: String(localized: "welcomeLabelText").uppercased(),
-            attributes: attributes
-        )
-
-        welcomeLabel = label
+        appNameLabel.text = "HABIT HERO".uppercased()
+        appNameLabel.font = UIFont(name: FontName.SFProDisplayBold.rawValue, size: 24.0)
+        appNameLabel.textAlignment = .center
+        appNameLabel.textColor = .black
     }
     
-    private func configureAppNameLabel() {
-        let label = UILabel()
+    private func addLogoImageView() {
+        view.addSubview(logoImageView)
+        addLogoLabel()
         
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .center
-        paragraphStyle.lineHeightMultiple = 1.09
-
-        let stringAttributes: [NSAttributedString.Key: Any] = [
-             .kern: -0.41,
-             .font: UIFont(name: FontName.SFProDisplayBold.rawValue, size: 24.0)!,
-             .foregroundColor: UIColor.black,
-             .paragraphStyle: paragraphStyle
-        ]
-        
-        label.attributedText = NSAttributedString(string: "HABIT HERO", attributes: stringAttributes)
-
-        appNameLabel = label
+        logoImageView.image = UIImage(named: "logo")
     }
     
-    private func configureLogoImageView() {
-        logoImageView = UIImageView(image: UIImage(named: "logo"))
-        
-        configureLogoLabel()
+    private func addLogoLabel() {
         logoImageView.addSubview(logoLabel)
+        
+        logoLabel.text = String(localized: "logoLabelText").uppercased()
+        logoLabel.font = UIFont(name: FontName.interExtraBold.rawValue, size: 15.0)
+        logoLabel.textAlignment = .left
+        logoLabel.textColor = UIColor(hexNumber: 0xFFFFFF)
     }
     
-    private func configureLogoLabel() {
-        let label = UILabel()
+    private func addPhraseLabel() {
+        view.addSubview(phraseLabel)
         
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .left
-
-        let attributes: [NSAttributedString.Key: Any] = [
-             .kern: -0.41,
-             .font: UIFont(name: FontName.interExtraBold.rawValue, size: 15.0)!,
-             .foregroundColor: UIColor(hexNumber: 0xFFFFFF),
-             .paragraphStyle: paragraphStyle
-        ]
-        
-        label.attributedText = NSAttributedString(
-            string: String(localized: "logoLabelText").uppercased(),
-            attributes: attributes)
-        
-        logoLabel = label
+        phraseLabel.text = String(localized: "phraseLabelText").uppercased()
+        phraseLabel.font = UIFont(name: FontName.SFProDisplayMedium.rawValue, size: 14.0)
+        phraseLabel.textAlignment = .center
+        phraseLabel.textColor = .black
+        phraseLabel.lineBreakMode = .byWordWrapping
+        phraseLabel.numberOfLines = 0
     }
     
-    private func configurePhraseLabel() {
-        let label = UILabel()
+    private func addStartButton() {
+        view.addSubview(startButton)
         
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .center
-        paragraphStyle.lineHeightMultiple = 1.26
-        paragraphStyle.lineBreakMode = .byWordWrapping
-
-        let attributes: [NSAttributedString.Key: Any] = [
-             .kern: -0.41,
-             .font: UIFont(name: FontName.SFProDisplayMedium.rawValue, size: 14.0)!,
-             .foregroundColor: UIColor.black,
-             .paragraphStyle: paragraphStyle
-        ]
-        
-        label.attributedText = NSAttributedString(
-            string: String(localized: "phraseLabelText").uppercased(),
-            attributes: attributes
-        )
-        label.numberOfLines = 0
-
-        phraseLabel = label
-    }
-    
-    private func configureStartButton() {
         var buttonConfiguration = UIButton.Configuration.filled()
         buttonConfiguration.title = String(localized: "startButtonTitle").uppercased()
         buttonConfiguration.cornerStyle = .large
         buttonConfiguration.baseBackgroundColor = UIColor(hexNumber: 0x090909)
+
+        startButton.configuration = buttonConfiguration
         
-        let button = UIButton(configuration: buttonConfiguration)
-        button.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
-        
-        startButton = button
+        startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
     }
     
     @objc
