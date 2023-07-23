@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  BadHabbit
+
+  Created by Viktoria Misiulia on 24/07/2023.
+  
+*/
+
+"welcomeLabelText" = "ДОБРО ПОЖАЛОВАТЬ В";
+"phraseLabelText" = "НЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nНЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nТУТ КАКАЯ-ТО ФРАЗА";
+"startButtonTitle" = "НАЧАТЬ";
+"logoLabelText" = "ЛОГО";

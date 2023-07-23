@@ -71,7 +71,10 @@ extension SignUpViewController {
              .paragraphStyle: paragraphStyle
         ]
         
-        label.attributedText = NSAttributedString(string: "ДОБРО ПОЖАЛОВАТЬ В", attributes: attributes)
+        label.attributedText = NSAttributedString(
+            string: String(localized: "welcomeLabelText").uppercased(),
+            attributes: attributes
+        )
 
         welcomeLabel = label
     }
@@ -115,7 +118,9 @@ extension SignUpViewController {
              .paragraphStyle: paragraphStyle
         ]
         
-        label.attributedText = NSAttributedString(string: "ЛОГО", attributes: attributes)
+        label.attributedText = NSAttributedString(
+            string: String(localized: "logoLabelText").uppercased(),
+            attributes: attributes)
         
         logoLabel = label
     }
@@ -135,14 +140,10 @@ extension SignUpViewController {
              .paragraphStyle: paragraphStyle
         ]
         
-        let phrase =
-"""
-НЕ ЗАПОЛНЯЮТ ПУСТОТУ,  ОНИ ЕЕ СОЗДАЮТ!
-НЕ ЗАПОЛНЯЮТ ПУСТОТУ,  ОНИ ЕЕ СОЗДАЮТ!
-ТУТ КАКАЯ-ТО ФРАЗА
-"""
-        
-        label.attributedText = NSAttributedString(string: phrase, attributes: attributes)
+        label.attributedText = NSAttributedString(
+            string: String(localized: "phraseLabelText").uppercased(),
+            attributes: attributes
+        )
         label.numberOfLines = 0
 
         phraseLabel = label
@@ -150,7 +151,7 @@ extension SignUpViewController {
     
     private func configureStartButton() {
         var buttonConfiguration = UIButton.Configuration.filled()
-        buttonConfiguration.title = "НАЧАТЬ"
+        buttonConfiguration.title = String(localized: "startButtonTitle").uppercased()
         buttonConfiguration.cornerStyle = .large
         buttonConfiguration.baseBackgroundColor = UIColor(hexNumber: 0x090909)
         
