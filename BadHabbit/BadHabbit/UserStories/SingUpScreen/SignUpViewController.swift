@@ -8,23 +8,37 @@
 import UIKit
 import SnapKit
 
-final class SignUpViewController: UIViewController {
+protocol SignUpViewProtocol: AnyObject {
+    var startButton: UIButton { get }
+}
+
+final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     private lazy var backgroundImageView = UIImageView()
     private lazy var welcomeLabel = UILabel()
     private lazy var appNameLabel = UILabel()
     private lazy var logoImageView = UIImageView()
     private lazy var logoLabel = UILabel()
     private lazy var phraseLabel = UILabel()
-    private lazy var startButton = UIButton()
- 
+    
+    lazy var startButton = UIButton()
+    
+    private let presenter: SignUpScreenPresenterProtocol
+    
+    init(presenter: SignUpScreenPresenterProtocol) {
+        self.presenter = presenter
+        super.init()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
     }
-}
-
-extension SignUpViewController {
+    
     private func setupUI() {
         configureBackground()
         
@@ -102,10 +116,6 @@ extension SignUpViewController {
         startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
     }
     
-    @objc
-    private func startButtonTapped() {
-    }
-    
     private func setupViewConstraints() {
         let safeArea = view.safeAreaLayoutGuide
         
@@ -150,5 +160,10 @@ extension SignUpViewController {
             make.leading.trailing.equalTo(safeArea).inset(16)
             make.bottom.equalTo(safeArea.snp.bottom).inset(20)
         }
+    }
+    
+    @objc
+    private func startButtonTapped() {
+        presenter.startButtonTapped()
     }
 }

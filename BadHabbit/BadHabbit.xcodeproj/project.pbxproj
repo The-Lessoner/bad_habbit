@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		372F03E231465F74E9E647DD /* Pods_BadHabbit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */; };
+		614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */; };
+		614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614717242A6F060100731065 /* SignUpScreenRouter.swift */; };
 		614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA9422A674317004231A3 /* SignUpViewController.swift */; };
 		614BA9482A6749F5004231A3 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 614BA9472A6749F5004231A3 /* SF-Pro-Display-Medium.otf */; };
 		614BA94A2A674A1C004231A3 /* FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA9492A674A1C004231A3 /* FontName.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenPresenter.swift; sourceTree = "<group>"; };
+		614717242A6F060100731065 /* SignUpScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenRouter.swift; sourceTree = "<group>"; };
 		614BA9422A674317004231A3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		614BA9472A6749F5004231A3 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		614BA9492A674A1C004231A3 /* FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontName.swift; sourceTree = "<group>"; };
@@ -85,7 +89,9 @@
 		614BA9412A6742F3004231A3 /* SingUpScreen */ = {
 			isa = PBXGroup;
 			children = (
+				6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */,
 				614BA9422A674317004231A3 /* SignUpViewController.swift */,
+				614717242A6F060100731065 /* SignUpScreenRouter.swift */,
 			);
 			path = SingUpScreen;
 			sourceTree = "<group>";
@@ -424,6 +430,7 @@
 				E58D1BCC2A1D02E100137CC6 /* ViewAssembly.swift in Sources */,
 				E58D1BE82A1D0B2E00137CC6 /* ExampleModelParser.swift in Sources */,
 				614BA94A2A674A1C004231A3 /* FontName.swift in Sources */,
+				614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */,
 				E58D1BD02A1D03A900137CC6 /* ExampleScreenAssembly.swift in Sources */,
 				E58D1BF12A1D133200137CC6 /* ServiceAssembly.swift in Sources */,
 				E58D1BE42A1D0AAD00137CC6 /* ExampleModel.swift in Sources */,
@@ -435,6 +442,7 @@
 				E58D1BD42A1D042400137CC6 /* ExampleScreenViewController.swift in Sources */,
 				E58D1BEA2A1D0BD900137CC6 /* NetworkError.swift in Sources */,
 				614BA94D2A674B46004231A3 /* Color.swift in Sources */,
+				614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */,
 				E58D1BF42A1D142E00137CC6 /* RequestExecutorMock.swift in Sources */,
 				E58D1BD22A1D041A00137CC6 /* ExampleViewModel.swift in Sources */,
 				E58D1BAF2A1CFF2C00137CC6 /* SceneDelegate.swift in Sources */,
