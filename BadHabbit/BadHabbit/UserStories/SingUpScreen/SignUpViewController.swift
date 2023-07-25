@@ -156,9 +156,10 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         }
         
         startButton.snp.makeConstraints { make in
-            make.height.equalTo(50)
-            make.leading.trailing.equalTo(safeArea).inset(16)
-            make.bottom.equalTo(safeArea.snp.bottom).inset(20)
+            make.height.equalTo(StartButtonConstraints.height.rawValue)
+            make.leading.equalTo(safeArea).inset(StartButtonConstraints.leading.rawValue)
+            make.trailing.equalTo(safeArea).inset(StartButtonConstraints.trailing.rawValue)
+            make.bottom.equalTo(safeArea.snp.bottom).inset(StartButtonConstraints.bottom.rawValue)
         }
     }
     
