@@ -12,4 +12,5 @@ enum ActionButton {
     static let leadingInset = 16
     static let trailingInset = 16
     static let bottomInset = 20
+    static let topOffset = 30
 }

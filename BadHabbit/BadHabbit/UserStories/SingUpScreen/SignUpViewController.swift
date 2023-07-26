@@ -162,7 +162,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
             make.leading.equalTo(safeArea).inset(ActionButton.leadingInset)
             make.trailing.equalTo(safeArea).inset(ActionButton.trailingInset)
             make.bottom.equalTo(safeArea.snp.bottom).inset(ActionButton.bottomInset)
-            make.top.equalTo(phraseLabel.snp.bottom).offset(30)
+            make.top.equalTo(phraseLabel.snp.bottom).offset(ActionButton.topOffset)
         }
     }
     
