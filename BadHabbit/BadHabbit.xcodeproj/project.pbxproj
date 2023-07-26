@@ -53,6 +53,7 @@
 		F6E458A72A711CD700A3C4E5 /* AlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458A12A711CD700A3C4E5 /* AlertAction.swift */; };
 		F6E458A82A711CD700A3C4E5 /* AlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458A22A711CD700A3C4E5 /* AlertConfiguration.swift */; };
 		F6E458A92A711CD700A3C4E5 /* AlertAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458A32A711CD700A3C4E5 /* AlertAssembly.swift */; };
+		F6E458AB2A71269B00A3C4E5 /* KeyChainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458AA2A71269B00A3C4E5 /* KeyChainItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +110,7 @@
 		F6E458A12A711CD700A3C4E5 /* AlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertAction.swift; sourceTree = "<group>"; };
 		F6E458A22A711CD700A3C4E5 /* AlertConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertConfiguration.swift; sourceTree = "<group>"; };
 		F6E458A32A711CD700A3C4E5 /* AlertAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertAssembly.swift; sourceTree = "<group>"; };
+		F6E458AA2A71269B00A3C4E5 /* KeyChainItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChainItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +284,7 @@
 		F64555972A6173F40070947C /* SingnInAppleScreen */ = {
 			isa = PBXGroup;
 			children = (
+				F6E458AA2A71269B00A3C4E5 /* KeyChainItem.swift */,
 				F64555E62A6E780D0070947C /* SignInDataAssembly.swift */,
 				F64555E42A6E77A70070947C /* SignInDataPresenter.swift */,
 				F64555E22A6E77670070947C /* SignInDataRouter.swift */,
@@ -574,6 +577,7 @@
 				F64555E52A6E77A70070947C /* SignInDataPresenter.swift in Sources */,
 				F6E458982A711CB700A3C4E5 /* FillingPersonalDataAssembly.swift in Sources */,
 				F6E458A52A711CD700A3C4E5 /* AlertController.swift in Sources */,
+				F6E458AB2A71269B00A3C4E5 /* KeyChainItem.swift in Sources */,
 				F64555CB2A6D1A890070947C /* Fonts.swift in Sources */,
 				E58D1BE02A1D086600137CC6 /* RequestExecutor.swift in Sources */,
 				E58D1BC92A1D022000137CC6 /* MainTabBarAssembly.swift in Sources */,
