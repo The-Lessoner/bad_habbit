@@ -92,8 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */,
-				614BA9422A674317004231A3 /* SignUpViewController.swift */,
 				614717242A6F060100731065 /* SignUpScreenRouter.swift */,
+				614BA9422A674317004231A3 /* SignUpViewController.swift */,
 			);
 			path = SingUpScreen;
 			sourceTree = "<group>";
