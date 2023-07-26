@@ -21,6 +21,6 @@ final class SignUpScreenPresenter: SignUpScreenPresenterProtocol {
     }
     
     func startButtonTapped() {
-        router.presentAnotherScreen()
+        router.presentSingInAppleScreen()
     }
 }

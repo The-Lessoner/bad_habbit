@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SignUpRouterProtocol {
-    func presentAnotherScreen()
+    func presentSingInAppleScreen()
 }
 
 final class SignUpScreenRouter: SignUpRouterProtocol {
@@ -22,7 +22,7 @@ final class SignUpScreenRouter: SignUpRouterProtocol {
         self.globalCoordinator = globalCoordinator
      }
 
-    func presentAnotherScreen() {
+    func presentSingInAppleScreen() {
         let vc = nextScreen.assembleStory()
         globalCoordinator.presentOnTopVisibleViewController(vc, animated: true, completion: nil)
     }
