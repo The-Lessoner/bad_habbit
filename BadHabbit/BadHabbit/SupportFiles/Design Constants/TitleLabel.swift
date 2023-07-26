@@ -7,10 +7,8 @@
 
 import Foundation
 
-let appTitle = "habit hero"
-
-struct TitleLabelConstraints {
-    static let leading = 16
-    static let trailing = 16
-    static let top = 35
+enum TitleLabelConstraints {
+    static let leadingOffset = 16
+    static let trailingOffset = 16
+    static let topOffset = 35
 }

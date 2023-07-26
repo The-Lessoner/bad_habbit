@@ -27,11 +27,22 @@
 		E58D1BEF2A1D125B00137CC6 /* ViewModelAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BEE2A1D125B00137CC6 /* ViewModelAssembly.swift */; };
 		E58D1BF12A1D133200137CC6 /* ServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BF02A1D133200137CC6 /* ServiceAssembly.swift */; };
 		E58D1BF42A1D142E00137CC6 /* RequestExecutorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BF32A1D142E00137CC6 /* RequestExecutorMock.swift */; };
+		F61522032A70600F007939E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F61522052A70600F007939E9 /* Localizable.strings */; };
+		F615220D2A70FC91007939E9 /* CommonTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F615220C2A70FC91007939E9 /* CommonTypeAliases.swift */; };
+		F615220F2A70FCBB007939E9 /* CanPresentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F615220E2A70FCBB007939E9 /* CanPresentView.swift */; };
 		F64555992A61743A0070947C /* SignInAppleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555982A61743A0070947C /* SignInAppleViewController.swift */; };
 		F645559D2A62D13E0070947C /* SFProDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F645559C2A62D13E0070947C /* SFProDisplay-Bold.ttf */; };
 		F64555C92A6D15100070947C /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555C82A6D15100070947C /* TitleLabel.swift */; };
 		F64555CB2A6D1A890070947C /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555CA2A6D1A890070947C /* Fonts.swift */; };
 		F64555CD2A6D1EA70070947C /* StartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555CC2A6D1EA70070947C /* StartButton.swift */; };
+		F64555CF2A6E6BA40070947C /* DesignKitAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555CE2A6E6BA40070947C /* DesignKitAssembly.swift */; };
+		F64555D22A6E6C0B0070947C /* GlobalCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555D12A6E6C0B0070947C /* GlobalCoordinator.swift */; };
+		F64555DA2A6E6DCC0070947C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555D92A6E6DCC0070947C /* BaseViewController.swift */; };
+		F64555DC2A6E70190070947C /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555DB2A6E70190070947C /* AppAssembly.swift */; };
+		F64555DE2A6E709F0070947C /* StoriesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555DD2A6E709F0070947C /* StoriesAssembly.swift */; };
+		F64555E32A6E77670070947C /* SignInDataRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E22A6E77670070947C /* SignInDataRouter.swift */; };
+		F64555E52A6E77A70070947C /* SignInDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E42A6E77A70070947C /* SignInDataPresenter.swift */; };
+		F64555E72A6E780D0070947C /* SignInDataAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E62A6E780D0070947C /* SignInDataAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,12 +70,25 @@
 		E58D1BF02A1D133200137CC6 /* ServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
 		E58D1BF32A1D142E00137CC6 /* RequestExecutorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExecutorMock.swift; sourceTree = "<group>"; };
 		EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BadHabbit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F61522062A7060D2007939E9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F61522072A7060D2007939E9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F615220C2A70FC91007939E9 /* CommonTypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTypeAliases.swift; sourceTree = "<group>"; };
+		F615220E2A70FCBB007939E9 /* CanPresentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanPresentView.swift; sourceTree = "<group>"; };
 		F64555982A61743A0070947C /* SignInAppleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleViewController.swift; sourceTree = "<group>"; };
 		F645559A2A62B93C0070947C /* BadHabbitDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BadHabbitDebug.entitlements; sourceTree = "<group>"; };
 		F645559C2A62D13E0070947C /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		F64555C82A6D15100070947C /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		F64555CA2A6D1A890070947C /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		F64555CC2A6D1EA70070947C /* StartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButton.swift; sourceTree = "<group>"; };
+		F64555CE2A6E6BA40070947C /* DesignKitAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DesignKitAssembly.swift; path = BadHabbit/DesignKitAssembly.swift; sourceTree = SOURCE_ROOT; };
+		F64555D12A6E6C0B0070947C /* GlobalCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GlobalCoordinator.swift; path = BadHabbit/GlobalCoordinator.swift; sourceTree = SOURCE_ROOT; };
+		F64555D92A6E6DCC0070947C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F64555DB2A6E70190070947C /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
+		F64555DD2A6E709F0070947C /* StoriesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesAssembly.swift; sourceTree = "<group>"; };
+		F64555E22A6E77670070947C /* SignInDataRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDataRouter.swift; sourceTree = "<group>"; };
+		F64555E42A6E77A70070947C /* SignInDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDataPresenter.swift; sourceTree = "<group>"; };
+		F64555E62A6E780D0070947C /* SignInDataAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDataAssembly.swift; sourceTree = "<group>"; };
+		F6D9511D2A6EC556001E342C /* BadHabbit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BadHabbit.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				E58D1BAB2A1CFF2C00137CC6 /* BadHabbit */,
+				F64555D32A6E6C600070947C /* Utils */,
 				E58D1BAA2A1CFF2C00137CC6 /* Products */,
 				7F8062058E6710BFF5E557EE /* Pods */,
 				FBB8119D4F423E33D72AFCB8 /* Frameworks */,
@@ -109,8 +134,10 @@
 		E58D1BAB2A1CFF2C00137CC6 /* BadHabbit */ = {
 			isa = PBXGroup;
 			children = (
+				F6D9511D2A6EC556001E342C /* BadHabbit.entitlements */,
 				F645559A2A62B93C0070947C /* BadHabbitDebug.entitlements */,
 				E58D1BAC2A1CFF2C00137CC6 /* AppDelegate.swift */,
+				F64555DB2A6E70190070947C /* AppAssembly.swift */,
 				E58D1BAE2A1CFF2C00137CC6 /* SceneDelegate.swift */,
 				E58D1BCA2A1D02D100137CC6 /* DI */,
 				E58D1BC52A1D01AB00137CC6 /* UserStories */,
@@ -123,6 +150,9 @@
 		E58D1BC02A1D000000137CC6 /* DesignKit */ = {
 			isa = PBXGroup;
 			children = (
+				F64555D82A6E6D980070947C /* BaseViewController */,
+				F64555CE2A6E6BA40070947C /* DesignKitAssembly.swift */,
+				F64555D02A6E6BD70070947C /* GlobalCoordinator */,
 			);
 			path = DesignKit;
 			sourceTree = "<group>";
@@ -153,6 +183,7 @@
 				E58D1BBA2A1CFF2E00137CC6 /* Info.plist */,
 				E58D1BB52A1CFF2E00137CC6 /* Assets.xcassets */,
 				E58D1BB72A1CFF2E00137CC6 /* LaunchScreen.storyboard */,
+				F61522052A70600F007939E9 /* Localizable.strings */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -191,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				E58D1BCB2A1D02E100137CC6 /* ViewAssembly.swift */,
+				F64555DD2A6E709F0070947C /* StoriesAssembly.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -228,6 +260,9 @@
 		F64555972A6173F40070947C /* SingnInAppleScreen */ = {
 			isa = PBXGroup;
 			children = (
+				F64555E62A6E780D0070947C /* SignInDataAssembly.swift */,
+				F64555E42A6E77A70070947C /* SignInDataPresenter.swift */,
+				F64555E22A6E77670070947C /* SignInDataRouter.swift */,
 				F64555982A61743A0070947C /* SignInAppleViewController.swift */,
 			);
 			path = SingnInAppleScreen;
@@ -249,6 +284,32 @@
 				F64555CC2A6D1EA70070947C /* StartButton.swift */,
 			);
 			path = "Design Constants";
+			sourceTree = "<group>";
+		};
+		F64555D02A6E6BD70070947C /* GlobalCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F64555D12A6E6C0B0070947C /* GlobalCoordinator.swift */,
+			);
+			name = GlobalCoordinator;
+			path = BadHabbit/Kit/DesignKit/GlobalCoordinator;
+			sourceTree = "<group>";
+		};
+		F64555D32A6E6C600070947C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F615220C2A70FC91007939E9 /* CommonTypeAliases.swift */,
+				F615220E2A70FCBB007939E9 /* CanPresentView.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F64555D82A6E6D980070947C /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F64555D92A6E6DCC0070947C /* BaseViewController.swift */,
+			);
+			path = BaseViewController;
 			sourceTree = "<group>";
 		};
 		FBB8119D4F423E33D72AFCB8 /* Frameworks */ = {
@@ -305,6 +366,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = E58D1BA02A1CFF2C00137CC6;
 			productRefGroup = E58D1BAA2A1CFF2C00137CC6 /* Products */;
@@ -322,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F645559D2A62D13E0070947C /* SFProDisplay-Bold.ttf in Resources */,
+				F61522032A70600F007939E9 /* Localizable.strings in Resources */,
 				E58D1BB92A1CFF2E00137CC6 /* LaunchScreen.storyboard in Resources */,
 				E58D1BB62A1CFF2E00137CC6 /* Assets.xcassets in Resources */,
 			);
@@ -414,22 +477,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				E58D1BCC2A1D02E100137CC6 /* ViewAssembly.swift in Sources */,
+				F64555E72A6E780D0070947C /* SignInDataAssembly.swift in Sources */,
 				E58D1BE82A1D0B2E00137CC6 /* ExampleModelParser.swift in Sources */,
+				F64555D22A6E6C0B0070947C /* GlobalCoordinator.swift in Sources */,
 				F64555CD2A6D1EA70070947C /* StartButton.swift in Sources */,
 				E58D1BD02A1D03A900137CC6 /* ExampleScreenAssembly.swift in Sources */,
 				E58D1BF12A1D133200137CC6 /* ServiceAssembly.swift in Sources */,
 				E58D1BE42A1D0AAD00137CC6 /* ExampleModel.swift in Sources */,
 				E58D1BEF2A1D125B00137CC6 /* ViewModelAssembly.swift in Sources */,
 				E58D1BAD2A1CFF2C00137CC6 /* AppDelegate.swift in Sources */,
+				F64555DC2A6E70190070947C /* AppAssembly.swift in Sources */,
 				E58D1BDE2A1D082400137CC6 /* ExampleService.swift in Sources */,
 				E58D1BE22A1D08B300137CC6 /* Request.swift in Sources */,
+				F64555DE2A6E709F0070947C /* StoriesAssembly.swift in Sources */,
 				E58D1BD42A1D042400137CC6 /* ExampleScreenViewController.swift in Sources */,
+				F64555DA2A6E6DCC0070947C /* BaseViewController.swift in Sources */,
 				E58D1BEA2A1D0BD900137CC6 /* NetworkError.swift in Sources */,
 				F64555992A61743A0070947C /* SignInAppleViewController.swift in Sources */,
 				F64555C92A6D15100070947C /* TitleLabel.swift in Sources */,
+				F64555CF2A6E6BA40070947C /* DesignKitAssembly.swift in Sources */,
 				E58D1BF42A1D142E00137CC6 /* RequestExecutorMock.swift in Sources */,
+				F64555E32A6E77670070947C /* SignInDataRouter.swift in Sources */,
 				E58D1BD22A1D041A00137CC6 /* ExampleViewModel.swift in Sources */,
+				F615220D2A70FC91007939E9 /* CommonTypeAliases.swift in Sources */,
 				E58D1BAF2A1CFF2C00137CC6 /* SceneDelegate.swift in Sources */,
+				F615220F2A70FCBB007939E9 /* CanPresentView.swift in Sources */,
+				F64555E52A6E77A70070947C /* SignInDataPresenter.swift in Sources */,
 				F64555CB2A6D1A890070947C /* Fonts.swift in Sources */,
 				E58D1BE02A1D086600137CC6 /* RequestExecutor.swift in Sources */,
 				E58D1BC92A1D022000137CC6 /* MainTabBarAssembly.swift in Sources */,
@@ -444,8 +517,17 @@
 			isa = PBXVariantGroup;
 			children = (
 				E58D1BB82A1CFF2E00137CC6 /* Base */,
+				F61522062A7060D2007939E9 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F61522052A70600F007939E9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F61522072A7060D2007939E9 /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -455,6 +537,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -485,6 +568,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -515,6 +599,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -545,6 +630,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -572,9 +658,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = BadHabbit/BadHabbitDebug.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8WG6LW4XNB;
+				DEVELOPMENT_TEAM = DA2QG6RD9Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BadHabbit/SupportFiles/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
@@ -590,6 +677,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.the-lessoner.BadHabbit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -603,9 +691,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BadHabbit/BadHabbit.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8WG6LW4XNB;
+				DEVELOPMENT_TEAM = DA2QG6RD9Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BadHabbit/SupportFiles/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
@@ -621,6 +711,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.the-lessoner.BadHabbit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

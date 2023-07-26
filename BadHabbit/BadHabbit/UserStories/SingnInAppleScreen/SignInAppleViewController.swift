@@ -9,11 +9,24 @@ import UIKit
 import SnapKit
 import AuthenticationServices
 
-final class SignInAppleViewController: UIViewController {
+protocol SignInDataViewProtocol: AnyObject { }
+
+final class SignInAppleViewController: BaseViewController, SignInDataViewProtocol {
     private lazy var authorizationButton = ASAuthorizationAppleIDButton()
     private lazy var titleLabel = UILabel()
     private lazy var imageLogo = UIImageView()
     private lazy var imageMountains = UIImageView()
+
+    private let presenter: SignInDataPresenterProtocol?
+
+    init(presenter: SignInDataPresenterProtocol) {
+        self.presenter = presenter
+        super.init()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +57,7 @@ extension SignInAppleViewController {
         view.addSubview(titleLabel)
         titleLabel.textColor = .black
         titleLabel.font = UIFont(name: Font.SFProDisplayBold.rawValue, size: 24)
-        titleLabel.text = appTitle.uppercased()
+        titleLabel.text = String(localized: "appTitle").uppercased()
         titleLabel.textAlignment = .center
     }
 
@@ -52,13 +65,13 @@ extension SignInAppleViewController {
         let safeArea = view.safeAreaLayoutGuide
 
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeArea).inset(TitleLabelConstraints.top)
-            make.leading.trailing.equalToSuperview().inset(TitleLabelConstraints.leading)
+            make.top.equalTo(safeArea).inset(TitleLabelConstraints.topOffset)
+            make.leading.trailing.equalToSuperview().inset(TitleLabelConstraints.leadingOffset)
         }
 
         imageLogo.snp.makeConstraints { make in
             make.centerX.equalTo(safeArea)
-            make.centerY.equalTo(safeArea).offset(-35)
+            make.centerY.equalTo(safeArea).inset(35)
             make.size.equalTo(196)
         }
 
@@ -69,19 +82,20 @@ extension SignInAppleViewController {
         }
 
         authorizationButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeArea).inset(ButtonConstraints.bottom)
-            make.height.equalTo(ButtonConstraints.eight)
-            make.leading.trailing.equalTo(safeArea).inset(ButtonConstraints.leading)
+            make.bottom.equalTo(safeArea).inset(ActionButton.bottomOffset)
+            make.height.equalTo(ActionButton.height)
+            make.leading.trailing.equalTo(safeArea).inset(ActionButtonConstants.trailingOffset)
         }
     }
 
     private func createAuthorizationButton() {
         view.addSubview(authorizationButton)
-        authorizationButton.layer.cornerRadius = buttonCornerRadius
+        authorizationButton.layer.cornerRadius = ActionButton.cornerRadius
         authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
     }
 
     @objc
     func handleAuthorizationAppleIDButtonPress() {
+        presenter?.authorizationButtonDidTap()
     }
 }

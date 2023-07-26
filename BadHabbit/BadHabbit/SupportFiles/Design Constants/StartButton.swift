@@ -7,11 +7,12 @@
 
 import Foundation
 
-let buttonCornerRadius: CGFloat = 12
-
-struct ButtonConstraints {
-    static let leading = 16
-    static let traling = 16
-    static let bottom = 20
-    static let eight = 50
+enum ActionButtonConstants {
+    static let leadingOffset = 16
+    static let trailingOffset = 16
+}
+enum ActionButton {
+    static let height = 50
+    static let bottomOffset = 20
+    static let cornerRadius: CGFloat = 12
 }
