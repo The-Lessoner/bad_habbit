@@ -43,6 +43,16 @@
 		F64555E32A6E77670070947C /* SignInDataRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E22A6E77670070947C /* SignInDataRouter.swift */; };
 		F64555E52A6E77A70070947C /* SignInDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E42A6E77A70070947C /* SignInDataPresenter.swift */; };
 		F64555E72A6E780D0070947C /* SignInDataAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E62A6E780D0070947C /* SignInDataAssembly.swift */; };
+		F6E458972A711CB700A3C4E5 /* FillingPersonalDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458932A711CB600A3C4E5 /* FillingPersonalDataView.swift */; };
+		F6E458982A711CB700A3C4E5 /* FillingPersonalDataAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458942A711CB600A3C4E5 /* FillingPersonalDataAssembly.swift */; };
+		F6E458992A711CB700A3C4E5 /* FillingPersonalDataRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458952A711CB600A3C4E5 /* FillingPersonalDataRouter.swift */; };
+		F6E4589A2A711CB700A3C4E5 /* FillingPersonalDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458962A711CB600A3C4E5 /* FillingPersonalDataPresenter.swift */; };
+		F6E458A42A711CD700A3C4E5 /* AlertRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4589D2A711CD700A3C4E5 /* AlertRouter.swift */; };
+		F6E458A52A711CD700A3C4E5 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4589E2A711CD700A3C4E5 /* AlertController.swift */; };
+		F6E458A62A711CD700A3C4E5 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4589F2A711CD700A3C4E5 /* AlertPresenter.swift */; };
+		F6E458A72A711CD700A3C4E5 /* AlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458A12A711CD700A3C4E5 /* AlertAction.swift */; };
+		F6E458A82A711CD700A3C4E5 /* AlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458A22A711CD700A3C4E5 /* AlertConfiguration.swift */; };
+		F6E458A92A711CD700A3C4E5 /* AlertAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458A32A711CD700A3C4E5 /* AlertAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +99,16 @@
 		F64555E42A6E77A70070947C /* SignInDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDataPresenter.swift; sourceTree = "<group>"; };
 		F64555E62A6E780D0070947C /* SignInDataAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDataAssembly.swift; sourceTree = "<group>"; };
 		F6D9511D2A6EC556001E342C /* BadHabbit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BadHabbit.entitlements; sourceTree = "<group>"; };
+		F6E458932A711CB600A3C4E5 /* FillingPersonalDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillingPersonalDataView.swift; sourceTree = "<group>"; };
+		F6E458942A711CB600A3C4E5 /* FillingPersonalDataAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillingPersonalDataAssembly.swift; sourceTree = "<group>"; };
+		F6E458952A711CB600A3C4E5 /* FillingPersonalDataRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillingPersonalDataRouter.swift; sourceTree = "<group>"; };
+		F6E458962A711CB600A3C4E5 /* FillingPersonalDataPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillingPersonalDataPresenter.swift; sourceTree = "<group>"; };
+		F6E4589D2A711CD700A3C4E5 /* AlertRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertRouter.swift; sourceTree = "<group>"; };
+		F6E4589E2A711CD700A3C4E5 /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		F6E4589F2A711CD700A3C4E5 /* AlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
+		F6E458A12A711CD700A3C4E5 /* AlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertAction.swift; sourceTree = "<group>"; };
+		F6E458A22A711CD700A3C4E5 /* AlertConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertConfiguration.swift; sourceTree = "<group>"; };
+		F6E458A32A711CD700A3C4E5 /* AlertAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +170,7 @@
 		E58D1BC02A1D000000137CC6 /* DesignKit */ = {
 			isa = PBXGroup;
 			children = (
+				F6E4589B2A711CD700A3C4E5 /* Alerts */,
 				F64555D82A6E6D980070947C /* BaseViewController */,
 				F64555CE2A6E6BA40070947C /* DesignKitAssembly.swift */,
 				F64555D02A6E6BD70070947C /* GlobalCoordinator */,
@@ -191,6 +212,7 @@
 		E58D1BC52A1D01AB00137CC6 /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
+				F6E458922A711CB600A3C4E5 /* FillingPersonalData */,
 				F64555972A6173F40070947C /* SingnInAppleScreen */,
 				E58D1BED2A1D124C00137CC6 /* DI */,
 				E58D1BC72A1D020F00137CC6 /* MainTabBar */,
@@ -310,6 +332,46 @@
 				F64555D92A6E6DCC0070947C /* BaseViewController.swift */,
 			);
 			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		F6E458922A711CB600A3C4E5 /* FillingPersonalData */ = {
+			isa = PBXGroup;
+			children = (
+				F6E458932A711CB600A3C4E5 /* FillingPersonalDataView.swift */,
+				F6E458942A711CB600A3C4E5 /* FillingPersonalDataAssembly.swift */,
+				F6E458952A711CB600A3C4E5 /* FillingPersonalDataRouter.swift */,
+				F6E458962A711CB600A3C4E5 /* FillingPersonalDataPresenter.swift */,
+			);
+			path = FillingPersonalData;
+			sourceTree = "<group>";
+		};
+		F6E4589B2A711CD700A3C4E5 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				F6E4589C2A711CD700A3C4E5 /* Alert */,
+				F6E458A02A711CD700A3C4E5 /* Models */,
+				F6E458A32A711CD700A3C4E5 /* AlertAssembly.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
+		F6E4589C2A711CD700A3C4E5 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				F6E4589D2A711CD700A3C4E5 /* AlertRouter.swift */,
+				F6E4589E2A711CD700A3C4E5 /* AlertController.swift */,
+				F6E4589F2A711CD700A3C4E5 /* AlertPresenter.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		F6E458A02A711CD700A3C4E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F6E458A12A711CD700A3C4E5 /* AlertAction.swift */,
+				F6E458A22A711CD700A3C4E5 /* AlertConfiguration.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		FBB8119D4F423E33D72AFCB8 /* Frameworks */ = {
@@ -482,6 +544,7 @@
 				F64555D22A6E6C0B0070947C /* GlobalCoordinator.swift in Sources */,
 				F64555CD2A6D1EA70070947C /* StartButton.swift in Sources */,
 				E58D1BD02A1D03A900137CC6 /* ExampleScreenAssembly.swift in Sources */,
+				F6E458992A711CB700A3C4E5 /* FillingPersonalDataRouter.swift in Sources */,
 				E58D1BF12A1D133200137CC6 /* ServiceAssembly.swift in Sources */,
 				E58D1BE42A1D0AAD00137CC6 /* ExampleModel.swift in Sources */,
 				E58D1BEF2A1D125B00137CC6 /* ViewModelAssembly.swift in Sources */,
@@ -490,23 +553,32 @@
 				E58D1BDE2A1D082400137CC6 /* ExampleService.swift in Sources */,
 				E58D1BE22A1D08B300137CC6 /* Request.swift in Sources */,
 				F64555DE2A6E709F0070947C /* StoriesAssembly.swift in Sources */,
+				F6E458A62A711CD700A3C4E5 /* AlertPresenter.swift in Sources */,
 				E58D1BD42A1D042400137CC6 /* ExampleScreenViewController.swift in Sources */,
 				F64555DA2A6E6DCC0070947C /* BaseViewController.swift in Sources */,
 				E58D1BEA2A1D0BD900137CC6 /* NetworkError.swift in Sources */,
 				F64555992A61743A0070947C /* SignInAppleViewController.swift in Sources */,
 				F64555C92A6D15100070947C /* TitleLabel.swift in Sources */,
 				F64555CF2A6E6BA40070947C /* DesignKitAssembly.swift in Sources */,
+				F6E458A42A711CD700A3C4E5 /* AlertRouter.swift in Sources */,
+				F6E458A92A711CD700A3C4E5 /* AlertAssembly.swift in Sources */,
 				E58D1BF42A1D142E00137CC6 /* RequestExecutorMock.swift in Sources */,
 				F64555E32A6E77670070947C /* SignInDataRouter.swift in Sources */,
+				F6E458972A711CB700A3C4E5 /* FillingPersonalDataView.swift in Sources */,
 				E58D1BD22A1D041A00137CC6 /* ExampleViewModel.swift in Sources */,
+				F6E458A82A711CD700A3C4E5 /* AlertConfiguration.swift in Sources */,
+				F6E458A72A711CD700A3C4E5 /* AlertAction.swift in Sources */,
 				F615220D2A70FC91007939E9 /* CommonTypeAliases.swift in Sources */,
 				E58D1BAF2A1CFF2C00137CC6 /* SceneDelegate.swift in Sources */,
 				F615220F2A70FCBB007939E9 /* CanPresentView.swift in Sources */,
 				F64555E52A6E77A70070947C /* SignInDataPresenter.swift in Sources */,
+				F6E458982A711CB700A3C4E5 /* FillingPersonalDataAssembly.swift in Sources */,
+				F6E458A52A711CD700A3C4E5 /* AlertController.swift in Sources */,
 				F64555CB2A6D1A890070947C /* Fonts.swift in Sources */,
 				E58D1BE02A1D086600137CC6 /* RequestExecutor.swift in Sources */,
 				E58D1BC92A1D022000137CC6 /* MainTabBarAssembly.swift in Sources */,
 				E58D1BE62A1D0AEA00137CC6 /* ResponseParserProtocol.swift in Sources */,
+				F6E4589A2A711CB700A3C4E5 /* FillingPersonalDataPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

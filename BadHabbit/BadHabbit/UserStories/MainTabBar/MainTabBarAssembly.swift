@@ -22,13 +22,10 @@ final class MainTabBarAssembly {
         
         let exampleVC = exampleScreenAssembly.assembleView()
         exampleVC.tabBarItem.title = "Example"
-        let secondVC = SignInAppleViewController()
-        secondVC.tabBarItem.title = "second"
         
         tabVC.setViewControllers(
             [
-                exampleVC,
-                secondVC
+                exampleVC
             ],
             animated: true
         )

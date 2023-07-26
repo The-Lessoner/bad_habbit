@@ -17,11 +17,11 @@ final class DesignKitAssembly {
         self.window = window
     }
 
-//    var alertAssembly: AlertAssemblyProtocol {
-//        AlertAssembly(
-//            globalCoordinator: globalCoordinator
-//        )
-//    }
+    var alertAssembly: AlertAssemblyProtocol {
+        AlertAssembly(
+            globalCoordinator: globalCoordinator
+        )
+    }
 
     var globalCoordinator: IGlobalCoordinator {
         GlobalCoordinator(application: application, initialWindow: window)

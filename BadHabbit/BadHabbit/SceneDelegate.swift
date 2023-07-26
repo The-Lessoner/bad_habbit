@@ -11,17 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-    private lazy var serviceAssembly = ServiceAssembly(
-        requestExecutor: RequestExecutorMock(requestResponseData: "{\"text\":\"Random Mocked text\"}".data(using: .utf8) ?? .init())
-    )
-        
-    private lazy var viewModelAssembly = ViewModelAssembly(serviceAssembly: serviceAssembly)
-    
-    private lazy var rootTabBarAssembler: MainTabBarAssembly = {
-        MainTabBarAssembly(
-            exampleScreenAssembly: ExampleScreenAssembly(viewModelAssembly: viewModelAssembly)
-        )
-    }()
+    private var appAssembly: AppAssembly!
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -30,10 +20,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else {
             return
         }
-        
+
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = rootTabBarAssembler.assemble()
-        
+
+        self.appAssembly = AppAssembly(application: .shared, window: window)
+        self.window = window
+
+        window.rootViewController = appAssembly.storiesAssembly.signInScreen.assembleView()
+
         self.window = window
         window.makeKeyAndVisible()
     }

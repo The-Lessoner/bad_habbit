@@ -8,7 +8,7 @@
 import UIKit
 
 final class AppAssembly {
-    
+
     private(set) lazy var designKitAssembly = DesignKitAssembly(
         application: application,
         window: window
@@ -26,4 +26,3 @@ final class AppAssembly {
         self.window = window
     }
 }
-
