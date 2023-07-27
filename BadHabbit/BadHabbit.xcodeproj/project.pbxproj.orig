@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		372F03E231465F74E9E647DD /* Pods_BadHabbit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */; };
+<<<<<<< HEAD
+		614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */; };
+		614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614717242A6F060100731065 /* SignUpScreenRouter.swift */; };
+		614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA9422A674317004231A3 /* SignUpViewController.swift */; };
+		614BA9482A6749F5004231A3 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 614BA9472A6749F5004231A3 /* SF-Pro-Display-Medium.otf */; };
+		614BA94A2A674A1C004231A3 /* FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA9492A674A1C004231A3 /* FontName.swift */; };
+		614BA94D2A674B46004231A3 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA94C2A674B46004231A3 /* UIColor+hex.swift */; };
+		6194A0B02A6FB53B0006F570 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6194A0AF2A6FB53B0006F570 /* ActionButton.swift */; };
+		61AE3EFF2A6DCC9D00B607E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61AE3F012A6DCC9D00B607E1 /* Localizable.strings */; };
+		61CEF96E2A67739600744ADA /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61CEF96D2A67739600744ADA /* SF-Pro-Display-Bold.otf */; };
+		61CEF9702A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61CEF96F2A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf */; };
+=======
 		E5109B4A2A6AD962008B74D3 /* AlertAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B492A6AD962008B74D3 /* AlertAssembly.swift */; };
 		E5109B4C2A6AD9A4008B74D3 /* DesignKitAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B4B2A6AD9A4008B74D3 /* DesignKitAssembly.swift */; };
 		E5109B4E2A6ADA99008B74D3 /* AlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B4D2A6ADA99008B74D3 /* AlertConfiguration.swift */; };
@@ -24,22 +36,16 @@
 		E5109B692A6D4269008B74D3 /* FillingPersonalDataRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B682A6D4269008B74D3 /* FillingPersonalDataRouter.swift */; };
 		E5109B6B2A6D4337008B74D3 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B6A2A6D4337008B74D3 /* AppAssembly.swift */; };
 		E5109B6E2A6D4733008B74D3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B6D2A6D4733008B74D3 /* BaseViewController.swift */; };
-		614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */; };
-		614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614717242A6F060100731065 /* SignUpScreenRouter.swift */; };
-		614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA9422A674317004231A3 /* SignUpViewController.swift */; };
-		614BA9482A6749F5004231A3 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 614BA9472A6749F5004231A3 /* SF-Pro-Display-Medium.otf */; };
-		614BA94A2A674A1C004231A3 /* FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA9492A674A1C004231A3 /* FontName.swift */; };
-		614BA94D2A674B46004231A3 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA94C2A674B46004231A3 /* UIColor+hex.swift */; };
-		6194A0B02A6FB53B0006F570 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6194A0AF2A6FB53B0006F570 /* ActionButton.swift */; };
-		61AE3EFF2A6DCC9D00B607E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61AE3F012A6DCC9D00B607E1 /* Localizable.strings */; };
-		61CEF96E2A67739600744ADA /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61CEF96D2A67739600744ADA /* SF-Pro-Display-Bold.otf */; };
-		61CEF9702A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61CEF96F2A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf */; };
+>>>>>>> develop
 		E58D1BAD2A1CFF2C00137CC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BAC2A1CFF2C00137CC6 /* AppDelegate.swift */; };
 		E58D1BAF2A1CFF2C00137CC6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BAE2A1CFF2C00137CC6 /* SceneDelegate.swift */; };
 		E58D1BB62A1CFF2E00137CC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E58D1BB52A1CFF2E00137CC6 /* Assets.xcassets */; };
 		E58D1BB92A1CFF2E00137CC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E58D1BB72A1CFF2E00137CC6 /* LaunchScreen.storyboard */; };
+<<<<<<< HEAD
+=======
 		E58D1BCC2A1D02E100137CC6 /* StoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BCB2A1D02E100137CC6 /* StoryAssembly.swift */; };
 		E58D1BEF2A1D125B00137CC6 /* StoriesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BEE2A1D125B00137CC6 /* StoriesAssembly.swift */; };
+>>>>>>> develop
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,8 +83,11 @@
 		E58D1BB52A1CFF2E00137CC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E58D1BB82A1CFF2E00137CC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E58D1BBA2A1CFF2E00137CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+<<<<<<< HEAD
+=======
 		E58D1BCB2A1D02E100137CC6 /* StoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryAssembly.swift; sourceTree = "<group>"; };
 		E58D1BEE2A1D125B00137CC6 /* StoriesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesAssembly.swift; sourceTree = "<group>"; };
+>>>>>>> develop
 		EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BadHabbit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -249,16 +258,20 @@
 				E58D1BAC2A1CFF2C00137CC6 /* AppDelegate.swift */,
 				E5109B6A2A6D4337008B74D3 /* AppAssembly.swift */,
 				E58D1BAE2A1CFF2C00137CC6 /* SceneDelegate.swift */,
-				E58D1BCA2A1D02D100137CC6 /* DI */,
 				E58D1BC52A1D01AB00137CC6 /* UserStories */,
+<<<<<<< HEAD
+				61EF63AA2A7290820009218A /* DesignKitHAB16 */,
+=======
 				E58D1BC62A1D01C700137CC6 /* Kit */,
 				E5109B512A6ADB1E008B74D3 /* Utils */,
-				61EF63AA2A7290820009218A /* DesignKitHAB16 */,
+>>>>>>> develop
 				E58D1BC42A1D00D100137CC6 /* SupportFiles */,
 			);
 			path = BadHabbit;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
+=======
 		E58D1BC22A1D001A00137CC6 /* PersistenceKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +286,7 @@
 			path = NetworkKit;
 			sourceTree = "<group>";
 		};
+>>>>>>> develop
 		E58D1BC42A1D00D100137CC6 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,13 +302,18 @@
 		E58D1BC52A1D01AB00137CC6 /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+				614BA9412A6742F3004231A3 /* SingUpScreen */,
+=======
 				E58D1BED2A1D124C00137CC6 /* DI */,
 				E5109B562A6ADEA3008B74D3 /* FillingPersonalData */,
-				614BA9412A6742F3004231A3 /* SingUpScreen */,
+>>>>>>> develop
 			);
 			path = UserStories;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
+=======
 		E58D1BC62A1D01C700137CC6 /* Kit */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +340,7 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
+>>>>>>> develop
 		FBB8119D4F423E33D72AFCB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,6 +507,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
+				614BA94A2A674A1C004231A3 /* FontName.swift in Sources */,
+				614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */,
+				614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */,
+				E58D1BAD2A1CFF2C00137CC6 /* AppDelegate.swift in Sources */,
+				6194A0B02A6FB53B0006F570 /* ActionButton.swift in Sources */,
+				614BA94D2A674B46004231A3 /* UIColor+hex.swift in Sources */,
+				614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */,
+				E58D1BAF2A1CFF2C00137CC6 /* SceneDelegate.swift in Sources */,
+=======
 				E5109B5A2A6ADEFF008B74D3 /* FillingPersonalDataPresenter.swift in Sources */,
 				E5109B672A6D3DAE008B74D3 /* CanPresentView.swift in Sources */,
 				E5109B4E2A6ADA99008B74D3 /* AlertConfiguration.swift in Sources */,
@@ -502,17 +532,12 @@
 				E5109B6B2A6D4337008B74D3 /* AppAssembly.swift in Sources */,
 				E5109B582A6ADEC1008B74D3 /* FillingPersonalDataAssembly.swift in Sources */,
 				E5109B5C2A6ADF14008B74D3 /* FillingPersonalDataView.swift in Sources */,
-				614BA94A2A674A1C004231A3 /* FontName.swift in Sources */,
-				614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */,
-				614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */,
 				E58D1BAD2A1CFF2C00137CC6 /* AppDelegate.swift in Sources */,
-				6194A0B02A6FB53B0006F570 /* ActionButton.swift in Sources */,
-				614BA94D2A674B46004231A3 /* UIColor+hex.swift in Sources */,
-				614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */,
 				E58D1BAF2A1CFF2C00137CC6 /* SceneDelegate.swift in Sources */,
 				E5109B622A6AE5CD008B74D3 /* AlertRouter.swift in Sources */,
 				E5109B552A6ADC5C008B74D3 /* AlertPresenter.swift in Sources */,
 				E5109B4A2A6AD962008B74D3 /* AlertAssembly.swift in Sources */,
+>>>>>>> develop
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
