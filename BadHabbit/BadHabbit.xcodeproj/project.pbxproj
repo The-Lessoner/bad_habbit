@@ -95,6 +95,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		61EF63AA2A7290820009218A /* DesignKitHAB16 */ = {
+			isa = PBXGroup;
+			children = (
+				6194A0B12A6FB6330006F570 /* Models */,
+				614BA94B2A674B1C004231A3 /* Colors */,
+			);
+			path = DesignKitHAB16;
+			sourceTree = "<group>";
+		};
 		7F8062058E6710BFF5E557EE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,19 +137,10 @@
 				E58D1BAC2A1CFF2C00137CC6 /* AppDelegate.swift */,
 				E58D1BAE2A1CFF2C00137CC6 /* SceneDelegate.swift */,
 				E58D1BC52A1D01AB00137CC6 /* UserStories */,
-				E58D1BC62A1D01C700137CC6 /* Kit */,
+				61EF63AA2A7290820009218A /* DesignKitHAB16 */,
 				E58D1BC42A1D00D100137CC6 /* SupportFiles */,
 			);
 			path = BadHabbit;
-			sourceTree = "<group>";
-		};
-		E58D1BC02A1D000000137CC6 /* DesignKitHAB13 */ = {
-			isa = PBXGroup;
-			children = (
-				6194A0B12A6FB6330006F570 /* Models */,
-				614BA94B2A674B1C004231A3 /* Colors */,
-			);
-			path = DesignKitHAB13;
 			sourceTree = "<group>";
 		};
 		E58D1BC42A1D00D100137CC6 /* SupportFiles */ = {
@@ -161,14 +161,6 @@
 				614BA9412A6742F3004231A3 /* SingUpScreen */,
 			);
 			path = UserStories;
-			sourceTree = "<group>";
-		};
-		E58D1BC62A1D01C700137CC6 /* Kit */ = {
-			isa = PBXGroup;
-			children = (
-				E58D1BC02A1D000000137CC6 /* DesignKitHAB13 */,
-			);
-			path = Kit;
 			sourceTree = "<group>";
 		};
 		FBB8119D4F423E33D72AFCB8 /* Frameworks */ = {
