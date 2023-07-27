@@ -24,9 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         
         self.appAssembly = AppAssembly(application: .shared, window: window)
-        self.window = window
-        
-        window.rootViewController = appAssembly.storiesAssembly.fillingPersonalData.assembleStory()
+        window.rootViewController = appAssembly.storiesAssembly.signUpScreen.assembleStory()
         
         self.window = window
         window.makeKeyAndVisible()

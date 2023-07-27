@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		372F03E231465F74E9E647DD /* Pods_BadHabbit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */; };
+		614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */; };
+		614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614717242A6F060100731065 /* SignUpScreenRouter.swift */; };
+		614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA9422A674317004231A3 /* SignUpViewController.swift */; };
+		614BA9482A6749F5004231A3 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 614BA9472A6749F5004231A3 /* SF-Pro-Display-Medium.otf */; };
+		614BA94A2A674A1C004231A3 /* FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA9492A674A1C004231A3 /* FontName.swift */; };
+		614BA94D2A674B46004231A3 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA94C2A674B46004231A3 /* UIColor+hex.swift */; };
+		6194A0B02A6FB53B0006F570 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6194A0AF2A6FB53B0006F570 /* ActionButton.swift */; };
+		61AE3EFF2A6DCC9D00B607E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61AE3F012A6DCC9D00B607E1 /* Localizable.strings */; };
+		61CEF96E2A67739600744ADA /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61CEF96D2A67739600744ADA /* SF-Pro-Display-Bold.otf */; };
+		61CEF9702A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61CEF96F2A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf */; };
+		61EF63AC2A7297E00009218A /* SignUpScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EF63AB2A7297E00009218A /* SignUpScreenAssembly.swift */; };
 		E5109B4A2A6AD962008B74D3 /* AlertAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B492A6AD962008B74D3 /* AlertAssembly.swift */; };
 		E5109B4C2A6AD9A4008B74D3 /* DesignKitAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B4B2A6AD9A4008B74D3 /* DesignKitAssembly.swift */; };
 		E5109B4E2A6ADA99008B74D3 /* AlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B4D2A6ADA99008B74D3 /* AlertConfiguration.swift */; };
@@ -24,16 +35,6 @@
 		E5109B692A6D4269008B74D3 /* FillingPersonalDataRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B682A6D4269008B74D3 /* FillingPersonalDataRouter.swift */; };
 		E5109B6B2A6D4337008B74D3 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B6A2A6D4337008B74D3 /* AppAssembly.swift */; };
 		E5109B6E2A6D4733008B74D3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B6D2A6D4733008B74D3 /* BaseViewController.swift */; };
-		614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */; };
-		614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614717242A6F060100731065 /* SignUpScreenRouter.swift */; };
-		614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA9422A674317004231A3 /* SignUpViewController.swift */; };
-		614BA9482A6749F5004231A3 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 614BA9472A6749F5004231A3 /* SF-Pro-Display-Medium.otf */; };
-		614BA94A2A674A1C004231A3 /* FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA9492A674A1C004231A3 /* FontName.swift */; };
-		614BA94D2A674B46004231A3 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA94C2A674B46004231A3 /* UIColor+hex.swift */; };
-		6194A0B02A6FB53B0006F570 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6194A0AF2A6FB53B0006F570 /* ActionButton.swift */; };
-		61AE3EFF2A6DCC9D00B607E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61AE3F012A6DCC9D00B607E1 /* Localizable.strings */; };
-		61CEF96E2A67739600744ADA /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61CEF96D2A67739600744ADA /* SF-Pro-Display-Bold.otf */; };
-		61CEF9702A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61CEF96F2A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf */; };
 		E58D1BAD2A1CFF2C00137CC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BAC2A1CFF2C00137CC6 /* AppDelegate.swift */; };
 		E58D1BAF2A1CFF2C00137CC6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BAE2A1CFF2C00137CC6 /* SceneDelegate.swift */; };
 		E58D1BB62A1CFF2E00137CC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E58D1BB52A1CFF2E00137CC6 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		61AE3F022A6DCCAD00B607E1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		61CEF96D2A67739600744ADA /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		61CEF96F2A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular_ExtraBold.ttf"; sourceTree = "<group>"; };
+		61EF63AB2A7297E00009218A /* SignUpScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenAssembly.swift; sourceTree = "<group>"; };
 		77FC42E518800866EDC7473A /* Pods-BadHabbit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadHabbit.debug.xcconfig"; path = "Target Support Files/Pods-BadHabbit/Pods-BadHabbit.debug.xcconfig"; sourceTree = "<group>"; };
 		82255F197739D3932E47D930 /* Pods-BadHabbit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadHabbit.release.xcconfig"; path = "Target Support Files/Pods-BadHabbit/Pods-BadHabbit.release.xcconfig"; sourceTree = "<group>"; };
 		E5109B492A6AD962008B74D3 /* AlertAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAssembly.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		614BA9412A6742F3004231A3 /* SingUpScreen */ = {
 			isa = PBXGroup;
 			children = (
+				61EF63AB2A7297E00009218A /* SignUpScreenAssembly.swift */,
 				6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */,
 				614717242A6F060100731065 /* SignUpScreenRouter.swift */,
 				614BA9422A674317004231A3 /* SignUpViewController.swift */,
@@ -131,15 +134,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		61EF63AA2A7290820009218A /* DesignKitHAB16 */ = {
-			isa = PBXGroup;
-			children = (
-				6194A0B12A6FB6330006F570 /* Models */,
-				614BA94B2A674B1C004231A3 /* Colors */,
-			);
-			path = DesignKitHAB16;
-			sourceTree = "<group>";
-		};
 		7F8062058E6710BFF5E557EE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,10 +146,12 @@
 		E5109B472A6AD904008B74D3 /* DesignKit */ = {
 			isa = PBXGroup;
 			children = (
-				E5109B6C2A6D4726008B74D3 /* BaseViewController */,
 				E5109B4B2A6AD9A4008B74D3 /* DesignKitAssembly.swift */,
+				E5109B6C2A6D4726008B74D3 /* BaseViewController */,
 				E5109B632A6AE6F7008B74D3 /* GlobalCoordinator */,
 				E5109B482A6AD94B008B74D3 /* Alerts */,
+				614BA94B2A674B1C004231A3 /* Colors */,
+				6194A0B12A6FB6330006F570 /* Models */,
 			);
 			path = DesignKit;
 			sourceTree = "<group>";
@@ -253,7 +249,6 @@
 				E58D1BC52A1D01AB00137CC6 /* UserStories */,
 				E58D1BC62A1D01C700137CC6 /* Kit */,
 				E5109B512A6ADB1E008B74D3 /* Utils */,
-				61EF63AA2A7290820009218A /* DesignKitHAB16 */,
 				E58D1BC42A1D00D100137CC6 /* SupportFiles */,
 			);
 			path = BadHabbit;
@@ -508,6 +503,7 @@
 				E58D1BAD2A1CFF2C00137CC6 /* AppDelegate.swift in Sources */,
 				6194A0B02A6FB53B0006F570 /* ActionButton.swift in Sources */,
 				614BA94D2A674B46004231A3 /* UIColor+hex.swift in Sources */,
+				61EF63AC2A7297E00009218A /* SignUpScreenAssembly.swift in Sources */,
 				614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */,
 				E58D1BAF2A1CFF2C00137CC6 /* SceneDelegate.swift in Sources */,
 				E5109B622A6AE5CD008B74D3 /* AlertRouter.swift in Sources */,
