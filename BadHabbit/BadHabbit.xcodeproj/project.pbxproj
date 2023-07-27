@@ -22,21 +22,6 @@
 		E58D1BAF2A1CFF2C00137CC6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BAE2A1CFF2C00137CC6 /* SceneDelegate.swift */; };
 		E58D1BB62A1CFF2E00137CC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E58D1BB52A1CFF2E00137CC6 /* Assets.xcassets */; };
 		E58D1BB92A1CFF2E00137CC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E58D1BB72A1CFF2E00137CC6 /* LaunchScreen.storyboard */; };
-		E58D1BC92A1D022000137CC6 /* MainTabBarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BC82A1D022000137CC6 /* MainTabBarAssembly.swift */; };
-		E58D1BCC2A1D02E100137CC6 /* ViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BCB2A1D02E100137CC6 /* ViewAssembly.swift */; };
-		E58D1BD02A1D03A900137CC6 /* ExampleScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BCF2A1D03A900137CC6 /* ExampleScreenAssembly.swift */; };
-		E58D1BD22A1D041A00137CC6 /* ExampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BD12A1D041A00137CC6 /* ExampleViewModel.swift */; };
-		E58D1BD42A1D042400137CC6 /* ExampleScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BD32A1D042400137CC6 /* ExampleScreenViewController.swift */; };
-		E58D1BDE2A1D082400137CC6 /* ExampleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BDD2A1D082400137CC6 /* ExampleService.swift */; };
-		E58D1BE02A1D086600137CC6 /* RequestExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BDF2A1D086600137CC6 /* RequestExecutor.swift */; };
-		E58D1BE22A1D08B300137CC6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BE12A1D08B300137CC6 /* Request.swift */; };
-		E58D1BE42A1D0AAD00137CC6 /* ExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BE32A1D0AAD00137CC6 /* ExampleModel.swift */; };
-		E58D1BE62A1D0AEA00137CC6 /* ResponseParserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BE52A1D0AEA00137CC6 /* ResponseParserProtocol.swift */; };
-		E58D1BE82A1D0B2E00137CC6 /* ExampleModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BE72A1D0B2E00137CC6 /* ExampleModelParser.swift */; };
-		E58D1BEA2A1D0BD900137CC6 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BE92A1D0BD900137CC6 /* NetworkError.swift */; };
-		E58D1BEF2A1D125B00137CC6 /* ViewModelAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BEE2A1D125B00137CC6 /* ViewModelAssembly.swift */; };
-		E58D1BF12A1D133200137CC6 /* ServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BF02A1D133200137CC6 /* ServiceAssembly.swift */; };
-		E58D1BF42A1D142E00137CC6 /* RequestExecutorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BF32A1D142E00137CC6 /* RequestExecutorMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,21 +43,6 @@
 		E58D1BB52A1CFF2E00137CC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E58D1BB82A1CFF2E00137CC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E58D1BBA2A1CFF2E00137CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E58D1BC82A1D022000137CC6 /* MainTabBarAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarAssembly.swift; sourceTree = "<group>"; };
-		E58D1BCB2A1D02E100137CC6 /* ViewAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAssembly.swift; sourceTree = "<group>"; };
-		E58D1BCF2A1D03A900137CC6 /* ExampleScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleScreenAssembly.swift; sourceTree = "<group>"; };
-		E58D1BD12A1D041A00137CC6 /* ExampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewModel.swift; sourceTree = "<group>"; };
-		E58D1BD32A1D042400137CC6 /* ExampleScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleScreenViewController.swift; sourceTree = "<group>"; };
-		E58D1BDD2A1D082400137CC6 /* ExampleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleService.swift; sourceTree = "<group>"; };
-		E58D1BDF2A1D086600137CC6 /* RequestExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExecutor.swift; sourceTree = "<group>"; };
-		E58D1BE12A1D08B300137CC6 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		E58D1BE32A1D0AAD00137CC6 /* ExampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleModel.swift; sourceTree = "<group>"; };
-		E58D1BE52A1D0AEA00137CC6 /* ResponseParserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseParserProtocol.swift; sourceTree = "<group>"; };
-		E58D1BE72A1D0B2E00137CC6 /* ExampleModelParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleModelParser.swift; sourceTree = "<group>"; };
-		E58D1BE92A1D0BD900137CC6 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		E58D1BEE2A1D125B00137CC6 /* ViewModelAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelAssembly.swift; sourceTree = "<group>"; };
-		E58D1BF02A1D133200137CC6 /* ServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
-		E58D1BF32A1D142E00137CC6 /* RequestExecutorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExecutorMock.swift; sourceTree = "<group>"; };
 		EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BadHabbit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -157,7 +127,6 @@
 			children = (
 				E58D1BAC2A1CFF2C00137CC6 /* AppDelegate.swift */,
 				E58D1BAE2A1CFF2C00137CC6 /* SceneDelegate.swift */,
-				E58D1BCA2A1D02D100137CC6 /* DI */,
 				E58D1BC52A1D01AB00137CC6 /* UserStories */,
 				E58D1BC62A1D01C700137CC6 /* Kit */,
 				E58D1BC42A1D00D100137CC6 /* SupportFiles */,
@@ -165,31 +134,13 @@
 			path = BadHabbit;
 			sourceTree = "<group>";
 		};
-		E58D1BC02A1D000000137CC6 /* DesignKit */ = {
+		E58D1BC02A1D000000137CC6 /* DesignKitHAB13 */ = {
 			isa = PBXGroup;
 			children = (
 				6194A0B12A6FB6330006F570 /* Models */,
 				614BA94B2A674B1C004231A3 /* Colors */,
 			);
-			path = DesignKit;
-			sourceTree = "<group>";
-		};
-		E58D1BC22A1D001A00137CC6 /* PersistenceKit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PersistenceKit;
-			sourceTree = "<group>";
-		};
-		E58D1BC32A1D008400137CC6 /* NetworkKit */ = {
-			isa = PBXGroup;
-			children = (
-				E58D1BDF2A1D086600137CC6 /* RequestExecutor.swift */,
-				E58D1BE12A1D08B300137CC6 /* Request.swift */,
-				E58D1BE52A1D0AEA00137CC6 /* ResponseParserProtocol.swift */,
-				E58D1BE92A1D0BD900137CC6 /* NetworkError.swift */,
-			);
-			path = NetworkKit;
+			path = DesignKitHAB13;
 			sourceTree = "<group>";
 		};
 		E58D1BC42A1D00D100137CC6 /* SupportFiles */ = {
@@ -207,9 +158,6 @@
 		E58D1BC52A1D01AB00137CC6 /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
-				E58D1BED2A1D124C00137CC6 /* DI */,
-				E58D1BC72A1D020F00137CC6 /* MainTabBar */,
-				E58D1BCE2A1D037E00137CC6 /* ExampleScreen */,
 				614BA9412A6742F3004231A3 /* SingUpScreen */,
 			);
 			path = UserStories;
@@ -218,58 +166,9 @@
 		E58D1BC62A1D01C700137CC6 /* Kit */ = {
 			isa = PBXGroup;
 			children = (
-				E58D1BC32A1D008400137CC6 /* NetworkKit */,
-				E58D1BF22A1D141D00137CC6 /* NetworkKitMock */,
-				E58D1BC22A1D001A00137CC6 /* PersistenceKit */,
-				E58D1BC02A1D000000137CC6 /* DesignKit */,
+				E58D1BC02A1D000000137CC6 /* DesignKitHAB13 */,
 			);
 			path = Kit;
-			sourceTree = "<group>";
-		};
-		E58D1BC72A1D020F00137CC6 /* MainTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				E58D1BC82A1D022000137CC6 /* MainTabBarAssembly.swift */,
-			);
-			path = MainTabBar;
-			sourceTree = "<group>";
-		};
-		E58D1BCA2A1D02D100137CC6 /* DI */ = {
-			isa = PBXGroup;
-			children = (
-				E58D1BCB2A1D02E100137CC6 /* ViewAssembly.swift */,
-			);
-			path = DI;
-			sourceTree = "<group>";
-		};
-		E58D1BCE2A1D037E00137CC6 /* ExampleScreen */ = {
-			isa = PBXGroup;
-			children = (
-				E58D1BCF2A1D03A900137CC6 /* ExampleScreenAssembly.swift */,
-				E58D1BDD2A1D082400137CC6 /* ExampleService.swift */,
-				E58D1BD12A1D041A00137CC6 /* ExampleViewModel.swift */,
-				E58D1BD32A1D042400137CC6 /* ExampleScreenViewController.swift */,
-				E58D1BE32A1D0AAD00137CC6 /* ExampleModel.swift */,
-				E58D1BE72A1D0B2E00137CC6 /* ExampleModelParser.swift */,
-			);
-			path = ExampleScreen;
-			sourceTree = "<group>";
-		};
-		E58D1BED2A1D124C00137CC6 /* DI */ = {
-			isa = PBXGroup;
-			children = (
-				E58D1BF02A1D133200137CC6 /* ServiceAssembly.swift */,
-				E58D1BEE2A1D125B00137CC6 /* ViewModelAssembly.swift */,
-			);
-			path = DI;
-			sourceTree = "<group>";
-		};
-		E58D1BF22A1D141D00137CC6 /* NetworkKitMock */ = {
-			isa = PBXGroup;
-			children = (
-				E58D1BF32A1D142E00137CC6 /* RequestExecutorMock.swift */,
-			);
-			path = NetworkKitMock;
 			sourceTree = "<group>";
 		};
 		FBB8119D4F423E33D72AFCB8 /* Frameworks */ = {
@@ -438,29 +337,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E58D1BCC2A1D02E100137CC6 /* ViewAssembly.swift in Sources */,
-				E58D1BE82A1D0B2E00137CC6 /* ExampleModelParser.swift in Sources */,
 				614BA94A2A674A1C004231A3 /* FontName.swift in Sources */,
 				614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */,
-				E58D1BD02A1D03A900137CC6 /* ExampleScreenAssembly.swift in Sources */,
-				E58D1BF12A1D133200137CC6 /* ServiceAssembly.swift in Sources */,
-				E58D1BE42A1D0AAD00137CC6 /* ExampleModel.swift in Sources */,
-				E58D1BEF2A1D125B00137CC6 /* ViewModelAssembly.swift in Sources */,
 				614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */,
 				E58D1BAD2A1CFF2C00137CC6 /* AppDelegate.swift in Sources */,
 				6194A0B02A6FB53B0006F570 /* ActionButton.swift in Sources */,
-				E58D1BDE2A1D082400137CC6 /* ExampleService.swift in Sources */,
-				E58D1BE22A1D08B300137CC6 /* Request.swift in Sources */,
-				E58D1BD42A1D042400137CC6 /* ExampleScreenViewController.swift in Sources */,
-				E58D1BEA2A1D0BD900137CC6 /* NetworkError.swift in Sources */,
 				614BA94D2A674B46004231A3 /* UIColor+hex.swift in Sources */,
 				614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */,
-				E58D1BF42A1D142E00137CC6 /* RequestExecutorMock.swift in Sources */,
-				E58D1BD22A1D041A00137CC6 /* ExampleViewModel.swift in Sources */,
 				E58D1BAF2A1CFF2C00137CC6 /* SceneDelegate.swift in Sources */,
-				E58D1BE02A1D086600137CC6 /* RequestExecutor.swift in Sources */,
-				E58D1BC92A1D022000137CC6 /* MainTabBarAssembly.swift in Sources */,
-				E58D1BE62A1D0AEA00137CC6 /* ResponseParserProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
