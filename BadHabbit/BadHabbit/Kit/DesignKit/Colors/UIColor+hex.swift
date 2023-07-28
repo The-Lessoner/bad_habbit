@@ -1,5 +1,5 @@
 //
-//  Color.swift
+//  UIColor+hex.swift
 //  BadHabbit
 //
 //  Created by Viktoria Misiulia on 19/07/2023.
