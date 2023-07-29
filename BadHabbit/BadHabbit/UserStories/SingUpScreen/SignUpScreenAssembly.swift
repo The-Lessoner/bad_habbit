@@ -8,18 +8,17 @@
 import UIKit
 
 class SignUpScreenAssembly: StoryAssembly {
-    private let alertAssembly: AlertAssemblyProtocol
+    private let nextScreen: StoryAssembly
     private let globalCoordinator: IGlobalCoordinator
     
-    init(alertAssembly: AlertAssemblyProtocol, globalCoordinator: IGlobalCoordinator) {
-        self.alertAssembly = alertAssembly
+    init(nextScreen: StoryAssembly, globalCoordinator: IGlobalCoordinator) {
+        self.nextScreen = nextScreen
         self.globalCoordinator = globalCoordinator
     }
     
     func assembleStory() -> UIViewController {
-        let router = SignUpScreenRouter(
-            nextScreen: FillingPersonalDataAssembly(alertAssembly: alertAssembly),
-            globalCoordinator: globalCoordinator)
+        let router = SignUpScreenRouter(nextScreen: nextScreen,
+                                        globalCoordinator: globalCoordinator)
         let presenter = SignUpScreenPresenter(router: router)
         let view = SignUpViewController(presenter: presenter)
         

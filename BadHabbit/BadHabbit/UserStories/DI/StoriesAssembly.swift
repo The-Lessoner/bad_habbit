@@ -16,8 +16,7 @@ final class StoriesAssembly {
     }
     
     var signUpScreen: StoryAssembly {
-        SignUpScreenAssembly(alertAssembly: designKitAssembly.alertAssembly,
-                             globalCoordinator: designKitAssembly.globalCoordinator)
+        SignUpScreenAssembly(nextScreen: self.fillingPersonalData, globalCoordinator: designKitAssembly.globalCoordinator)
     }
     
     var fillingPersonalData: StoryAssembly {
