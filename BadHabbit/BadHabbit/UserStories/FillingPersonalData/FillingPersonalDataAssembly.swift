@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FillingPersonalDataAssembly: ViewAssembly {
+class FillingPersonalDataAssembly: StoryAssembly {
     
     private let alertAssembly: AlertAssemblyProtocol
     
@@ -15,7 +15,7 @@ class FillingPersonalDataAssembly: ViewAssembly {
         self.alertAssembly = alertAssembly
     }
     
-    func assembleView() -> UIViewController {
+    func assembleStory() -> UIViewController {
         let router = FillingPersonalDataRouter()
         let presenter = FillingPersonalDataPresenter(alertAssembly: alertAssembly, router: router)
         let view = FillingPersonalDataViewController(presenter: presenter)

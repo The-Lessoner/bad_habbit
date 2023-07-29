@@ -54,6 +54,8 @@
 		F6E458A82A711CD700A3C4E5 /* AlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458A22A711CD700A3C4E5 /* AlertConfiguration.swift */; };
 		F6E458A92A711CD700A3C4E5 /* AlertAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458A32A711CD700A3C4E5 /* AlertAssembly.swift */; };
 		F6E458AB2A71269B00A3C4E5 /* KeyChainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458AA2A71269B00A3C4E5 /* KeyChainItem.swift */; };
+		E58D1BCC2A1D02E100137CC6 /* StoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BCB2A1D02E100137CC6 /* StoryAssembly.swift */; };
+		E58D1BEF2A1D125B00137CC6 /* StoriesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BEE2A1D125B00137CC6 /* StoriesAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,7 @@
 		E58D1BEE2A1D125B00137CC6 /* ViewModelAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelAssembly.swift; sourceTree = "<group>"; };
 		E58D1BF02A1D133200137CC6 /* ServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
 		E58D1BF32A1D142E00137CC6 /* RequestExecutorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExecutorMock.swift; sourceTree = "<group>"; };
+		E58D1BCB2A1D02E100137CC6 /* StoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryAssembly.swift; sourceTree = "<group>"; };
 		EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BadHabbit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F61522062A7060D2007939E9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F61522072A7060D2007939E9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -247,6 +250,7 @@
 			children = (
 				E58D1BCB2A1D02E100137CC6 /* ViewAssembly.swift */,
 				F64555DD2A6E709F0070947C /* StoriesAssembly.swift */,
+				E58D1BCB2A1D02E100137CC6 /* StoryAssembly.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -269,6 +273,7 @@
 			children = (
 				E58D1BF02A1D133200137CC6 /* ServiceAssembly.swift */,
 				E58D1BEE2A1D125B00137CC6 /* ViewModelAssembly.swift */,
+				E58D1BEE2A1D125B00137CC6 /* StoriesAssembly.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -613,7 +618,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -644,7 +648,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -675,7 +678,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -706,7 +708,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -737,7 +738,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DA2QG6RD9Z;
+				DEVELOPMENT_TEAM = 8WG6LW4XNB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BadHabbit/SupportFiles/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
@@ -753,7 +754,6 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.the-lessoner.BadHabbit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -771,7 +771,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DA2QG6RD9Z;
+				DEVELOPMENT_TEAM = 8WG6LW4XNB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BadHabbit/SupportFiles/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
@@ -787,7 +787,6 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.the-lessoner.BadHabbit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
