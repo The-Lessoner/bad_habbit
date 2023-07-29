@@ -4,7 +4,6 @@
 //
 //  Created by Halina Kurylchykava on 24.07.23.
 
-
 import UIKit
 
 final class DesignKitAssembly {

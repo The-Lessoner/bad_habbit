@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignInDataAssembly: ViewAssembly {
+class SignInDataAssembly: StoryAssembly {
     
     private let alertAssembly: AlertAssemblyProtocol
     private let globalCoordinator: IGlobalCoordinator
@@ -17,7 +17,7 @@ class SignInDataAssembly: ViewAssembly {
         self.globalCoordinator = globalCoordinator
     }
     
-    func assembleView() -> UIViewController {
+    func assembleStory() -> UIViewController {
         let router = SignInDataRouter(nextScreen: FillingPersonalDataAssembly(alertAssembly: alertAssembly), globalCoordinator: globalCoordinator)
         let presenter = SignInDataPresenter(router: router)
         let view = SignInAppleViewController(presenter: presenter)

@@ -15,11 +15,11 @@ final class StoriesAssembly {
         self.designKitAssembly = designKitAssembly
     }
 
-    var signInScreen: ViewAssembly {
+    var signInScreen: StoryAssembly {
         SignInDataAssembly(alertAssembly: designKitAssembly.alertAssembly, globalCoordinator: designKitAssembly.globalCoordinator)
     }
 
-    var fillingPersonalData: ViewAssembly {
+    var fillingPersonalData: StoryAssembly {
         FillingPersonalDataAssembly(
             alertAssembly: designKitAssembly.alertAssembly
         )

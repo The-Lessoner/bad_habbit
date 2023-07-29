@@ -12,17 +12,17 @@ protocol SignInDataRouterProtocol {
 
 final class SignInDataRouter: SignInDataRouterProtocol {
 
-    let nextScreen: ViewAssembly
+    let nextScreen: StoryAssembly
     let globalCoordinator: IGlobalCoordinator
 
-    init(nextScreen: ViewAssembly,
+    init(nextScreen: StoryAssembly,
          globalCoordinator: IGlobalCoordinator) {
         self.nextScreen = nextScreen
         self.globalCoordinator = globalCoordinator
     }
 
     func presentAnotherScreen() {
-        let vc = nextScreen.assembleView()
+        let vc = nextScreen.assembleStory()
         globalCoordinator.presentOnTopVisibleViewController(vc, animated: true, completion: nil)
     }
 }
