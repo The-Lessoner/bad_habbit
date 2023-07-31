@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpScreenAssembly: StoryAssembly {
+final class SignUpScreenAssembly: StoryAssembly {
     private let nextScreen: StoryAssembly
     private let globalCoordinator: IGlobalCoordinator
     
@@ -17,8 +17,10 @@ class SignUpScreenAssembly: StoryAssembly {
     }
     
     func assembleStory() -> UIViewController {
-        let router = SignUpScreenRouter(nextScreen: nextScreen,
-                                        globalCoordinator: globalCoordinator)
+        let router = SignUpScreenRouter(
+            nextScreen: nextScreen,
+            globalCoordinator: globalCoordinator
+        )
         let presenter = SignUpScreenPresenter(router: router)
         let view = SignUpViewController(presenter: presenter)
         

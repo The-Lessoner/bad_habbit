@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		372F03E231465F74E9E647DD /* Pods_BadHabbit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */; };
+		61302DB82A786B5100258BAF /* UIColor+darkBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61302DB72A786B5100258BAF /* UIColor+darkBackground.swift */; };
 		614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */; };
 		614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614717242A6F060100731065 /* SignUpScreenRouter.swift */; };
 		614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA9422A674317004231A3 /* SignUpViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		61302DB72A786B5100258BAF /* UIColor+darkBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+darkBackground.swift"; sourceTree = "<group>"; };
 		6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenPresenter.swift; sourceTree = "<group>"; };
 		614717242A6F060100731065 /* SignUpScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenRouter.swift; sourceTree = "<group>"; };
 		614BA9422A674317004231A3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				614BA94C2A674B46004231A3 /* UIColor+hex.swift */,
+				61302DB72A786B5100258BAF /* UIColor+darkBackground.swift */,
 			);
 			path = Colors;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				614BA94D2A674B46004231A3 /* UIColor+hex.swift in Sources */,
 				61EF63AC2A7297E00009218A /* SignUpScreenAssembly.swift in Sources */,
 				614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */,
+				61302DB82A786B5100258BAF /* UIColor+darkBackground.swift in Sources */,
 				E58D1BAF2A1CFF2C00137CC6 /* SceneDelegate.swift in Sources */,
 				E5109B622A6AE5CD008B74D3 /* AlertRouter.swift in Sources */,
 				E5109B552A6ADC5C008B74D3 /* AlertPresenter.swift in Sources */,

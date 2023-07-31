@@ -14,9 +14,11 @@ extension UIColor {
         let green = (hexNumber & 0x00FF00) >> 8
         let blue = hexNumber & 0x0000FF
         
-        self.init(red: CGFloat(red) / 255,
-                  green: CGFloat(green) / 255,
-                  blue: CGFloat(blue) / 255,
-                  alpha: alpha)
+        self.init(
+            red: CGFloat(red) / 255,
+            green: CGFloat(green) / 255,
+            blue: CGFloat(blue) / 255,
+            alpha: alpha
+        )
     }
 }

@@ -8,9 +8,7 @@
 import UIKit
 import SnapKit
 
-protocol SignUpViewProtocol: AnyObject {
-    var startButton: UIButton { get }
-}
+protocol SignUpViewProtocol: AnyObject { }
 
 final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     private lazy var backgroundImageView = UIImageView()
@@ -52,7 +50,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     }
     
     private func configureBackground() {
-        view.backgroundColor = UIColor(hexNumber: 0xCFCFCF)
+        view.backgroundColor = UIColor.darkBackground
         
         view.addSubview(backgroundImageView)
         backgroundImageView.image = UIImage(named: "mountains")
@@ -81,6 +79,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         addLogoLabel()
         
         logoImageView.image = UIImage(named: "logo")
+        logoImageView.alpha = 0.5
     }
     
     private func addLogoLabel() {
@@ -120,9 +119,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         let safeArea = view.safeAreaLayoutGuide
         
         backgroundImageView.snp.makeConstraints { make in
-            let heightMultiplier: CGFloat = 445 / 844
-
-            make.height.equalToSuperview().multipliedBy(heightMultiplier)
+            make.height.equalToSuperview().multipliedBy(LayoutConstants.BackgroundImage.heightMultiplier)
             make.bottom.equalToSuperview()
             make.leading.trailing.equalTo(safeArea)
         }
@@ -142,10 +139,8 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         }
         
         logoImageView.snp.makeConstraints { make in
-            let multiplayer: CGFloat = 196 / 390
-            
             make.centerX.equalTo(safeArea)
-            make.size.equalTo(safeArea.snp.width).multipliedBy(multiplayer)
+            make.size.equalTo(safeArea.snp.width).multipliedBy(LayoutConstants.LogoImageView.sizeMultiplier)
         }
         
         logoLabel.snp.makeConstraints { make in
@@ -153,16 +148,16 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         }
         
         phraseLabel.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(safeArea).inset(16)
+            make.leading.trailing.equalTo(safeArea).inset(LayoutConstants.leadingInset)
             make.centerX.equalTo(safeArea)
         }
         
         startButton.snp.makeConstraints { make in
             make.height.equalTo(LayoutConstants.ActionButton.height)
-            make.leading.equalTo(safeArea).inset(LayoutConstants.ActionButton.leadingInset)
-            make.trailing.equalTo(safeArea).inset(LayoutConstants.ActionButton.trailingInset)
+            make.leading.equalTo(safeArea).inset(LayoutConstants.leadingInset)
+            make.trailing.equalTo(safeArea).inset(LayoutConstants.trailingInset)
             make.bottom.equalTo(safeArea.snp.bottom).inset(LayoutConstants.ActionButton.bottomInset)
-            make.top.equalTo(phraseLabel.snp.bottom).offset(LayoutConstants.ActionButton.topOffset)
+            make.top.equalTo(phraseLabel.snp.bottom).offset(30)
         }
     }
     

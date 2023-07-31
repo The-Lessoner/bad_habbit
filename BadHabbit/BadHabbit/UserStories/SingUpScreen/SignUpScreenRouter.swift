@@ -13,11 +13,13 @@ protocol SignUpRouterProtocol {
 
 final class SignUpScreenRouter: SignUpRouterProtocol {
     
-    let nextScreen: StoryAssembly
+    let nextScreen: SignInDataAssembly
     let globalCoordinator: IGlobalCoordinator
     
-    init(nextScreen: StoryAssembly,
-         globalCoordinator: IGlobalCoordinator) {
+    init(
+        nextScreen: SignInDataAssembly,
+        globalCoordinator: IGlobalCoordinator
+    ) {
         self.nextScreen = nextScreen
         self.globalCoordinator = globalCoordinator
      }

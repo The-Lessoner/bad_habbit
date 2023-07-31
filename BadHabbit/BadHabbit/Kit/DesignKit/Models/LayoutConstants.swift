@@ -8,11 +8,29 @@
 import Foundation
 
 enum LayoutConstants {
+    static let leadingInset = 16
+    static let trailingInset = 16
+    
     enum ActionButton {
         static let height = 50
-        static let leadingInset = 16
-        static let trailingInset = 16
         static let bottomInset = 20
-        static let topOffset = 30
+    }
+    
+    enum BackgroundImage {
+        static let heightMultiplier = {
+            let signUpScreenMockupBackgroundImageHeight: CGFloat = 445
+            let signUpScreenMockupHeight: CGFloat = 844
+            
+            return signUpScreenMockupBackgroundImageHeight / signUpScreenMockupHeight
+        }()
+    }
+    
+    enum LogoImageView {
+        static let sizeMultiplier = {
+            let signUpScreenMockupLogoViewWidth: CGFloat = 196
+            let signUpScreenMockupWidth: CGFloat = 390
+            
+            return signUpScreenMockupLogoViewWidth / signUpScreenMockupWidth
+        }()
     }
 }
