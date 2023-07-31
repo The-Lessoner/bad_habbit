@@ -23,6 +23,6 @@ final class SignInDataRouter: SignInDataRouterProtocol {
 
     func presentAnotherScreen() {
         let vc = nextScreen.assembleStory()
-        globalCoordinator.presentOnTopVisibleViewController(vc, animated: true, completion: nil)
+        globalCoordinator.presentOnTopVisibleViewController(vc)
     }
 }

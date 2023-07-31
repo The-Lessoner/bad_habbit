@@ -63,34 +63,36 @@ extension SignInAppleViewController {
 
     private func setupConstraints() {
         let safeArea = view.safeAreaLayoutGuide
-
+        
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeArea).inset(TitleLabelConstraints.topOffset)
-            make.leading.trailing.equalToSuperview().inset(TitleLabelConstraints.leadingOffset)
+            make.top.equalTo(safeArea).inset(LayoutConstants.topOffset)
+            make.leading.trailing.equalToSuperview().inset(LayoutConstants.leadingOffset)
         }
 
         imageLogo.snp.makeConstraints { make in
+            let aspectRatio: CGFloat = LayoutConstants.ImageLogo.width / LayoutConstants.SuperView.width
+            let multiplier = aspectRatio
             make.centerX.equalTo(safeArea)
-            make.centerY.equalTo(safeArea).inset(35)
-            make.size.equalTo(196)
+            make.centerY.equalTo(safeArea).offset(-35)
+            make.size.equalTo(safeArea.snp.width).multipliedBy(multiplier)
         }
 
         imageMountains.snp.makeConstraints { make in
-            let multiplier: CGFloat = 445/844
+            let multiplier: CGFloat = 0.53
             make.height.equalToSuperview().multipliedBy(multiplier)
             make.bottom.leading.trailing.equalToSuperview()
         }
 
         authorizationButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeArea).inset(ActionButton.bottomOffset)
-            make.height.equalTo(ActionButton.height)
-            make.leading.trailing.equalTo(safeArea).inset(ActionButtonConstants.trailingOffset)
+            make.bottom.equalTo(safeArea).inset(LayoutConstants.ActionButton.bottomOffset)
+            make.height.equalTo(LayoutConstants.ActionButton.height)
+            make.leading.trailing.equalTo(safeArea).inset(LayoutConstants.trailingOffset)
         }
     }
 
     private func createAuthorizationButton() {
         view.addSubview(authorizationButton)
-        authorizationButton.layer.cornerRadius = ActionButton.cornerRadius
+        authorizationButton.cornerRadius = LayoutConstants.ActionButton.cornerRadius
         authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
     }
 

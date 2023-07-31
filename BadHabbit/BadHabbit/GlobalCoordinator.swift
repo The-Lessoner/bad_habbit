@@ -13,6 +13,7 @@ protocol IGlobalCoordinator {
         animated: Bool,
         completion: VoidClosure?
     )
+    func presentOnTopVisibleViewController(_ viewController: UIViewController)
 }
 
 final class GlobalCoordinator: IGlobalCoordinator {
@@ -63,6 +64,10 @@ final class GlobalCoordinator: IGlobalCoordinator {
         let window = scene.windows.first(where: { $0.isKeyWindow })
 
         return window
+    }
+
+    func presentOnTopVisibleViewController(_ viewController: UIViewController) {
+        presentOnTopVisibleViewController(viewController, animated: true, completion: nil)
     }
 
     private func topViewController(on viewController: UIViewController?) -> UIViewController? {
