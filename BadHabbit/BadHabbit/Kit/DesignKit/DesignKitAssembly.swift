@@ -26,4 +26,8 @@ final class DesignKitAssembly {
     var globalCoordinator: IGlobalCoordinator {
         GlobalCoordinator(application: application, initialWindow: window)
     }
+    
+    var dropDownViewPresenter: DropDownViewPresenterAssemblyProtocol {
+        DropDownViewPresenterAssembly()
+    }
 }
