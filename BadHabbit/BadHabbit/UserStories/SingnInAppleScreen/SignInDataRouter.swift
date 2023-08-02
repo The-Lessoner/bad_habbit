@@ -12,10 +12,10 @@ protocol SignInDataRouterProtocol {
 
 final class SignInDataRouter: SignInDataRouterProtocol {
 
-    let nextScreen: StoryAssembly
+    let nextScreen: FillingPersonalDataAssembly
     let globalCoordinator: IGlobalCoordinator
 
-    init(nextScreen: StoryAssembly,
+    init(nextScreen: FillingPersonalDataAssembly,
          globalCoordinator: IGlobalCoordinator) {
         self.nextScreen = nextScreen
         self.globalCoordinator = globalCoordinator

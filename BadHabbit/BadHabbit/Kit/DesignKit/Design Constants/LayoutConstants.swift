@@ -11,7 +11,7 @@ enum LayoutConstants {
     static let leadingOffset = 16
     static let trailingOffset = 16
     static let topOffset = 35
-
+    
     enum ActionButton {
         static let height = 50
         static let bottomOffset = 20
@@ -21,8 +21,12 @@ enum LayoutConstants {
         static let heigth: CGFloat = 196
         static let width: CGFloat = 196
     }
-    enum SuperView {
-        static let width: CGFloat = 390
-        static let heigth: CGFloat = 844
+    enum ImageMountains {
+        static let heightMultiplier = {
+            let imageMountainsMockupHeight: CGFloat = 445
+            let superViewMockupHeight: CGFloat = 844
+            
+            return imageMountainsMockupHeight / superViewMockupHeight
+        }()
     }
 }

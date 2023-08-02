@@ -40,6 +40,7 @@ extension SignInAppleViewController {
         view.backgroundColor = UIColor(red: 0.81, green: 0.81, blue: 0.81, alpha: 1.00)
         imageMountains = createImageView(name: "mountains")
         imageLogo = createImageView(name: "logo")
+        imageLogo.contentMode = .scaleAspectFill
         createAuthorizationButton()
         createTitleLabel()
         setupConstraints()
@@ -70,16 +71,13 @@ extension SignInAppleViewController {
         }
 
         imageLogo.snp.makeConstraints { make in
-            let aspectRatio: CGFloat = LayoutConstants.ImageLogo.width / LayoutConstants.SuperView.width
-            let multiplier = aspectRatio
             make.centerX.equalTo(safeArea)
-            make.centerY.equalTo(safeArea).offset(-35)
-            make.size.equalTo(safeArea.snp.width).multipliedBy(multiplier)
+            make.centerY.equalTo(imageMountains.snp.top)
+            make.size.equalTo(196)
         }
 
         imageMountains.snp.makeConstraints { make in
-            let multiplier: CGFloat = 0.53
-            make.height.equalToSuperview().multipliedBy(multiplier)
+            make.height.equalToSuperview().multipliedBy(LayoutConstants.ImageMountains.heightMultiplier)
             make.bottom.leading.trailing.equalToSuperview()
         }
 
