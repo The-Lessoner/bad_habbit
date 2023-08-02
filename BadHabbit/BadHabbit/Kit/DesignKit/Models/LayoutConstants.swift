@@ -24,13 +24,4 @@ enum LayoutConstants {
             return signUpScreenMockupBackgroundImageHeight / signUpScreenMockupHeight
         }()
     }
-    
-    enum LogoImageView {
-        static let sizeMultiplier = {
-            let signUpScreenMockupLogoViewWidth: CGFloat = 196
-            let signUpScreenMockupWidth: CGFloat = 390
-            
-            return signUpScreenMockupLogoViewWidth / signUpScreenMockupWidth
-        }()
-    }
 }

@@ -80,6 +80,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         
         logoImageView.image = UIImage(named: "logo")
         logoImageView.alpha = 0.5
+        logoImageView.contentMode = .scaleAspectFill
     }
     
     private func addLogoLabel() {
@@ -111,7 +112,6 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         buttonConfiguration.baseBackgroundColor = UIColor(hexNumber: 0x090909)
 
         startButton.configuration = buttonConfiguration
-        
         startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
     }
     
@@ -134,13 +134,10 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
             make.centerX.equalTo(safeArea)
         }
         
-        safeArea.snp.makeConstraints { make in
-            make.centerY.equalTo(logoImageView).offset(35)
-        }
-        
         logoImageView.snp.makeConstraints { make in
+            make.size.equalTo(196)
             make.centerX.equalTo(safeArea)
-            make.size.equalTo(safeArea.snp.width).multipliedBy(LayoutConstants.LogoImageView.sizeMultiplier)
+            make.centerY.equalTo(backgroundImageView.snp.top)
         }
         
         logoLabel.snp.makeConstraints { make in
