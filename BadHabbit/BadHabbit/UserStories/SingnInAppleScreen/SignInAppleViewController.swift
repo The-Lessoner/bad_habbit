@@ -77,7 +77,7 @@ extension SignInAppleViewController {
         }
 
         imageMountains.snp.makeConstraints { make in
-            make.height.equalToSuperview().multipliedBy(LayoutConstants.ImageMountains.heightMultiplier)
+            make.top.equalTo(view.snp.centerY)
             make.bottom.leading.trailing.equalToSuperview()
         }
 

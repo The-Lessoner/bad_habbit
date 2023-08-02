@@ -21,12 +21,4 @@ enum LayoutConstants {
         static let heigth: CGFloat = 196
         static let width: CGFloat = 196
     }
-    enum ImageMountains {
-        static let heightMultiplier = {
-            let imageMountainsMockupHeight: CGFloat = 445
-            let superViewMockupHeight: CGFloat = 844
-            
-            return imageMountainsMockupHeight / superViewMockupHeight
-        }()
-    }
 }
