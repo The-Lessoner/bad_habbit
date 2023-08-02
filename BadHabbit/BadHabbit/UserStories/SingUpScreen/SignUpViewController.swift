@@ -50,7 +50,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     }
     
     private func configureBackground() {
-        view.backgroundColor = UIColor.darkBackground
+        view.backgroundColor = UIColor.backgroundColor
         
         view.addSubview(backgroundImageView)
         backgroundImageView.image = UIImage(named: "mountains")

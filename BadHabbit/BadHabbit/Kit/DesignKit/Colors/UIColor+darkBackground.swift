@@ -8,5 +8,5 @@
 import UIKit
 
 extension UIColor {
-    static let darkBackground = UIColor(hexNumber: 0xCFCFCF)
+    static let backgroundColor = UIColor(named: "backgroundColor")
 }
