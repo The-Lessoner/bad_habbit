@@ -50,7 +50,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     }
     
     private func configureBackground() {
-        view.backgroundColor = UIColor.backgroundColor
+        view.backgroundColor = UIColor(named: "backgroundColor")
         
         view.addSubview(backgroundImageView)
         backgroundImageView.image = UIImage(named: "mountains")
@@ -89,7 +89,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         logoLabel.text = String(localized: "signUpScreen.logoLabelText").uppercased()
         logoLabel.font = UIFont(name: FontName.interExtraBold.rawValue, size: 15.0)
         logoLabel.textAlignment = .left
-        logoLabel.textColor = UIColor(hexNumber: 0xFFFFFF)
+        logoLabel.textColor = UIColor(named: "logoLabelTextColor")
     }
     
     private func addPhraseLabel() {
@@ -109,7 +109,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         var buttonConfiguration = UIButton.Configuration.filled()
         buttonConfiguration.title = String(localized: "signUpScreen.startButtonTitle").uppercased()
         buttonConfiguration.cornerStyle = .large
-        buttonConfiguration.baseBackgroundColor = UIColor(hexNumber: 0x090909)
+        buttonConfiguration.baseBackgroundColor = UIColor(named: "startButtonbaseBackgroundColor")
 
         startButton.configuration = buttonConfiguration
         startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)

@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		372F03E231465F74E9E647DD /* Pods_BadHabbit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */; };
-		61302DB82A786B5100258BAF /* UIColor+darkBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61302DB72A786B5100258BAF /* UIColor+darkBackground.swift */; };
 		614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */; };
 		614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614717242A6F060100731065 /* SignUpScreenRouter.swift */; };
 		614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA9422A674317004231A3 /* SignUpViewController.swift */; };
 		614BA9482A6749F5004231A3 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 614BA9472A6749F5004231A3 /* SF-Pro-Display-Medium.otf */; };
 		614BA94A2A674A1C004231A3 /* FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA9492A674A1C004231A3 /* FontName.swift */; };
-		614BA94D2A674B46004231A3 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA94C2A674B46004231A3 /* UIColor+hex.swift */; };
 		6194A0B02A6FB53B0006F570 /* LayoutConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6194A0AF2A6FB53B0006F570 /* LayoutConstants.swift */; };
 		61AE3EFF2A6DCC9D00B607E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61AE3F012A6DCC9D00B607E1 /* Localizable.strings */; };
 		61C658BA2A7A7F670046B242 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61C658B92A7A7F670046B242 /* Colors.xcassets */; };
@@ -46,13 +44,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		61302DB72A786B5100258BAF /* UIColor+darkBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+darkBackground.swift"; sourceTree = "<group>"; };
 		6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenPresenter.swift; sourceTree = "<group>"; };
 		614717242A6F060100731065 /* SignUpScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenRouter.swift; sourceTree = "<group>"; };
 		614BA9422A674317004231A3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		614BA9472A6749F5004231A3 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		614BA9492A674A1C004231A3 /* FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontName.swift; sourceTree = "<group>"; };
-		614BA94C2A674B46004231A3 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		6194A0AF2A6FB53B0006F570 /* LayoutConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstants.swift; sourceTree = "<group>"; };
 		61AE3F022A6DCCAD00B607E1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		61C658B92A7A7F670046B242 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -122,15 +118,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		614BA94B2A674B1C004231A3 /* Colors */ = {
-			isa = PBXGroup;
-			children = (
-				614BA94C2A674B46004231A3 /* UIColor+hex.swift */,
-				61302DB72A786B5100258BAF /* UIColor+darkBackground.swift */,
-			);
-			path = Colors;
-			sourceTree = "<group>";
-		};
 		6194A0B12A6FB6330006F570 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,7 +142,6 @@
 				E5109B6C2A6D4726008B74D3 /* BaseViewController */,
 				E5109B632A6AE6F7008B74D3 /* GlobalCoordinator */,
 				E5109B482A6AD94B008B74D3 /* Alerts */,
-				614BA94B2A674B1C004231A3 /* Colors */,
 				6194A0B12A6FB6330006F570 /* Models */,
 			);
 			path = DesignKit;
@@ -509,10 +495,8 @@
 				614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */,
 				E58D1BAD2A1CFF2C00137CC6 /* AppDelegate.swift in Sources */,
 				6194A0B02A6FB53B0006F570 /* LayoutConstants.swift in Sources */,
-				614BA94D2A674B46004231A3 /* UIColor+hex.swift in Sources */,
 				61EF63AC2A7297E00009218A /* SignUpScreenAssembly.swift in Sources */,
 				614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */,
-				61302DB82A786B5100258BAF /* UIColor+darkBackground.swift in Sources */,
 				E58D1BAF2A1CFF2C00137CC6 /* SceneDelegate.swift in Sources */,
 				E5109B622A6AE5CD008B74D3 /* AlertRouter.swift in Sources */,
 				E5109B552A6ADC5C008B74D3 /* AlertPresenter.swift in Sources */,
