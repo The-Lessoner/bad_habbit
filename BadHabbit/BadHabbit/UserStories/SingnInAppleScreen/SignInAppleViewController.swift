@@ -37,7 +37,7 @@ final class SignInAppleViewController: BaseViewController, SignInDataViewProtoco
 extension SignInAppleViewController {
 
     private func setupUI() {
-        view.backgroundColor = UIColor(red: 0.81, green: 0.81, blue: 0.81, alpha: 1.00)
+        view.backgroundColor = UIColor(named: "backgroundColor")
         imageMountains = createImageView(name: "mountains")
         imageLogo = createImageView(name: "logo")
         imageLogo.contentMode = .scaleAspectFill

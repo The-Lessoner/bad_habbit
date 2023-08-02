@@ -13,6 +13,7 @@
 		E58D1BB62A1CFF2E00137CC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E58D1BB52A1CFF2E00137CC6 /* Assets.xcassets */; };
 		E58D1BB92A1CFF2E00137CC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E58D1BB72A1CFF2E00137CC6 /* LaunchScreen.storyboard */; };
 		E58D1BCC2A1D02E100137CC6 /* StoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D1BCB2A1D02E100137CC6 /* StoryAssembly.swift */; };
+		F60A74062A7A8628000105B2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60A74052A7A8628000105B2 /* Colors.xcassets */; };
 		F61522032A70600F007939E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F61522052A70600F007939E9 /* Localizable.strings */; };
 		F615220D2A70FC91007939E9 /* CommonTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F615220C2A70FC91007939E9 /* CommonTypeAliases.swift */; };
 		F615220F2A70FCBB007939E9 /* CanPresentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F615220E2A70FCBB007939E9 /* CanPresentView.swift */; };
@@ -51,6 +52,7 @@
 		E58D1BBA2A1CFF2E00137CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E58D1BCB2A1D02E100137CC6 /* StoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryAssembly.swift; sourceTree = "<group>"; };
 		EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BadHabbit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F60A74052A7A8628000105B2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		F61522062A7060D2007939E9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F61522072A7060D2007939E9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F615220C2A70FC91007939E9 /* CommonTypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTypeAliases.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				F645559B2A62D0F20070947C /* Fonts */,
 				E58D1BBA2A1CFF2E00137CC6 /* Info.plist */,
 				E58D1BB52A1CFF2E00137CC6 /* Assets.xcassets */,
+				F60A74052A7A8628000105B2 /* Colors.xcassets */,
 				E58D1BB72A1CFF2E00137CC6 /* LaunchScreen.storyboard */,
 				F61522052A70600F007939E9 /* Localizable.strings */,
 			);
@@ -359,6 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F60A74062A7A8628000105B2 /* Colors.xcassets in Resources */,
 				F645559D2A62D13E0070947C /* SFProDisplay-Bold.ttf in Resources */,
 				F61522032A70600F007939E9 /* Localizable.strings in Resources */,
 				E58D1BB92A1CFF2E00137CC6 /* LaunchScreen.storyboard in Resources */,
