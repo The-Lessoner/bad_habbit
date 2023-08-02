@@ -15,13 +15,4 @@ enum LayoutConstants {
         static let height = 50
         static let bottomInset = 20
     }
-    
-    enum BackgroundImage {
-        static let heightMultiplier = {
-            let signUpScreenMockupBackgroundImageHeight: CGFloat = 445
-            let signUpScreenMockupHeight: CGFloat = 844
-            
-            return signUpScreenMockupBackgroundImageHeight / signUpScreenMockupHeight
-        }()
-    }
 }

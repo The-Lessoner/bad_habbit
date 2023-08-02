@@ -119,9 +119,8 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         let safeArea = view.safeAreaLayoutGuide
         
         backgroundImageView.snp.makeConstraints { make in
-            make.height.equalToSuperview().multipliedBy(LayoutConstants.BackgroundImage.heightMultiplier)
-            make.bottom.equalToSuperview()
-            make.leading.trailing.equalTo(safeArea)
+            make.top.equalTo(view.snp.centerY)
+            make.leading.trailing.bottom.equalToSuperview()
         }
         
         welcomeLabel.snp.makeConstraints { make in
