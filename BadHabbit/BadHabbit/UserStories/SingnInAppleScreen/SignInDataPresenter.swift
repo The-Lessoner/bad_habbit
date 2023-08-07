@@ -1,5 +1,5 @@
 //
-//  FillingSignInDataPresenter.swift
+//  SignInDataPresenter.swift
 //  BadHabbit
 //
 //  Created by Halina Kurylchykava on 24.07.23.

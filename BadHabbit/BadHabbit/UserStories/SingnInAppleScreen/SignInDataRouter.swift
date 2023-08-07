@@ -1,5 +1,5 @@
 //
-//  FillingSignInDataRouter.swift
+//  SignInDataRouter.swift
 //  BadHabbit
 //
 //  Created by Halina Kurylchykava on 24.07.23.
@@ -23,6 +23,7 @@ final class SignInDataRouter: SignInDataRouterProtocol {
 
     func presentAnotherScreen() {
         let vc = nextScreen.assembleStory()
+        vc.modalPresentationStyle = .fullScreen
         globalCoordinator.presentOnTopVisibleViewController(vc)
     }
 }

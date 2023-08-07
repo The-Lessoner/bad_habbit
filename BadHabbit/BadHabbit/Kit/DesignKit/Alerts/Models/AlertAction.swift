@@ -14,6 +14,7 @@ struct AlertAction {
 
 extension AlertAction {
     static func ok(handler: VoidClosure? = nil) -> Self {
+        // TODO: - Check if localization is needed
         return .init(title: "OK", handler: handler)
     }
 }
