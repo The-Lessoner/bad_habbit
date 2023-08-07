@@ -20,4 +20,8 @@ final class StoriesAssembly {
             alertAssembly: designKitAssembly.alertAssembly
         )
     }
+
+    var signInScreen: StoryAssembly {
+        SignInDataAssembly(alertAssembly: designKitAssembly.alertAssembly, globalCoordinator: designKitAssembly.globalCoordinator)
+    }
 }
