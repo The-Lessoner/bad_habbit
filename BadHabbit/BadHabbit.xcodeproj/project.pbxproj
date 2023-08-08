@@ -58,7 +58,6 @@
 		F60A742B2A8128ED000105B2 /* CommonTypeAliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonTypeAliases.swift; path = BadHabbit/Utils/CommonTypeAliases.swift; sourceTree = SOURCE_ROOT; };
 		F60A742D2A81291D000105B2 /* CanPresentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CanPresentView.swift; path = BadHabbit/Utils/CanPresentView.swift; sourceTree = SOURCE_ROOT; };
 		F60A742F2A812997000105B2 /* StoriesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesAssembly.swift; sourceTree = "<group>"; };
-		F61522072A7060D2007939E9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F6261F1B2A77019300815497 /* LayoutConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstants.swift; sourceTree = "<group>"; };
 		F64555982A61743A0070947C /* SignInAppleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleViewController.swift; sourceTree = "<group>"; };
 		F645559C2A62D13E0070947C /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
@@ -68,6 +67,7 @@
 		F64555E22A6E77670070947C /* SignInAppleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleRouter.swift; sourceTree = "<group>"; };
 		F64555E42A6E77A70070947C /* SignInApplePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInApplePresenter.swift; sourceTree = "<group>"; };
 		F64555E62A6E780D0070947C /* SignInAppleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleAssembly.swift; sourceTree = "<group>"; };
+		F64E9DEC2A8250B90095425D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F6D9511D2A6EC556001E342C /* BadHabbit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BadHabbit.entitlements; sourceTree = "<group>"; };
 		F6E458932A711CB600A3C4E5 /* FillingPersonalDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillingPersonalDataView.swift; sourceTree = "<group>"; };
 		F6E458942A711CB600A3C4E5 /* FillingPersonalDataAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillingPersonalDataAssembly.swift; sourceTree = "<group>"; };
@@ -497,7 +497,7 @@
 		F61522052A70600F007939E9 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F61522072A7060D2007939E9 /* ru */,
+				F64E9DEC2A8250B90095425D /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

@@ -6,8 +6,6 @@
 	<array>
 		<string>SFProDisplay-Bold.ttf</string>
 	</array>
-	<key>CFBundleShortVersionString</key>
-	<string></string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

@@ -12,10 +12,10 @@ protocol SignInAppleRouterProtocol {
 
 final class SignInAppleRouter: SignInAppleRouterProtocol {
 
-    let nextScreen: FillingPersonalDataAssembly
+    let nextScreen: StoryAssembly
     let globalCoordinator: IGlobalCoordinator
 
-    init(nextScreen: FillingPersonalDataAssembly,
+    init(nextScreen: StoryAssembly,
          globalCoordinator: IGlobalCoordinator) {
         self.nextScreen = nextScreen
         self.globalCoordinator = globalCoordinator
