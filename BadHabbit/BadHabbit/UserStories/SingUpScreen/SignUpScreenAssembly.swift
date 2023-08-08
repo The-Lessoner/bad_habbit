@@ -18,7 +18,7 @@ final class SignUpScreenAssembly: StoryAssembly {
     
     func assembleStory() -> UIViewController {
         let router = SignUpScreenRouter(
-            nextScreen: nextScreen,
+            signInAppleScreenAssembly: nextScreen,
             globalCoordinator: globalCoordinator
         )
         let presenter = SignUpScreenPresenter(router: router)
