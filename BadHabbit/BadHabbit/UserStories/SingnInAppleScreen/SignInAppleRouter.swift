@@ -1,16 +1,16 @@
 //
-//  SignInDataRouter.swift
+//  SignInAppleRouter.swift
 //  BadHabbit
 //
 //  Created by Halina Kurylchykava on 24.07.23.
 //
 import Foundation
 
-protocol SignInDataRouterProtocol {
-    func presentAnotherScreen()
+protocol SignInAppleRouterProtocol {
+    func presentFillingPersonalDataScreen()
 }
 
-final class SignInDataRouter: SignInDataRouterProtocol {
+final class SignInAppleRouter: SignInAppleRouterProtocol {
 
     let nextScreen: FillingPersonalDataAssembly
     let globalCoordinator: IGlobalCoordinator
@@ -21,7 +21,7 @@ final class SignInDataRouter: SignInDataRouterProtocol {
         self.globalCoordinator = globalCoordinator
     }
 
-    func presentAnotherScreen() {
+    func presentFillingPersonalDataScreen() {
         let vc = nextScreen.assembleStory()
         vc.modalPresentationStyle = .fullScreen
         globalCoordinator.presentOnTopVisibleViewController(vc)

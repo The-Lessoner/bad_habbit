@@ -26,9 +26,9 @@
 		F64555CB2A6D1A890070947C /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555CA2A6D1A890070947C /* Fonts.swift */; };
 		F64555DA2A6E6DCC0070947C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555D92A6E6DCC0070947C /* BaseViewController.swift */; };
 		F64555DC2A6E70190070947C /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555DB2A6E70190070947C /* AppAssembly.swift */; };
-		F64555E32A6E77670070947C /* SignInDataRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E22A6E77670070947C /* SignInDataRouter.swift */; };
-		F64555E52A6E77A70070947C /* SignInDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E42A6E77A70070947C /* SignInDataPresenter.swift */; };
-		F64555E72A6E780D0070947C /* SignInDataAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E62A6E780D0070947C /* SignInDataAssembly.swift */; };
+		F64555E32A6E77670070947C /* SignInAppleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E22A6E77670070947C /* SignInAppleRouter.swift */; };
+		F64555E52A6E77A70070947C /* SignInApplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E42A6E77A70070947C /* SignInApplePresenter.swift */; };
+		F64555E72A6E780D0070947C /* SignInAppleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E62A6E780D0070947C /* SignInAppleAssembly.swift */; };
 		F6E458972A711CB700A3C4E5 /* FillingPersonalDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458932A711CB600A3C4E5 /* FillingPersonalDataView.swift */; };
 		F6E458982A711CB700A3C4E5 /* FillingPersonalDataAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458942A711CB600A3C4E5 /* FillingPersonalDataAssembly.swift */; };
 		F6E458992A711CB700A3C4E5 /* FillingPersonalDataRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458952A711CB600A3C4E5 /* FillingPersonalDataRouter.swift */; };
@@ -58,7 +58,6 @@
 		F60A742B2A8128ED000105B2 /* CommonTypeAliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonTypeAliases.swift; path = BadHabbit/Utils/CommonTypeAliases.swift; sourceTree = SOURCE_ROOT; };
 		F60A742D2A81291D000105B2 /* CanPresentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CanPresentView.swift; path = BadHabbit/Utils/CanPresentView.swift; sourceTree = SOURCE_ROOT; };
 		F60A742F2A812997000105B2 /* StoriesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesAssembly.swift; sourceTree = "<group>"; };
-		F61522062A7060D2007939E9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F61522072A7060D2007939E9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F6261F1B2A77019300815497 /* LayoutConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstants.swift; sourceTree = "<group>"; };
 		F64555982A61743A0070947C /* SignInAppleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleViewController.swift; sourceTree = "<group>"; };
@@ -66,9 +65,9 @@
 		F64555CA2A6D1A890070947C /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		F64555D92A6E6DCC0070947C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F64555DB2A6E70190070947C /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
-		F64555E22A6E77670070947C /* SignInDataRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDataRouter.swift; sourceTree = "<group>"; };
-		F64555E42A6E77A70070947C /* SignInDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDataPresenter.swift; sourceTree = "<group>"; };
-		F64555E62A6E780D0070947C /* SignInDataAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDataAssembly.swift; sourceTree = "<group>"; };
+		F64555E22A6E77670070947C /* SignInAppleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleRouter.swift; sourceTree = "<group>"; };
+		F64555E42A6E77A70070947C /* SignInApplePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInApplePresenter.swift; sourceTree = "<group>"; };
+		F64555E62A6E780D0070947C /* SignInAppleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleAssembly.swift; sourceTree = "<group>"; };
 		F6D9511D2A6EC556001E342C /* BadHabbit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BadHabbit.entitlements; sourceTree = "<group>"; };
 		F6E458932A711CB600A3C4E5 /* FillingPersonalDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillingPersonalDataView.swift; sourceTree = "<group>"; };
 		F6E458942A711CB600A3C4E5 /* FillingPersonalDataAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillingPersonalDataAssembly.swift; sourceTree = "<group>"; };
@@ -207,9 +206,9 @@
 		F64555972A6173F40070947C /* SingnInAppleScreen */ = {
 			isa = PBXGroup;
 			children = (
-				F64555E62A6E780D0070947C /* SignInDataAssembly.swift */,
-				F64555E42A6E77A70070947C /* SignInDataPresenter.swift */,
-				F64555E22A6E77670070947C /* SignInDataRouter.swift */,
+				F64555E62A6E780D0070947C /* SignInAppleAssembly.swift */,
+				F64555E42A6E77A70070947C /* SignInApplePresenter.swift */,
+				F64555E22A6E77670070947C /* SignInAppleRouter.swift */,
 				F64555982A61743A0070947C /* SignInAppleViewController.swift */,
 			);
 			path = SingnInAppleScreen;
@@ -339,12 +338,12 @@
 			};
 			buildConfigurationList = E58D1BA42A1CFF2C00137CC6 /* Build configuration list for PBXProject "BadHabbit" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 				ru,
+				en,
 			);
 			mainGroup = E58D1BA02A1CFF2C00137CC6;
 			productRefGroup = E58D1BAA2A1CFF2C00137CC6 /* Products */;
@@ -456,7 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E58D1BCC2A1D02E100137CC6 /* StoryAssembly.swift in Sources */,
-				F64555E72A6E780D0070947C /* SignInDataAssembly.swift in Sources */,
+				F64555E72A6E780D0070947C /* SignInAppleAssembly.swift in Sources */,
 				F6E458992A711CB700A3C4E5 /* FillingPersonalDataRouter.swift in Sources */,
 				F60A742E2A81291D000105B2 /* CanPresentView.swift in Sources */,
 				E58D1BAD2A1CFF2C00137CC6 /* AppDelegate.swift in Sources */,
@@ -467,7 +466,7 @@
 				F6E458A42A711CD700A3C4E5 /* AlertRouter.swift in Sources */,
 				F6E458A92A711CD700A3C4E5 /* AlertAssembly.swift in Sources */,
 				F6261F1C2A77019300815497 /* LayoutConstants.swift in Sources */,
-				F64555E32A6E77670070947C /* SignInDataRouter.swift in Sources */,
+				F64555E32A6E77670070947C /* SignInAppleRouter.swift in Sources */,
 				F60A74272A812878000105B2 /* DesignKitAssembly.swift in Sources */,
 				F6E458972A711CB700A3C4E5 /* FillingPersonalDataView.swift in Sources */,
 				F6E458A82A711CD700A3C4E5 /* AlertConfiguration.swift in Sources */,
@@ -475,7 +474,7 @@
 				F60A74302A812997000105B2 /* StoriesAssembly.swift in Sources */,
 				E58D1BAF2A1CFF2C00137CC6 /* SceneDelegate.swift in Sources */,
 				F60A742A2A81288F000105B2 /* GlobalCoordinator.swift in Sources */,
-				F64555E52A6E77A70070947C /* SignInDataPresenter.swift in Sources */,
+				F64555E52A6E77A70070947C /* SignInApplePresenter.swift in Sources */,
 				F6E458982A711CB700A3C4E5 /* FillingPersonalDataAssembly.swift in Sources */,
 				F6E458A52A711CD700A3C4E5 /* AlertController.swift in Sources */,
 				F64555CB2A6D1A890070947C /* Fonts.swift in Sources */,
@@ -491,7 +490,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				E58D1BB82A1CFF2E00137CC6 /* Base */,
-				F61522062A7060D2007939E9 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

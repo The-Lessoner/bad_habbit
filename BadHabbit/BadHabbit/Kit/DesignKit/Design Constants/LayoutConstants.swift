@@ -10,12 +10,10 @@ import Foundation
 enum LayoutConstants {
     static let leadingOffset = 16
     static let trailingOffset = 16
-    static let topOffset = 35
     
     enum ActionButton {
         static let height = 50
         static let bottomOffset = 20
-        static let cornerRadius: CGFloat = 12
     }
     enum ImageLogo {
         static let heigth: CGFloat = 196

@@ -22,6 +22,6 @@ final class StoriesAssembly {
     }
 
     var signInScreen: StoryAssembly {
-        SignInDataAssembly(alertAssembly: designKitAssembly.alertAssembly, globalCoordinator: designKitAssembly.globalCoordinator)
+        SignInAppleAssembly(alertAssembly: designKitAssembly.alertAssembly, globalCoordinator: designKitAssembly.globalCoordinator)
     }
 }

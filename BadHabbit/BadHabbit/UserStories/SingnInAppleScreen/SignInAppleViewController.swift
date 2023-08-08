@@ -9,17 +9,17 @@ import UIKit
 import SnapKit
 import AuthenticationServices
 
-protocol SignInDataViewProtocol: AnyObject { }
+protocol SignInAppleViewProtocol: AnyObject { }
 
-final class SignInAppleViewController: BaseViewController, SignInDataViewProtocol {
+final class SignInAppleViewController: BaseViewController, SignInAppleViewProtocol {
     private lazy var authorizationButton = ASAuthorizationAppleIDButton()
     private lazy var titleLabel = UILabel()
     private lazy var imageLogo = UIImageView()
     private lazy var imageMountains = UIImageView()
 
-    private let presenter: SignInDataPresenterProtocol?
+    private let presenter: SignInApplePresenterProtocol?
 
-    init(presenter: SignInDataPresenterProtocol) {
+    init(presenter: SignInApplePresenterProtocol) {
         self.presenter = presenter
         super.init()
     }
@@ -66,14 +66,14 @@ extension SignInAppleViewController {
         let safeArea = view.safeAreaLayoutGuide
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeArea).inset(LayoutConstants.topOffset)
+            make.top.equalTo(safeArea).inset(35)
             make.leading.trailing.equalToSuperview().inset(LayoutConstants.leadingOffset)
         }
 
         imageLogo.snp.makeConstraints { make in
             make.centerX.equalTo(safeArea)
             make.centerY.equalTo(imageMountains.snp.top)
-            make.size.equalTo(196)
+            make.size.equalTo(LayoutConstants.ImageLogo.width)
         }
 
         imageMountains.snp.makeConstraints { make in
@@ -90,12 +90,12 @@ extension SignInAppleViewController {
 
     private func createAuthorizationButton() {
         view.addSubview(authorizationButton)
-        authorizationButton.cornerRadius = LayoutConstants.ActionButton.cornerRadius
+        authorizationButton.cornerRadius = 12
         authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
     }
 
     @objc
-    func handleAuthorizationAppleIDButtonPress() {
+    private func handleAuthorizationAppleIDButtonPress() {
         presenter?.authorizationButtonDidTap()
     }
 
