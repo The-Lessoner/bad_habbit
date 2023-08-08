@@ -374,10 +374,9 @@
 			};
 			buildConfigurationList = E58D1BA42A1CFF2C00137CC6 /* Build configuration list for PBXProject "BadHabbit" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 				ru,
 			);
