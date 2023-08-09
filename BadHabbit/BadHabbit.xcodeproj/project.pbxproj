@@ -44,32 +44,10 @@
 		E59E8A342A78E85400ABD1DA /* DropDownViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59E8A332A78E85400ABD1DA /* DropDownViewPresenter.swift */; };
 		E59E8A372A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59E8A362A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift */; };
 		E59E8A392A790C7100ABD1DA /* DropDownViewPresenterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59E8A382A790C7100ABD1DA /* DropDownViewPresenterConfig.swift */; };
-		F60A74062A7A8628000105B2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F60A74052A7A8628000105B2 /* Colors.xcassets */; };
-		F60A74272A812878000105B2 /* DesignKitAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60A74262A812878000105B2 /* DesignKitAssembly.swift */; };
-		F60A742A2A81288F000105B2 /* GlobalCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60A74292A81288F000105B2 /* GlobalCoordinator.swift */; };
-		F60A742C2A8128ED000105B2 /* CommonTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60A742B2A8128ED000105B2 /* CommonTypeAliases.swift */; };
-		F60A742E2A81291D000105B2 /* CanPresentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60A742D2A81291D000105B2 /* CanPresentView.swift */; };
-		F60A74302A812997000105B2 /* StoriesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60A742F2A812997000105B2 /* StoriesAssembly.swift */; };
-		F61522032A70600F007939E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F61522052A70600F007939E9 /* Localizable.strings */; };
-		F6261F1C2A77019300815497 /* LayoutConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6261F1B2A77019300815497 /* LayoutConstants.swift */; };
 		F64555992A61743A0070947C /* SignInAppleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555982A61743A0070947C /* SignInAppleViewController.swift */; };
-		F645559D2A62D13E0070947C /* SFProDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F645559C2A62D13E0070947C /* SFProDisplay-Bold.ttf */; };
-		F64555CB2A6D1A890070947C /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555CA2A6D1A890070947C /* Fonts.swift */; };
-		F64555DA2A6E6DCC0070947C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555D92A6E6DCC0070947C /* BaseViewController.swift */; };
-		F64555DC2A6E70190070947C /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555DB2A6E70190070947C /* AppAssembly.swift */; };
 		F64555E32A6E77670070947C /* SignInAppleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E22A6E77670070947C /* SignInAppleRouter.swift */; };
 		F64555E52A6E77A70070947C /* SignInApplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E42A6E77A70070947C /* SignInApplePresenter.swift */; };
 		F64555E72A6E780D0070947C /* SignInAppleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E62A6E780D0070947C /* SignInAppleAssembly.swift */; };
-		F6E458972A711CB700A3C4E5 /* FillingPersonalDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458932A711CB600A3C4E5 /* FillingPersonalDataView.swift */; };
-		F6E458982A711CB700A3C4E5 /* FillingPersonalDataAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458942A711CB600A3C4E5 /* FillingPersonalDataAssembly.swift */; };
-		F6E458992A711CB700A3C4E5 /* FillingPersonalDataRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458952A711CB600A3C4E5 /* FillingPersonalDataRouter.swift */; };
-		F6E4589A2A711CB700A3C4E5 /* FillingPersonalDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458962A711CB600A3C4E5 /* FillingPersonalDataPresenter.swift */; };
-		F6E458A42A711CD700A3C4E5 /* AlertRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4589D2A711CD700A3C4E5 /* AlertRouter.swift */; };
-		F6E458A52A711CD700A3C4E5 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4589E2A711CD700A3C4E5 /* AlertController.swift */; };
-		F6E458A62A711CD700A3C4E5 /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4589F2A711CD700A3C4E5 /* AlertPresenter.swift */; };
-		F6E458A72A711CD700A3C4E5 /* AlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458A12A711CD700A3C4E5 /* AlertAction.swift */; };
-		F6E458A82A711CD700A3C4E5 /* AlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458A22A711CD700A3C4E5 /* AlertConfiguration.swift */; };
-		F6E458A92A711CD700A3C4E5 /* AlertAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E458A32A711CD700A3C4E5 /* AlertAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,33 +92,11 @@
 		E59E8A362A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownViewPresenterAssembly.swift; sourceTree = "<group>"; };
 		E59E8A382A790C7100ABD1DA /* DropDownViewPresenterConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownViewPresenterConfig.swift; sourceTree = "<group>"; };
 		EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BadHabbit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F60A74052A7A8628000105B2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		F60A74262A812878000105B2 /* DesignKitAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignKitAssembly.swift; sourceTree = "<group>"; };
-		F60A74292A81288F000105B2 /* GlobalCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalCoordinator.swift; sourceTree = "<group>"; };
-		F60A742B2A8128ED000105B2 /* CommonTypeAliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonTypeAliases.swift; path = BadHabbit/Utils/CommonTypeAliases.swift; sourceTree = SOURCE_ROOT; };
-		F60A742D2A81291D000105B2 /* CanPresentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CanPresentView.swift; path = BadHabbit/Utils/CanPresentView.swift; sourceTree = SOURCE_ROOT; };
-		F60A742F2A812997000105B2 /* StoriesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesAssembly.swift; sourceTree = "<group>"; };
-		F6261F1B2A77019300815497 /* LayoutConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstants.swift; sourceTree = "<group>"; };
 		F64555982A61743A0070947C /* SignInAppleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleViewController.swift; sourceTree = "<group>"; };
-		F645559C2A62D13E0070947C /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
-		F64555CA2A6D1A890070947C /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		F64555D92A6E6DCC0070947C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		F64555DB2A6E70190070947C /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		F64555E22A6E77670070947C /* SignInAppleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleRouter.swift; sourceTree = "<group>"; };
 		F64555E42A6E77A70070947C /* SignInApplePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInApplePresenter.swift; sourceTree = "<group>"; };
 		F64555E62A6E780D0070947C /* SignInAppleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleAssembly.swift; sourceTree = "<group>"; };
-		F64E9DEC2A8250B90095425D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F6D9511D2A6EC556001E342C /* BadHabbit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BadHabbit.entitlements; sourceTree = "<group>"; };
-		F6E458932A711CB600A3C4E5 /* FillingPersonalDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillingPersonalDataView.swift; sourceTree = "<group>"; };
-		F6E458942A711CB600A3C4E5 /* FillingPersonalDataAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillingPersonalDataAssembly.swift; sourceTree = "<group>"; };
-		F6E458952A711CB600A3C4E5 /* FillingPersonalDataRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillingPersonalDataRouter.swift; sourceTree = "<group>"; };
-		F6E458962A711CB600A3C4E5 /* FillingPersonalDataPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillingPersonalDataPresenter.swift; sourceTree = "<group>"; };
-		F6E4589D2A711CD700A3C4E5 /* AlertRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertRouter.swift; sourceTree = "<group>"; };
-		F6E4589E2A711CD700A3C4E5 /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
-		F6E4589F2A711CD700A3C4E5 /* AlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
-		F6E458A12A711CD700A3C4E5 /* AlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertAction.swift; sourceTree = "<group>"; };
-		F6E458A22A711CD700A3C4E5 /* AlertConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertConfiguration.swift; sourceTree = "<group>"; };
-		F6E458A32A711CD700A3C4E5 /* AlertAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,13 +253,11 @@
 				F6D9511D2A6EC556001E342C /* BadHabbit.entitlements */,
 				E58D1BAC2A1CFF2C00137CC6 /* AppDelegate.swift */,
 				E5109B6A2A6D4337008B74D3 /* AppAssembly.swift */,
-				F64555DB2A6E70190070947C /* AppAssembly.swift */,
 				E58D1BAE2A1CFF2C00137CC6 /* SceneDelegate.swift */,
 				E58D1BCA2A1D02D100137CC6 /* DI */,
 				E58D1BC52A1D01AB00137CC6 /* UserStories */,
 				E58D1BC62A1D01C700137CC6 /* Kit */,
 				E5109B512A6ADB1E008B74D3 /* Utils */,
-				F64555D32A6E6C600070947C /* Utils */,
 				E58D1BC42A1D00D100137CC6 /* SupportFiles */,
 			);
 			path = BadHabbit;
@@ -316,25 +270,12 @@
 			path = PersistenceKit;
 			sourceTree = "<group>";
 		};
-		E58D1BC02A1D000000137CC6 /* DesignKit */ = {
-			isa = PBXGroup;
-			children = (
-				F60A74282A81288F000105B2 /* GlobalCoordinator */,
-				F60A74262A812878000105B2 /* DesignKitAssembly.swift */,
-				F64555C72A6D14640070947C /* Design Constants */,
-				F6E4589B2A711CD700A3C4E5 /* Alerts */,
-				F64555D82A6E6D980070947C /* BaseViewController */,
-			);
-			path = DesignKit;
-			sourceTree = "<group>";
-		};
 		E58D1BC42A1D00D100137CC6 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
 				E58D1BBA2A1CFF2E00137CC6 /* Info.plist */,
 				E58D1BB52A1CFF2E00137CC6 /* Assets.xcassets */,
 				61C658B92A7A7F670046B242 /* Colors.xcassets */,
-				F60A74052A7A8628000105B2 /* Colors.xcassets */,
 				E58D1BB72A1CFF2E00137CC6 /* LaunchScreen.storyboard */,
 				61AE3F012A6DCC9D00B607E1 /* Localizable.strings */,
 				614BA9462A6749EA004231A3 /* Fonts */,
@@ -348,7 +289,6 @@
 				E58D1BED2A1D124C00137CC6 /* DI */,
 				E5109B562A6ADEA3008B74D3 /* FillingPersonalData */,
 				614BA9412A6742F3004231A3 /* SingUpScreen */,
-				F6E458922A711CB600A3C4E5 /* FillingPersonalData */,
 				F64555972A6173F40070947C /* SingnInAppleScreen */,
 			);
 			path = UserStories;
@@ -359,7 +299,6 @@
 			children = (
 				E5109B472A6AD904008B74D3 /* DesignKit */,
 				E58D1BC22A1D001A00137CC6 /* PersistenceKit */,
-				E58D1BC02A1D000000137CC6 /* DesignKit */,
 			);
 			path = Kit;
 			sourceTree = "<group>";
@@ -376,7 +315,6 @@
 			isa = PBXGroup;
 			children = (
 				E58D1BEE2A1D125B00137CC6 /* StoriesAssembly.swift */,
-				F60A742F2A812997000105B2 /* StoriesAssembly.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -398,14 +336,6 @@
 			path = DropDownViewPresenter;
 			sourceTree = "<group>";
 		};
-		F60A74282A81288F000105B2 /* GlobalCoordinator */ = {
-			isa = PBXGroup;
-			children = (
-				F60A74292A81288F000105B2 /* GlobalCoordinator.swift */,
-			);
-			path = GlobalCoordinator;
-			sourceTree = "<group>";
-		};
 		F64555972A6173F40070947C /* SingnInAppleScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,81 +345,6 @@
 				F64555982A61743A0070947C /* SignInAppleViewController.swift */,
 			);
 			path = SingnInAppleScreen;
-			sourceTree = "<group>";
-		};
-		F645559B2A62D0F20070947C /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				F645559C2A62D13E0070947C /* SFProDisplay-Bold.ttf */,
-				F64555CA2A6D1A890070947C /* Fonts.swift */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
-		F64555C72A6D14640070947C /* Design Constants */ = {
-			isa = PBXGroup;
-			children = (
-				F6261F1B2A77019300815497 /* LayoutConstants.swift */,
-			);
-			path = "Design Constants";
-			sourceTree = "<group>";
-		};
-		F64555D32A6E6C600070947C /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				F60A742B2A8128ED000105B2 /* CommonTypeAliases.swift */,
-				F60A742D2A81291D000105B2 /* CanPresentView.swift */,
-			);
-			name = Utils;
-			path = ../Utils;
-			sourceTree = "<group>";
-		};
-		F64555D82A6E6D980070947C /* BaseViewController */ = {
-			isa = PBXGroup;
-			children = (
-				F64555D92A6E6DCC0070947C /* BaseViewController.swift */,
-			);
-			path = BaseViewController;
-			sourceTree = "<group>";
-		};
-		F6E458922A711CB600A3C4E5 /* FillingPersonalData */ = {
-			isa = PBXGroup;
-			children = (
-				F6E458932A711CB600A3C4E5 /* FillingPersonalDataView.swift */,
-				F6E458942A711CB600A3C4E5 /* FillingPersonalDataAssembly.swift */,
-				F6E458952A711CB600A3C4E5 /* FillingPersonalDataRouter.swift */,
-				F6E458962A711CB600A3C4E5 /* FillingPersonalDataPresenter.swift */,
-			);
-			path = FillingPersonalData;
-			sourceTree = "<group>";
-		};
-		F6E4589B2A711CD700A3C4E5 /* Alerts */ = {
-			isa = PBXGroup;
-			children = (
-				F6E4589C2A711CD700A3C4E5 /* Alert */,
-				F6E458A02A711CD700A3C4E5 /* Models */,
-				F6E458A32A711CD700A3C4E5 /* AlertAssembly.swift */,
-			);
-			path = Alerts;
-			sourceTree = "<group>";
-		};
-		F6E4589C2A711CD700A3C4E5 /* Alert */ = {
-			isa = PBXGroup;
-			children = (
-				F6E4589D2A711CD700A3C4E5 /* AlertRouter.swift */,
-				F6E4589E2A711CD700A3C4E5 /* AlertController.swift */,
-				F6E4589F2A711CD700A3C4E5 /* AlertPresenter.swift */,
-			);
-			path = Alert;
-			sourceTree = "<group>";
-		};
-		F6E458A02A711CD700A3C4E5 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				F6E458A12A711CD700A3C4E5 /* AlertAction.swift */,
-				F6E458A22A711CD700A3C4E5 /* AlertConfiguration.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		FBB8119D4F423E33D72AFCB8 /* Frameworks */ = {
@@ -565,9 +420,6 @@
 				614BA9482A6749F5004231A3 /* SF-Pro-Display-Medium.otf in Resources */,
 				61AE3EFF2A6DCC9D00B607E1 /* Localizable.strings in Resources */,
 				61CEF9702A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf in Resources */,
-				F60A74062A7A8628000105B2 /* Colors.xcassets in Resources */,
-				F645559D2A62D13E0070947C /* SFProDisplay-Bold.ttf in Resources */,
-				F61522032A70600F007939E9 /* Localizable.strings in Resources */,
 				E58D1BB92A1CFF2E00137CC6 /* LaunchScreen.storyboard in Resources */,
 				61CEF96E2A67739600744ADA /* SF-Pro-Display-Bold.otf in Resources */,
 				E58D1BB62A1CFF2E00137CC6 /* Assets.xcassets in Resources */,
@@ -683,36 +535,17 @@
 				614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */,
 				614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */,
 				F64555E72A6E780D0070947C /* SignInAppleAssembly.swift in Sources */,
-				F6E458992A711CB700A3C4E5 /* FillingPersonalDataRouter.swift in Sources */,
-				F60A742E2A81291D000105B2 /* CanPresentView.swift in Sources */,
 				E58D1BAD2A1CFF2C00137CC6 /* AppDelegate.swift in Sources */,
 				6194A0B02A6FB53B0006F570 /* LayoutConstants.swift in Sources */,
 				61EF63AC2A7297E00009218A /* SignUpScreenAssembly.swift in Sources */,
 				614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */,
-				F64555DC2A6E70190070947C /* AppAssembly.swift in Sources */,
-				F6E458A62A711CD700A3C4E5 /* AlertPresenter.swift in Sources */,
-				F64555DA2A6E6DCC0070947C /* BaseViewController.swift in Sources */,
 				F64555992A61743A0070947C /* SignInAppleViewController.swift in Sources */,
-				F6E458A42A711CD700A3C4E5 /* AlertRouter.swift in Sources */,
-				F6E458A92A711CD700A3C4E5 /* AlertAssembly.swift in Sources */,
-				F6261F1C2A77019300815497 /* LayoutConstants.swift in Sources */,
 				F64555E32A6E77670070947C /* SignInAppleRouter.swift in Sources */,
-				F60A74272A812878000105B2 /* DesignKitAssembly.swift in Sources */,
-				F6E458972A711CB700A3C4E5 /* FillingPersonalDataView.swift in Sources */,
-				F6E458A82A711CD700A3C4E5 /* AlertConfiguration.swift in Sources */,
-				F6E458A72A711CD700A3C4E5 /* AlertAction.swift in Sources */,
-				F60A74302A812997000105B2 /* StoriesAssembly.swift in Sources */,
 				E58D1BAF2A1CFF2C00137CC6 /* SceneDelegate.swift in Sources */,
 				E5109B622A6AE5CD008B74D3 /* AlertRouter.swift in Sources */,
 				E5109B552A6ADC5C008B74D3 /* AlertPresenter.swift in Sources */,
 				E5109B4A2A6AD962008B74D3 /* AlertAssembly.swift in Sources */,
-				F60A742A2A81288F000105B2 /* GlobalCoordinator.swift in Sources */,
 				F64555E52A6E77A70070947C /* SignInApplePresenter.swift in Sources */,
-				F6E458982A711CB700A3C4E5 /* FillingPersonalDataAssembly.swift in Sources */,
-				F6E458A52A711CD700A3C4E5 /* AlertController.swift in Sources */,
-				F64555CB2A6D1A890070947C /* Fonts.swift in Sources */,
-				F6E4589A2A711CB700A3C4E5 /* FillingPersonalDataPresenter.swift in Sources */,
-				F60A742C2A8128ED000105B2 /* CommonTypeAliases.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,14 +566,6 @@
 				E58D1BB82A1CFF2E00137CC6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		F61522052A70600F007939E9 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F64E9DEC2A8250B90095425D /* ru */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

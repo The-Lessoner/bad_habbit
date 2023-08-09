@@ -57,8 +57,8 @@ extension SignInAppleViewController {
     private func createTitleLabel() {
         view.addSubview(titleLabel)
         titleLabel.textColor = .black
-        titleLabel.font = UIFont(name: Font.SFProDisplayBold.rawValue, size: 24)
-        titleLabel.text = String(localized: "appTitle").uppercased()
+        titleLabel.font = UIFont(name: FontName.SFProDisplayBold.rawValue, size: 24)
+        titleLabel.text = String(localized: "appName")
         titleLabel.textAlignment = .center
     }
 
@@ -67,7 +67,7 @@ extension SignInAppleViewController {
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(safeArea).inset(35)
-            make.leading.trailing.equalToSuperview().inset(LayoutConstants.leadingOffset)
+            make.leading.trailing.equalToSuperview().inset(LayoutConstants.leadingInset)
         }
 
         imageLogo.snp.makeConstraints { make in
@@ -82,9 +82,9 @@ extension SignInAppleViewController {
         }
 
         authorizationButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeArea).inset(LayoutConstants.ActionButton.bottomOffset)
+            make.bottom.equalTo(safeArea).inset(LayoutConstants.ActionButton.bottomInset)
             make.height.equalTo(LayoutConstants.ActionButton.height)
-            make.leading.trailing.equalTo(safeArea).inset(LayoutConstants.trailingOffset)
+            make.leading.trailing.equalTo(safeArea).inset(LayoutConstants.trailingInset)
         }
     }
 
