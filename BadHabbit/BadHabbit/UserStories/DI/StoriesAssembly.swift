@@ -15,6 +15,13 @@ final class StoriesAssembly {
         self.designKitAssembly = designKitAssembly
     }
     
+    var signUpScreen: StoryAssembly {
+        SignUpScreenAssembly(
+            nextScreen: self.fillingPersonalData,
+            globalCoordinator: designKitAssembly.globalCoordinator
+        )
+    }
+    
     var fillingPersonalData: StoryAssembly {
         FillingPersonalDataAssembly(
             alertAssembly: designKitAssembly.alertAssembly

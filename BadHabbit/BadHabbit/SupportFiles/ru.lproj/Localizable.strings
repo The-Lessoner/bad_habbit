@@ -2,8 +2,13 @@
   Localizable.strings
   BadHabbit
 
-  Created by Halina Kurylchykava on 25.07.23.
+  Created by Viktoria Misiulia on 24/07/2023.
   
 */
 
+"appName" = "HABIT HERO";
+"signUpScreen.welcomeLabelText" = "ДОБРО ПОЖАЛОВАТЬ В";
+"signUpScreen.phraseLabelText" = "НЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nНЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nТУТ КАКАЯ-ТО ФРАЗА";
+"signUpScreen.startButtonTitle" = "НАЧАТЬ";
+"signUpScreen.logoLabelText" = "ЛОГО";
 "appTitle" = "habit hero";

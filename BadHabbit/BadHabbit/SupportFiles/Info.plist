@@ -4,8 +4,12 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>SFProDisplay-Bold.ttf</string>
+		<string>SF-Pro-Display-Medium.otf</string>
+		<string>SF-Pro-Display-Bold.otf</string>
+		<string>Inter-Regular_ExtraBold.ttf</string>
 	</array>
+	<key>CFBundleShortVersionString</key>
+	<string></string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
