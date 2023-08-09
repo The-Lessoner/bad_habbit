@@ -13,19 +13,17 @@ protocol SignUpRouterProtocol {
 
 final class SignUpScreenRouter: SignUpRouterProtocol {
     
-    let nextScreen: SignInDataAssembly
+    let signInAppleScreenAssembly: StoryAssembly?
     let globalCoordinator: IGlobalCoordinator
     
     init(
-        nextScreen: SignInDataAssembly,
+        signInAppleScreenAssembly: StoryAssembly?,
         globalCoordinator: IGlobalCoordinator
     ) {
-        self.nextScreen = nextScreen
+        self.signInAppleScreenAssembly = signInAppleScreenAssembly
         self.globalCoordinator = globalCoordinator
      }
 
     func presentSignInAppleScreen() {
-        let vc = nextScreen.assembleStory()
-        globalCoordinator.presentOnTopVisibleViewController(vc)
     }
 }
