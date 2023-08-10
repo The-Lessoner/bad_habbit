@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import AuthenticationServices
 
 protocol SignInApplePresenterProtocol {
     func authorizationButtonDidTap()
@@ -22,6 +21,6 @@ final class SignInApplePresenter: SignInApplePresenterProtocol {
     }
 
     func authorizationButtonDidTap() {
-        router.presentFillingPersonalDataScreen()
+        router.presentEmptyScreen()
     }
 }

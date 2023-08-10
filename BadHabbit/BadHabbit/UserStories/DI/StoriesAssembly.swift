@@ -28,7 +28,14 @@ final class StoriesAssembly {
         )
     }
 
+    var emptyScreen: StoryAssembly {
+        EmptyScreenAssembly()
+    }
+
     var signInScreen: StoryAssembly {
-        SignInAppleAssembly(nextScreen: self.fillingPersonalData, globalCoordinator: designKitAssembly.globalCoordinator)
+        SignInAppleAssembly(
+            nextScreen: self.emptyScreen,
+            globalCoordinator: designKitAssembly.globalCoordinator
+        )
     }
 }

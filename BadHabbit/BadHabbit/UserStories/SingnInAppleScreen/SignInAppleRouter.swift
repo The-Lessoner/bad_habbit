@@ -7,23 +7,22 @@
 import Foundation
 
 protocol SignInAppleRouterProtocol {
-    func presentFillingPersonalDataScreen()
+    func presentEmptyScreen()
 }
 
 final class SignInAppleRouter: SignInAppleRouterProtocol {
 
-    let nextScreen: StoryAssembly?
+    let nextScreen: StoryAssembly
     let globalCoordinator: IGlobalCoordinator
 
-    init(nextScreen: StoryAssembly?,
+    init(nextScreen: StoryAssembly,
          globalCoordinator: IGlobalCoordinator) {
         self.nextScreen = nextScreen
         self.globalCoordinator = globalCoordinator
     }
 
-    func presentFillingPersonalDataScreen() {
-        guard let vc = nextScreen?.assembleStory() else { return }
-        vc.modalPresentationStyle = .fullScreen
+    func presentEmptyScreen() {
+        let vc = nextScreen.assembleStory()
         globalCoordinator.presentOnTopVisibleViewController(vc)
     }
 }

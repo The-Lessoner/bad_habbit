@@ -48,6 +48,7 @@
 		F64555E32A6E77670070947C /* SignInAppleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E22A6E77670070947C /* SignInAppleRouter.swift */; };
 		F64555E52A6E77A70070947C /* SignInApplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E42A6E77A70070947C /* SignInApplePresenter.swift */; };
 		F64555E72A6E780D0070947C /* SignInAppleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E62A6E780D0070947C /* SignInAppleAssembly.swift */; };
+		F6F3DA5E2A858E0A00AC7A48 /* EmptyScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F3DA5D2A858E0A00AC7A48 /* EmptyScreenAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		F64555E42A6E77A70070947C /* SignInApplePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInApplePresenter.swift; sourceTree = "<group>"; };
 		F64555E62A6E780D0070947C /* SignInAppleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleAssembly.swift; sourceTree = "<group>"; };
 		F6D9511D2A6EC556001E342C /* BadHabbit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BadHabbit.entitlements; sourceTree = "<group>"; };
+		F6F3DA5D2A858E0A00AC7A48 /* EmptyScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyScreenAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,7 @@
 				E5109B562A6ADEA3008B74D3 /* FillingPersonalData */,
 				614BA9412A6742F3004231A3 /* SingUpScreen */,
 				F64555972A6173F40070947C /* SingnInAppleScreen */,
+				F6F3DA5F2A858E2900AC7A48 /* EmptyScreen */,
 			);
 			path = UserStories;
 			sourceTree = "<group>";
@@ -345,6 +348,14 @@
 				F64555982A61743A0070947C /* SignInAppleViewController.swift */,
 			);
 			path = SingnInAppleScreen;
+			sourceTree = "<group>";
+		};
+		F6F3DA5F2A858E2900AC7A48 /* EmptyScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F6F3DA5D2A858E0A00AC7A48 /* EmptyScreenAssembly.swift */,
+			);
+			path = EmptyScreen;
 			sourceTree = "<group>";
 		};
 		FBB8119D4F423E33D72AFCB8 /* Frameworks */ = {
@@ -514,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5109B5A2A6ADEFF008B74D3 /* FillingPersonalDataPresenter.swift in Sources */,
+				F6F3DA5E2A858E0A00AC7A48 /* EmptyScreenAssembly.swift in Sources */,
 				E5109B672A6D3DAE008B74D3 /* CanPresentView.swift in Sources */,
 				E5109B4E2A6ADA99008B74D3 /* AlertConfiguration.swift in Sources */,
 				E58D1BCC2A1D02E100137CC6 /* StoryAssembly.swift in Sources */,
