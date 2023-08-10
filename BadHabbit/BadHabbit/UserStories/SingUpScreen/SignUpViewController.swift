@@ -109,7 +109,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         var buttonConfiguration = UIButton.Configuration.filled()
         buttonConfiguration.title = String(localized: "signUpScreen.startButtonTitle").uppercased()
         buttonConfiguration.cornerStyle = .large
-        buttonConfiguration.baseBackgroundColor = UIColor(named: "startButtonbaseBackgroundColor")
+        buttonConfiguration.baseBackgroundColor = UIColor(named: "startButtonBaseBackgroundColor")
 
         startButton.configuration = buttonConfiguration
         startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)

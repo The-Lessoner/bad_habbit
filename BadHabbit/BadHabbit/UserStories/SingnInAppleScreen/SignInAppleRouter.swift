@@ -12,17 +12,17 @@ protocol SignInAppleRouterProtocol {
 
 final class SignInAppleRouter: SignInAppleRouterProtocol {
 
-    let nextScreen: StoryAssembly
+    let nextScreen: StoryAssembly?
     let globalCoordinator: IGlobalCoordinator
 
-    init(nextScreen: StoryAssembly,
+    init(nextScreen: StoryAssembly?,
          globalCoordinator: IGlobalCoordinator) {
         self.nextScreen = nextScreen
         self.globalCoordinator = globalCoordinator
     }
 
     func presentFillingPersonalDataScreen() {
-        let vc = nextScreen.assembleStory()
+        guard let vc = nextScreen?.assembleStory() else { return }
         vc.modalPresentationStyle = .fullScreen
         globalCoordinator.presentOnTopVisibleViewController(vc)
     }
