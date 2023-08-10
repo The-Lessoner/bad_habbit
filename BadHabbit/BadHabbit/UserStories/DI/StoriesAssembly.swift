@@ -17,7 +17,7 @@ final class StoriesAssembly {
     
     var signUpScreen: StoryAssembly {
         SignUpScreenAssembly(
-            nextScreen: signInScreen,
+            nextScreen: nil,
             globalCoordinator: designKitAssembly.globalCoordinator
         )
     }
