@@ -8,10 +8,10 @@
 import UIKit
 
 final class SignUpScreenAssembly: StoryAssembly {
-    private let nextScreen: StoryAssembly?
+    private let nextScreen: StoryAssembly
     private let globalCoordinator: IGlobalCoordinator
     
-    init(nextScreen: StoryAssembly?, globalCoordinator: IGlobalCoordinator) {
+    init(nextScreen: StoryAssembly, globalCoordinator: IGlobalCoordinator) {
         self.nextScreen = nextScreen
         self.globalCoordinator = globalCoordinator
     }
