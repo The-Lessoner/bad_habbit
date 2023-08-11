@@ -17,7 +17,7 @@ final class SignInAppleViewController: BaseViewController, SignInAppleViewProtoc
     private lazy var imageLogo = UIImageView()
     private lazy var imageMountains = UIImageView()
 
-    private let presenter: SignInApplePresenterProtocol?
+    private let presenter: SignInApplePresenterProtocol
 
     init(presenter: SignInApplePresenterProtocol) {
         self.presenter = presenter
@@ -40,6 +40,7 @@ extension SignInAppleViewController {
         view.backgroundColor = UIColor(named: "backgroundColor")
         imageMountains = createImageView(name: "mountains")
         imageLogo = createImageView(name: "logo")
+        imageLogo.alpha = 0.5
         imageLogo.contentMode = .scaleAspectFill
         createAuthorizationButton()
         createTitleLabel()
@@ -73,7 +74,7 @@ extension SignInAppleViewController {
         imageLogo.snp.makeConstraints { make in
             make.centerX.equalTo(safeArea)
             make.centerY.equalTo(imageMountains.snp.top)
-            make.size.equalTo(LayoutConstants.ImageLogo.width)
+            make.size.equalTo(LayoutConstants.ImageLogo.size)
         }
 
         imageMountains.snp.makeConstraints { make in
@@ -96,7 +97,7 @@ extension SignInAppleViewController {
 
     @objc
     private func handleAuthorizationAppleIDButtonPress() {
-        presenter?.authorizationButtonDidTap()
+        presenter.authorizationButtonDidTap()
     }
 
 }

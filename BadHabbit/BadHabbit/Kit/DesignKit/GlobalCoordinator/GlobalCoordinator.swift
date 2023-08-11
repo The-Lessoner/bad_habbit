@@ -13,6 +13,7 @@ protocol IGlobalCoordinator {
         animated: Bool,
         completion: VoidClosure?
     )
+    
     func presentOnTopVisibleViewController(_ viewController: UIViewController)
 
 }
