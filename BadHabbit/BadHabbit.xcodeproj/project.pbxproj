@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		372F03E231465F74E9E647DD /* Pods_BadHabbit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */; };
+		61363E022A8B732700134715 /* SwipeGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61363E012A8B732700134715 /* SwipeGestureRecognizer.swift */; };
 		614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */; };
 		614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614717242A6F060100731065 /* SignUpScreenRouter.swift */; };
 		614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA9422A674317004231A3 /* SignUpViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		61363E012A8B732700134715 /* SwipeGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeGestureRecognizer.swift; sourceTree = "<group>"; };
 		6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenPresenter.swift; sourceTree = "<group>"; };
 		614717242A6F060100731065 /* SignUpScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenRouter.swift; sourceTree = "<group>"; };
 		614BA9422A674317004231A3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		6194A0B12A6FB6330006F570 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				61363E012A8B732700134715 /* SwipeGestureRecognizer.swift */,
 				6194A0AF2A6FB53B0006F570 /* LayoutConstants.swift */,
 			);
 			path = Models;
@@ -512,6 +515,7 @@
 				614BA94A2A674A1C004231A3 /* FontName.swift in Sources */,
 				614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */,
 				614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */,
+				61363E022A8B732700134715 /* SwipeGestureRecognizer.swift in Sources */,
 				E58D1BAD2A1CFF2C00137CC6 /* AppDelegate.swift in Sources */,
 				6194A0B02A6FB53B0006F570 /* LayoutConstants.swift in Sources */,
 				61EF63AC2A7297E00009218A /* SignUpScreenAssembly.swift in Sources */,

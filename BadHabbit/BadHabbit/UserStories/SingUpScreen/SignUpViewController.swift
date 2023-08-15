@@ -8,15 +8,20 @@
 import UIKit
 import SnapKit
 
-protocol SignUpViewProtocol: AnyObject { }
+protocol SignUpViewProtocol: AnyObject {
+    func updateLogoImageViewImage(_ image: UIImage?)
+    func updateStartButtonEnabledState(_ isEnabled: Bool)
+    func updateStartButtonBackgroundColor(_ color: UIColor?)
+    func updatePageControlPage(toPage page: Int)
+}
 
 final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     private lazy var backgroundImageView = UIImageView()
     private lazy var welcomeLabel = UILabel()
     private lazy var appNameLabel = UILabel()
     private lazy var logoImageView = UIImageView()
-    private lazy var logoLabel = UILabel()
     private lazy var phraseLabel = UILabel()
+    private lazy var pageControl = UIPageControl()
     
     lazy var startButton = UIButton()
     
@@ -44,6 +49,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         addAppNameLabel()
         addLogoImageView()
         addPhraseLabel()
+        addPageControl()
         addStartButton()
         
         setupViewConstraints()
@@ -76,20 +82,22 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     
     private func addLogoImageView() {
         view.addSubview(logoImageView)
-        addLogoLabel()
+        addSwipeGestureRecognizers(
+            recognizers: [SwipeGestureRecognizer.left, SwipeGestureRecognizer.right],
+            action: #selector(logoImageViewSwiped),
+            toView: logoImageView
+        )
         
-        logoImageView.image = UIImage(named: "logo")
-        logoImageView.alpha = 0.5
+        logoImageView.image = UIImage(named: "signUpScreenLogo")
         logoImageView.contentMode = .scaleAspectFill
+        logoImageView.isUserInteractionEnabled = true
     }
     
-    private func addLogoLabel() {
-        logoImageView.addSubview(logoLabel)
-        
-        logoLabel.text = String(localized: "signUpScreen.logoLabelText").uppercased()
-        logoLabel.font = UIFont(name: FontName.interExtraBold.rawValue, size: 15.0)
-        logoLabel.textAlignment = .left
-        logoLabel.textColor = UIColor(named: "logoLabelTextColor")
+    private func addSwipeGestureRecognizers(recognizers: [UIGestureRecognizer], action: Selector, toView: UIView) {
+        recognizers.forEach { recognizer in
+            recognizer.addTarget(self, action: action)
+            view.addGestureRecognizer(recognizer)
+        }
     }
     
     private func addPhraseLabel() {
@@ -103,15 +111,32 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         phraseLabel.numberOfLines = 0
     }
     
+    private func addPageControl() {
+        view.addSubview(pageControl)
+        
+        pageControl.numberOfPages = 3
+        pageControl.pageIndicatorTintColor = UIColor(named: "darkBlueColor")
+        pageControl.currentPageIndicatorTintColor = UIColor(named: "pirpleLightColor")
+        pageControl.direction = .leftToRight
+        pageControl.backgroundStyle = .minimal
+        
+        pageControl.addTarget(self, action: #selector(pageControlPageChanged), for: .valueChanged)
+    }
+    
     private func addStartButton() {
         view.addSubview(startButton)
         
-        var buttonConfiguration = UIButton.Configuration.filled()
-        buttonConfiguration.title = String(localized: "signUpScreen.startButtonTitle").uppercased()
-        buttonConfiguration.cornerStyle = .large
-        buttonConfiguration.baseBackgroundColor = UIColor(named: "startButtonBaseBackgroundColor")
-
-        startButton.configuration = buttonConfiguration
+        startButton.layer.cornerRadius = 12
+        startButton.isEnabled = false
+        
+        startButton.setTitle(
+            String(localized: "signUpScreen.startButtonTitle").uppercased(),
+            for: .normal
+        )
+        startButton.setTitleColor(.white, for: .normal)
+        startButton.setTitleColor(.black, for: .disabled)
+        startButton.backgroundColor = UIColor(named: "startButtonUnenabledBackgroundColor")
+        
         startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
     }
     
@@ -139,8 +164,9 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
             make.centerY.equalTo(backgroundImageView.snp.top)
         }
         
-        logoLabel.snp.makeConstraints { make in
-            make.centerX.centerY.equalTo(logoImageView)
+        pageControl.snp.makeConstraints { make in
+            make.centerX.equalTo(safeArea)
+            make.bottom.equalTo(phraseLabel.snp.top).inset(-30)
         }
         
         phraseLabel.snp.makeConstraints { make in
@@ -158,7 +184,36 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     }
     
     @objc
+    private func logoImageViewSwiped(gestureRecognizer: UISwipeGestureRecognizer) {
+        presenter.logoImageViewSwiped(gestureRecognizer.direction, currentPageControlPage: pageControl.currentPage)
+        presenter.pageControlPageChanged(toPage: pageControl.currentPage)
+    }
+    
+    @objc
+    private func pageControlPageChanged(pageControl: UIPageControl) {
+        presenter.pageControlPageChanged(toPage: pageControl.currentPage)
+    }
+    
+    @objc
     private func startButtonTapped() {
         presenter.startButtonTapped()
+    }
+}
+
+extension SignUpViewController {
+    func updateLogoImageViewImage(_ image: UIImage?) {
+        logoImageView.image = image
+    }
+    
+    func updateStartButtonEnabledState(_ isEnabled: Bool) {
+        startButton.isEnabled = isEnabled
+    }
+    
+    func updateStartButtonBackgroundColor(_ color: UIColor?) {
+        startButton.backgroundColor = color
+    }
+    
+    func updatePageControlPage(toPage page: Int) {
+        pageControl.currentPage = page
     }
 }
