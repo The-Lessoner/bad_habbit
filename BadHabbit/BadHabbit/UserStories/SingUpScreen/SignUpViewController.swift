@@ -120,6 +120,10 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         pageControl.direction = .leftToRight
         pageControl.backgroundStyle = .minimal
         
+        let сurrentPageIndicatorImage = UIImage(systemName: "circle.fill")
+        сurrentPageIndicatorImage?.draw(in: CGRect(x: 0, y: 0, width: 160, height: 160))
+        pageControl.preferredCurrentPageIndicatorImage = сurrentPageIndicatorImage
+        
         pageControl.addTarget(self, action: #selector(pageControlPageChanged), for: .valueChanged)
     }
     
