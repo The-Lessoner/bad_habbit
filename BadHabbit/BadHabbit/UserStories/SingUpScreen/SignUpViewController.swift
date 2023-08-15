@@ -184,14 +184,14 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     }
     
     @objc
-    private func logoImageViewSwiped(gestureRecognizer: UISwipeGestureRecognizer) {
-        presenter.logoImageViewSwiped(gestureRecognizer.direction, currentPageControlPage: pageControl.currentPage)
+    private func logoImageViewSwiped(sender: UISwipeGestureRecognizer) {
+        presenter.logoImageViewSwiped(sender.direction, currentPageControlPage: pageControl.currentPage)
         presenter.pageControlPageChanged(toPage: pageControl.currentPage)
     }
     
     @objc
-    private func pageControlPageChanged(pageControl: UIPageControl) {
-        presenter.pageControlPageChanged(toPage: pageControl.currentPage)
+    private func pageControlPageChanged(sender: UIPageControl) {
+        presenter.pageControlPageChanged(toPage: sender.currentPage)
     }
     
     @objc
