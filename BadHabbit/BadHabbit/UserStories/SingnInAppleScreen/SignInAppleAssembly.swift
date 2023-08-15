@@ -1,13 +1,14 @@
 //
-//  SignUpScreenAssembly.swift
+//  SignInAppleAssembly.swift
 //  BadHabbit
 //
-//  Created by Viktoria Misiulia on 27/07/2023.
+//  Created by Halina Kurylchykava on 24.07.23.
 //
 
 import UIKit
 
-final class SignUpScreenAssembly: StoryAssembly {
+class SignInAppleAssembly: StoryAssembly {
+    
     private let nextScreen: StoryAssembly
     private let globalCoordinator: IGlobalCoordinator
     
@@ -15,17 +16,18 @@ final class SignUpScreenAssembly: StoryAssembly {
         self.nextScreen = nextScreen
         self.globalCoordinator = globalCoordinator
     }
-    
+
     func assembleStory() -> UIViewController {
-        let router = SignUpScreenRouter(
-            signInAppleScreenAssembly: nextScreen,
+        let router = SignInAppleRouter(
+            nextScreen: nextScreen,
             globalCoordinator: globalCoordinator
         )
-        let presenter = SignUpScreenPresenter(router: router)
-        let view = SignUpViewController(presenter: presenter)
-        
+        let presenter = SignInApplePresenter(router: router)
+        let view = SignInAppleViewController(presenter: presenter)
+        view.modalPresentationStyle = .fullScreen
         presenter.view = view
         
         return view
     }
+    
 }

@@ -17,7 +17,7 @@ final class StoriesAssembly {
     
     var signUpScreen: StoryAssembly {
         SignUpScreenAssembly(
-            nextScreen: nil,
+            nextScreen: signInScreen,
             globalCoordinator: designKitAssembly.globalCoordinator
         )
     }
@@ -25,6 +25,17 @@ final class StoriesAssembly {
     var fillingPersonalData: StoryAssembly {
         FillingPersonalDataAssembly(
             alertAssembly: designKitAssembly.alertAssembly
+        )
+    }
+
+    var emptyScreen: StoryAssembly {
+        EmptyScreenAssembly()
+    }
+
+    var signInScreen: StoryAssembly {
+        SignInAppleAssembly(
+            nextScreen: self.emptyScreen,
+            globalCoordinator: designKitAssembly.globalCoordinator
         )
     }
 }
