@@ -52,7 +52,7 @@ final class GlobalCoordinator: IGlobalCoordinator {
         
         topVC.present(viewController, animated: animated, completion: completion)
     }
-    
+
     func presentOnTopVisibleViewController(_ viewController: UIViewController) {
         presentOnTopVisibleViewController(viewController, animated: true, completion: nil)
     }
