@@ -12,12 +12,13 @@
 		614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614717242A6F060100731065 /* SignUpScreenRouter.swift */; };
 		614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA9422A674317004231A3 /* SignUpViewController.swift */; };
 		614BA9482A6749F5004231A3 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 614BA9472A6749F5004231A3 /* SF-Pro-Display-Medium.otf */; };
-		614BA94A2A674A1C004231A3 /* FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA9492A674A1C004231A3 /* FontName.swift */; };
 		6194A0B02A6FB53B0006F570 /* LayoutConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6194A0AF2A6FB53B0006F570 /* LayoutConstants.swift */; };
 		61AE3EFF2A6DCC9D00B607E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61AE3F012A6DCC9D00B607E1 /* Localizable.strings */; };
-		61C658BA2A7A7F670046B242 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61C658B92A7A7F670046B242 /* Colors.xcassets */; };
 		61CEF96E2A67739600744ADA /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61CEF96D2A67739600744ADA /* SF-Pro-Display-Bold.otf */; };
 		61CEF9702A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61CEF96F2A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf */; };
+		61E5EF7D2A8D0A6600091EBA /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E5EF7A2A8D0A6600091EBA /* Assets.swift */; };
+		61E5EF7E2A8D0A6600091EBA /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E5EF7B2A8D0A6600091EBA /* Strings.swift */; };
+		61E5EF842A8D0CE300091EBA /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E5EF832A8D0CE300091EBA /* Fonts.swift */; };
 		61EF63AC2A7297E00009218A /* SignUpScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EF63AB2A7297E00009218A /* SignUpScreenAssembly.swift */; };
 		E5109B4A2A6AD962008B74D3 /* AlertAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B492A6AD962008B74D3 /* AlertAssembly.swift */; };
 		E5109B4C2A6AD9A4008B74D3 /* DesignKitAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B4B2A6AD9A4008B74D3 /* DesignKitAssembly.swift */; };
@@ -56,12 +57,13 @@
 		614717242A6F060100731065 /* SignUpScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenRouter.swift; sourceTree = "<group>"; };
 		614BA9422A674317004231A3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		614BA9472A6749F5004231A3 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
-		614BA9492A674A1C004231A3 /* FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontName.swift; sourceTree = "<group>"; };
 		6194A0AF2A6FB53B0006F570 /* LayoutConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstants.swift; sourceTree = "<group>"; };
 		61AE3F022A6DCCAD00B607E1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		61C658B92A7A7F670046B242 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		61CEF96D2A67739600744ADA /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		61CEF96F2A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular_ExtraBold.ttf"; sourceTree = "<group>"; };
+		61E5EF7A2A8D0A6600091EBA /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		61E5EF7B2A8D0A6600091EBA /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		61E5EF832A8D0CE300091EBA /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		61EF63AB2A7297E00009218A /* SignUpScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenAssembly.swift; sourceTree = "<group>"; };
 		77FC42E518800866EDC7473A /* Pods-BadHabbit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadHabbit.debug.xcconfig"; path = "Target Support Files/Pods-BadHabbit/Pods-BadHabbit.debug.xcconfig"; sourceTree = "<group>"; };
 		82255F197739D3932E47D930 /* Pods-BadHabbit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadHabbit.release.xcconfig"; path = "Target Support Files/Pods-BadHabbit/Pods-BadHabbit.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,7 +129,7 @@
 		614BA9462A6749EA004231A3 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				614BA9492A674A1C004231A3 /* FontName.swift */,
+				61E5EF832A8D0CE300091EBA /* Fonts.swift */,
 				614BA9472A6749F5004231A3 /* SF-Pro-Display-Medium.otf */,
 				61CEF96D2A67739600744ADA /* SF-Pro-Display-Bold.otf */,
 				61CEF96F2A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf */,
@@ -275,9 +277,10 @@
 		E58D1BC42A1D00D100137CC6 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				61E5EF7A2A8D0A6600091EBA /* Assets.swift */,
+				61E5EF7B2A8D0A6600091EBA /* Strings.swift */,
 				E58D1BBA2A1CFF2E00137CC6 /* Info.plist */,
 				E58D1BB52A1CFF2E00137CC6 /* Assets.xcassets */,
-				61C658B92A7A7F670046B242 /* Colors.xcassets */,
 				E58D1BB72A1CFF2E00137CC6 /* LaunchScreen.storyboard */,
 				61AE3F012A6DCC9D00B607E1 /* Localizable.strings */,
 				614BA9462A6749EA004231A3 /* Fonts */,
@@ -434,7 +437,6 @@
 				E58D1BB92A1CFF2E00137CC6 /* LaunchScreen.storyboard in Resources */,
 				61CEF96E2A67739600744ADA /* SF-Pro-Display-Bold.otf in Resources */,
 				E58D1BB62A1CFF2E00137CC6 /* Assets.xcassets in Resources */,
-				61C658BA2A7A7F670046B242 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +526,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61E5EF7E2A8D0A6600091EBA /* Strings.swift in Sources */,
 				E5109B5A2A6ADEFF008B74D3 /* FillingPersonalDataPresenter.swift in Sources */,
 				F6F3DA5E2A858E0A00AC7A48 /* EmptyScreenAssembly.swift in Sources */,
 				E5109B672A6D3DAE008B74D3 /* CanPresentView.swift in Sources */,
@@ -543,12 +546,12 @@
 				E5109B6B2A6D4337008B74D3 /* AppAssembly.swift in Sources */,
 				E5109B582A6ADEC1008B74D3 /* FillingPersonalDataAssembly.swift in Sources */,
 				E5109B5C2A6ADF14008B74D3 /* FillingPersonalDataView.swift in Sources */,
-				614BA94A2A674A1C004231A3 /* FontName.swift in Sources */,
 				614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */,
 				614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */,
 				F64555E72A6E780D0070947C /* SignInAppleAssembly.swift in Sources */,
 				E58D1BAD2A1CFF2C00137CC6 /* AppDelegate.swift in Sources */,
 				6194A0B02A6FB53B0006F570 /* LayoutConstants.swift in Sources */,
+				61E5EF7D2A8D0A6600091EBA /* Assets.swift in Sources */,
 				61EF63AC2A7297E00009218A /* SignUpScreenAssembly.swift in Sources */,
 				614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */,
 				F64555992A61743A0070947C /* SignInAppleViewController.swift in Sources */,
@@ -557,6 +560,7 @@
 				E5109B622A6AE5CD008B74D3 /* AlertRouter.swift in Sources */,
 				E5109B552A6ADC5C008B74D3 /* AlertPresenter.swift in Sources */,
 				E5109B4A2A6AD962008B74D3 /* AlertAssembly.swift in Sources */,
+				61E5EF842A8D0CE300091EBA /* Fonts.swift in Sources */,
 				F64555E52A6E77A70070947C /* SignInApplePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

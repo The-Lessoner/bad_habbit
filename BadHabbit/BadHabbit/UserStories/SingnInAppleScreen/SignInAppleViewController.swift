@@ -37,9 +37,9 @@ final class SignInAppleViewController: BaseViewController, SignInAppleViewProtoc
 extension SignInAppleViewController {
 
     private func setupUI() {
-        view.backgroundColor = UIColor(named: "backgroundColor")
-        imageMountains = createImageView(name: "mountains")
-        imageLogo = createImageView(name: "logo")
+        view.backgroundColor = Asset.Colors.background.color
+        imageMountains = createImageView(image: Asset.Images.mountains.image)
+        imageLogo = createImageView(image: Asset.Images.logo.image)
         imageLogo.alpha = 0.5
         imageLogo.contentMode = .scaleAspectFill
         createAuthorizationButton()
@@ -47,9 +47,7 @@ extension SignInAppleViewController {
         setupConstraints()
     }
 
-    private func createImageView(name: String) -> UIImageView {
-        let imageName = name
-        let image = UIImage(named: imageName)
+    private func createImageView(image: UIImage) -> UIImageView {
         let imageView = UIImageView(image: image)
         view.addSubview(imageView)
         return imageView
@@ -58,8 +56,8 @@ extension SignInAppleViewController {
     private func createTitleLabel() {
         view.addSubview(titleLabel)
         titleLabel.textColor = .black
-        titleLabel.font = UIFont(name: FontName.SFProDisplayBold.rawValue, size: 24)
-        titleLabel.text = String(localized: "appName")
+        titleLabel.font = Fonts.SFProDisplay.bold.font(size: 24.0)
+        titleLabel.text = Strings.appName.uppercased()
         titleLabel.textAlignment = .center
     }
 
