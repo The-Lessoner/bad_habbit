@@ -50,17 +50,17 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     }
     
     private func configureBackground() {
-        view.backgroundColor = UIColor(named: "backgroundColor")
+        view.backgroundColor = Asset.Colors.background.color
         
         view.addSubview(backgroundImageView)
-        backgroundImageView.image = UIImage(named: "mountains")
+        backgroundImageView.image = Asset.Images.mountains.image
     }
     
     private func addWelcomeLabel() {
         view.addSubview(welcomeLabel)
         
-        welcomeLabel.text = String(localized: "signUpScreen.welcomeLabelText").uppercased()
-        welcomeLabel.font = UIFont(name: FontName.SFProDisplayMedium.rawValue, size: 16.0)
+        welcomeLabel.text = Strings.SignUpScreen.welcomeLabelText.uppercased()
+        welcomeLabel.font = Fonts.SFProDisplay.medium.font(size: 16.0)
         welcomeLabel.textAlignment = .center
         welcomeLabel.textColor = .black
     }
@@ -68,8 +68,8 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     private func addAppNameLabel() {
         view.addSubview(appNameLabel)
 
-        appNameLabel.text = String(localized: "appName").uppercased()
-        appNameLabel.font = UIFont(name: FontName.SFProDisplayBold.rawValue, size: 24.0)
+        appNameLabel.text = Strings.appName.uppercased()
+        appNameLabel.font = Fonts.SFProDisplay.bold.font(size: 24.0)
         appNameLabel.textAlignment = .center
         appNameLabel.textColor = .black
     }
@@ -78,7 +78,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         view.addSubview(logoImageView)
         addLogoLabel()
         
-        logoImageView.image = UIImage(named: "logo")
+        logoImageView.image = Asset.Images.logo.image
         logoImageView.alpha = 0.5
         logoImageView.contentMode = .scaleAspectFill
     }
@@ -86,17 +86,17 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     private func addLogoLabel() {
         logoImageView.addSubview(logoLabel)
         
-        logoLabel.text = String(localized: "signUpScreen.logoLabelText").uppercased()
-        logoLabel.font = UIFont(name: FontName.interExtraBold.rawValue, size: 15.0)
+        logoLabel.text = Strings.SignUpScreen.logoLabelText.uppercased()
+        logoLabel.font = Fonts.Inter.extraBold.font(size: 15.0)
         logoLabel.textAlignment = .left
-        logoLabel.textColor = UIColor(named: "logoLabelTextColor")
+        logoLabel.textColor = Asset.Colors.logoLabelText.color
     }
     
     private func addPhraseLabel() {
         view.addSubview(phraseLabel)
         
-        phraseLabel.text = String(localized: "signUpScreen.phraseLabelText").uppercased()
-        phraseLabel.font = UIFont(name: FontName.SFProDisplayMedium.rawValue, size: 14.0)
+        phraseLabel.text = Strings.SignUpScreen.phraseLabelText.uppercased()
+        phraseLabel.font = Fonts.SFProDisplay.medium.font(size: 14.0)
         phraseLabel.textAlignment = .center
         phraseLabel.textColor = .black
         phraseLabel.lineBreakMode = .byWordWrapping
@@ -107,9 +107,9 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         view.addSubview(startButton)
         
         var buttonConfiguration = UIButton.Configuration.filled()
-        buttonConfiguration.title = String(localized: "signUpScreen.startButtonTitle").uppercased()
+        buttonConfiguration.title = Strings.SignUpScreen.startButtonTitle.uppercased()
         buttonConfiguration.cornerStyle = .large
-        buttonConfiguration.baseBackgroundColor = UIColor(named: "startButtonBaseBackgroundColor")
+        buttonConfiguration.baseBackgroundColor = Asset.Colors.startButtonBaseBackground.color
 
         startButton.configuration = buttonConfiguration
         startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)

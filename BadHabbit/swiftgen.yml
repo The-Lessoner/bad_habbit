@@ -2,21 +2,30 @@ input_dir: BadHabbit
 output_dir: BadHabbit
 
 
-## Generate a Swift enum L10n that will map all your Localizable.strings and Localizable.stringsdict (or other tables) keys to a static let constant
+## Generates a Swift enum L10n that will map all your Localizable.strings and Localizable.stringsdict (or other tables) keys to a static let constant
 strings:
-  inputs:
-    - SupportFiles/Base.lproj
+  inputs: SupportFiles/ru.lproj
   outputs:
-    - templateName: structured-swift5
-      output: Strings+Generated.swift
+    templateName: structured-swift5
+    params:
+        enumName: Strings
+    output: SupportFiles/Strings.swift
 
 
-## Generate constants for your Assets Catalogs, including constants for images, colors, ARKit resources, etc.
+## Generates constants for your Assets Catalogs, including constants for images, colors, ARKit resources, etc.
 xcassets:
-  inputs:
-    - SupportFiles/Assets.xcassets
+  inputs: SupportFiles/Assets.xcassets
   outputs:
-    - templateName: swift5
-      params:
+    templateName: swift5
+    params:
         forceProvidesNamespaces: true
-      output: XCAssets+Generated.swift
+    output: SupportFiles/Assets.swift
+    
+## Defines a struct FontFamily for each family, and an enum nested under that family that will represent the font styles.
+fonts:
+  inputs: SupportFiles/Fonts/
+  outputs:
+    templateName: swift5
+    params:
+        enumName: Fonts
+    output: SupportFiles/Fonts/Fonts.swift
