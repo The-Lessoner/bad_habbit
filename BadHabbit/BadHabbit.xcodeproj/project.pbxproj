@@ -377,11 +377,11 @@
 			buildConfigurationList = E58D1BBD2A1CFF2E00137CC6 /* Build configuration list for PBXNativeTarget "BadHabbit" */;
 			buildPhases = (
 				5143C3AABB4F39A1B4930A27 /* [CP] Check Pods Manifest.lock */,
+				61BB022F2A3B5C3400D0DCD5 /* SwiftGen Run Script */,
 				E58D1BA52A1CFF2C00137CC6 /* Sources */,
 				E58D1BA62A1CFF2C00137CC6 /* Frameworks */,
 				E58D1BA72A1CFF2C00137CC6 /* Resources */,
-				F637B9BB2A31DEDE000DE6D3 /* ShellScript */,
-				61BB022F2A3B5C3400D0DCD5 /* SwiftGen Run Script */,
+				F637B9BB2A31DEDE000DE6D3 /* SwiftLint Run Script */,
 				11780267A11A1B1AD9D32238 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -501,7 +501,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if [[ -f ${PODS_ROOT}/SwiftGen/bin/swiftgen ]]; then\n  ${PODS_ROOT}/SwiftGen/bin/swiftgen\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
 		};
-		F637B9BB2A31DEDE000DE6D3 /* ShellScript */ = {
+		F637B9BB2A31DEDE000DE6D3 /* SwiftLint Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -511,6 +511,7 @@
 			);
 			inputPaths = (
 			);
+			name = "SwiftLint Run Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
