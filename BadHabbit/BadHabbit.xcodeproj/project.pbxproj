@@ -496,6 +496,9 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(SRCROOT)/BadHabbit/SupportFiles/Fonts/Fonts.swift",
+				"$(SRCROOT)/BadHabbit/SupportFiles/Assets.swift",
+				"$(SRCROOT)/BadHabbit/SupportFiles/Strings.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
