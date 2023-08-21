@@ -10,8 +10,7 @@ import SnapKit
 
 protocol SignUpViewProtocol: AnyObject {
     func updateLogoImageViewImage(_ image: UIImage?)
-    func updateStartButtonEnabledState(_ isEnabled: Bool)
-    func updateStartButtonBackgroundColor(_ color: UIColor?)
+    func updateStartButton(isEnabled: Bool, backgroundColor: UIColor)
     func updatePageControlPage(toPage page: Int)
 }
 
@@ -56,10 +55,10 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     }
     
     private func configureBackground() {
-        view.backgroundColor = Asset.Colors.background.color
+        view.backgroundColor = Assets.Colors.background.color
         
         view.addSubview(backgroundImageView)
-        backgroundImageView.image = Asset.Images.mountains.image
+        backgroundImageView.image = Assets.Images.mountains.image
     }
     
     private func addWelcomeLabel() {
@@ -88,7 +87,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
             toView: logoImageView
         )
         
-        logoImageView.image = UIImage(named: "signUpScreenLogo")
+        logoImageView.image = Assets.Images.signUpScreenLogo.image
         logoImageView.contentMode = .scaleAspectFill
         logoImageView.isUserInteractionEnabled = true
     }
@@ -115,8 +114,8 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         view.addSubview(pageControl)
         
         pageControl.numberOfPages = 3
-        pageControl.pageIndicatorTintColor = UIColor(named: "darkBlueColor")
-        pageControl.currentPageIndicatorTintColor = UIColor(named: "pirpleLightColor")
+        pageControl.pageIndicatorTintColor = Assets.Colors.darkBlue.color
+        pageControl.currentPageIndicatorTintColor = Assets.Colors.purpleLight.color
         pageControl.direction = .leftToRight
         pageControl.backgroundStyle = .minimal
         
@@ -139,7 +138,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         )
         startButton.setTitleColor(.white, for: .normal)
         startButton.setTitleColor(.black, for: .disabled)
-        startButton.backgroundColor = UIColor(named: "startButtonUnenabledBackgroundColor")
+        startButton.backgroundColor = Assets.Colors.startButtonUnenabledBackground.color
         
         startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
     }
@@ -189,8 +188,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     
     @objc
     private func logoImageViewSwiped(_ gestureRecognizer: UISwipeGestureRecognizer) {
-        presenter.logoImageViewSwiped(gestureRecognizer.direction, currentPageControlPage: pageControl.currentPage)
-        presenter.pageControlPageChanged(toPage: pageControl.currentPage)
+        presenter.logoImageViewSwiped(gestureRecognizer.direction, pageControlCurrentPage: pageControl.currentPage)
     }
     
     @objc
@@ -209,12 +207,9 @@ extension SignUpViewController {
         logoImageView.image = image
     }
     
-    func updateStartButtonEnabledState(_ isEnabled: Bool) {
+    func updateStartButton(isEnabled: Bool, backgroundColor: UIColor) {
         startButton.isEnabled = isEnabled
-    }
-    
-    func updateStartButtonBackgroundColor(_ color: UIColor?) {
-        startButton.backgroundColor = color
+        startButton.backgroundColor = backgroundColor
     }
     
     func updatePageControlPage(toPage page: Int) {

@@ -10,19 +10,27 @@ import UIKit
 protocol SignUpScreenPresenterProtocol {
     func startButtonTapped()
     func pageControlPageChanged(toPage: Int)
-    func logoImageViewSwiped(_ swipeDirection: UISwipeGestureRecognizer.Direction, currentPageControlPage page: Int)
+    func logoImageViewSwiped(_ swipeDirection: UISwipeGestureRecognizer.Direction, pageControlCurrentPage page: Int)
 }
 
 final class SignUpScreenPresenter: SignUpScreenPresenterProtocol {
     
     weak var view: SignUpViewProtocol?
     private let router: SignUpRouterProtocol
+    private var startButtonIsEnabled = false {
+        didSet {
+            view?.updateStartButton(
+                isEnabled: true,
+                backgroundColor: Assets.Colors.startButtonBaseBackground.color
+            )
+        }
+    }
     
     init(router: SignUpRouterProtocol) {
         self.router = router
     }
     
-    func logoImageViewSwiped(_ swipeDirection: UISwipeGestureRecognizer.Direction, currentPageControlPage page: Int) {
+    func logoImageViewSwiped(_ swipeDirection: UISwipeGestureRecognizer.Direction, pageControlCurrentPage page: Int) {
         let nextPage: Int
         
         switch swipeDirection {
@@ -35,6 +43,7 @@ final class SignUpScreenPresenter: SignUpScreenPresenterProtocol {
         
         if (0...2).contains(nextPage) {
             view?.updatePageControlPage(toPage: nextPage)
+            pageControlPageChanged(toPage: nextPage)
         }
     }
     
@@ -42,12 +51,11 @@ final class SignUpScreenPresenter: SignUpScreenPresenterProtocol {
         guard let image = image(forPage: page)
         else { return }
         
-        let buttonIsEnabled = startButtonIsEnabled(onPage: page)
-        let buttonBackgroundColor = startButtonBackgroundColor(forPage: page)
-        
         view?.updateLogoImageViewImage(image)
-        view?.updateStartButtonEnabledState(buttonIsEnabled)
-        view?.updateStartButtonBackgroundColor(buttonBackgroundColor)
+        
+        if page == 2 && startButtonIsEnabled == false {
+            startButtonIsEnabled = true
+        }
     }
     
     func startButtonTapped() {
@@ -59,30 +67,10 @@ final class SignUpScreenPresenter: SignUpScreenPresenterProtocol {
         
         switch page {
         case 0, 1, 2:
-            image = UIImage(named: "signUpScreenLogo")
+            image = Assets.Images.signUpScreenLogo.image
         default: break
         }
         
         return image
-    }
-    
-    private func startButtonIsEnabled(onPage page: Int) -> Bool {
-        if page == 2 {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    private func startButtonBackgroundColor(forPage page: Int) -> UIColor? {
-        let colorName: String
-        
-        if page == 2 {
-            colorName = "startButtonBaseBackgroundColor"
-        } else {
-            colorName = "startButtonUnenabledBackgroundColor"
-        }
-        
-        return UIColor(named: colorName)
     }
 }

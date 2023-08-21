@@ -37,9 +37,9 @@ final class SignInAppleViewController: BaseViewController, SignInAppleViewProtoc
 extension SignInAppleViewController {
 
     private func setupUI() {
-        view.backgroundColor = Asset.Colors.background.color
-        imageMountains = createImageView(image: Asset.Images.mountains.image)
-        imageLogo = createImageView(image: Asset.Images.logo.image)
+        view.backgroundColor = Assets.Colors.background.color
+        imageMountains = createImageView(image: Assets.Images.mountains.image)
+        imageLogo = createImageView(image: Assets.Images.logo.image)
         imageLogo.alpha = 0.5
         imageLogo.contentMode = .scaleAspectFill
         createAuthorizationButton()
