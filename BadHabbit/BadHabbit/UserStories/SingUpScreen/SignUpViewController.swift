@@ -56,17 +56,17 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     }
     
     private func configureBackground() {
-        view.backgroundColor = UIColor(named: "backgroundColor")
+        view.backgroundColor = Asset.Colors.background.color
         
         view.addSubview(backgroundImageView)
-        backgroundImageView.image = UIImage(named: "mountains")
+        backgroundImageView.image = Asset.Images.mountains.image
     }
     
     private func addWelcomeLabel() {
         view.addSubview(welcomeLabel)
         
-        welcomeLabel.text = String(localized: "signUpScreen.welcomeLabelText").uppercased()
-        welcomeLabel.font = UIFont(name: FontName.SFProDisplayMedium.rawValue, size: 16.0)
+        welcomeLabel.text = Strings.SignUpScreen.welcomeLabelText.uppercased()
+        welcomeLabel.font = Fonts.SFProDisplay.medium.font(size: 16.0)
         welcomeLabel.textAlignment = .center
         welcomeLabel.textColor = .black
     }
@@ -74,8 +74,8 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     private func addAppNameLabel() {
         view.addSubview(appNameLabel)
 
-        appNameLabel.text = String(localized: "appName").uppercased()
-        appNameLabel.font = UIFont(name: FontName.SFProDisplayBold.rawValue, size: 24.0)
+        appNameLabel.text = Strings.appName.uppercased()
+        appNameLabel.font = Fonts.SFProDisplay.bold.font(size: 24.0)
         appNameLabel.textAlignment = .center
         appNameLabel.textColor = .black
     }
@@ -103,8 +103,8 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     private func addPhraseLabel() {
         view.addSubview(phraseLabel)
         
-        phraseLabel.text = String(localized: "signUpScreen.phraseLabelText").uppercased()
-        phraseLabel.font = UIFont(name: FontName.SFProDisplayMedium.rawValue, size: 14.0)
+        phraseLabel.text = Strings.SignUpScreen.phraseLabelText.uppercased()
+        phraseLabel.font = Fonts.SFProDisplay.medium.font(size: 14.0)
         phraseLabel.textAlignment = .center
         phraseLabel.textColor = .black
         phraseLabel.lineBreakMode = .byWordWrapping
