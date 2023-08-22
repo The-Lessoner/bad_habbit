@@ -93,5 +93,6 @@ iOSInjectionProject/
 
 # SwiftGen
 
-Strings+Generated.swift
-XCAssets+Generated.swift
+Strings.swift
+Assets.swift
+Fonts.swift
