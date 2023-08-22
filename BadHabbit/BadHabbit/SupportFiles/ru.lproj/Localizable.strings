@@ -11,3 +11,4 @@
 "signUpScreen.phraseLabelText" = "НЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nНЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nТУТ КАКАЯ-ТО ФРАЗА";
 "signUpScreen.startButtonTitle" = "НАЧАТЬ";
 "signUpScreen.logoLabelText" = "ЛОГО";
+"backButtonText" = "Назад";

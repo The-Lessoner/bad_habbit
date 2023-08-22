@@ -11,4 +11,6 @@ enum FontName: String {
     case SFProDisplayMedium = "SFProDisplay-Medium"
     case SFProDisplayBold = "SFProDisplay-Bold"
     case interExtraBold = "Inter-Regular_ExtraBold"
+    case SFProDisplayRegular = "SFProDisplay-Regular"
+    case SFProDisplaySemibold = "SFProDisplay-Semibold"
 }

@@ -8,7 +8,6 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
     
     private var appAssembly: AppAssembly!
@@ -22,10 +21,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         let window = UIWindow(windowScene: windowScene)
-        
+
         self.appAssembly = AppAssembly(application: .shared, window: window)
-        window.rootViewController = appAssembly.storiesAssembly.signUpScreen.assembleStory()
-        
+        let navController = UINavigationController(rootViewController: appAssembly.storiesAssembly.signUpScreen.assembleStory())
+//
+//        let navBarAppearance = UINavigationBar.appearance()
+//        navBarAppearance.barTintColor = UIColor(named: "backButtonTextColor")
+//        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: FontName.SFProDisplayRegular.rawValue, size: 17)!]
+      
+        window.rootViewController = navController
+
         self.window = window
         window.makeKeyAndVisible()
     }

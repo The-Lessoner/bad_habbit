@@ -44,11 +44,13 @@
 		E59E8A342A78E85400ABD1DA /* DropDownViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59E8A332A78E85400ABD1DA /* DropDownViewPresenter.swift */; };
 		E59E8A372A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59E8A362A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift */; };
 		E59E8A392A790C7100ABD1DA /* DropDownViewPresenterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59E8A382A790C7100ABD1DA /* DropDownViewPresenterConfig.swift */; };
+		F61C94432A93F5260008FC96 /* SFProDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F61C94422A93F5250008FC96 /* SFProDisplay-Semibold.ttf */; };
 		F64555992A61743A0070947C /* SignInAppleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555982A61743A0070947C /* SignInAppleViewController.swift */; };
 		F64555E32A6E77670070947C /* SignInAppleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E22A6E77670070947C /* SignInAppleRouter.swift */; };
 		F64555E52A6E77A70070947C /* SignInApplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E42A6E77A70070947C /* SignInApplePresenter.swift */; };
 		F64555E72A6E780D0070947C /* SignInAppleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E62A6E780D0070947C /* SignInAppleAssembly.swift */; };
 		F6F3DA5E2A858E0A00AC7A48 /* EmptyScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F3DA5D2A858E0A00AC7A48 /* EmptyScreenAssembly.swift */; };
+		F6F3DABD2A93E26400AC7A48 /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6F3DABC2A93E26400AC7A48 /* SFProDisplay-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,12 +95,14 @@
 		E59E8A362A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownViewPresenterAssembly.swift; sourceTree = "<group>"; };
 		E59E8A382A790C7100ABD1DA /* DropDownViewPresenterConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownViewPresenterConfig.swift; sourceTree = "<group>"; };
 		EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BadHabbit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F61C94422A93F5250008FC96 /* SFProDisplay-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Semibold.ttf"; sourceTree = "<group>"; };
 		F64555982A61743A0070947C /* SignInAppleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleViewController.swift; sourceTree = "<group>"; };
 		F64555E22A6E77670070947C /* SignInAppleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleRouter.swift; sourceTree = "<group>"; };
 		F64555E42A6E77A70070947C /* SignInApplePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInApplePresenter.swift; sourceTree = "<group>"; };
 		F64555E62A6E780D0070947C /* SignInAppleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleAssembly.swift; sourceTree = "<group>"; };
 		F6D9511D2A6EC556001E342C /* BadHabbit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BadHabbit.entitlements; sourceTree = "<group>"; };
 		F6F3DA5D2A858E0A00AC7A48 /* EmptyScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyScreenAssembly.swift; sourceTree = "<group>"; };
+		F6F3DABC2A93E26400AC7A48 /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFProDisplay-Regular.ttf"; path = "../../../../../../../../Downloads/SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,9 +131,11 @@
 		614BA9462A6749EA004231A3 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				F61C94422A93F5250008FC96 /* SFProDisplay-Semibold.ttf */,
 				614BA9492A674A1C004231A3 /* FontName.swift */,
 				614BA9472A6749F5004231A3 /* SF-Pro-Display-Medium.otf */,
 				61CEF96D2A67739600744ADA /* SF-Pro-Display-Bold.otf */,
+				F6F3DABC2A93E26400AC7A48 /* SFProDisplay-Regular.ttf */,
 				61CEF96F2A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf */,
 			);
 			path = Fonts;
@@ -157,7 +163,6 @@
 			children = (
 				E59E8A352A78E85B00ABD1DA /* DropDownViewPresenter */,
 				E5109B6C2A6D4726008B74D3 /* BaseViewController */,
-				E5109B4B2A6AD9A4008B74D3 /* DesignKitAssembly.swift */,
 				E5109B632A6AE6F7008B74D3 /* GlobalCoordinator */,
 				E5109B482A6AD94B008B74D3 /* Alerts */,
 				6194A0B12A6FB6330006F570 /* Models */,
@@ -218,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				E5109B642A6AE70D008B74D3 /* GlobalCoordinator.swift */,
+				E5109B4B2A6AD9A4008B74D3 /* DesignKitAssembly.swift */,
 			);
 			path = GlobalCoordinator;
 			sourceTree = "<group>";
@@ -429,8 +435,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				614BA9482A6749F5004231A3 /* SF-Pro-Display-Medium.otf in Resources */,
+				F61C94432A93F5260008FC96 /* SFProDisplay-Semibold.ttf in Resources */,
 				61AE3EFF2A6DCC9D00B607E1 /* Localizable.strings in Resources */,
 				61CEF9702A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf in Resources */,
+				F6F3DABD2A93E26400AC7A48 /* SFProDisplay-Regular.ttf in Resources */,
 				E58D1BB92A1CFF2E00137CC6 /* LaunchScreen.storyboard in Resources */,
 				61CEF96E2A67739600744ADA /* SF-Pro-Display-Bold.otf in Resources */,
 				E58D1BB62A1CFF2E00137CC6 /* Assets.xcassets in Resources */,

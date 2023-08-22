@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol SignUpRouterProtocol {
     func presentSignInAppleScreen()
@@ -23,9 +24,12 @@ final class SignUpScreenRouter: SignUpRouterProtocol {
         self.signInAppleScreenAssembly = signInAppleScreenAssembly
         self.globalCoordinator = globalCoordinator
     }
-
+    
     func presentSignInAppleScreen() {
-        let vc = signInAppleScreenAssembly.assembleStory()
-        globalCoordinator.presentOnTopVisibleViewController(vc)
+        //    let vc = signInAppleScreenAssembly.assembleStory()
+        let vc = UINavigationController(rootViewController: signInAppleScreenAssembly.assembleStory())
+        vc.modalPresentationStyle = .fullScreen
+        vc.navigationController?.pushViewController(vc, animated: true)
+        // globalCoordinator.presentOnTopVisibleViewController(vc)
     }
 }
