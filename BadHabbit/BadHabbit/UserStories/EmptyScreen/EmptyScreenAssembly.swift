@@ -12,7 +12,6 @@ class EmptyScreenAssembly: StoryAssembly {
     func assembleStory() -> UIViewController {
         let view = UIViewController()
         view.view.backgroundColor = .white
-        view.modalPresentationStyle = .fullScreen
         return view
     }
 }
