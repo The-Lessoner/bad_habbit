@@ -13,6 +13,7 @@ protocol SignInAppleViewProtocol: AnyObject { }
 
 final class SignInAppleViewController: BaseViewController, SignInAppleViewProtocol {
     private lazy var authorizationButton = ASAuthorizationAppleIDButton()
+    private lazy var titleLabel = UILabel()
     private lazy var imageLogo = UIImageView()
     private lazy var imageMountains = UIImageView()
 
@@ -36,19 +37,24 @@ final class SignInAppleViewController: BaseViewController, SignInAppleViewProtoc
 extension SignInAppleViewController {
 
     private func setupUI() {
-        setupNavigationBar()
         view.backgroundColor = Asset.Colors.background.color
+        
         imageMountains = createImageView(name: Asset.Images.mountains.image)
         imageLogo = createImageView(name: Asset.Images.logo.image)
         imageLogo.alpha = 0.5
         imageLogo.contentMode = .scaleAspectFill
         createAuthorizationButton()
+        createTitleLabel()
+
         setupConstraints()
     }
 
-    private func setupNavigationBar() {
-        navigationItem.title = String(localized: "appName")
-        navigationItem.backButtonTitle = String(localized: "backButtonTitle")
+    private func createTitleLabel() {
+        view.addSubview(titleLabel)
+        titleLabel.textColor = .black
+        titleLabel.font = Fonts.SFProDisplay.semibold.font(size: 24.0)
+        titleLabel.text = Strings.appName.uppercased()
+        titleLabel.textAlignment = .center
     }
 
     private func createImageView(name: UIImage) -> UIImageView {
@@ -60,6 +66,11 @@ extension SignInAppleViewController {
 
     private func setupConstraints() {
         let safeArea = view.safeAreaLayoutGuide
+
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(safeArea).inset(42)
+            make.centerX.equalTo(safeArea)
+        }
 
         imageLogo.snp.makeConstraints { make in
             make.centerX.equalTo(safeArea)
