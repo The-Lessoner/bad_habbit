@@ -31,14 +31,21 @@ final class SignInAppleViewController: BaseViewController, SignInAppleViewProtoc
         super.viewDidLoad()
         setupUI()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.title = String(localized: "appName")
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.title = nil
+    }
 }
 
 extension SignInAppleViewController {
 
     private func setupUI() {
-        navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationItem.title = String(localized: "appName")
-        
         view.backgroundColor = Asset.Colors.background.color
         imageMountains = createImageView(name: Asset.Images.mountains.image)
         imageLogo = createImageView(name: Asset.Images.logo.image)
