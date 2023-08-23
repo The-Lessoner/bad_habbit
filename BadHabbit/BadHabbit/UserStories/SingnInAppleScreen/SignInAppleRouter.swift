@@ -23,6 +23,6 @@ final class SignInAppleRouter: SignInAppleRouterProtocol {
 
     func presentEmptyScreen() {
         let vc = nextScreen.assembleStory()
-        globalCoordinator.presentOnTopVisibleViewController(vc)
+        globalCoordinator.pushVC(vc)
     }
 }

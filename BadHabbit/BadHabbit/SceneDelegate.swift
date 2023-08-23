@@ -23,13 +23,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
 
         self.appAssembly = AppAssembly(application: .shared, window: window)
-        let navController = UINavigationController(rootViewController: appAssembly.storiesAssembly.signUpScreen.assembleStory())
-//
-//        let navBarAppearance = UINavigationBar.appearance()
-//        navBarAppearance.barTintColor = UIColor(named: "backButtonTextColor")
-//        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: FontName.SFProDisplayRegular.rawValue, size: 17)!]
-      
-        window.rootViewController = navController
+
+        let navigationController = UINavigationController(rootViewController: appAssembly.storiesAssembly.signUpScreen.assembleStory())
+
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        appearance.titleTextAttributes = [
+            .foregroundColor: UIColor.black,
+            .font: Fonts.SFProDisplay.semibold.font(size: 17)
+        ]
+        appearance.shadowColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.35)
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().tintColor = Asset.Colors.backButtonTextColor.color
+
+        window.rootViewController = navigationController
 
         self.window = window
         window.makeKeyAndVisible()
@@ -41,7 +49,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
     }
-
+    
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.

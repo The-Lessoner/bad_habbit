@@ -13,15 +13,8 @@ protocol SignInAppleViewProtocol: AnyObject { }
 
 final class SignInAppleViewController: BaseViewController, SignInAppleViewProtocol {
     private lazy var authorizationButton = ASAuthorizationAppleIDButton()
-    private lazy var titleLabel = UILabel()
     private lazy var imageLogo = UIImageView()
     private lazy var imageMountains = UIImageView()
-    //    private let backButton: UIButton = {
-    //        let button = UIButton()
-    //        button.setTitle(String(localized: "backButtonText"), for: .normal)
-    //        button.setTitleColor(UIColor(named: "backButtonTextColor"), for: .normal)
-    //        return button
-    //    }()
 
     private let presenter: SignInApplePresenterProtocol
 
@@ -43,44 +36,20 @@ final class SignInAppleViewController: BaseViewController, SignInAppleViewProtoc
 extension SignInAppleViewController {
 
     private func setupUI() {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationItem.title = String(localized: "appName")
+        
         view.backgroundColor = Asset.Colors.background.color
-        imageMountains = createImageView(image: Asset.Images.mountains.image)
-        imageLogo = createImageView(image: Asset.Images.logo.image)
+        imageMountains = createImageView(name: Asset.Images.mountains.image)
+        imageLogo = createImageView(name: Asset.Images.logo.image)
         imageLogo.alpha = 0.5
         imageLogo.contentMode = .scaleAspectFill
         createAuthorizationButton()
         setupConstraints()
     }
 
-    func setupNavBar() {
-        navigationItem.title = String(localized: "appName")
-        let barButtonImage = UIImage(systemName: "chevron.left")
-        let barButtonTitle = String(localized: "backButtonText")
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: barButtonTitle, style: .plain, target: self, action: #selector(backAction)
-        )
-
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithTransparentBackground()
-        appearance.shadowColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.35)
-        appearance.titleTextAttributes = [
-            .font: UIFont(name: FontName.SFProDisplaySemibold.rawValue, size: 17)!,
-            .foregroundColor: UIColor.black
-        ]
-        navigationItem.standardAppearance = appearance
-        navigationItem.scrollEdgeAppearance = appearance
-        navigationItem.compactAppearance = appearance
-        navigationController?.navigationBar.tintColor = UIColor(named: "backButtonTextColor")
-
-    }
-
-    @objc func backAction() {
-        navigationController?.pushViewController(EmptyScreenAssembly().assembleStory(), animated: true)
-    }
-
-    private func createImageView(name: String) -> UIImageView {
-        let imageName = name
-        let image = UIImage(named: imageName)
-    private func createImageView(image: UIImage) -> UIImageView {
+    private func createImageView(name: UIImage) -> UIImageView {
+        let image = name
         let imageView = UIImageView(image: image)
         view.addSubview(imageView)
         return imageView
