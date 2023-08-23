@@ -24,7 +24,6 @@ class SignInAppleAssembly: StoryAssembly {
         )
         let presenter = SignInApplePresenter(router: router)
         let view = SignInAppleViewController(presenter: presenter)
-        view.modalPresentationStyle = .fullScreen
         presenter.view = view
         
         return view

@@ -26,7 +26,6 @@ final class SignUpScreenRouter: SignUpRouterProtocol {
     
     func presentSignInAppleScreen() {
         let vc = signInAppleScreenAssembly.assembleStory()
-        vc.modalPresentationStyle = .fullScreen
         globalCoordinator.pushVC(vc)
     }
 }
