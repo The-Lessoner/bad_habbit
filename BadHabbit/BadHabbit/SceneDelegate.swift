@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let appearance = UINavigationBarAppearance()
         appearance.configureWithTransparentBackground()
-        appearance.shadowColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.35)
+        appearance.shadowColor = Asset.Colors.borderColor.color
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().tintColor = Asset.Colors.backButtonTextColor.color

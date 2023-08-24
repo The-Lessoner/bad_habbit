@@ -37,8 +37,7 @@ final class SignInAppleViewController: BaseViewController, SignInAppleViewProtoc
 extension SignInAppleViewController {
 
     private func setupUI() {
-        view.backgroundColor = Asset.Colors.background.color
-        
+        configureBackground()
         imageMountains = createImageView(name: Asset.Images.mountains.image)
         imageLogo = createImageView(name: Asset.Images.logo.image)
         imageLogo.alpha = 0.5
@@ -47,6 +46,11 @@ extension SignInAppleViewController {
         createTitleLabel()
 
         setupConstraints()
+    }
+
+    private func configureBackground() {
+        let backgroundView = BackgroundGradientView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height))
+        self.view = backgroundView
     }
 
     private func createTitleLabel() {
@@ -58,8 +62,7 @@ extension SignInAppleViewController {
     }
 
     private func createImageView(name: UIImage) -> UIImageView {
-        let image = name
-        let imageView = UIImageView(image: image)
+        let imageView = UIImageView(image: name)
         view.addSubview(imageView)
         return imageView
     }
