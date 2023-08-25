@@ -37,6 +37,9 @@ final class SignInAppleViewController: BaseViewController, SignInAppleViewProtoc
 extension SignInAppleViewController {
 
     private func setupUI() {
+
+        navigationController?.navigationBar.tintColor = Asset.Colors.backButtonTextColor.color
+
         configureBackground()
         imageMountains = createImageView(name: Asset.Images.mountains.image)
         imageLogo = createImageView(name: Asset.Images.logo.image)

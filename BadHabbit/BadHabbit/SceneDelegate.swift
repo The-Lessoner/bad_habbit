@@ -26,13 +26,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let navigationController = UINavigationController(rootViewController: appAssembly.storiesAssembly.signUpScreen.assembleStory())
 
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithTransparentBackground()
-        appearance.shadowColor = Asset.Colors.borderColor.color
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        UINavigationBar.appearance().standardAppearance = appearance
-        UINavigationBar.appearance().tintColor = Asset.Colors.backButtonTextColor.color
-
         window.rootViewController = navigationController
 
         self.window = window
