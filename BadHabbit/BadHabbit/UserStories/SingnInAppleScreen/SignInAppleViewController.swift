@@ -38,8 +38,7 @@ extension SignInAppleViewController {
 
     private func setupUI() {
 
-        navigationController?.navigationBar.tintColor = Asset.Colors.backButtonTextColor.color
-
+        configureNavigationBar()
         configureBackground()
         imageMountains = createImageView(name: Asset.Images.mountains.image)
         imageLogo = createImageView(name: Asset.Images.logo.image)
@@ -49,6 +48,12 @@ extension SignInAppleViewController {
         createTitleLabel()
 
         setupConstraints()
+    }
+
+    private func configureNavigationBar() {
+        guard let navigationController = self.navigationController else { return }
+        navigationController.navigationBar.tintColor = Asset.Colors.backButtonTextColor.color
+        navigationController.navigationBar.isTranslucent = true
     }
 
     private func configureBackground() {

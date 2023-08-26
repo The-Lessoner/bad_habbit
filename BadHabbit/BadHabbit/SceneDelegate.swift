@@ -11,7 +11,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     private var appAssembly: AppAssembly!
-    
+    private var rootNavigationControllerAssembler: MainNavigationControllerAssembly!
+
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -23,10 +24,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
 
         self.appAssembly = AppAssembly(application: .shared, window: window)
-
-        let navigationController = UINavigationController(rootViewController: appAssembly.storiesAssembly.signUpScreen.assembleStory())
-
-        window.rootViewController = navigationController
+        rootNavigationControllerAssembler = {
+            MainNavigationControllerAssembly(signUpScreenAssembly: appAssembly.storiesAssembly.signUpScreen)
+        }()
+        window.rootViewController = rootNavigationControllerAssembler.assemble()
 
         self.window = window
         window.makeKeyAndVisible()

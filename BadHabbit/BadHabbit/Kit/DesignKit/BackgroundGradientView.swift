@@ -4,7 +4,6 @@
 //
 //  Created by Halina Kurylchykava on 24.08.23.
 //
-// swiftlint:disable force_cast
 
 import UIKit
 
@@ -14,8 +13,9 @@ class BackgroundGradientView: UIView {
         return CAGradientLayer.self
     }
 
-    private var gradientLayer: CAGradientLayer {
-        return self.layer as! CAGradientLayer
+    private var gradientLayer: CAGradientLayer? {
+        guard let layer = self.layer as? CAGradientLayer else { return nil }
+        return layer
     }
 
     override init(frame: CGRect) {
@@ -29,6 +29,7 @@ class BackgroundGradientView: UIView {
     }
 
     func configureGradientLayer() {
+        guard let gradientLayer = gradientLayer else { return }
         gradientLayer.type = .axial
         gradientLayer.locations = [0, 1]
         gradientLayer.colors = [
