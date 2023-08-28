@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		372F03E231465F74E9E647DD /* Pods_BadHabbit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */; };
 		61363E022A8B732700134715 /* SwipeGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61363E012A8B732700134715 /* SwipeGestureRecognizer.swift */; };
+		61448CC22A980BC6002CD090 /* CAGradientLayer+backgroundGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61448CC12A980BC6002CD090 /* CAGradientLayer+backgroundGradientLayer.swift */; };
 		614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */; };
 		614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614717242A6F060100731065 /* SignUpScreenRouter.swift */; };
 		614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA9422A674317004231A3 /* SignUpViewController.swift */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		61363E012A8B732700134715 /* SwipeGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeGestureRecognizer.swift; sourceTree = "<group>"; };
+		61448CC12A980BC6002CD090 /* CAGradientLayer+backgroundGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+backgroundGradientLayer.swift"; sourceTree = "<group>"; };
 		6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenPresenter.swift; sourceTree = "<group>"; };
 		614717242A6F060100731065 /* SignUpScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenRouter.swift; sourceTree = "<group>"; };
 		614BA9422A674317004231A3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -160,12 +162,13 @@
 		E5109B472A6AD904008B74D3 /* DesignKit */ = {
 			isa = PBXGroup;
 			children = (
+				E5109B4B2A6AD9A4008B74D3 /* DesignKitAssembly.swift */,
 				E59E8A352A78E85B00ABD1DA /* DropDownViewPresenter */,
 				E5109B6C2A6D4726008B74D3 /* BaseViewController */,
-				E5109B4B2A6AD9A4008B74D3 /* DesignKitAssembly.swift */,
 				E5109B632A6AE6F7008B74D3 /* GlobalCoordinator */,
 				E5109B482A6AD94B008B74D3 /* Alerts */,
 				6194A0B12A6FB6330006F570 /* Models */,
+				61448CC12A980BC6002CD090 /* CAGradientLayer+backgroundGradientLayer.swift */,
 			);
 			path = DesignKit;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				F6F3DA5E2A858E0A00AC7A48 /* EmptyScreenAssembly.swift in Sources */,
 				E5109B672A6D3DAE008B74D3 /* CanPresentView.swift in Sources */,
 				E5109B4E2A6ADA99008B74D3 /* AlertConfiguration.swift in Sources */,
+				61448CC22A980BC6002CD090 /* CAGradientLayer+backgroundGradientLayer.swift in Sources */,
 				E58D1BCC2A1D02E100137CC6 /* StoryAssembly.swift in Sources */,
 				E59E8A342A78E85400ABD1DA /* DropDownViewPresenter.swift in Sources */,
 				E5109B532A6ADB4A008B74D3 /* CommonTypeAliases.swift in Sources */,

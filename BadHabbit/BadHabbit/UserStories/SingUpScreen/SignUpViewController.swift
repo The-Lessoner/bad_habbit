@@ -37,7 +37,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupUI()
     }
     
@@ -55,7 +55,14 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     }
     
     private func configureBackground() {
-        view.backgroundColor = Assets.Colors.background.color
+        view.layer.addSublayer(
+            CAGradientLayer.backgroundGradientLayer(
+                colors: [
+                    Assets.Colors.gradientBackgroundBegin.color.cgColor,
+                    Assets.Colors.gradientBackgroundEnd.color.cgColor
+                ],
+                inFrame: view.frame)
+        )
         
         view.addSubview(backgroundImageView)
         backgroundImageView.image = Assets.Images.mountains.image
@@ -118,10 +125,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         pageControl.currentPageIndicatorTintColor = Assets.Colors.purpleLight.color
         pageControl.direction = .leftToRight
         pageControl.backgroundStyle = .minimal
-        
-        let сurrentPageIndicatorImage = UIImage(systemName: "circle.fill")
-        сurrentPageIndicatorImage?.draw(in: CGRect(x: 0, y: 0, width: 160, height: 160))
-        pageControl.preferredCurrentPageIndicatorImage = сurrentPageIndicatorImage
+        pageControl.preferredCurrentPageIndicatorImage = UIImage(systemName: "circle.fill")
         
         pageControl.addTarget(self, action: #selector(pageControlPageChanged), for: .valueChanged)
     }
