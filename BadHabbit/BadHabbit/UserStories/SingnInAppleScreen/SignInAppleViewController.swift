@@ -14,8 +14,8 @@ protocol SignInAppleViewProtocol: AnyObject { }
 final class SignInAppleViewController: BaseViewController, SignInAppleViewProtocol {
     private lazy var authorizationButton = ASAuthorizationAppleIDButton()
     private lazy var titleLabel = UILabel()
-    private lazy var imageLogo = UIImageView()
-    private lazy var imageMountains = UIImageView()
+    private lazy var imageLogo = UIImageView(image: Asset.Images.logo.image)
+    private lazy var imageMountains = UIImageView(image: Asset.Images.mountains.image)
 
     private let presenter: SignInApplePresenterProtocol
 
@@ -40,10 +40,7 @@ extension SignInAppleViewController {
 
         configureNavigationBar()
         configureBackground()
-        imageMountains = createImageView(name: Asset.Images.mountains.image)
-        imageLogo = createImageView(name: Asset.Images.logo.image)
-        imageLogo.alpha = 0.5
-        imageLogo.contentMode = .scaleAspectFill
+        configureImageLogo()
         createAuthorizationButton()
         createTitleLabel()
 
@@ -58,7 +55,18 @@ extension SignInAppleViewController {
 
     private func configureBackground() {
         let backgroundView = BackgroundGradientView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height))
-        self.view = backgroundView
+        view.addSubview(backgroundView)
+
+        backgroundView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        view.addSubview(imageMountains)
+    }
+
+    private func configureImageLogo() {
+        view.addSubview(imageLogo)
+        imageLogo.alpha = 0.5
+        imageLogo.contentMode = .scaleAspectFill
     }
 
     private func createTitleLabel() {
@@ -67,12 +75,6 @@ extension SignInAppleViewController {
         titleLabel.font = Fonts.SFProDisplay.semibold.font(size: 24.0)
         titleLabel.text = Strings.appName.uppercased()
         titleLabel.textAlignment = .center
-    }
-
-    private func createImageView(name: UIImage) -> UIImageView {
-        let imageView = UIImageView(image: name)
-        view.addSubview(imageView)
-        return imageView
     }
 
     private func setupConstraints() {

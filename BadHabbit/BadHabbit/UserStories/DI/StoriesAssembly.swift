@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class StoriesAssembly {
     
@@ -37,5 +38,9 @@ final class StoriesAssembly {
             nextScreen: self.emptyScreen,
             globalCoordinator: designKitAssembly.globalCoordinator
         )
+    }
+
+    var mainNavigationViewController: UINavigationController {
+        UINavigationController(rootViewController: self.signUpScreen.assembleStory())
     }
 }

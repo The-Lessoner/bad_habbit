@@ -42,15 +42,15 @@ final class GlobalCoordinator: IGlobalCoordinator {
         animated: Bool,
         completion: VoidClosure?
     ) {
-        guard let topVC = topVisibleViewController(viewController) else {
-            assertionFailure()
+        guard let topVC = topVisibleViewController() else {
             return
         }
+
         topVC.present(viewController, animated: animated, completion: completion)
     }
 
-    private func topVisibleViewController(_ viewController: UIViewController) -> UIViewController? {
-        guard let window = self.window else {
+    private func topVisibleViewController() -> UIViewController? {
+        guard let window else {
             assertionFailure()
             return nil
         }
@@ -99,8 +99,7 @@ final class GlobalCoordinator: IGlobalCoordinator {
     }
 
     func pushViewController(_ viewController: UIViewController) {
-        guard let topVC = topVisibleViewController(viewController) else {
-            assertionFailure()
+        guard let topVC = topVisibleViewController() else {
             return
         }
 
