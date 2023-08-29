@@ -35,6 +35,10 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func loadView() {
+        view = BackgroundGradientView(frame: UIScreen.main.bounds)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,15 +59,6 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     }
     
     private func configureBackground() {
-        view.layer.addSublayer(
-            CAGradientLayer.backgroundGradientLayer(
-                colors: [
-                    Assets.Colors.gradientBackgroundBegin.color.cgColor,
-                    Assets.Colors.gradientBackgroundEnd.color.cgColor
-                ],
-                inFrame: view.frame)
-        )
-        
         view.addSubview(backgroundImageView)
         backgroundImageView.image = Assets.Images.mountains.image
     }
@@ -137,7 +132,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         startButton.isEnabled = false
         
         startButton.setTitle(
-            String(localized: "signUpScreen.startButtonTitle").uppercased(),
+            Strings.SignUpScreen.startButtonTitle.uppercased(),
             for: .normal
         )
         startButton.setTitleColor(.white, for: .normal)
