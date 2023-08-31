@@ -31,12 +31,10 @@ class BackgroundGradientView: UIView {
     func configureGradientLayer() {
         guard let gradientLayer = gradientLayer else { return }
         gradientLayer.type = .axial
-        gradientLayer.locations = [0, 1]
+        gradientLayer.locations = [0, 0.6]
         gradientLayer.colors = [
             Asset.Colors.backgroundTopColor.color.cgColor,
             Asset.Colors.backgroundBottomColor.color.cgColor
         ]
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 0, y: 0.6)
     }
 }

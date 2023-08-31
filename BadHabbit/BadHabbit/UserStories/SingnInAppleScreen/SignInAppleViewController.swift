@@ -54,9 +54,8 @@ extension SignInAppleViewController {
     }
 
     private func configureBackground() {
-        let backgroundView = BackgroundGradientView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height))
+        let backgroundView = BackgroundGradientView()
         view.addSubview(backgroundView)
-
         backgroundView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
