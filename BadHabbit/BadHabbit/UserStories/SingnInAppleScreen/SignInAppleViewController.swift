@@ -16,6 +16,7 @@ final class SignInAppleViewController: BaseViewController, SignInAppleViewProtoc
     private lazy var titleLabel = UILabel()
     private lazy var imageLogo = UIImageView(image: Asset.Images.logo.image)
     private lazy var imageMountains = UIImageView(image: Asset.Images.mountains.image)
+    private lazy var backgroundView = BackgroundGradientView()
 
     private let presenter: SignInApplePresenterProtocol
 
@@ -38,13 +39,12 @@ extension SignInAppleViewController {
 
     private func setupUI() {
 
-        configureNavigationBar()
-        configureBackground()
-        configureImageLogo()
-        createAuthorizationButton()
-        createTitleLabel()
-
         setupConstraints()
+
+        configureNavigationBar()
+        configureImageLogo()
+        configureAuthorizationButton()
+        configureTitleLabel()
     }
 
     private func configureNavigationBar() {
@@ -53,23 +53,12 @@ extension SignInAppleViewController {
         navigationController.navigationBar.isTranslucent = true
     }
 
-    private func configureBackground() {
-        let backgroundView = BackgroundGradientView()
-        view.addSubview(backgroundView)
-        backgroundView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        view.addSubview(imageMountains)
-    }
-
     private func configureImageLogo() {
-        view.addSubview(imageLogo)
         imageLogo.alpha = 0.5
         imageLogo.contentMode = .scaleAspectFill
     }
 
-    private func createTitleLabel() {
-        view.addSubview(titleLabel)
+    private func configureTitleLabel() {
         titleLabel.textColor = .black
         titleLabel.font = Fonts.SFProDisplay.semibold.font(size: 24.0)
         titleLabel.text = Strings.appName.uppercased()
@@ -79,22 +68,31 @@ extension SignInAppleViewController {
     private func setupConstraints() {
         let safeArea = view.safeAreaLayoutGuide
 
+        view.addSubview(backgroundView)
+        backgroundView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
+        view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(safeArea).inset(42)
             make.centerX.equalTo(safeArea)
         }
 
+        view.addSubview(imageMountains)
+        imageMountains.snp.makeConstraints { make in
+            make.top.equalTo(view.snp.centerY)
+            make.bottom.leading.trailing.equalToSuperview()
+        }
+        
+        view.addSubview(imageLogo)
         imageLogo.snp.makeConstraints { make in
             make.centerX.equalTo(safeArea)
             make.centerY.equalTo(imageMountains.snp.top)
             make.size.equalTo(LayoutConstants.ImageLogo.size)
         }
 
-        imageMountains.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.centerY)
-            make.bottom.leading.trailing.equalToSuperview()
-        }
-
+        view.addSubview(authorizationButton)
         authorizationButton.snp.makeConstraints { make in
             make.bottom.equalTo(safeArea).inset(LayoutConstants.ActionButton.bottomInset)
             make.height.equalTo(LayoutConstants.ActionButton.height)
@@ -102,8 +100,7 @@ extension SignInAppleViewController {
         }
     }
 
-    private func createAuthorizationButton() {
-        view.addSubview(authorizationButton)
+    private func configureAuthorizationButton() {
         authorizationButton.cornerRadius = 12
         authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
     }
