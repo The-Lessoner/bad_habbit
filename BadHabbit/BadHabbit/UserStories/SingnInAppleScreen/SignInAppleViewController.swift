@@ -12,7 +12,7 @@ import AuthenticationServices
 protocol SignInAppleViewProtocol: AnyObject { }
 
 final class SignInAppleViewController: BaseViewController, SignInAppleViewProtocol {
-    private lazy var authorizationButton = ASAuthorizationAppleIDButton()
+    private lazy var authorizationButton = UIButton()
     private lazy var titleLabel = UILabel()
     private lazy var imageLogo = UIImageView(image: Asset.Images.logo.image)
     private lazy var imageMountains = UIImageView(image: Asset.Images.mountains.image)
@@ -84,7 +84,7 @@ extension SignInAppleViewController {
             make.top.equalTo(view.snp.centerY)
             make.bottom.leading.trailing.equalToSuperview()
         }
-        
+
         view.addSubview(imageLogo)
         imageLogo.snp.makeConstraints { make in
             make.centerX.equalTo(safeArea)
@@ -101,7 +101,12 @@ extension SignInAppleViewController {
     }
 
     private func configureAuthorizationButton() {
-        authorizationButton.cornerRadius = 12
+        authorizationButton.layer.cornerRadius = 12
+        var buttonConfiguration = UIButton.Configuration.filled()
+        buttonConfiguration.title = Strings.SignInAppleScreen.authorizationButtonTitle.uppercased()
+        buttonConfiguration.baseBackgroundColor = .black
+        authorizationButton.configuration = buttonConfiguration
+
         authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
     }
 

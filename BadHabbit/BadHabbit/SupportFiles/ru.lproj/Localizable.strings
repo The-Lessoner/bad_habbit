@@ -12,3 +12,5 @@
 "signUpScreen.startButtonTitle" = "НАЧАТЬ";
 "signUpScreen.logoLabelText" = "ЛОГО";
 "backButtonTitle" = "Назад";
+"signInAppleScreen.authorizationButtonTitle" = "ВОЙТИ С APPLE";
+

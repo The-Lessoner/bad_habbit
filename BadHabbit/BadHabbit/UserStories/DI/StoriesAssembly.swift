@@ -39,8 +39,4 @@ final class StoriesAssembly {
             globalCoordinator: designKitAssembly.globalCoordinator
         )
     }
-
-    var mainNavigationViewController: UINavigationController {
-        UINavigationController(rootViewController: self.signUpScreen.assembleStory())
-    }
 }
