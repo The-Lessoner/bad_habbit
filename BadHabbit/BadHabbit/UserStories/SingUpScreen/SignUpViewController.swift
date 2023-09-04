@@ -10,7 +10,7 @@ import SnapKit
 
 protocol SignUpViewProtocol: AnyObject {
     func updateLogoImageViewImage(_ image: UIImage?)
-    func updateStartButton(isEnabled: Bool, backgroundColor: UIColor)
+    func updateStartButton(isEnabled: Bool)
     func updatePageControlPage(toPage page: Int)
 }
 
@@ -22,7 +22,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     private lazy var phraseLabel = UILabel()
     private lazy var pageControl = UIPageControl()
     
-    lazy var startButton = UIButton()
+    lazy var startButton = GradientButton()
     
     private let presenter: SignUpScreenPresenterProtocol
     
@@ -135,9 +135,11 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
             Strings.SignUpScreen.startButtonTitle.uppercased(),
             for: .normal
         )
+        
         startButton.setTitleColor(.white, for: .normal)
         startButton.setTitleColor(.black, for: .disabled)
-        startButton.backgroundColor = Assets.Colors.startButtonUnenabledBackground.color
+        startButton.titleLabel?.font = Fonts.SFProDisplay.medium.font(size: 17.0)
+        startButton.titleLabel?.textAlignment = .left
         
         startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
     }
@@ -206,9 +208,8 @@ extension SignUpViewController {
         logoImageView.image = image
     }
     
-    func updateStartButton(isEnabled: Bool, backgroundColor: UIColor) {
+    func updateStartButton(isEnabled: Bool) {
         startButton.isEnabled = isEnabled
-        startButton.backgroundColor = backgroundColor
     }
     
     func updatePageControlPage(toPage page: Int) {

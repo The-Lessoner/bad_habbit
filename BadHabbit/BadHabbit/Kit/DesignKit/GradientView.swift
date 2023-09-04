@@ -1,5 +1,5 @@
 //
-//  HorizontalGradientView.swift
+//  GradientView.swift
 //  BadHabbit
 //
 //  Created by Viktoria Misiulia on 28/08/2023.

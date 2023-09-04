@@ -20,8 +20,7 @@ final class SignUpScreenPresenter: SignUpScreenPresenterProtocol {
     private var startButtonIsEnabled = false {
         didSet {
             view?.updateStartButton(
-                isEnabled: true,
-                backgroundColor: Assets.Colors.startButtonBaseBackground.color
+                isEnabled: self.startButtonIsEnabled
             )
         }
     }
