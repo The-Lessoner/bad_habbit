@@ -101,11 +101,16 @@ extension SignInAppleViewController {
     }
 
     private func configureAuthorizationButton() {
-        authorizationButton.layer.cornerRadius = 12
-        var buttonConfiguration = UIButton.Configuration.filled()
-        buttonConfiguration.title = Strings.SignInAppleScreen.authorizationButtonTitle.uppercased()
-        buttonConfiguration.baseBackgroundColor = .black
-        authorizationButton.configuration = buttonConfiguration
+        var config = UIButton.Configuration.filled()
+        config.baseBackgroundColor = .black
+        config.image = UIImage(systemName: "apple.logo")
+        config.imagePadding = 5
+        let title = Strings.SignInAppleScreen.authorizationButtonTitle.uppercased()
+        let attibutes = AttributeContainer([.font: Fonts.SFProDisplay.medium.font(size: 17)])
+        config.attributedTitle = AttributedString(title, attributes: attibutes)
+        authorizationButton.configuration = config
+        authorizationButton.layer.cornerRadius = 12.0
+        authorizationButton.layer.masksToBounds = true
 
         authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
     }
