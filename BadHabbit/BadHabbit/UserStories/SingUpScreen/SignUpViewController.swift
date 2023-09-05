@@ -94,9 +94,10 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         
         if let layout = slidesCollectoinView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
-            layout.minimumLineSpacing = LayoutConstants.ImageLogo.widht
             
             let slidesEdgesInset = view.bounds.width / 2 - LayoutConstants.ImageLogo.widht / 2
+            
+            layout.minimumLineSpacing = slidesEdgesInset * 2
             layout.sectionInset = UIEdgeInsets(top: 0, left: slidesEdgesInset, bottom: 0, right: slidesEdgesInset)
         }
     }
