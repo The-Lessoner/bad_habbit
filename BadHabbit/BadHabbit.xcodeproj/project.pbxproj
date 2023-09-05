@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		372F03E231465F74E9E647DD /* Pods_BadHabbit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */; };
 		61194AE32A9DEE3200F32EFF /* BackgroundGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61194AE22A9DEE3200F32EFF /* BackgroundGradientView.swift */; };
-		61363E022A8B732700134715 /* SwipeGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61363E012A8B732700134715 /* SwipeGestureRecognizer.swift */; };
 		61448CC22A980BC6002CD090 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61448CC12A980BC6002CD090 /* GradientButton.swift */; };
 		61448CC62A9CDBF8002CD090 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61448CC52A9CDBF8002CD090 /* GradientView.swift */; };
 		614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */; };
@@ -59,7 +58,6 @@
 
 /* Begin PBXFileReference section */
 		61194AE22A9DEE3200F32EFF /* BackgroundGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradientView.swift; sourceTree = "<group>"; };
-		61363E012A8B732700134715 /* SwipeGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeGestureRecognizer.swift; sourceTree = "<group>"; };
 		61448CC12A980BC6002CD090 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		61448CC52A9CDBF8002CD090 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenPresenter.swift; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 		6194A0B12A6FB6330006F570 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				61363E012A8B732700134715 /* SwipeGestureRecognizer.swift */,
 				6194A0AF2A6FB53B0006F570 /* LayoutConstants.swift */,
 			);
 			path = Models;
@@ -572,7 +569,6 @@
 				614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */,
 				614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */,
 				F64555E72A6E780D0070947C /* SignInAppleAssembly.swift in Sources */,
-				61363E022A8B732700134715 /* SwipeGestureRecognizer.swift in Sources */,
 				E58D1BAD2A1CFF2C00137CC6 /* AppDelegate.swift in Sources */,
 				6194A0B02A6FB53B0006F570 /* LayoutConstants.swift in Sources */,
 				61E5EF7D2A8D0A6600091EBA /* Assets.swift in Sources */,
