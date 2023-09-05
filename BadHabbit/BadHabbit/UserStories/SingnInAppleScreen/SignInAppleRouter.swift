@@ -11,18 +11,18 @@ protocol SignInAppleRouterProtocol {
 }
 
 final class SignInAppleRouter: SignInAppleRouterProtocol {
-
+    
     let nextScreen: StoryAssembly
     let globalCoordinator: IGlobalCoordinator
-
+    
     init(nextScreen: StoryAssembly,
          globalCoordinator: IGlobalCoordinator) {
         self.nextScreen = nextScreen
         self.globalCoordinator = globalCoordinator
     }
-
+    
     func presentEmptyScreen() {
         let vc = nextScreen.assembleStory()
-        globalCoordinator.presentOnTopVisibleViewController(vc)
+        globalCoordinator.pushViewController(vc)
     }
 }

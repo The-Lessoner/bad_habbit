@@ -12,10 +12,11 @@ import AuthenticationServices
 protocol SignInAppleViewProtocol: AnyObject { }
 
 final class SignInAppleViewController: BaseViewController, SignInAppleViewProtocol {
-    private lazy var authorizationButton = ASAuthorizationAppleIDButton()
+    private lazy var authorizationButton = UIButton()
     private lazy var titleLabel = UILabel()
-    private lazy var imageLogo = UIImageView()
-    private lazy var imageMountains = UIImageView()
+    private lazy var imageLogo = UIImageView(image: Asset.Images.logo.image)
+    private lazy var imageMountains = UIImageView(image: Asset.Images.mountains.image)
+    private lazy var backgroundView = BackgroundGradientView()
 
     private let presenter: SignInApplePresenterProtocol
 
@@ -37,49 +38,61 @@ final class SignInAppleViewController: BaseViewController, SignInAppleViewProtoc
 extension SignInAppleViewController {
 
     private func setupUI() {
-        view.backgroundColor = Asset.Colors.background.color
-        imageMountains = createImageView(image: Asset.Images.mountains.image)
-        imageLogo = createImageView(image: Asset.Images.logo.image)
+
+        setupConstraints()
+
+        configureNavigationBar()
+        configureImageLogo()
+        configureAuthorizationButton()
+        configureTitleLabel()
+    }
+
+    private func configureNavigationBar() {
+        guard let navigationController = self.navigationController else { return }
+        navigationController.navigationBar.tintColor = Asset.Colors.backButtonTextColor.color
+        navigationController.navigationBar.isTranslucent = true
+    }
+
+    private func configureImageLogo() {
         imageLogo.alpha = 0.5
         imageLogo.contentMode = .scaleAspectFill
-        createAuthorizationButton()
-        createTitleLabel()
-        setupConstraints()
     }
 
-    private func createImageView(image: UIImage) -> UIImageView {
-        let imageView = UIImageView(image: image)
-        view.addSubview(imageView)
-        return imageView
-    }
-
-    private func createTitleLabel() {
-        view.addSubview(titleLabel)
+    private func configureTitleLabel() {
         titleLabel.textColor = .black
-        titleLabel.font = Fonts.SFProDisplay.bold.font(size: 24.0)
+        titleLabel.font = Fonts.SFProDisplay.semibold.font(size: 24.0)
         titleLabel.text = Strings.appName.uppercased()
         titleLabel.textAlignment = .center
     }
 
     private func setupConstraints() {
         let safeArea = view.safeAreaLayoutGuide
-        
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeArea).inset(35)
-            make.leading.trailing.equalToSuperview().inset(LayoutConstants.leadingInset)
+
+        view.addSubview(backgroundView)
+        backgroundView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
 
+        view.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(safeArea).inset(42)
+            make.centerX.equalTo(safeArea)
+        }
+
+        view.addSubview(imageMountains)
+        imageMountains.snp.makeConstraints { make in
+            make.top.equalTo(view.snp.centerY)
+            make.bottom.leading.trailing.equalToSuperview()
+        }
+
+        view.addSubview(imageLogo)
         imageLogo.snp.makeConstraints { make in
             make.centerX.equalTo(safeArea)
             make.centerY.equalTo(imageMountains.snp.top)
             make.size.equalTo(LayoutConstants.ImageLogo.size)
         }
 
-        imageMountains.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.centerY)
-            make.bottom.leading.trailing.equalToSuperview()
-        }
-
+        view.addSubview(authorizationButton)
         authorizationButton.snp.makeConstraints { make in
             make.bottom.equalTo(safeArea).inset(LayoutConstants.ActionButton.bottomInset)
             make.height.equalTo(LayoutConstants.ActionButton.height)
@@ -87,9 +100,18 @@ extension SignInAppleViewController {
         }
     }
 
-    private func createAuthorizationButton() {
-        view.addSubview(authorizationButton)
-        authorizationButton.cornerRadius = 12
+    private func configureAuthorizationButton() {
+        var config = UIButton.Configuration.filled()
+        config.baseBackgroundColor = .black
+        config.image = UIImage(systemName: "apple.logo")
+        config.imagePadding = 5
+        let title = Strings.SignInAppleScreen.authorizationButtonTitle.uppercased()
+        let attibutes = AttributeContainer([.font: Fonts.SFProDisplay.medium.font(size: 17)])
+        config.attributedTitle = AttributedString(title, attributes: attibutes)
+        authorizationButton.configuration = config
+        authorizationButton.layer.cornerRadius = 12.0
+        authorizationButton.layer.masksToBounds = true
+
         authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
     }
 

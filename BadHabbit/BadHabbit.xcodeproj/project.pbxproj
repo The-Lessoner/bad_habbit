@@ -21,7 +21,6 @@
 		61E5EF842A8D0CE300091EBA /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E5EF832A8D0CE300091EBA /* Fonts.swift */; };
 		61EF63AC2A7297E00009218A /* SignUpScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EF63AB2A7297E00009218A /* SignUpScreenAssembly.swift */; };
 		E5109B4A2A6AD962008B74D3 /* AlertAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B492A6AD962008B74D3 /* AlertAssembly.swift */; };
-		E5109B4C2A6AD9A4008B74D3 /* DesignKitAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B4B2A6AD9A4008B74D3 /* DesignKitAssembly.swift */; };
 		E5109B4E2A6ADA99008B74D3 /* AlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B4D2A6ADA99008B74D3 /* AlertConfiguration.swift */; };
 		E5109B502A6ADABF008B74D3 /* AlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B4F2A6ADABF008B74D3 /* AlertAction.swift */; };
 		E5109B532A6ADB4A008B74D3 /* CommonTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B522A6ADB4A008B74D3 /* CommonTypeAliases.swift */; };
@@ -45,6 +44,9 @@
 		E59E8A342A78E85400ABD1DA /* DropDownViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59E8A332A78E85400ABD1DA /* DropDownViewPresenter.swift */; };
 		E59E8A372A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59E8A362A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift */; };
 		E59E8A392A790C7100ABD1DA /* DropDownViewPresenterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59E8A382A790C7100ABD1DA /* DropDownViewPresenterConfig.swift */; };
+		F61C94432A93F5260008FC96 /* SFProDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F61C94422A93F5250008FC96 /* SFProDisplay-Semibold.ttf */; };
+		F62BB3592A94F40C005BEAEB /* DesignKitAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62BB3582A94F40B005BEAEB /* DesignKitAssembly.swift */; };
+		F62BB37F2A97A517005BEAEB /* BackgroundGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62BB37E2A97A517005BEAEB /* BackgroundGradientView.swift */; };
 		F64555992A61743A0070947C /* SignInAppleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555982A61743A0070947C /* SignInAppleViewController.swift */; };
 		F64555E32A6E77670070947C /* SignInAppleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E22A6E77670070947C /* SignInAppleRouter.swift */; };
 		F64555E52A6E77A70070947C /* SignInApplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E42A6E77A70070947C /* SignInApplePresenter.swift */; };
@@ -68,7 +70,6 @@
 		77FC42E518800866EDC7473A /* Pods-BadHabbit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadHabbit.debug.xcconfig"; path = "Target Support Files/Pods-BadHabbit/Pods-BadHabbit.debug.xcconfig"; sourceTree = "<group>"; };
 		82255F197739D3932E47D930 /* Pods-BadHabbit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadHabbit.release.xcconfig"; path = "Target Support Files/Pods-BadHabbit/Pods-BadHabbit.release.xcconfig"; sourceTree = "<group>"; };
 		E5109B492A6AD962008B74D3 /* AlertAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAssembly.swift; sourceTree = "<group>"; };
-		E5109B4B2A6AD9A4008B74D3 /* DesignKitAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignKitAssembly.swift; sourceTree = "<group>"; };
 		E5109B4D2A6ADA99008B74D3 /* AlertConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertConfiguration.swift; sourceTree = "<group>"; };
 		E5109B4F2A6ADABF008B74D3 /* AlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAction.swift; sourceTree = "<group>"; };
 		E5109B522A6ADB4A008B74D3 /* CommonTypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTypeAliases.swift; sourceTree = "<group>"; };
@@ -95,6 +96,9 @@
 		E59E8A362A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownViewPresenterAssembly.swift; sourceTree = "<group>"; };
 		E59E8A382A790C7100ABD1DA /* DropDownViewPresenterConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownViewPresenterConfig.swift; sourceTree = "<group>"; };
 		EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BadHabbit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F61C94422A93F5250008FC96 /* SFProDisplay-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Semibold.ttf"; sourceTree = "<group>"; };
+		F62BB3582A94F40B005BEAEB /* DesignKitAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignKitAssembly.swift; sourceTree = "<group>"; };
+		F62BB37E2A97A517005BEAEB /* BackgroundGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradientView.swift; sourceTree = "<group>"; };
 		F64555982A61743A0070947C /* SignInAppleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleViewController.swift; sourceTree = "<group>"; };
 		F64555E22A6E77670070947C /* SignInAppleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleRouter.swift; sourceTree = "<group>"; };
 		F64555E42A6E77A70070947C /* SignInApplePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInApplePresenter.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				61E5EF832A8D0CE300091EBA /* Fonts.swift */,
+				F61C94422A93F5250008FC96 /* SFProDisplay-Semibold.ttf */,
 				614BA9472A6749F5004231A3 /* SF-Pro-Display-Medium.otf */,
 				61CEF96D2A67739600744ADA /* SF-Pro-Display-Bold.otf */,
 				61CEF96F2A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf */,
@@ -159,10 +164,11 @@
 			children = (
 				E59E8A352A78E85B00ABD1DA /* DropDownViewPresenter */,
 				E5109B6C2A6D4726008B74D3 /* BaseViewController */,
-				E5109B4B2A6AD9A4008B74D3 /* DesignKitAssembly.swift */,
+				F62BB3582A94F40B005BEAEB /* DesignKitAssembly.swift */,
 				E5109B632A6AE6F7008B74D3 /* GlobalCoordinator */,
 				E5109B482A6AD94B008B74D3 /* Alerts */,
 				6194A0B12A6FB6330006F570 /* Models */,
+				F62BB37E2A97A517005BEAEB /* BackgroundGradientView.swift */,
 			);
 			path = DesignKit;
 			sourceTree = "<group>";
@@ -432,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				614BA9482A6749F5004231A3 /* SF-Pro-Display-Medium.otf in Resources */,
+				F61C94432A93F5260008FC96 /* SFProDisplay-Semibold.ttf in Resources */,
 				61AE3EFF2A6DCC9D00B607E1 /* Localizable.strings in Resources */,
 				61CEF9702A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf in Resources */,
 				E58D1BB92A1CFF2E00137CC6 /* LaunchScreen.storyboard in Resources */,
@@ -530,6 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F62BB37F2A97A517005BEAEB /* BackgroundGradientView.swift in Sources */,
 				61E5EF7E2A8D0A6600091EBA /* Strings.swift in Sources */,
 				E5109B5A2A6ADEFF008B74D3 /* FillingPersonalDataPresenter.swift in Sources */,
 				F6F3DA5E2A858E0A00AC7A48 /* EmptyScreenAssembly.swift in Sources */,
@@ -545,10 +553,10 @@
 				E58D1BEF2A1D125B00137CC6 /* StoriesAssembly.swift in Sources */,
 				E59E8A392A790C7100ABD1DA /* DropDownViewPresenterConfig.swift in Sources */,
 				E5109B652A6AE70D008B74D3 /* GlobalCoordinator.swift in Sources */,
-				E5109B4C2A6AD9A4008B74D3 /* DesignKitAssembly.swift in Sources */,
 				E5109B692A6D4269008B74D3 /* FillingPersonalDataRouter.swift in Sources */,
 				E5109B6B2A6D4337008B74D3 /* AppAssembly.swift in Sources */,
 				E5109B582A6ADEC1008B74D3 /* FillingPersonalDataAssembly.swift in Sources */,
+				F62BB3592A94F40C005BEAEB /* DesignKitAssembly.swift in Sources */,
 				E5109B5C2A6ADF14008B74D3 /* FillingPersonalDataView.swift in Sources */,
 				614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */,
 				614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */,
@@ -715,7 +723,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8WG6LW4XNB;
+				DEVELOPMENT_TEAM = DA2QG6RD9Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BadHabbit/SupportFiles/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
@@ -748,7 +756,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8WG6LW4XNB;
+				DEVELOPMENT_TEAM = DA2QG6RD9Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BadHabbit/SupportFiles/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
