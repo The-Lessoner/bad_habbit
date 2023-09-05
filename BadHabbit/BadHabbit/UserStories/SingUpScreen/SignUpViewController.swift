@@ -9,16 +9,16 @@ import UIKit
 import SnapKit
 
 protocol SignUpViewProtocol: AnyObject {
-    func updateLogoImageViewImage(_ image: UIImage?)
     func updateStartButton(isEnabled: Bool)
     func updatePageControlPage(toPage page: Int)
+    func updateCollectionView(toPage page: Int)
 }
 
 final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     private lazy var backgroundImageView = UIImageView()
     private lazy var welcomeLabel = UILabel()
     private lazy var appNameLabel = UILabel()
-    private lazy var logoImageView = UIImageView()
+    private lazy var slidesCollectoinView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     private lazy var phraseLabel = UILabel()
     private lazy var pageControl = UIPageControl()
     
@@ -50,7 +50,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         
         addWelcomeLabel()
         addAppNameLabel()
-        addLogoImageView()
+        addSlidesCollectoinView()
         addPhraseLabel()
         addPageControl()
         addStartButton()
@@ -81,23 +81,23 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         appNameLabel.textColor = .black
     }
     
-    private func addLogoImageView() {
-        view.addSubview(logoImageView)
-        addSwipeGestureRecognizers(
-            recognizers: [SwipeGestureRecognizer.left, SwipeGestureRecognizer.right],
-            action: #selector(logoImageViewSwiped),
-            toView: logoImageView
-        )
+    private func addSlidesCollectoinView() {
+        view.addSubview(slidesCollectoinView)
         
-        logoImageView.image = Assets.Images.signUpScreenLogo.image
-        logoImageView.contentMode = .scaleAspectFill
-        logoImageView.isUserInteractionEnabled = true
-    }
-    
-    private func addSwipeGestureRecognizers(recognizers: [UIGestureRecognizer], action: Selector, toView: UIView) {
-        recognizers.forEach { recognizer in
-            recognizer.addTarget(self, action: action)
-            view.addGestureRecognizer(recognizer)
+        slidesCollectoinView.backgroundColor = .none
+        slidesCollectoinView.isPagingEnabled = true
+        slidesCollectoinView.showsHorizontalScrollIndicator = false
+        
+        slidesCollectoinView.register(SignUpScreenCollectionViewCell.self, forCellWithReuseIdentifier: SignUpScreenCollectionViewCell.identifier)
+        slidesCollectoinView.dataSource = self
+        slidesCollectoinView.delegate = self
+        
+        if let layout = slidesCollectoinView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .horizontal
+            layout.minimumLineSpacing = LayoutConstants.ImageLogo.widht
+            
+            let slidesEdgesInset = view.bounds.width / 2 - LayoutConstants.ImageLogo.widht / 2
+            layout.sectionInset = UIEdgeInsets(top: 0, left: slidesEdgesInset, bottom: 0, right: slidesEdgesInset)
         }
     }
     
@@ -114,8 +114,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     
     private func addPageControl() {
         view.addSubview(pageControl)
-        
-        pageControl.numberOfPages = 3
+        pageControl.numberOfPages = presenter.images.count
         pageControl.pageIndicatorTintColor = Assets.Colors.darkBlue.color
         pageControl.currentPageIndicatorTintColor = Assets.Colors.purpleLight.color
         pageControl.direction = .leftToRight
@@ -162,10 +161,11 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
             make.centerX.equalTo(safeArea)
         }
         
-        logoImageView.snp.makeConstraints { make in
-            make.size.equalTo(196)
-            make.centerX.equalTo(safeArea)
-            make.centerY.equalTo(backgroundImageView.snp.top)
+        slidesCollectoinView.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(safeArea.snp)
+            make.trailing.equalTo(safeArea.snp.trailing)
+            make.centerY.equalTo(safeArea)
+            make.height.equalTo(LayoutConstants.ImageLogo.height)
         }
         
         pageControl.snp.makeConstraints { make in
@@ -188,11 +188,6 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     }
     
     @objc
-    private func logoImageViewSwiped(_ gestureRecognizer: UISwipeGestureRecognizer) {
-        presenter.logoImageViewSwiped(gestureRecognizer.direction, pageControlCurrentPage: pageControl.currentPage)
-    }
-    
-    @objc
     private func pageControlPageChanged(sender: UIPageControl) {
         presenter.pageControlPageChanged(toPage: sender.currentPage)
     }
@@ -204,15 +199,45 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
 }
 
 extension SignUpViewController {
-    func updateLogoImageViewImage(_ image: UIImage?) {
-        logoImageView.image = image
-    }
-    
     func updateStartButton(isEnabled: Bool) {
         startButton.isEnabled = isEnabled
     }
     
     func updatePageControlPage(toPage page: Int) {
         pageControl.currentPage = page
+    }
+    
+    func updateCollectionView(toPage page: Int) {
+        let offset = pageControl.currentPage * Int(view.bounds.width)
+        slidesCollectoinView.setContentOffset(
+            CGPoint(x: offset, y: 0),
+            animated: true
+        )
+    }
+}
+
+extension SignUpViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return presenter.images.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SignUpScreenCollectionViewCell.identifier, for: indexPath)
+        
+        guard let cell = cell as? SignUpScreenCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        cell.imageView.image = presenter.images[indexPath.row]
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: LayoutConstants.ImageLogo.widht, height: LayoutConstants.ImageLogo.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        presenter.collectionViewSwiped(toItemAt: indexPath.row)
     }
 }

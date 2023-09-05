@@ -8,14 +8,30 @@
 import UIKit
 
 protocol SignUpScreenPresenterProtocol {
+    var cellCount: Int { get }
+    var images: [UIImage] { get }
+    
     func startButtonTapped()
     func pageControlPageChanged(toPage: Int)
-    func logoImageViewSwiped(_ swipeDirection: UISwipeGestureRecognizer.Direction, pageControlCurrentPage page: Int)
+    func collectionViewSwiped(toItemAt visibleItem: Int)
 }
 
 final class SignUpScreenPresenter: SignUpScreenPresenterProtocol {
-    
     weak var view: SignUpViewProtocol?
+    
+    lazy var cellCount: Int = {
+        return 3
+    }()
+    
+    lazy var images: [UIImage] = {
+        var image: [UIImage] = []
+        (1...3).forEach { _ in
+            image.append(Assets.Images.signUpScreenLogo.image)
+        }
+        
+        return image
+    }()
+    
     private let router: SignUpRouterProtocol
     private var startButtonIsEnabled = false {
         didSet {
@@ -29,47 +45,23 @@ final class SignUpScreenPresenter: SignUpScreenPresenterProtocol {
         self.router = router
     }
     
-    func logoImageViewSwiped(_ swipeDirection: UISwipeGestureRecognizer.Direction, pageControlCurrentPage page: Int) {
-        let nextPage: Int
-        
-        switch swipeDirection {
-        case .left:
-            nextPage = page + 1
-        case .right:
-            nextPage = page - 1
-        default: return
-        }
-        
-        if (0...2).contains(nextPage) {
-            view?.updatePageControlPage(toPage: nextPage)
-            pageControlPageChanged(toPage: nextPage)
-        }
+    func collectionViewSwiped(toItemAt visibleItem: Int) {
+        view?.updatePageControlPage(toPage: visibleItem)
+        isNeedStartButtonUpdate(forPage: visibleItem)
     }
     
     func pageControlPageChanged(toPage page: Int) {
-        guard let image = image(forPage: page)
-        else { return }
-        
-        view?.updateLogoImageViewImage(image)
-        
-        if page == 2 && startButtonIsEnabled == false {
-            startButtonIsEnabled = true
-        }
+        view?.updateCollectionView(toPage: page)
+        isNeedStartButtonUpdate(forPage: page)
     }
     
     func startButtonTapped() {
         router.presentSignInAppleScreen()
     }
     
-    private func image(forPage page: Int) -> UIImage? {
-        var image: UIImage?
-        
-        switch page {
-        case 0, 1, 2:
-            image = Assets.Images.signUpScreenLogo.image
-        default: break
+    private func isNeedStartButtonUpdate(forPage page: Int) {
+        if page == 2 && startButtonIsEnabled == false {
+            startButtonIsEnabled = true
         }
-        
-        return image
     }
 }
