@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BackgroundGradientView: GradientView {
+final class BackgroundGradientView: GradientView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

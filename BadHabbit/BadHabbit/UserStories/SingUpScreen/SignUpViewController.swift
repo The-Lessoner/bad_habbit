@@ -164,7 +164,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         slidesCollectoinView.snp.makeConstraints { make in
             make.leading.equalTo(safeArea.snp.leading)
             make.trailing.equalTo(safeArea.snp.trailing)
-            make.centerY.equalTo(safeArea)
+            make.centerY.equalTo(backgroundImageView.snp.top)
             make.height.equalTo(LayoutConstants.ImageLogo.height)
         }
         
