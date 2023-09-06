@@ -49,7 +49,7 @@ extension SignInAppleViewController {
 
     private func configureNavigationBar() {
         guard let navigationController = self.navigationController else { return }
-        navigationController.navigationBar.tintColor = Asset.Colors.backButtonTextColor.color
+        navigationController.navigationBar.tintColor = Asset.Colors.purpleLight.color
         navigationController.navigationBar.isTranslucent = true
     }
 

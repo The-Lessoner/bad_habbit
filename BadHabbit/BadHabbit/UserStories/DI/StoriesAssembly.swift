@@ -35,6 +35,13 @@ final class StoriesAssembly {
 
     var signInScreen: StoryAssembly {
         SignInAppleAssembly(
+            nextScreen: self.breakHabitScreen,
+            globalCoordinator: designKitAssembly.globalCoordinator
+        )
+    }
+
+    var breakHabitScreen: StoryAssembly {
+        BreakHabitScreenAssembly(
             nextScreen: self.emptyScreen,
             globalCoordinator: designKitAssembly.globalCoordinator
         )
