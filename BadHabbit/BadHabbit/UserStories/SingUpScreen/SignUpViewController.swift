@@ -8,11 +8,7 @@
 import UIKit
 import SnapKit
 
-protocol SignUpViewProtocol: AnyObject {
-    func updateStartButton(isEnabled: Bool)
-    func updatePageControlPage(toPage page: Int)
-    func updateCollectionView(toPage page: Int)
-}
+protocol SignUpViewProtocol: AnyObject { }
 
 final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     private lazy var backgroundImageView = UIImageView()
@@ -94,18 +90,18 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         
         if let layout = slidesCollectoinView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
-            
-            let slidesEdgesInset = view.bounds.width / 2 - LayoutConstants.ImageLogo.widht / 2
-            
-            layout.minimumLineSpacing = slidesEdgesInset * 2
-            layout.sectionInset = UIEdgeInsets(top: 0, left: slidesEdgesInset, bottom: 0, right: slidesEdgesInset)
         }
     }
     
     private func addPhraseLabel() {
         view.addSubview(phraseLabel)
         
-        phraseLabel.text = Strings.SignUpScreen.phraseLabelText.uppercased()
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = Multipliers.phraseLabelLineHeight
+        let attributes: [NSAttributedString.Key: Any] = [.paragraphStyle: paragraphStyle]
+        
+        phraseLabel.attributedText = NSAttributedString(string: Strings.SignUpScreen.phraseLabelText.uppercased(), attributes: attributes)
+        
         phraseLabel.font = Fonts.SFProDisplay.medium.font(size: 14.0)
         phraseLabel.textAlignment = .center
         phraseLabel.textColor = .black
@@ -115,7 +111,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     
     private func addPageControl() {
         view.addSubview(pageControl)
-        pageControl.numberOfPages = presenter.images.count
+        pageControl.numberOfPages = presenter.numberOfItems
         pageControl.pageIndicatorTintColor = Assets.Colors.darkBlue.color
         pageControl.currentPageIndicatorTintColor = Assets.Colors.purpleLight.color
         pageControl.direction = .leftToRight
@@ -128,7 +124,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     private func addStartButton() {
         view.addSubview(startButton)
         
-        startButton.layer.cornerRadius = 12
+        startButton.layer.cornerRadius = Radius.actionButtonCorner
         startButton.isEnabled = false
         
         startButton.setTitle(
@@ -166,12 +162,13 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
             make.leading.equalTo(safeArea.snp.leading)
             make.trailing.equalTo(safeArea.snp.trailing)
             make.centerY.equalTo(backgroundImageView.snp.top)
-            make.height.equalTo(LayoutConstants.ImageLogo.height)
+            make.height.equalTo(LayoutConstants.ImageLogo.size)
+            
         }
         
         pageControl.snp.makeConstraints { make in
             make.centerX.equalTo(safeArea)
-            make.bottom.equalTo(phraseLabel.snp.top).inset(-30)
+            make.bottom.equalTo(phraseLabel.snp.bottom).inset(93)
         }
         
         phraseLabel.snp.makeConstraints { make in
@@ -184,13 +181,23 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
             make.leading.equalTo(safeArea).inset(LayoutConstants.leadingInset)
             make.trailing.equalTo(safeArea).inset(LayoutConstants.trailingInset)
             make.bottom.equalTo(safeArea.snp.bottom).inset(LayoutConstants.ActionButton.bottomInset)
-            make.top.equalTo(phraseLabel.snp.bottom).offset(30)
+            make.top.equalTo(phraseLabel.snp.bottom).offset(LayoutConstants.ActionButton.topOffset)
+        }
+    }
+    
+    private func updateStartButton(isEnabled: Bool) {
+        if isEnabled {
+            startButton.isEnabled = isEnabled
         }
     }
     
     @objc
     private func pageControlPageChanged(sender: UIPageControl) {
-        presenter.pageControlPageChanged(toPage: sender.currentPage)
+        slidesCollectoinView.scrollToItem(
+            at: IndexPath(row: sender.currentPage, section: 0),
+            at: .centeredHorizontally,
+            animated: true)
+        updateStartButton(isEnabled: sender.currentPage == 2)
     }
     
     @objc
@@ -199,27 +206,9 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     }
 }
 
-extension SignUpViewController {
-    func updateStartButton(isEnabled: Bool) {
-        startButton.isEnabled = isEnabled
-    }
-    
-    func updatePageControlPage(toPage page: Int) {
-        pageControl.currentPage = page
-    }
-    
-    func updateCollectionView(toPage page: Int) {
-        let offset = pageControl.currentPage * Int(view.bounds.width)
-        slidesCollectoinView.setContentOffset(
-            CGPoint(x: offset, y: 0),
-            animated: true
-        )
-    }
-}
-
-extension SignUpViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension SignUpViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter.images.count
+        return presenter.numberOfItems
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -229,16 +218,34 @@ extension SignUpViewController: UICollectionViewDataSource, UICollectionViewDele
             return UICollectionViewCell()
         }
         
-        cell.imageView.image = presenter.images[indexPath.row]
+        cell.imageView.image = presenter.image(forRow: indexPath.row)
         
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        pageControl.currentPage = indexPath.row
+        updateStartButton(isEnabled: indexPath.row == 2)
+    }
+}
+
+extension SignUpViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: LayoutConstants.ImageLogo.widht, height: LayoutConstants.ImageLogo.height)
+        CGSize(width: LayoutConstants.ImageLogo.size, height: LayoutConstants.ImageLogo.size)
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        presenter.collectionViewSwiped(toItemAt: indexPath.row)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        LayoutConstants.CollectionView.edgeInset(superviewWidth: view.bounds.width) * 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        UIEdgeInsets(
+            top: 0,
+            left: LayoutConstants.CollectionView.edgeInset(superviewWidth: view.bounds.width),
+            bottom: 0,
+            right: LayoutConstants.CollectionView.edgeInset(superviewWidth: view.bounds.width)
+        )
     }
 }

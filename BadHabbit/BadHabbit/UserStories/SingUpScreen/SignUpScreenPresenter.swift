@@ -8,22 +8,19 @@
 import UIKit
 
 protocol SignUpScreenPresenterProtocol {
-    var cellCount: Int { get }
-    var images: [UIImage] { get }
+    var numberOfItems: Int { get }
     
     func startButtonTapped()
-    func pageControlPageChanged(toPage: Int)
-    func collectionViewSwiped(toItemAt visibleItem: Int)
+    func image(forRow row: Int) -> UIImage
 }
 
 final class SignUpScreenPresenter: SignUpScreenPresenterProtocol {
+    private let router: SignUpRouterProtocol
     weak var view: SignUpViewProtocol?
     
-    lazy var cellCount: Int = {
-        return 3
-    }()
+    var numberOfItems: Int { images.count }
     
-    lazy var images: [UIImage] = {
+    private var images: [UIImage] = {
         var image: [UIImage] = []
         (1...3).forEach { _ in
             image.append(Assets.Images.signUpScreenLogo.image)
@@ -32,36 +29,15 @@ final class SignUpScreenPresenter: SignUpScreenPresenterProtocol {
         return image
     }()
     
-    private let router: SignUpRouterProtocol
-    private var startButtonIsEnabled = false {
-        didSet {
-            view?.updateStartButton(
-                isEnabled: self.startButtonIsEnabled
-            )
-        }
-    }
-    
     init(router: SignUpRouterProtocol) {
         self.router = router
-    }
-    
-    func collectionViewSwiped(toItemAt visibleItem: Int) {
-        view?.updatePageControlPage(toPage: visibleItem)
-        isNeedStartButtonUpdate(forPage: visibleItem)
-    }
-    
-    func pageControlPageChanged(toPage page: Int) {
-        view?.updateCollectionView(toPage: page)
-        isNeedStartButtonUpdate(forPage: page)
     }
     
     func startButtonTapped() {
         router.presentSignInAppleScreen()
     }
     
-    private func isNeedStartButtonUpdate(forPage page: Int) {
-        if page == 2 && startButtonIsEnabled == false {
-            startButtonIsEnabled = true
-        }
+    func image(forRow row: Int) -> UIImage {
+        images[row]
     }
 }

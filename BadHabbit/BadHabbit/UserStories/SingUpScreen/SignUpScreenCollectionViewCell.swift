@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpScreenCollectionViewCell: UICollectionViewCell {
+final class SignUpScreenCollectionViewCell: UICollectionViewCell {
     static let identifier = "SignUpScreenCollectionViewCell"
     lazy var imageView = UIImageView()
     
