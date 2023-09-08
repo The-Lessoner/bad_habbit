@@ -61,7 +61,7 @@ extension BreakHabitViewController {
     
     private func configurePhraseLabel() {
         let labetText = Strings.BreakHabitScreen.phraseLabelText.uppercased()
-        phraseLabel.setTextWithLineSpacing(lineSpacing: Constants.lineHeightMultiple, for: labetText)
+        phraseLabel.setTextWithLineSpacing(lineHeightMultiple: Constants.lineHeightMultiple, for: labetText)
         phraseLabel.font = Fonts.SFProDisplay.medium.font(size: 14.0)
         phraseLabel.textAlignment = .center
         phraseLabel.textColor = .black

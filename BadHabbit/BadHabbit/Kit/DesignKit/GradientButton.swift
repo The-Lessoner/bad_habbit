@@ -26,14 +26,12 @@ class GradientButton: UIButton {
 
     func configureGradientLayer() {
         guard let gradientLayer = self.layer as? CAGradientLayer else { return }
-        gradientLayer.type = .axial
         gradientLayer.colors = [
             Asset.Colors.darkBlueColor.color.cgColor,
             Asset.Colors.purple.color.cgColor
         ]
 
-        gradientLayer.locations = [0, 1]
-        gradientLayer.startPoint = CGPoint(x: 0.25, y: 0.5)
-        gradientLayer.endPoint = CGPoint(x: 0.75, y: 0.5)
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 0)
     }
 }
