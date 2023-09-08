@@ -57,7 +57,7 @@
 		F65BE6B22AA737900006FB92 /* BreakHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65BE6B12AA737900006FB92 /* BreakHabitViewController.swift */; };
 		F65BE6B42AA739340006FB92 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65BE6B32AA739340006FB92 /* GradientButton.swift */; };
 		F65BE6B62AA7DC270006FB92 /* UILabel+lineSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65BE6B52AA7DC270006FB92 /* UILabel+lineSpacing.swift */; };
-		F65BE70E2AAAFB020006FB92 /* CornerRadiusConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65BE70D2AAAFB020006FB92 /* CornerRadiusConstants.swift */; };
+		F65BE70E2AAAFB020006FB92 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65BE70D2AAAFB020006FB92 /* Constants.swift */; };
 		F6F3DA5E2A858E0A00AC7A48 /* EmptyScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F3DA5D2A858E0A00AC7A48 /* EmptyScreenAssembly.swift */; };
 /* End PBXBuildFile section */
 
@@ -116,7 +116,7 @@
 		F65BE6B12AA737900006FB92 /* BreakHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakHabitViewController.swift; sourceTree = "<group>"; };
 		F65BE6B32AA739340006FB92 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		F65BE6B52AA7DC270006FB92 /* UILabel+lineSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+lineSpacing.swift"; sourceTree = "<group>"; };
-		F65BE70D2AAAFB020006FB92 /* CornerRadiusConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusConstants.swift; sourceTree = "<group>"; };
+		F65BE70D2AAAFB020006FB92 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F6D9511D2A6EC556001E342C /* BadHabbit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BadHabbit.entitlements; sourceTree = "<group>"; };
 		F6F3DA5D2A858E0A00AC7A48 /* EmptyScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyScreenAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				6194A0AF2A6FB53B0006F570 /* LayoutConstants.swift */,
-				F65BE70D2AAAFB020006FB92 /* CornerRadiusConstants.swift */,
+				F65BE70D2AAAFB020006FB92 /* Constants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -587,7 +587,7 @@
 				E5109B532A6ADB4A008B74D3 /* CommonTypeAliases.swift in Sources */,
 				E5109B6E2A6D4733008B74D3 /* BaseViewController.swift in Sources */,
 				E59E8A372A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift in Sources */,
-				F65BE70E2AAAFB020006FB92 /* CornerRadiusConstants.swift in Sources */,
+				F65BE70E2AAAFB020006FB92 /* Constants.swift in Sources */,
 				E5109B5F2A6AE4CB008B74D3 /* AlertController.swift in Sources */,
 				E5109B502A6ADABF008B74D3 /* AlertAction.swift in Sources */,
 				E58D1BEF2A1D125B00137CC6 /* StoriesAssembly.swift in Sources */,

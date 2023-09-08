@@ -61,7 +61,7 @@ extension BreakHabitViewController {
     
     private func configurePhraseLabel() {
         let labetText = Strings.BreakHabitScreen.phraseLabelText.uppercased()
-        phraseLabel.setTextWithLineSpacing(lineHeightMultiple: 1.26, for: labetText)
+        phraseLabel.setTextWithLineSpacing(lineSpacing: Constants.lineHeightMultiple, for: labetText)
         phraseLabel.font = Fonts.SFProDisplay.medium.font(size: 14.0)
         phraseLabel.textAlignment = .center
         phraseLabel.textColor = .black
@@ -116,7 +116,7 @@ extension BreakHabitViewController {
         startButton.setTitle(title, for: .normal)
         startButton.setTitleColor(.white, for: .normal)
         startButton.titleLabel?.font = Fonts.SFProDisplay.medium.font(size: 17)
-        startButton.layer.cornerRadius = CornerRadiusConstants.actionButtonCornerRadius
+        startButton.layer.cornerRadius = Constants.actionButtonCornerRadius
 
         startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
     }
