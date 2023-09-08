@@ -12,17 +12,17 @@ protocol SignInAppleRouterProtocol {
 
 final class SignInAppleRouter: SignInAppleRouterProtocol {
     
-    let nextScreen: StoryAssembly
+    let breakHabitScreenAssembly: StoryAssembly
     let globalCoordinator: IGlobalCoordinator
     
-    init(nextScreen: StoryAssembly,
+    init(breakHabitScreenAssembly: StoryAssembly,
          globalCoordinator: IGlobalCoordinator) {
-        self.nextScreen = nextScreen
+        self.breakHabitScreenAssembly = breakHabitScreenAssembly
         self.globalCoordinator = globalCoordinator
     }
     
     func presentBreakHabitScreen() {
-        let vc = nextScreen.assembleStory()
+        let vc = breakHabitScreenAssembly.assembleStory()
         globalCoordinator.pushViewController(vc)
     }
 }

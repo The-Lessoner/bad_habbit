@@ -19,7 +19,7 @@ final class SignInAppleAssembly: StoryAssembly {
 
     func assembleStory() -> UIViewController {
         let router = SignInAppleRouter(
-            nextScreen: nextScreen,
+            breakHabitScreenAssembly: nextScreen,
             globalCoordinator: globalCoordinator
         )
         let presenter = SignInApplePresenter(router: router)

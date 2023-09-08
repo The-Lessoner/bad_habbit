@@ -19,7 +19,7 @@ final class BreakHabitScreenAssembly: StoryAssembly {
 
     func assembleStory() -> UIViewController {
         let router = BreakHabitScreenRouter(
-            nextScreen: nextScreen,
+            emptyScreenAssembly: nextScreen,
             globalCoordinator: globalCoordinator
         )
         let presenter = BreakHabitScreenPresenter(router: router)

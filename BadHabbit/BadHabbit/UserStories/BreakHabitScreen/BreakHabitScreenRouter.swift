@@ -13,19 +13,19 @@ protocol BreakHabitScreenRouterProtocol {
 
 final class BreakHabitScreenRouter: BreakHabitScreenRouterProtocol {
     
-    let nextScreen: StoryAssembly
+    let emptyScreenAssembly: StoryAssembly
     let globalCoordinator: IGlobalCoordinator
     
     init(
-        nextScreen: StoryAssembly,
+        emptyScreenAssembly: StoryAssembly,
         globalCoordinator: IGlobalCoordinator
     ) {
-        self.nextScreen = nextScreen
+        self.emptyScreenAssembly = emptyScreenAssembly
         self.globalCoordinator = globalCoordinator
     }
     
     func presentEmptyScreen() {
-        let vc = nextScreen.assembleStory()
+        let vc = emptyScreenAssembly.assembleStory()
         globalCoordinator.pushViewController(vc)
     }
 }
