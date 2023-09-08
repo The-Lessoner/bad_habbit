@@ -14,7 +14,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     private lazy var backgroundImageView = UIImageView()
     private lazy var welcomeLabel = UILabel()
     private lazy var appNameLabel = UILabel()
-    private lazy var slidesCollectoinView = HorizontalCollectionView()
+    private lazy var slidesCollectoinView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     private lazy var phraseLabel = UILabel()
     private lazy var pageControl = UIPageControl()
     
@@ -83,6 +83,9 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         slidesCollectoinView.backgroundColor = .none
         slidesCollectoinView.isPagingEnabled = true
         slidesCollectoinView.showsHorizontalScrollIndicator = false
+        if let layout = slidesCollectoinView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .horizontal
+        }
         
         slidesCollectoinView.register(SignUpScreenCollectionViewCell.self, forCellWithReuseIdentifier: SignUpScreenCollectionViewCell.identifier)
         slidesCollectoinView.dataSource = self
