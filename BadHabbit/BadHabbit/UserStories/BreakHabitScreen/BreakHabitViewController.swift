@@ -16,9 +16,7 @@ final class BreakHabitViewController: BaseViewController, BreakHabitViewProtocol
     private lazy var imageLogo = UIImageView(image: Asset.Images.logo.image)
     private lazy var imageMountains = UIImageView(image: Asset.Images.mountains.image)
     private lazy var backgroundView = BackgroundGradientView()
-    private lazy var buttonGragientView = StartButtonGradientView()
-    
-    private lazy var startButton = UIButton()
+    private lazy var startButton = GradientButton()
     
     private let presenter: BreakHabitScreenPresenterProtocol
     
@@ -62,8 +60,8 @@ extension BreakHabitViewController {
     }
     
     private func configurePhraseLabel() {
-        phraseLabel.text = Strings.BreakHabitScreen.phraseLabelText.uppercased()
-        phraseLabel.setLineSpacing(lineHeightMultiple: 1.26)
+        let labetText = Strings.BreakHabitScreen.phraseLabelText.uppercased()
+        phraseLabel.setTextWithLineSpacing(lineHeightMultiple: 1.26, for: labetText)
         phraseLabel.font = Fonts.SFProDisplay.medium.font(size: 14.0)
         phraseLabel.textAlignment = .center
         phraseLabel.textColor = .black
@@ -111,22 +109,15 @@ extension BreakHabitViewController {
             make.leading.trailing.equalTo(safeArea).inset(LayoutConstants.trailingInset)
             make.top.equalTo(phraseLabel.snp.bottom).offset(30)
         }
-        
-        startButton.addSubview(buttonGragientView)
-        buttonGragientView.snp.makeConstraints { make in
-            make.edges.equalTo(startButton)
-        }
     }
     
     private func configureStartButton() {
-        startButton.clipsToBounds = true
-        buttonGragientView.isUserInteractionEnabled = false
         let title = Strings.BreakHabitScreen.startButtonTitle.uppercased()
         startButton.setTitle(title, for: .normal)
         startButton.setTitleColor(.white, for: .normal)
         startButton.titleLabel?.font = Fonts.SFProDisplay.medium.font(size: 17)
-        startButton.layer.cornerRadius = 12.0
-        
+        startButton.layer.cornerRadius = CornerRadiusConstants.actionButtonCornerRadius
+
         startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
     }
     

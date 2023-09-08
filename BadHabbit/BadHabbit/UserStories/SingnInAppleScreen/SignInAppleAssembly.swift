@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignInAppleAssembly: StoryAssembly {
+final class SignInAppleAssembly: StoryAssembly {
     
     private let nextScreen: StoryAssembly
     private let globalCoordinator: IGlobalCoordinator
@@ -28,5 +28,4 @@ class SignInAppleAssembly: StoryAssembly {
         
         return view
     }
-    
 }

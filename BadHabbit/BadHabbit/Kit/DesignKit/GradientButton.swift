@@ -1,5 +1,5 @@
 //
-//  StartButtonGradientView.swift
+//  GradientButton.swift
 //  BadHabbit
 //
 //  Created by Halina Kurylchykava on 5.09.23.
@@ -7,20 +7,16 @@
 
 import UIKit
 
-class StartButtonGradientView: UIView {
+class GradientButton: UIButton {
 
     override class var layerClass: AnyClass {
         return CAGradientLayer.self
     }
 
-    private var gradientLayer: CAGradientLayer? {
-        guard let layer = self.layer as? CAGradientLayer else { return nil }
-        return layer
-    }
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureGradientLayer()
+        layer.masksToBounds = true
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -29,7 +25,7 @@ class StartButtonGradientView: UIView {
     }
 
     func configureGradientLayer() {
-        guard let gradientLayer = gradientLayer else { return }
+        guard let gradientLayer = self.layer as? CAGradientLayer else { return }
         gradientLayer.type = .axial
         gradientLayer.colors = [
             Asset.Colors.darkBlueColor.color.cgColor,

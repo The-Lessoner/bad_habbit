@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BreakHabitScreenAssembly: StoryAssembly {
+final class BreakHabitScreenAssembly: StoryAssembly {
 
     private let nextScreen: StoryAssembly
     private let globalCoordinator: IGlobalCoordinator
