@@ -14,7 +14,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     private lazy var backgroundImageView = UIImageView()
     private lazy var welcomeLabel = UILabel()
     private lazy var appNameLabel = UILabel()
-    private lazy var slidesCollectoinView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    private lazy var slidesCollectoinView = HorizontalCollectionView()
     private lazy var phraseLabel = UILabel()
     private lazy var pageControl = UIPageControl()
     
@@ -87,10 +87,6 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         slidesCollectoinView.register(SignUpScreenCollectionViewCell.self, forCellWithReuseIdentifier: SignUpScreenCollectionViewCell.identifier)
         slidesCollectoinView.dataSource = self
         slidesCollectoinView.delegate = self
-        
-        if let layout = slidesCollectoinView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
-        }
     }
     
     private func addPhraseLabel() {
@@ -208,10 +204,12 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
 
 extension SignUpViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter.numberOfItems
+        
+        presenter.numberOfItems
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SignUpScreenCollectionViewCell.identifier, for: indexPath)
         
         guard let cell = cell as? SignUpScreenCollectionViewCell else {
@@ -231,21 +229,23 @@ extension SignUpViewController: UICollectionViewDataSource {
 
 extension SignUpViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: LayoutConstants.ImageLogo.size, height: LayoutConstants.ImageLogo.size)
+        
+        LayoutConstants.CollectionView.itemSize
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        LayoutConstants.CollectionView.edgeInset(superviewWidth: view.bounds.width) * 2
+        LayoutConstants.CollectionView.minimumLineSpacing(inSuperviewWidth: view.bounds.width)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        UIEdgeInsets(
-            top: 0,
-            left: LayoutConstants.CollectionView.edgeInset(superviewWidth: view.bounds.width),
-            bottom: 0,
-            right: LayoutConstants.CollectionView.edgeInset(superviewWidth: view.bounds.width)
+        let sideInset = LayoutConstants.CollectionView.sideInset(toSuperviewWidth: view.bounds.width)
+        return UIEdgeInsets(
+            top: LayoutConstants.CollectionView.topInset,
+            left: sideInset,
+            bottom: LayoutConstants.CollectionView.bottomInset,
+            right: sideInset
         )
     }
 }

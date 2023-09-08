@@ -23,6 +23,7 @@
 		61E5EF7E2A8D0A6600091EBA /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E5EF7B2A8D0A6600091EBA /* Strings.swift */; };
 		61E5EF842A8D0CE300091EBA /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E5EF832A8D0CE300091EBA /* Fonts.swift */; };
 		61EF1D4C2AA91E5F00031D88 /* Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EF1D4B2AA91E5F00031D88 /* Radius.swift */; };
+		61EF1D4E2AA9C30900031D88 /* HorizontalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EF1D4D2AA9C30900031D88 /* HorizontalCollectionView.swift */; };
 		61EF63AC2A7297E00009218A /* SignUpScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EF63AB2A7297E00009218A /* SignUpScreenAssembly.swift */; };
 		61FD44C52AA6784C00080653 /* SignUpScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FD44C42AA6784C00080653 /* SignUpScreenCollectionViewCell.swift */; };
 		E5109B4A2A6AD962008B74D3 /* AlertAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5109B492A6AD962008B74D3 /* AlertAssembly.swift */; };
@@ -73,6 +74,7 @@
 		61E5EF7B2A8D0A6600091EBA /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		61E5EF832A8D0CE300091EBA /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		61EF1D4B2AA91E5F00031D88 /* Radius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Radius.swift; sourceTree = "<group>"; };
+		61EF1D4D2AA9C30900031D88 /* HorizontalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionView.swift; sourceTree = "<group>"; };
 		61EF63AB2A7297E00009218A /* SignUpScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenAssembly.swift; sourceTree = "<group>"; };
 		61FD44C42AA6784C00080653 /* SignUpScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenCollectionViewCell.swift; sourceTree = "<group>"; };
 		77FC42E518800866EDC7473A /* Pods-BadHabbit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BadHabbit.debug.xcconfig"; path = "Target Support Files/Pods-BadHabbit/Pods-BadHabbit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				6194A0B12A6FB6330006F570 /* Models */,
 				61448CC12A980BC6002CD090 /* GradientButton.swift */,
 				61194AE22A9DEE3200F32EFF /* BackgroundGradientView.swift */,
+				61EF1D4D2AA9C30900031D88 /* HorizontalCollectionView.swift */,
 			);
 			path = DesignKit;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				E58D1BEF2A1D125B00137CC6 /* StoriesAssembly.swift in Sources */,
 				61B207BA2AA7A77100629B30 /* Multipliers.swift in Sources */,
 				E59E8A392A790C7100ABD1DA /* DropDownViewPresenterConfig.swift in Sources */,
+				61EF1D4E2AA9C30900031D88 /* HorizontalCollectionView.swift in Sources */,
 				E5109B652A6AE70D008B74D3 /* GlobalCoordinator.swift in Sources */,
 				E5109B4C2A6AD9A4008B74D3 /* DesignKitAssembly.swift in Sources */,
 				E5109B692A6D4269008B74D3 /* FillingPersonalDataRouter.swift in Sources */,
