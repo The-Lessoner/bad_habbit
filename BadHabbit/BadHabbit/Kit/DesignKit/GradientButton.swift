@@ -15,13 +15,11 @@ class GradientButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureGradientLayer()
         layer.masksToBounds = true
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        configureGradientLayer()
     }
 
     func configureGradientLayer() {
