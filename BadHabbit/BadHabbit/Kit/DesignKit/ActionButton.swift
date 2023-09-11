@@ -7,10 +7,21 @@
 
 import UIKit
 
-class GradientButton: UIButton {
-    override class var layerClass: AnyClass {
-        CAGradientLayer.self
-    }
+class ActionButton: UIButton {
+    private lazy var gradientLayer: CAGradientLayer = {
+        let gradientLayer = CAGradientLayer()
+        
+        gradientLayer.locations = [0, 1]
+        gradientLayer.startPoint = CGPoint(x: 0.25, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 0.75, y: 0.5)
+        gradientLayer.colors = [
+            Assets.Colors.darkBlue.color.cgColor,
+            Assets.Colors.purple.color.cgColor
+        ]
+        gradientLayer.frame = self.bounds
+        
+        return  gradientLayer
+    }()
     
     private lazy var darkShadowLayer: CALayer = {
         let shadowLayer = CALayer()
@@ -36,24 +47,20 @@ class GradientButton: UIButton {
     
     override var isEnabled: Bool {
         didSet {
-            guard let layer = self.layer as? CAGradientLayer else { return }
-            
             if isEnabled {
-                layer.sublayers?.removeAll(where: { layer in
-                    layer == darkShadowLayer || layer == lightShadowLayer
+                layer.sublayers?.forEach({ sublayer in
+                    if sublayer == darkShadowLayer || sublayer == lightShadowLayer {
+                        sublayer.removeFromSuperlayer()
+                    }
                 })
                 
-                layer.startPoint = CGPoint(x: 0.0, y: 0.5)
-                layer.endPoint = CGPoint(x: 1.0, y: 0.5)
-                layer.colors = [
-                    Assets.Colors.darkBlue.color.cgColor,
-                    Assets.Colors.purple.color.cgColor
-                ]
+                layer.insertSublayer(gradientLayer, at: 0)
             } else {
-                layer.startPoint = .zero
-                layer.endPoint = .zero
-                layer.colors = []
-                layer.backgroundColor = Assets.Colors.startButtonUnenabledBackground.color.cgColor
+                layer.sublayers?.forEach({ sublayer in
+                    if sublayer == gradientLayer {
+                        sublayer.removeFromSuperlayer()
+                    }
+                })
                 
                 layer.addSublayer(darkShadowLayer)
                 layer.addSublayer(lightShadowLayer)
@@ -78,6 +85,7 @@ class GradientButton: UIButton {
         super.init(frame: frame)
         
         layer.masksToBounds = true
+        layer.backgroundColor = Assets.Colors.startButtonUnenabledBackground.color.cgColor
     }
 
     required init?(coder: NSCoder) {

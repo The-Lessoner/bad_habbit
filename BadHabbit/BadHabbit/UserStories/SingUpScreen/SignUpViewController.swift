@@ -11,16 +11,22 @@ import SnapKit
 protocol SignUpViewProtocol: AnyObject { }
 
 final class SignUpViewController: BaseViewController, SignUpViewProtocol {
+    private let presenter: SignUpScreenPresenterProtocol
+    
     private lazy var backgroundImageView = UIImageView()
     private lazy var welcomeLabel = UILabel()
     private lazy var appNameLabel = UILabel()
-    private lazy var slidesCollectoinView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    private lazy var slidesCollectoinView = UICollectionView(frame: .zero, collectionViewLayout: layout)
     private lazy var phraseLabel = UILabel()
     private lazy var pageControl = UIPageControl()
     
-    lazy var startButton = GradientButton()
+    private lazy var layout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        return layout
+    }()
     
-    private let presenter: SignUpScreenPresenterProtocol
+    lazy var startButton = ActionButton()
     
     init(presenter: SignUpScreenPresenterProtocol) {
         self.presenter = presenter
@@ -83,9 +89,6 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         slidesCollectoinView.backgroundColor = .none
         slidesCollectoinView.isPagingEnabled = true
         slidesCollectoinView.showsHorizontalScrollIndicator = false
-        if let layout = slidesCollectoinView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
-        }
         
         slidesCollectoinView.register(SignUpScreenCollectionViewCell.self, forCellWithReuseIdentifier: SignUpScreenCollectionViewCell.identifier)
         slidesCollectoinView.dataSource = self
@@ -123,7 +126,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     private func addStartButton() {
         view.addSubview(startButton)
         
-        startButton.layer.cornerRadius = Radius.actionButtonCorner
+        startButton.layer.cornerRadius = AppearanceConstants.CornerRadius.actionButton
         startButton.isEnabled = false
         
         startButton.setTitle(
@@ -162,7 +165,6 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
             make.trailing.equalTo(safeArea.snp.trailing)
             make.centerY.equalTo(backgroundImageView.snp.top)
             make.height.equalTo(LayoutConstants.ImageLogo.size)
-            
         }
         
         pageControl.snp.makeConstraints { make in
@@ -184,9 +186,9 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         }
     }
     
-    private func updateStartButton(isEnabled: Bool) {
-        if isEnabled {
-            startButton.isEnabled = isEnabled
+    private func updateStartButton() {
+        if !startButton.isEnabled {
+            startButton.isEnabled = true
         }
     }
     
@@ -196,7 +198,10 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
             at: IndexPath(row: sender.currentPage, section: 0),
             at: .centeredHorizontally,
             animated: true)
-        updateStartButton(isEnabled: sender.currentPage == 2)
+        
+        if sender.currentPage == 2 {
+            updateStartButton()
+        }
     }
     
     @objc
@@ -225,29 +230,33 @@ extension SignUpViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
         pageControl.currentPage = indexPath.row
-        updateStartButton(isEnabled: indexPath.row == 2)
+        
+        if indexPath.row == 2 {
+            updateStartButton()
+        }
     }
 }
 
 extension SignUpViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        LayoutConstants.CollectionView.itemSize
+        CGSize(width: LayoutConstants.ImageLogo.size, height: LayoutConstants.ImageLogo.size)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        LayoutConstants.CollectionView.minimumLineSpacing(inSuperviewWidth: view.bounds.width)
+        view.bounds.width - LayoutConstants.ImageLogo.size
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        let sideInset = LayoutConstants.CollectionView.sideInset(toSuperviewWidth: view.bounds.width)
+            
+        let sideInset = view.bounds.width / 2 - LayoutConstants.ImageLogo.size / 2
         return UIEdgeInsets(
-            top: LayoutConstants.CollectionView.topInset,
+            top: 0,
             left: sideInset,
-            bottom: LayoutConstants.CollectionView.bottomInset,
+            bottom: 0,
             right: sideInset
         )
     }

@@ -8,5 +8,5 @@
 import Foundation
 
 enum Multipliers {
-    static let phraseLabelLineHeight = 1.5
+    static let phraseLabelLineHeight = 1.26
 }

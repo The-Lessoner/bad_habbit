@@ -20,18 +20,4 @@ enum LayoutConstants {
     enum ImageLogo {
         static let size: CGFloat = 196
     }
-    
-    enum CollectionView {
-        static let itemSize: CGSize = CGSize(width: ImageLogo.size, height: ImageLogo.size)
-        static let topInset: CGFloat = 0
-        static let bottomInset: CGFloat = 0
-        
-        static func sideInset(toSuperviewWidth width: CGFloat) -> CGFloat {
-            width / 2 - ImageLogo.size / 2
-        }
-        
-        static func minimumLineSpacing(inSuperviewWidth width: CGFloat) -> CGFloat {
-            width - ImageLogo.size
-        }
-    }
 }
