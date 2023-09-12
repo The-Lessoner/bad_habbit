@@ -15,14 +15,15 @@ class GradientButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        layer.masksToBounds = true
+        configureGradientLayer()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        configureGradientLayer()
     }
 
-    func configureGradientLayer() {
+    private func configureGradientLayer() {
         guard let gradientLayer = self.layer as? CAGradientLayer else { return }
         gradientLayer.colors = [
             Asset.Colors.darkBlueColor.color.cgColor,

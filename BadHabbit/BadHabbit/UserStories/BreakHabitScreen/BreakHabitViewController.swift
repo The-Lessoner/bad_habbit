@@ -112,7 +112,6 @@ extension BreakHabitViewController {
     }
     
     private func configureStartButton() {
-        startButton.configureGradientLayer()
         let title = Strings.BreakHabitScreen.startButtonTitle.uppercased()
         startButton.setTitle(title, for: .normal)
         startButton.setTitleColor(.white, for: .normal)
