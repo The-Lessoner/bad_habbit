@@ -224,7 +224,7 @@ extension SignUpViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        cell.imageView.image = presenter.image(forRow: indexPath.row)
+        cell.configure(image: presenter.image(forRow: indexPath.row))
         
         return cell
     }
