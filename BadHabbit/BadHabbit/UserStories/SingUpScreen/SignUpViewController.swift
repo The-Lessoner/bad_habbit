@@ -17,16 +17,15 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     private lazy var welcomeLabel = UILabel()
     private lazy var appNameLabel = UILabel()
     private lazy var slidesCollectoinView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    private lazy var phraseLabel = UILabel()
     private lazy var pageControl = UIPageControl()
+    private lazy var phraseLabel = UILabel()
+    private lazy var startButton = ActionButton()
     
     private lazy var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         return layout
     }()
-    
-    lazy var startButton = ActionButton()
     
     init(presenter: SignUpScreenPresenterProtocol) {
         self.presenter = presenter
@@ -126,7 +125,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     private func addStartButton() {
         view.addSubview(startButton)
         
-        startButton.layer.cornerRadius = AppearanceConstants.CornerRadius.actionButton
+        startButton.layer.cornerRadius = AppearanceConstants.ActionButton.cornerRadius
         startButton.isEnabled = false
         
         startButton.setTitle(
@@ -182,12 +181,13 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
             make.leading.equalTo(safeArea).inset(LayoutConstants.leadingInset)
             make.trailing.equalTo(safeArea).inset(LayoutConstants.trailingInset)
             make.bottom.equalTo(safeArea.snp.bottom).inset(LayoutConstants.ActionButton.bottomInset)
-            make.top.equalTo(phraseLabel.snp.bottom).offset(LayoutConstants.ActionButton.topOffset)
+            make.top.equalTo(phraseLabel.snp.bottom).offset(30)
         }
     }
     
-    private func updateStartButton() {
-        if !startButton.isEnabled {
+    private func updateStartButton(visibleItemIndex: Int) {
+        if !startButton.isEnabled,
+           visibleItemIndex == presenter.numberOfItems - 1 {
             startButton.isEnabled = true
         }
     }
@@ -198,10 +198,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
             at: IndexPath(row: sender.currentPage, section: 0),
             at: .centeredHorizontally,
             animated: true)
-        
-        if sender.currentPage == 2 {
-            updateStartButton()
-        }
+        updateStartButton(visibleItemIndex: sender.currentPage)
     }
     
     @objc
@@ -232,10 +229,7 @@ extension SignUpViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
         pageControl.currentPage = indexPath.row
-        
-        if indexPath.row == 2 {
-            updateStartButton()
-        }
+        updateStartButton(visibleItemIndex: indexPath.row)
     }
 }
 

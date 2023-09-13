@@ -14,7 +14,6 @@ enum LayoutConstants {
     enum ActionButton {
         static let height = 50
         static let bottomInset = 20
-        static let topOffset = 30
     }
     
     enum ImageLogo {

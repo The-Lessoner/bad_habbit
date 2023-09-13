@@ -8,7 +8,7 @@
 import Foundation
 
 enum AppearanceConstants {
-    enum CornerRadius {
-        static let actionButton: CGFloat = 12
+    enum ActionButton {
+        static let cornerRadius: CGFloat = 12
     }
 }

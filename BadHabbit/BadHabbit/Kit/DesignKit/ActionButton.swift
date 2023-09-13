@@ -18,7 +18,6 @@ class ActionButton: UIButton {
             Assets.Colors.darkBlue.color.cgColor,
             Assets.Colors.purple.color.cgColor
         ]
-        gradientLayer.frame = self.bounds
         
         return  gradientLayer
     }()
@@ -47,20 +46,17 @@ class ActionButton: UIButton {
     
     override var isEnabled: Bool {
         didSet {
-            if isEnabled {
-                layer.sublayers?.forEach({ sublayer in
-                    if sublayer == darkShadowLayer || sublayer == lightShadowLayer {
-                        sublayer.removeFromSuperlayer()
-                    }
-                })
+            switch isEnabled {
+            case true:
+                darkShadowLayer.removeFromSuperlayer()
+                lightShadowLayer.removeFromSuperlayer()
                 
                 layer.insertSublayer(gradientLayer, at: 0)
-            } else {
-                layer.sublayers?.forEach({ sublayer in
-                    if sublayer == gradientLayer {
-                        sublayer.removeFromSuperlayer()
-                    }
-                })
+            case false:
+                if let sublayers = layer.sublayers,
+                   sublayers.contains(where: { $0 == gradientLayer }) {
+                    gradientLayer.removeFromSuperlayer()
+                }
                 
                 layer.addSublayer(darkShadowLayer)
                 layer.addSublayer(lightShadowLayer)
@@ -79,6 +75,8 @@ class ActionButton: UIButton {
         
         darkShadowLayer.shadowPath = darkShadowPath.cgPath
         lightShadowLayer.shadowPath = ligthShadowPath.cgPath
+        
+        gradientLayer.frame = bounds
     }
 
     override init(frame: CGRect) {
