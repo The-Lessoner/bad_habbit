@@ -12,8 +12,8 @@ protocol SignInAppleRouterProtocol {
 
 final class SignInAppleRouter: SignInAppleRouterProtocol {
     
-    let breakHabitScreenAssembly: StoryAssembly
-    let globalCoordinator: IGlobalCoordinator
+    private let breakHabitScreenAssembly: StoryAssembly
+    private let globalCoordinator: IGlobalCoordinator
     
     init(breakHabitScreenAssembly: StoryAssembly,
          globalCoordinator: IGlobalCoordinator) {

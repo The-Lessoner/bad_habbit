@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GradientButton: UIButton {
+final class GradientButton: UIButton {
 
     override class var layerClass: AnyClass {
         return CAGradientLayer.self

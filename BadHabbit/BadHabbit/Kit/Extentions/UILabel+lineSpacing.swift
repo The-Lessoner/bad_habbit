@@ -16,13 +16,7 @@ extension UILabel {
         paragraphStyle.lineSpacing = lineSpacing
         paragraphStyle.lineHeightMultiple = lineHeightMultiple
 
-        let attributedString: NSMutableAttributedString
-        if let labelAttributedText = self.attributedText {
-            attributedString = NSMutableAttributedString(attributedString: labelAttributedText)
-        } else {
-            attributedString = NSMutableAttributedString(string: labetText)
-        }
-
+        let attributedString = NSMutableAttributedString(string: labetText)
         attributedString.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributedString.length))
 
         self.attributedText = attributedString

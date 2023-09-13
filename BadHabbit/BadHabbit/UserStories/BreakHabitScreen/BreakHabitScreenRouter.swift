@@ -13,8 +13,8 @@ protocol BreakHabitScreenRouterProtocol {
 
 final class BreakHabitScreenRouter: BreakHabitScreenRouterProtocol {
     
-    let emptyScreenAssembly: StoryAssembly
-    let globalCoordinator: IGlobalCoordinator
+    private let emptyScreenAssembly: StoryAssembly
+    private let globalCoordinator: IGlobalCoordinator
     
     init(
         emptyScreenAssembly: StoryAssembly,
