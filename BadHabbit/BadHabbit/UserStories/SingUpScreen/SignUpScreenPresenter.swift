@@ -16,10 +16,6 @@ protocol SignUpScreenPresenterProtocol {
 
 final class SignUpScreenPresenter: SignUpScreenPresenterProtocol {
     private let router: SignUpRouterProtocol
-    weak var view: SignUpViewProtocol?
-    
-    var numberOfItems: Int { images.count }
-    
     private var images: [UIImage] = {
         var image: [UIImage] = []
         (1...3).forEach { _ in
@@ -28,6 +24,9 @@ final class SignUpScreenPresenter: SignUpScreenPresenterProtocol {
         
         return image
     }()
+    
+    weak var view: SignUpViewProtocol?
+    var numberOfItems: Int { images.count }
     
     init(router: SignUpRouterProtocol) {
         self.router = router

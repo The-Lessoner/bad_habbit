@@ -9,7 +9,7 @@ import UIKit
 
 final class SignUpScreenCollectionViewCell: UICollectionViewCell {
     static let identifier = "SignUpScreenCollectionViewCell"
-    lazy var imageView = UIImageView(frame: self.bounds)
+    private lazy var imageView = UIImageView(frame: self.bounds)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

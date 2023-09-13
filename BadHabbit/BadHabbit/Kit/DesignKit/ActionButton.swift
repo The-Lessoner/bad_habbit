@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ActionButton: UIButton {
+final class ActionButton: UIButton {
     private lazy var gradientLayer: CAGradientLayer = {
         let gradientLayer = CAGradientLayer()
         
