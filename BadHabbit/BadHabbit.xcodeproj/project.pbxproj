@@ -16,7 +16,6 @@
 		614BA9482A6749F5004231A3 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 614BA9472A6749F5004231A3 /* SF-Pro-Display-Medium.otf */; };
 		6194A0B02A6FB53B0006F570 /* LayoutConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6194A0AF2A6FB53B0006F570 /* LayoutConstants.swift */; };
 		61AE3EFF2A6DCC9D00B607E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61AE3F012A6DCC9D00B607E1 /* Localizable.strings */; };
-		61B207BA2AA7A77100629B30 /* Multipliers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B207B92AA7A77100629B30 /* Multipliers.swift */; };
 		61CEF96E2A67739600744ADA /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61CEF96D2A67739600744ADA /* SF-Pro-Display-Bold.otf */; };
 		61CEF9702A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61CEF96F2A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf */; };
 		61E5EF7D2A8D0A6600091EBA /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E5EF7A2A8D0A6600091EBA /* Assets.swift */; };
@@ -66,7 +65,6 @@
 		614BA9472A6749F5004231A3 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		6194A0AF2A6FB53B0006F570 /* LayoutConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstants.swift; sourceTree = "<group>"; };
 		61AE3F022A6DCCAD00B607E1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		61B207B92AA7A77100629B30 /* Multipliers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multipliers.swift; sourceTree = "<group>"; };
 		61CEF96D2A67739600744ADA /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		61CEF96F2A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular_ExtraBold.ttf"; sourceTree = "<group>"; };
 		61E5EF7A2A8D0A6600091EBA /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				6194A0AF2A6FB53B0006F570 /* LayoutConstants.swift */,
-				61B207B92AA7A77100629B30 /* Multipliers.swift */,
 				61EF1D4B2AA91E5F00031D88 /* AppearanceConstants.swift */,
 			);
 			path = Models;
@@ -561,7 +558,6 @@
 				E5109B5F2A6AE4CB008B74D3 /* AlertController.swift in Sources */,
 				E5109B502A6ADABF008B74D3 /* AlertAction.swift in Sources */,
 				E58D1BEF2A1D125B00137CC6 /* StoriesAssembly.swift in Sources */,
-				61B207BA2AA7A77100629B30 /* Multipliers.swift in Sources */,
 				E59E8A392A790C7100ABD1DA /* DropDownViewPresenterConfig.swift in Sources */,
 				E5109B652A6AE70D008B74D3 /* GlobalCoordinator.swift in Sources */,
 				E5109B4C2A6AD9A4008B74D3 /* DesignKitAssembly.swift in Sources */,

@@ -11,4 +11,8 @@ enum AppearanceConstants {
     enum ActionButton {
         static let cornerRadius: CGFloat = 12
     }
+    
+    enum PhraseLabel {
+        static let lineHeightMultiplier = 1.26
+    }
 }

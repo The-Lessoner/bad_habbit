@@ -46,18 +46,12 @@ final class ActionButton: UIButton {
     
     override var isEnabled: Bool {
         didSet {
-            switch isEnabled {
-            case true:
+            if isEnabled {
                 darkShadowLayer.removeFromSuperlayer()
                 lightShadowLayer.removeFromSuperlayer()
-                
                 layer.insertSublayer(gradientLayer, at: 0)
-            case false:
-                if let sublayers = layer.sublayers,
-                   sublayers.contains(where: { $0 == gradientLayer }) {
-                    gradientLayer.removeFromSuperlayer()
-                }
-                
+            } else {
+                gradientLayer.removeFromSuperlayer()
                 layer.addSublayer(darkShadowLayer)
                 layer.addSublayer(lightShadowLayer)
             }
@@ -81,6 +75,8 @@ final class ActionButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        isEnabled = true
         
         layer.masksToBounds = true
         layer.backgroundColor = Assets.Colors.startButtonUnenabledBackground.color.cgColor

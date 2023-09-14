@@ -98,7 +98,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         view.addSubview(phraseLabel)
         
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineHeightMultiple = Multipliers.phraseLabelLineHeight
+        paragraphStyle.lineHeightMultiple = AppearanceConstants.PhraseLabel.lineHeightMultiplier
         let attributes: [NSAttributedString.Key: Any] = [.paragraphStyle: paragraphStyle]
         
         phraseLabel.attributedText = NSAttributedString(string: Strings.SignUpScreen.phraseLabelText.uppercased(), attributes: attributes)
