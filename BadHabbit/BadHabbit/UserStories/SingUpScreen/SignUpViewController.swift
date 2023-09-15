@@ -97,11 +97,10 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
     private func addPhraseLabel() {
         view.addSubview(phraseLabel)
         
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineHeightMultiple = AppearanceConstants.PhraseLabel.lineHeightMultiplier
-        let attributes: [NSAttributedString.Key: Any] = [.paragraphStyle: paragraphStyle]
-        
-        phraseLabel.attributedText = NSAttributedString(string: Strings.SignUpScreen.phraseLabelText.uppercased(), attributes: attributes)
+        phraseLabel.setTextWithLineSpacing(
+            lineHeightMultiple: AppearanceConstants.lineHeightMultiplier,
+            for: Strings.SignUpScreen.phraseLabelText.uppercased()
+        )
         
         phraseLabel.font = Fonts.SFProDisplay.medium.font(size: 14.0)
         phraseLabel.textAlignment = .center

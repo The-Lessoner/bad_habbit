@@ -21,6 +21,6 @@ final class SignInApplePresenter: SignInApplePresenterProtocol {
     }
 
     func authorizationButtonDidTap() {
-        router.presentEmptyScreen()
+        router.presentBreakHabitScreen()
     }
 }

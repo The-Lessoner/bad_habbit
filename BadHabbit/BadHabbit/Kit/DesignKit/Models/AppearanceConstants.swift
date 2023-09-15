@@ -8,11 +8,9 @@
 import Foundation
 
 enum AppearanceConstants {
+    static let lineHeightMultiplier = 1.26
+    
     enum ActionButton {
         static let cornerRadius: CGFloat = 12
-    }
-    
-    enum PhraseLabel {
-        static let lineHeightMultiplier = 1.26
     }
 }

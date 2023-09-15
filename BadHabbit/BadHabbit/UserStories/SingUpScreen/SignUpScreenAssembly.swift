@@ -26,6 +26,7 @@ final class SignUpScreenAssembly: StoryAssembly {
         
         presenter.view = view
         
-        return view
+        let navController = UINavigationController(rootViewController: view)
+        return navController
     }
 }

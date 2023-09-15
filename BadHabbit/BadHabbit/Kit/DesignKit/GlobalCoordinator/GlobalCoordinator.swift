@@ -15,6 +15,8 @@ protocol IGlobalCoordinator {
     )
     
     func presentOnTopVisibleViewController(_ viewController: UIViewController)
+    
+    func pushViewController(_ viewController: UIViewController)
 }
 
 final class GlobalCoordinator: IGlobalCoordinator {
@@ -40,17 +42,25 @@ final class GlobalCoordinator: IGlobalCoordinator {
         animated: Bool,
         completion: VoidClosure?
     ) {
-        guard let window = self.window else {
-            assertionFailure()
+        guard let topVC = topVisibleViewController() else {
             return
         }
-        
+
+        topVC.present(viewController, animated: animated, completion: completion)
+    }
+
+    private func topVisibleViewController() -> UIViewController? {
+        guard let window else {
+            assertionFailure()
+            return nil
+        }
+
         guard let topVC = topViewController(on: window.rootViewController) else {
             assertionFailure()
-            return
+            return nil
         }
-        
-        topVC.present(viewController, animated: animated, completion: completion)
+
+        return topVC
     }
 
     func presentOnTopVisibleViewController(_ viewController: UIViewController) {
@@ -82,9 +92,17 @@ final class GlobalCoordinator: IGlobalCoordinator {
             
         case let navVC as UINavigationController:
             return topViewController(on: navVC.topViewController)
-            
+
         default:
             return viewController
         }
+    }
+
+    func pushViewController(_ viewController: UIViewController) {
+        guard let topVC = topVisibleViewController() else {
+            return
+        }
+
+        topVC.navigationController?.pushViewController(viewController, animated: true)
     }
 }

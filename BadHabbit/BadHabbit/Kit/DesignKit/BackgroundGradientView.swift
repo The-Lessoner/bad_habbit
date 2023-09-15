@@ -18,8 +18,8 @@ final class BackgroundGradientView: UIView {
         if let layer = self.layer as? CAGradientLayer {
             layer.locations = [0.0, 0.6]
             layer.colors = [
-                Assets.Colors.gradientBackgroundBegin.color.cgColor,
-                Assets.Colors.gradientBackgroundEnd.color.cgColor
+                Assets.Colors.gradientBackgroundTop.color.cgColor,
+                Assets.Colors.gradientBackgroundBottom.color.cgColor
             ]
         }
     }

@@ -23,9 +23,9 @@ final class SignUpScreenRouter: SignUpRouterProtocol {
         self.signInAppleScreenAssembly = signInAppleScreenAssembly
         self.globalCoordinator = globalCoordinator
     }
-
+    
     func presentSignInAppleScreen() {
         let vc = signInAppleScreenAssembly.assembleStory()
-        globalCoordinator.presentOnTopVisibleViewController(vc)
+        globalCoordinator.pushViewController(vc)
     }
 }

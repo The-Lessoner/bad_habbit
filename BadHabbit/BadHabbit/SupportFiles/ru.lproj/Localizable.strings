@@ -11,3 +11,8 @@
 "signUpScreen.phraseLabelText" = "НЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nНЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nТУТ КАКАЯ-ТО ФРАЗА";
 "signUpScreen.startButtonTitle" = "НАЧАТЬ";
 "signUpScreen.logoLabelText" = "ЛОГО";
+"backButtonTitle" = "Назад";
+"signInAppleScreen.authorizationButtonTitle" = "ВОЙТИ С APPLE";
+"breakHabitScreen.phraseLabelText" = "НЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nТУТ КАКАЯ-ТО ФРАЗА";
+"breakHabitScreen.startButtonTitle" = "ИЗБАВИТЬСЯ ОТ ПРИВЫЧКИ";
+

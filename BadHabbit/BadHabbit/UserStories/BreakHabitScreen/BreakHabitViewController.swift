@@ -1,126 +1,128 @@
 //
-//  SignInAppleViewController.swift
+//  BreakHabitViewController.swift
 //  BadHabbit
 //
-//  Created by Halina Kurylchykava on 14.07.23.
+//  Created by Halina Kurylchykava on 5.09.23.
 //
 
 import UIKit
 import SnapKit
-import AuthenticationServices
 
-protocol SignInAppleViewProtocol: AnyObject { }
+protocol BreakHabitViewProtocol: AnyObject { }
 
-final class SignInAppleViewController: BaseViewController, SignInAppleViewProtocol {
-    private lazy var authorizationButton = UIButton()
+final class BreakHabitViewController: BaseViewController, BreakHabitViewProtocol {
     private lazy var titleLabel = UILabel()
+    private lazy var phraseLabel = UILabel()
     private lazy var imageLogo = UIImageView(image: Assets.Images.logo.image)
     private lazy var imageMountains = UIImageView(image: Assets.Images.mountains.image)
     private lazy var backgroundView = BackgroundGradientView()
-
-    private let presenter: SignInApplePresenterProtocol
-
-    init(presenter: SignInApplePresenterProtocol) {
+    private lazy var startButton = ActionButton()
+    
+    private let presenter: BreakHabitScreenPresenterProtocol
+    
+    init(presenter: BreakHabitScreenPresenterProtocol) {
         self.presenter = presenter
         super.init()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
 }
 
-extension SignInAppleViewController {
-    override func loadView() {
-        view = BackgroundGradientView(frame: UIScreen.main.bounds)
-    }
-
+extension BreakHabitViewController {
+    
     private func setupUI() {
-
+        
         setupConstraints()
-
-        configureNavigationBar()
+        
         configureImageLogo()
-        configureAuthorizationButton()
+        configureStartButton()
         configureTitleLabel()
+        configurePhraseLabel()
     }
-
-    private func configureNavigationBar() {
-        guard let navigationController = self.navigationController else { return }
-        navigationController.navigationBar.tintColor = Assets.Colors.purpleLight.color
-        navigationController.navigationBar.isTranslucent = true
-    }
-
+    
     private func configureImageLogo() {
         imageLogo.alpha = 0.5
         imageLogo.contentMode = .scaleAspectFill
     }
-
+    
     private func configureTitleLabel() {
         titleLabel.textColor = .black
         titleLabel.font = Fonts.SFProDisplay.semibold.font(size: 24.0)
         titleLabel.text = Strings.appName.uppercased()
         titleLabel.textAlignment = .center
     }
-
+    
+    private func configurePhraseLabel() {
+        let labelText = Strings.BreakHabitScreen.phraseLabelText.uppercased()
+        phraseLabel.setTextWithLineSpacing(lineHeightMultiple: AppearanceConstants.lineHeightMultiplier, for: labelText)
+        phraseLabel.font = Fonts.SFProDisplay.medium.font(size: 14.0)
+        phraseLabel.textAlignment = .center
+        phraseLabel.textColor = .black
+        phraseLabel.lineBreakMode = .byWordWrapping
+        phraseLabel.numberOfLines = 0
+    }
+    
     private func setupConstraints() {
         let safeArea = view.safeAreaLayoutGuide
-
+        
         view.addSubview(backgroundView)
         backgroundView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-
+        
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(safeArea).inset(42)
             make.centerX.equalTo(safeArea)
         }
-
+        
         view.addSubview(imageMountains)
         imageMountains.snp.makeConstraints { make in
             make.top.equalTo(view.snp.centerY)
             make.bottom.leading.trailing.equalToSuperview()
         }
-
+        
         view.addSubview(imageLogo)
         imageLogo.snp.makeConstraints { make in
             make.centerX.equalTo(safeArea)
             make.centerY.equalTo(imageMountains.snp.top)
             make.size.equalTo(LayoutConstants.ImageLogo.size)
         }
-
-        view.addSubview(authorizationButton)
-        authorizationButton.snp.makeConstraints { make in
+        
+        view.addSubview(phraseLabel)
+        phraseLabel.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(safeArea).inset(LayoutConstants.leadingInset)
+            make.centerX.equalTo(safeArea)
+        }
+        
+        view.addSubview(startButton)
+        startButton.snp.makeConstraints { make in
             make.bottom.equalTo(safeArea).inset(LayoutConstants.ActionButton.bottomInset)
             make.height.equalTo(LayoutConstants.ActionButton.height)
             make.leading.trailing.equalTo(safeArea).inset(LayoutConstants.trailingInset)
+            make.top.equalTo(phraseLabel.snp.bottom).offset(30)
         }
     }
+    
+    private func configureStartButton() {
+        let title = Strings.BreakHabitScreen.startButtonTitle.uppercased()
+        startButton.setTitle(title, for: .normal)
+        startButton.setTitleColor(.white, for: .normal)
+        startButton.titleLabel?.font = Fonts.SFProDisplay.medium.font(size: 17)
+        startButton.layer.cornerRadius = AppearanceConstants.ActionButton.cornerRadius
 
-    private func configureAuthorizationButton() {
-        var config = UIButton.Configuration.filled()
-        config.baseBackgroundColor = .black
-        config.image = UIImage(systemName: "apple.logo")
-        config.imagePadding = 5
-        let title = Strings.SignInAppleScreen.authorizationButtonTitle.uppercased()
-        let attibutes = AttributeContainer([.font: Fonts.SFProDisplay.medium.font(size: 17)])
-        config.attributedTitle = AttributedString(title, attributes: attibutes)
-        authorizationButton.configuration = config
-        authorizationButton.layer.cornerRadius = 12.0
-        authorizationButton.layer.masksToBounds = true
-
-        authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
+        startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
     }
-
+    
     @objc
-    private func handleAuthorizationAppleIDButtonPress() {
-        presenter.authorizationButtonDidTap()
+    private func startButtonTapped() {
+        presenter.startButtonTapped()
     }
-
 }
