@@ -7,22 +7,22 @@
 import Foundation
 
 protocol SignInAppleRouterProtocol {
-    func presentEmptyScreen()
+    func presentBreakHabitScreen()
 }
 
 final class SignInAppleRouter: SignInAppleRouterProtocol {
     
-    let nextScreen: StoryAssembly
-    let globalCoordinator: IGlobalCoordinator
+    private let breakHabitScreenAssembly: StoryAssembly
+    private let globalCoordinator: IGlobalCoordinator
     
-    init(nextScreen: StoryAssembly,
+    init(breakHabitScreenAssembly: StoryAssembly,
          globalCoordinator: IGlobalCoordinator) {
-        self.nextScreen = nextScreen
+        self.breakHabitScreenAssembly = breakHabitScreenAssembly
         self.globalCoordinator = globalCoordinator
     }
     
-    func presentEmptyScreen() {
-        let vc = nextScreen.assembleStory()
+    func presentBreakHabitScreen() {
+        let vc = breakHabitScreenAssembly.assembleStory()
         globalCoordinator.pushViewController(vc)
     }
 }

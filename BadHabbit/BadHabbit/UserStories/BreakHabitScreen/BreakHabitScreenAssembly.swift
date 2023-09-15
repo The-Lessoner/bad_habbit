@@ -1,31 +1,32 @@
 //
-//  SignInAppleAssembly.swift
+//  BreakHabitScreenAssembly.swift
 //  BadHabbit
 //
-//  Created by Halina Kurylchykava on 24.07.23.
+//  Created by Halina Kurylchykava on 5.09.23.
 //
 
 import UIKit
 
-final class SignInAppleAssembly: StoryAssembly {
-    
+final class BreakHabitScreenAssembly: StoryAssembly {
+
     private let nextScreen: StoryAssembly
     private let globalCoordinator: IGlobalCoordinator
-    
+
     init(nextScreen: StoryAssembly, globalCoordinator: IGlobalCoordinator) {
         self.nextScreen = nextScreen
         self.globalCoordinator = globalCoordinator
     }
 
     func assembleStory() -> UIViewController {
-        let router = SignInAppleRouter(
-            breakHabitScreenAssembly: nextScreen,
+        let router = BreakHabitScreenRouter(
+            emptyScreenAssembly: nextScreen,
             globalCoordinator: globalCoordinator
         )
-        let presenter = SignInApplePresenter(router: router)
-        let view = SignInAppleViewController(presenter: presenter)
+        let presenter = BreakHabitScreenPresenter(router: router)
+        let view = BreakHabitViewController(presenter: presenter)
         presenter.view = view
-        
+
         return view
     }
+
 }
