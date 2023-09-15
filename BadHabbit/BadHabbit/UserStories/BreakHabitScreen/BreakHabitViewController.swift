@@ -13,10 +13,10 @@ protocol BreakHabitViewProtocol: AnyObject { }
 final class BreakHabitViewController: BaseViewController, BreakHabitViewProtocol {
     private lazy var titleLabel = UILabel()
     private lazy var phraseLabel = UILabel()
-    private lazy var imageLogo = UIImageView(image: Asset.Images.logo.image)
-    private lazy var imageMountains = UIImageView(image: Asset.Images.mountains.image)
+    private lazy var imageLogo = UIImageView(image: Assets.Images.logo.image)
+    private lazy var imageMountains = UIImageView(image: Assets.Images.mountains.image)
     private lazy var backgroundView = BackgroundGradientView()
-    private lazy var startButton = GradientButton()
+    private lazy var startButton = ActionButton()
     
     private let presenter: BreakHabitScreenPresenterProtocol
     
@@ -61,7 +61,7 @@ extension BreakHabitViewController {
     
     private func configurePhraseLabel() {
         let labelText = Strings.BreakHabitScreen.phraseLabelText.uppercased()
-        phraseLabel.setTextWithLineSpacing(lineHeightMultiple: Constants.lineHeightMultiple, for: labelText)
+        phraseLabel.setTextWithLineSpacing(lineHeightMultiple: AppearanceConstants.lineHeightMultiplier, for: labelText)
         phraseLabel.font = Fonts.SFProDisplay.medium.font(size: 14.0)
         phraseLabel.textAlignment = .center
         phraseLabel.textColor = .black
@@ -116,7 +116,7 @@ extension BreakHabitViewController {
         startButton.setTitle(title, for: .normal)
         startButton.setTitleColor(.white, for: .normal)
         startButton.titleLabel?.font = Fonts.SFProDisplay.medium.font(size: 17)
-        startButton.layer.cornerRadius = Constants.actionButtonCornerRadius
+        startButton.layer.cornerRadius = AppearanceConstants.ActionButton.cornerRadius
 
         startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
     }

@@ -2,39 +2,29 @@
 //  BackgroundGradientView.swift
 //  BadHabbit
 //
-//  Created by Halina Kurylchykava on 24.08.23.
+//  Created by Viktoria Misiulia on 29/08/2023.
 //
 
 import UIKit
 
 final class BackgroundGradientView: UIView {
-
     override class var layerClass: AnyClass {
         return CAGradientLayer.self
     }
-
-    private var gradientLayer: CAGradientLayer? {
-        guard let layer = self.layer as? CAGradientLayer else { return nil }
-        return layer
-    }
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureGradientLayer()
+
+        if let layer = self.layer as? CAGradientLayer {
+            layer.locations = [0.0, 0.6]
+            layer.colors = [
+                Assets.Colors.gradientBackgroundTop.color.cgColor,
+                Assets.Colors.gradientBackgroundBottom.color.cgColor
+            ]
+        }
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        configureGradientLayer()
-    }
-
-    func configureGradientLayer() {
-        guard let gradientLayer = gradientLayer else { return }
-        gradientLayer.type = .axial
-        gradientLayer.locations = [0, 0.6]
-        gradientLayer.colors = [
-            Asset.Colors.backgroundTopColor.color.cgColor,
-            Asset.Colors.backgroundBottomColor.color.cgColor
-        ]
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

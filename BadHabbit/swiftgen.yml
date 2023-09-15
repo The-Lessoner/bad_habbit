@@ -18,6 +18,7 @@ xcassets:
   outputs:
     templateName: swift5
     params:
+        enumName: Assets
         forceProvidesNamespaces: true
     output: SupportFiles/Assets.swift
     

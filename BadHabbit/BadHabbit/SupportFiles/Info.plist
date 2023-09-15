@@ -9,8 +9,6 @@
 		<string>SF-Pro-Display-Bold.otf</string>
 		<string>Inter-Regular_ExtraBold.ttf</string>
 	</array>
-	<key>CFBundleShortVersionString</key>
-	<string></string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

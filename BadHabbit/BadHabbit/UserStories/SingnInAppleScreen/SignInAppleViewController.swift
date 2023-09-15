@@ -14,8 +14,8 @@ protocol SignInAppleViewProtocol: AnyObject { }
 final class SignInAppleViewController: BaseViewController, SignInAppleViewProtocol {
     private lazy var authorizationButton = UIButton()
     private lazy var titleLabel = UILabel()
-    private lazy var imageLogo = UIImageView(image: Asset.Images.logo.image)
-    private lazy var imageMountains = UIImageView(image: Asset.Images.mountains.image)
+    private lazy var imageLogo = UIImageView(image: Assets.Images.logo.image)
+    private lazy var imageMountains = UIImageView(image: Assets.Images.mountains.image)
     private lazy var backgroundView = BackgroundGradientView()
 
     private let presenter: SignInApplePresenterProtocol
@@ -36,6 +36,9 @@ final class SignInAppleViewController: BaseViewController, SignInAppleViewProtoc
 }
 
 extension SignInAppleViewController {
+    override func loadView() {
+        view = BackgroundGradientView(frame: UIScreen.main.bounds)
+    }
 
     private func setupUI() {
 
@@ -49,7 +52,7 @@ extension SignInAppleViewController {
 
     private func configureNavigationBar() {
         guard let navigationController = self.navigationController else { return }
-        navigationController.navigationBar.tintColor = Asset.Colors.purpleLight.color
+        navigationController.navigationBar.tintColor = Assets.Colors.purpleLight.color
         navigationController.navigationBar.isTranslucent = true
     }
 
