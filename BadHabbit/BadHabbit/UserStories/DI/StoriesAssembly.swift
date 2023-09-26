@@ -22,16 +22,6 @@ final class StoriesAssembly {
             globalCoordinator: designKitAssembly.globalCoordinator
         )
     }
-    
-    var fillingPersonalData: StoryAssembly {
-        FillingPersonalDataAssembly(
-            alertAssembly: designKitAssembly.alertAssembly
-        )
-    }
-
-    var emptyScreen: StoryAssembly {
-        EmptyScreenAssembly()
-    }
 
     var signInScreen: StoryAssembly {
         SignInAppleAssembly(
@@ -42,8 +32,19 @@ final class StoriesAssembly {
 
     var breakHabitScreen: StoryAssembly {
         BreakHabitScreenAssembly(
-            nextScreen: self.emptyScreen,
+            nextScreen: cigarettesPerDayScreen,
             globalCoordinator: designKitAssembly.globalCoordinator
         )
+    }
+    
+    var cigarettesPerDayScreen: StoryAssembly {
+        CigarettesPerDayScreenAssembly(
+            nextScreen: emptyScreen,
+            globalCoordinator: designKitAssembly.globalCoordinator
+        )
+    }
+    
+    var emptyScreen: StoryAssembly {
+        EmptyScreenAssembly()
     }
 }

@@ -7,12 +7,19 @@
 */
 
 "appName" = "HABIT HERO";
+"backButtonTitle" = "Назад";
+"nextButtonTitle" = "Далее";
+
 "signUpScreen.welcomeLabelText" = "ДОБРО ПОЖАЛОВАТЬ В";
 "signUpScreen.phraseLabelText" = "НЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nНЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nТУТ КАКАЯ-ТО ФРАЗА";
 "signUpScreen.startButtonTitle" = "НАЧАТЬ";
 "signUpScreen.logoLabelText" = "ЛОГО";
-"backButtonTitle" = "Назад";
+
 "signInAppleScreen.authorizationButtonTitle" = "ВОЙТИ С APPLE";
+
 "breakHabitScreen.phraseLabelText" = "НЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nТУТ КАКАЯ-ТО ФРАЗА";
 "breakHabitScreen.startButtonTitle" = "ИЗБАВИТЬСЯ ОТ ПРИВЫЧКИ";
 
+"cigarettesPerDayScreen.navigationBarItemTitleText" = "Сигарет в день";
+"cigarettesPerDayScreen.textFieldPlaceHolderText" = "Введите количество потребляемых сигарет";
+"cigarettesPerDayScreen.promptText" = "Минимальное числовое значение - 1, максимальное - 9999";

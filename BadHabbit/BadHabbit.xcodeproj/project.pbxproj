@@ -9,7 +9,13 @@
 /* Begin PBXBuildFile section */
 		372F03E231465F74E9E647DD /* Pods_BadHabbit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */; };
 		61194AE32A9DEE3200F32EFF /* BackgroundGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61194AE22A9DEE3200F32EFF /* BackgroundGradientView.swift */; };
+		61329CF92AC1A85400721474 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61329CF82AC1A85400721474 /* SF-Pro-Display-Regular.otf */; };
 		61448CC22A980BC6002CD090 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61448CC12A980BC6002CD090 /* ActionButton.swift */; };
+		614584CB2AB795C8002E2F14 /* CigarettesPerDayScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614584CA2AB795C8002E2F14 /* CigarettesPerDayScreenAssembly.swift */; };
+		614584CD2AB79766002E2F14 /* CigarettesPerDayScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614584CC2AB79766002E2F14 /* CigarettesPerDayScreenPresenter.swift */; };
+		614584CF2AB79905002E2F14 /* CigarettesPerDayScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614584CE2AB79905002E2F14 /* CigarettesPerDayScreenRouter.swift */; };
+		614584D12AB799B1002E2F14 /* CigarettesPerDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614584D02AB799B1002E2F14 /* CigarettesPerDayViewController.swift */; };
+		614584D32AB79D6B002E2F14 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614584D22AB79D6B002E2F14 /* TextField.swift */; };
 		614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */; };
 		614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614717242A6F060100731065 /* SignUpScreenRouter.swift */; };
 		614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BA9422A674317004231A3 /* SignUpViewController.swift */; };
@@ -64,7 +70,13 @@
 
 /* Begin PBXFileReference section */
 		61194AE22A9DEE3200F32EFF /* BackgroundGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradientView.swift; sourceTree = "<group>"; };
+		61329CF82AC1A85400721474 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		61448CC12A980BC6002CD090 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		614584CA2AB795C8002E2F14 /* CigarettesPerDayScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CigarettesPerDayScreenAssembly.swift; sourceTree = "<group>"; };
+		614584CC2AB79766002E2F14 /* CigarettesPerDayScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CigarettesPerDayScreenPresenter.swift; sourceTree = "<group>"; };
+		614584CE2AB79905002E2F14 /* CigarettesPerDayScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CigarettesPerDayScreenRouter.swift; sourceTree = "<group>"; };
+		614584D02AB799B1002E2F14 /* CigarettesPerDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CigarettesPerDayViewController.swift; sourceTree = "<group>"; };
+		614584D22AB79D6B002E2F14 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		6147171F2A6EB92100731065 /* SignUpScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenPresenter.swift; sourceTree = "<group>"; };
 		614717242A6F060100731065 /* SignUpScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenRouter.swift; sourceTree = "<group>"; };
 		614BA9422A674317004231A3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +147,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		614584C92AB7959C002E2F14 /* CigarettesPerDayScreen */ = {
+			isa = PBXGroup;
+			children = (
+				614584CA2AB795C8002E2F14 /* CigarettesPerDayScreenAssembly.swift */,
+				614584CC2AB79766002E2F14 /* CigarettesPerDayScreenPresenter.swift */,
+				614584CE2AB79905002E2F14 /* CigarettesPerDayScreenRouter.swift */,
+				614584D02AB799B1002E2F14 /* CigarettesPerDayViewController.swift */,
+			);
+			path = CigarettesPerDayScreen;
+			sourceTree = "<group>";
+		};
 		614BA9412A6742F3004231A3 /* SingUpScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				61E5EF832A8D0CE300091EBA /* Fonts.swift */,
+				61329CF82AC1A85400721474 /* SF-Pro-Display-Regular.otf */,
 				F61C94422A93F5250008FC96 /* SFProDisplay-Semibold.ttf */,
 				614BA9472A6749F5004231A3 /* SF-Pro-Display-Medium.otf */,
 				61CEF96D2A67739600744ADA /* SF-Pro-Display-Bold.otf */,
@@ -188,6 +212,7 @@
 				6194A0B12A6FB6330006F570 /* Models */,
 				61448CC12A980BC6002CD090 /* ActionButton.swift */,
 				61194AE22A9DEE3200F32EFF /* BackgroundGradientView.swift */,
+				614584D22AB79D6B002E2F14 /* TextField.swift */,
 			);
 			path = DesignKit;
 			sourceTree = "<group>";
@@ -321,6 +346,7 @@
 				614BA9412A6742F3004231A3 /* SingUpScreen */,
 				F64555972A6173F40070947C /* SingnInAppleScreen */,
 				F65BE6AA2AA737260006FB92 /* BreakHabitScreen */,
+				614584C92AB7959C002E2F14 /* CigarettesPerDayScreen */,
 				F6F3DA5F2A858E2900AC7A48 /* EmptyScreen */,
 			);
 			path = UserStories;
@@ -479,6 +505,7 @@
 			files = (
 				614BA9482A6749F5004231A3 /* SF-Pro-Display-Medium.otf in Resources */,
 				F61C94432A93F5260008FC96 /* SFProDisplay-Semibold.ttf in Resources */,
+				61329CF92AC1A85400721474 /* SF-Pro-Display-Regular.otf in Resources */,
 				61AE3EFF2A6DCC9D00B607E1 /* Localizable.strings in Resources */,
 				61CEF9702A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf in Resources */,
 				E58D1BB92A1CFF2E00137CC6 /* LaunchScreen.storyboard in Resources */,
@@ -593,13 +620,18 @@
 				E59E8A372A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift in Sources */,
 				E5109B5F2A6AE4CB008B74D3 /* AlertController.swift in Sources */,
 				E5109B502A6ADABF008B74D3 /* AlertAction.swift in Sources */,
+				614584D12AB799B1002E2F14 /* CigarettesPerDayViewController.swift in Sources */,
 				E58D1BEF2A1D125B00137CC6 /* StoriesAssembly.swift in Sources */,
 				F65BE6AE2AA737660006FB92 /* BreakHabitScreenPresenter.swift in Sources */,
+				614584CB2AB795C8002E2F14 /* CigarettesPerDayScreenAssembly.swift in Sources */,
 				E59E8A392A790C7100ABD1DA /* DropDownViewPresenterConfig.swift in Sources */,
+				614584CD2AB79766002E2F14 /* CigarettesPerDayScreenPresenter.swift in Sources */,
 				E5109B652A6AE70D008B74D3 /* GlobalCoordinator.swift in Sources */,
+				614584CF2AB79905002E2F14 /* CigarettesPerDayScreenRouter.swift in Sources */,
 				E5109B4C2A6AD9A4008B74D3 /* DesignKitAssembly.swift in Sources */,
 				E5109B692A6D4269008B74D3 /* FillingPersonalDataRouter.swift in Sources */,
 				61FD44C52AA6784C00080653 /* SignUpScreenCollectionViewCell.swift in Sources */,
+				614584D32AB79D6B002E2F14 /* TextField.swift in Sources */,
 				E5109B6B2A6D4337008B74D3 /* AppAssembly.swift in Sources */,
 				E5109B582A6ADEC1008B74D3 /* FillingPersonalDataAssembly.swift in Sources */,
 				F65BE6B02AA7377C0006FB92 /* BreakHabitScreenRouter.swift in Sources */,
