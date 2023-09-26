@@ -13,4 +13,13 @@ enum AppearanceConstants {
     enum ActionButton {
         static let cornerRadius: CGFloat = 12
     }
+
+    enum PriceValidatedTextField {
+        static let indentLeft: CGFloat = 15.5
+        static let indentRight: CGFloat = 15.5
+    }
+
+    enum CurrencyView {
+        static let heightForRow: CGFloat = 40
+    }
 }

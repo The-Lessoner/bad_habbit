@@ -8,24 +8,24 @@
 import Foundation
 
 protocol BreakHabitScreenRouterProtocol {
-    func presentEmptyScreen()
+    func presentPriceForPackScreen()
 }
 
 final class BreakHabitScreenRouter: BreakHabitScreenRouterProtocol {
     
-    private let emptyScreenAssembly: StoryAssembly
+    private let priceForPackScreenAssembly: StoryAssembly
     private let globalCoordinator: IGlobalCoordinator
     
     init(
-        emptyScreenAssembly: StoryAssembly,
+        priceForPackScreenAssembly: StoryAssembly,
         globalCoordinator: IGlobalCoordinator
     ) {
-        self.emptyScreenAssembly = emptyScreenAssembly
+        self.priceForPackScreenAssembly = priceForPackScreenAssembly
         self.globalCoordinator = globalCoordinator
     }
     
-    func presentEmptyScreen() {
-        let vc = emptyScreenAssembly.assembleStory()
+    func presentPriceForPackScreen() {
+        let vc = priceForPackScreenAssembly.assembleStory()
         globalCoordinator.pushViewController(vc)
     }
 }

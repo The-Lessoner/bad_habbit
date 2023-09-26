@@ -15,4 +15,9 @@
 "signInAppleScreen.authorizationButtonTitle" = "ВОЙТИ С APPLE";
 "breakHabitScreen.phraseLabelText" = "НЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nТУТ КАКАЯ-ТО ФРАЗА";
 "breakHabitScreen.startButtonTitle" = "ИЗБАВИТЬСЯ ОТ ПРИВЫЧКИ";
-
+"next" = "ДАЛЕЕ";
+"priceForPack.title" = "ЦЕНА ПАЧКИ СИГАРЕТ";
+"priceForPack.pricePlaceholder" = "Введите стоимость пачки";
+"priceForPack.currencyPlaceholder" = "Валюта";
+"priceForPack.priceValidatedTextField.hintLabelText.invalid" = "Минимальное числовое значение - 1,\nмаксимальное - 999999";
+"priceForPack.priceValidatedTextField.hintLabelText.valid" = "Максимальное значение 999999";

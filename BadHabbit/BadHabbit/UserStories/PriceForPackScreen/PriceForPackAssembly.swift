@@ -1,13 +1,13 @@
 //
-//  BreakHabitScreenAssembly.swift
+//  PriceForPackScreenAssembly.swift
 //  BadHabbit
 //
-//  Created by Halina Kurylchykava on 5.09.23.
+//  Created by Halina Kurylchykava on 6.09.23.
 //
 
 import UIKit
 
-final class BreakHabitScreenAssembly: StoryAssembly {
+final class PriceForPackScreenAssembly: StoryAssembly {
 
     private let nextScreen: StoryAssembly
     private let globalCoordinator: IGlobalCoordinator
@@ -18,12 +18,12 @@ final class BreakHabitScreenAssembly: StoryAssembly {
     }
 
     func assembleStory() -> UIViewController {
-        let router = BreakHabitScreenRouter(
-            priceForPackScreenAssembly: nextScreen,
+        let router = PriceForPackScreenRouter(
+            emptyScreenAssembly: nextScreen,
             globalCoordinator: globalCoordinator
         )
-        let presenter = BreakHabitScreenPresenter(router: router)
-        let view = BreakHabitViewController(presenter: presenter)
+        let presenter = PriceForPackScreenPresenter(router: router)
+        let view = PriceForPackViewController(presenter: presenter)
         presenter.view = view
 
         return view
