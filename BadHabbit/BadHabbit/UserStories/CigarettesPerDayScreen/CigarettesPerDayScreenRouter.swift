@@ -8,23 +8,23 @@
 import Foundation
 
 protocol CigarettesPerDayScreenRouterProtocol {
-    func presentEmptyScreen()
+    func presentCigarettesInPackScreen()
 }
 
 final class CigarettesPerDayScreenRouter: CigarettesPerDayScreenRouterProtocol {
-    private let emptyScreenAssembly: StoryAssembly
+    private let cigarettesInPackScreenAssembly: StoryAssembly
     private let globalCoordinator: IGlobalCoordinator
     
     init(
-        emptyScreenAssembly: StoryAssembly,
+        cigarettesInPackScreenAssembly: StoryAssembly,
         globalCoordinator: IGlobalCoordinator
     ) {
-        self.emptyScreenAssembly = emptyScreenAssembly
+        self.cigarettesInPackScreenAssembly = cigarettesInPackScreenAssembly
         self.globalCoordinator = globalCoordinator
     }
     
-    func presentEmptyScreen() {
-        let vc = emptyScreenAssembly.assembleStory()
+    func presentCigarettesInPackScreen() {
+        let vc = cigarettesInPackScreenAssembly.assembleStory()
         globalCoordinator.pushViewController(vc)
     }
 }

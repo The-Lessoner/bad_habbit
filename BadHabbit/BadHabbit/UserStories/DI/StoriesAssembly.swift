@@ -39,6 +39,13 @@ final class StoriesAssembly {
     
     var cigarettesPerDayScreen: StoryAssembly {
         CigarettesPerDayScreenAssembly(
+            nextScreen: cigarettesInPackScreen,
+            globalCoordinator: designKitAssembly.globalCoordinator
+        )
+    }
+    
+    var cigarettesInPackScreen: StoryAssembly {
+        CigarettesInPackScreenAssembly(
             nextScreen: emptyScreen,
             globalCoordinator: designKitAssembly.globalCoordinator
         )

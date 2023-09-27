@@ -1,13 +1,13 @@
 //
-//  CigarettesPerDayScreenAssembly.swift
+//  CigarettesInPackScreenAssembly.swift
 //  BadHabbit
 //
-//  Created by Viktoria Misiulia on 17/09/2023.
+//  Created by Viktoria Misiulia on 27/09/2023.
 //
 
 import UIKit
 
-final class CigarettesPerDayScreenAssembly: StoryAssembly {
+final class CigarettesInPackScreenAssembly: StoryAssembly {
     private let nextScreen: StoryAssembly
     private let globalCoordinator: IGlobalCoordinator
     
@@ -17,12 +17,12 @@ final class CigarettesPerDayScreenAssembly: StoryAssembly {
     }
     
     func assembleStory() -> UIViewController {
-        let router = CigarettesPerDayScreenRouter(
-            cigarettesInPackScreenAssembly: nextScreen,
+        let router = CigarettesInPackScreenRouter(
+            emptyScreenAssembly: nextScreen,
             globalCoordinator: globalCoordinator
         )
-        let presenter = CigarettesPerDayScreenPresenter(router: router)
-        let view = CigarettesPerDayViewController(presenter: presenter)
+        let presenter = CigarettesInPackScreenPresenter(router: router)
+        let view = CigarettesInPackViewController(presenter: presenter)
         
         presenter.view = view
         

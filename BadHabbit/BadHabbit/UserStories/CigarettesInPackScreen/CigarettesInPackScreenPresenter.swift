@@ -1,24 +1,24 @@
 //
-//  CigarettesPerDayScreenPresenter.swift
+//  CigarettesInPackScreenPresenter.swift
 //  BadHabbit
 //
-//  Created by Viktoria Misiulia on 17/09/2023.
+//  Created by Viktoria Misiulia on 27/09/2023.
 //
 
 import Foundation
 
-protocol CigarettesPerDayScreenPresenterProtocol {
+protocol CigarettesInPackScreenPresenterProtocol {
     func isValidCigarettesCount(userInput: String?) -> Bool
     func nextButtonTapped()
 }
 
-final class CigarettesPerDayScreenPresenter: CigarettesPerDayScreenPresenterProtocol {
-    private let router: CigarettesPerDayScreenRouterProtocol
+final class CigarettesInPackScreenPresenter: CigarettesInPackScreenPresenterProtocol {
+    private let router: CigarettesInPackScreenRouterProtocol
     private var cigarettesCount: Int?
     
-    weak var view: CigarettesPerDayViewProtocol?
+    weak var view: CigarettesInPackViewProtocol?
     
-    init(router: CigarettesPerDayScreenRouterProtocol) {
+    init(router: CigarettesInPackScreenRouterProtocol) {
         self.router = router
     }
     
@@ -35,6 +35,6 @@ final class CigarettesPerDayScreenPresenter: CigarettesPerDayScreenPresenterProt
     }
     
     func nextButtonTapped() {
-        router.presentCigarettesInPackScreen()
+        router.presentEmptyScreen()
     }
 }

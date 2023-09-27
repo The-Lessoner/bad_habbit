@@ -1,23 +1,22 @@
 //
-//  CigarettesPerDayViewController.swift
+//  CigarettesInPackViewController.swift
 //  BadHabbit
 //
-//  Created by Viktoria Misiulia on 17/09/2023.
+//  Created by Viktoria Misiulia on 27/09/2023.
 //
 
 import UIKit
-import SnapKit
 
-protocol CigarettesPerDayViewProtocol: AnyObject { }
+protocol CigarettesInPackViewProtocol: AnyObject { }
 
-final class CigarettesPerDayViewController: BaseViewController, CigarettesPerDayViewProtocol {
-    private let presenter: CigarettesPerDayScreenPresenterProtocol
+final class CigarettesInPackViewController: BaseViewController, CigarettesInPackViewProtocol {
+    private let presenter: CigarettesInPackScreenPresenterProtocol
     
     private lazy var backgroundImageView = UIImageView()
-    private lazy var nextButton = ActionButton()
+    private lazy var startButton = ActionButton()
     private lazy var textField = TextField(prompt: Strings.cigarettesCountPromptText)
     
-    init(presenter: CigarettesPerDayScreenPresenterProtocol) {
+    init(presenter: CigarettesInPackScreenPresenterProtocol) {
         self.presenter = presenter
         super.init()
     }
@@ -38,13 +37,13 @@ final class CigarettesPerDayViewController: BaseViewController, CigarettesPerDay
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        title = Strings.CigarettesPerDayScreen.titleText.uppercased()
+
+        title = Strings.CigarettesInPackScreen.titleText.uppercased()
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+
         title = nil
     }
     
@@ -90,7 +89,7 @@ final class CigarettesPerDayViewController: BaseViewController, CigarettesPerDay
         textField.font = Fonts.SFProDisplay.regular.font(size: 17)
         textField.keyboardType = .numberPad
         textField.attributedPlaceholder = NSAttributedString(
-            string: Strings.CigarettesPerDayScreen.textFieldPlaceHolderText,
+            string: Strings.CigarettesInPackScreen.textFieldPlaceHolderText,
             attributes: [
                 .foregroundColor: Assets.Colors.gray.color
             ]
@@ -98,21 +97,21 @@ final class CigarettesPerDayViewController: BaseViewController, CigarettesPerDay
     }
     
     private func addNextButton() {
-        view.addSubview(nextButton)
+        view.addSubview(startButton)
         
-        nextButton.layer.cornerRadius = AppearanceConstants.ActionButton.cornerRadius
-        nextButton.isEnabled = false
+        startButton.layer.cornerRadius = AppearanceConstants.ActionButton.cornerRadius
+        startButton.isEnabled = false
         
-        nextButton.setTitle(
+        startButton.setTitle(
             Strings.nextButtonTitle.uppercased(),
             for: .normal
         )
         
-        nextButton.setTitleColor(.white, for: .normal)
-        nextButton.setTitleColor(.black, for: .disabled)
-        nextButton.titleLabel?.font = Fonts.SFProDisplay.medium.font(size: 17.0)
+        startButton.setTitleColor(.white, for: .normal)
+        startButton.setTitleColor(.black, for: .disabled)
+        startButton.titleLabel?.font = Fonts.SFProDisplay.medium.font(size: 17.0)
         
-        nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
     }
     
     private func setupViewConstraints() {
@@ -123,7 +122,7 @@ final class CigarettesPerDayViewController: BaseViewController, CigarettesPerDay
             make.leading.trailing.bottom.equalToSuperview()
         }
 
-        nextButton.snp.makeConstraints { make in
+        startButton.snp.makeConstraints { make in
             make.height.equalTo(LayoutConstants.ActionButton.height)
             make.leading.equalTo(safeArea).inset(LayoutConstants.leadingInset)
             make.trailing.equalTo(safeArea).inset(LayoutConstants.trailingInset)
@@ -138,10 +137,24 @@ final class CigarettesPerDayViewController: BaseViewController, CigarettesPerDay
         }
     }
     
-    private func updateNextButton(isEnabled: Bool) {
-        if nextButton.isEnabled != isEnabled {
-            nextButton.isEnabled = isEnabled
+    private func updateStartButton(isEnabled: Bool) {
+        if startButton.isEnabled != isEnabled {
+            startButton.isEnabled = isEnabled
+            
+            updateStartButtonTitile()
         }
+    }
+    
+    private func updateStartButtonTitile() {
+        let title: String
+        
+        if startButton.isEnabled {
+            title = Strings.startButtonTitle.uppercased()
+        } else {
+            title = Strings.nextButtonTitle.uppercased()
+        }
+        
+        startButton.setTitle(title, for: .normal)
     }
     
     private func updateTextFieldAppearance(isNeedDisplayRedBottomBorder: Bool) {
@@ -149,19 +162,19 @@ final class CigarettesPerDayViewController: BaseViewController, CigarettesPerDay
     }
     
     @objc
-    private func nextButtonTapped() {
+    private func startButtonTapped() {
         let isValid = presenter.isValidCigarettesCount(userInput: textField.text)
         
         if isValid {
             presenter.nextButtonTapped()
         } else {
             updateTextFieldAppearance(isNeedDisplayRedBottomBorder: true)
-            nextButton.isEnabled = false
+            updateStartButton(isEnabled: false)
         }
     }
 }
 
-extension CigarettesPerDayViewController: UITextFieldDelegate {
+extension CigarettesInPackViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if self.textField.isNeedSetRedAppearance {
             updateTextFieldAppearance(isNeedDisplayRedBottomBorder: false)
@@ -172,9 +185,9 @@ extension CigarettesPerDayViewController: UITextFieldDelegate {
         if navigationController?.visibleViewController == self,
            let textFieldText = textField.text,
            !textFieldText.isEmpty {
-            updateNextButton(isEnabled: true)
+            updateStartButton(isEnabled: true)
         } else {
-            updateNextButton(isEnabled: false)
+            updateStartButton(isEnabled: false)
         }
     }
 }
