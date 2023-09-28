@@ -21,6 +21,6 @@ final class BreakHabitScreenPresenter: BreakHabitScreenPresenterProtocol {
     }
     
     func startButtonTapped() {
-        router.presentEmptyScreen()
+        router.presentWelcomeNameScreen()
     }
 }

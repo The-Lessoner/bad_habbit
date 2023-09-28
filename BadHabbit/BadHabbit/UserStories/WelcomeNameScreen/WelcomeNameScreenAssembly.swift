@@ -1,13 +1,13 @@
 //
-//  BreakHabitScreenAssembly.swift
+//  WelcomeNameScreenAssembly.swift
 //  BadHabbit
 //
-//  Created by Halina Kurylchykava on 5.09.23.
+//  Created by Halina Kurylchykava on 15.09.23.
 //
 
 import UIKit
 
-final class BreakHabitScreenAssembly: StoryAssembly {
+final class WelcomeNameScreenAssembly: StoryAssembly {
 
     private let nextScreen: StoryAssembly
     private let globalCoordinator: IGlobalCoordinator
@@ -18,12 +18,12 @@ final class BreakHabitScreenAssembly: StoryAssembly {
     }
 
     func assembleStory() -> UIViewController {
-        let router = BreakHabitScreenRouter(
-            welcomeNameScreenAssembly: nextScreen,
+        let router = WelcomeNameScreenRouter(
+            emptyScreenAssembly: nextScreen,
             globalCoordinator: globalCoordinator
         )
-        let presenter = BreakHabitScreenPresenter(router: router)
-        let view = BreakHabitViewController(presenter: presenter)
+        let presenter = WelcomeNameScreenPresenter(router: router)
+        let view = WelcomeNameViewController(presenter: presenter)
         presenter.view = view
 
         return view

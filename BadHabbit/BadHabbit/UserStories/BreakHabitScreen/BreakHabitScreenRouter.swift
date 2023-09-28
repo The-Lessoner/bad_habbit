@@ -8,24 +8,24 @@
 import Foundation
 
 protocol BreakHabitScreenRouterProtocol {
-    func presentEmptyScreen()
+    func presentWelcomeNameScreen()
 }
 
 final class BreakHabitScreenRouter: BreakHabitScreenRouterProtocol {
     
-    private let emptyScreenAssembly: StoryAssembly
+    private let welcomeNameScreenAssembly: StoryAssembly
     private let globalCoordinator: IGlobalCoordinator
     
     init(
-        emptyScreenAssembly: StoryAssembly,
+        welcomeNameScreenAssembly: StoryAssembly,
         globalCoordinator: IGlobalCoordinator
     ) {
-        self.emptyScreenAssembly = emptyScreenAssembly
+        self.welcomeNameScreenAssembly = welcomeNameScreenAssembly
         self.globalCoordinator = globalCoordinator
     }
     
-    func presentEmptyScreen() {
-        let vc = emptyScreenAssembly.assembleStory()
+    func presentWelcomeNameScreen() {
+        let vc = welcomeNameScreenAssembly.assembleStory()
         globalCoordinator.pushViewController(vc)
     }
 }
