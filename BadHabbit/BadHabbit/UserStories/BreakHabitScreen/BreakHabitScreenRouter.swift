@@ -8,24 +8,24 @@
 import Foundation
 
 protocol BreakHabitScreenRouterProtocol {
-    func presentCigarettesPerDayScreen()
+    func presentWelcomeNameScreen()
 }
 
 final class BreakHabitScreenRouter: BreakHabitScreenRouterProtocol {
     
-    private let cigarettesPerDayScreenAssembly: StoryAssembly
+    private let welcomeNameScreenAssembly: StoryAssembly
     private let globalCoordinator: IGlobalCoordinator
     
     init(
-        cigarettesPerDayScreenAssembly: StoryAssembly,
+        welcomeNameScreenAssembly: StoryAssembly,
         globalCoordinator: IGlobalCoordinator
     ) {
-        self.cigarettesPerDayScreenAssembly = cigarettesPerDayScreenAssembly
+        self.welcomeNameScreenAssembly = welcomeNameScreenAssembly
         self.globalCoordinator = globalCoordinator
     }
     
-    func presentCigarettesPerDayScreen() {
-        let vc = cigarettesPerDayScreenAssembly.assembleStory()
+    func presentWelcomeNameScreen() {
+        let vc = welcomeNameScreenAssembly.assembleStory()
         globalCoordinator.pushViewController(vc)
     }
 }

@@ -21,6 +21,8 @@
 "breakHabitScreen.phraseLabelText" = "НЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nТУТ КАКАЯ-ТО ФРАЗА";
 "breakHabitScreen.startButtonTitle" = "ИЗБАВИТЬСЯ ОТ ПРИВЫЧКИ";
 
+"welcomeNameScreen.welcome" = "ДОБРО ПОЖАЛОВАТЬ,\n";
+
 "cigarettesPerDayScreen.titleText" = "Сигарет в день";
 "cigarettesPerDayScreen.textFieldPlaceHolderText" = "Введите количество потребляемых сигарет";
 

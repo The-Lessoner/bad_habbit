@@ -32,6 +32,13 @@ final class StoriesAssembly {
 
     var breakHabitScreen: StoryAssembly {
         BreakHabitScreenAssembly(
+            nextScreen: self.welcomeNameScreen,
+            globalCoordinator: designKitAssembly.globalCoordinator
+        )
+    }
+
+    var welcomeNameScreen: StoryAssembly {
+        WelcomeNameScreenAssembly(
             nextScreen: cigarettesPerDayScreen,
             globalCoordinator: designKitAssembly.globalCoordinator
         )
