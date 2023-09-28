@@ -30,31 +30,29 @@ final class TextField: UITextField {
         let label = UILabel()
         label.text = promptText
         label.font = Fonts.SFProDisplay.regular.font(size: 12)
-        label.textColor = Assets.Colors.red.color
         
         return label
     }()
     
-    var isNeedSetRedAppearance: Bool = false {
+    var isCorrectText: Bool = true {
         didSet {
-            if isNeedSetRedAppearance {
-                layer.addSublayer(redBottomBorder)
-                textColor = Assets.Colors.red.color
-                addSubview(promptLabel)
-                promptLabel.snp.makeConstraints { make in
-                    make.top.equalTo(self.snp.bottom).offset(5)
-                    make.leading.equalToSuperview().inset(15)
-                }
-            } else {
+            if isCorrectText {
                 redBottomBorder.removeFromSuperlayer()
-                promptLabel.removeFromSuperview()
-                textColor = UIColor.black
+                changePromptLabelText()
+                setComponentsTextColor(UIColor.black)
+            } else {
+                layer.addSublayer(redBottomBorder)
+                changePromptLabelText()
+                setComponentsTextColor(Assets.Colors.red.color)
+                shake()
+                
             }
         }
     }
     
-    init(prompt text: String) {
-        promptText = text
+    init(prompt: String) {
+        promptText = prompt
+        
         super.init(frame: .zero)
     }
     
@@ -66,5 +64,49 @@ final class TextField: UITextField {
         super.draw(rect)
         
         layer.addSublayer(lineLayer)
+        
+        addSubview(promptLabel)
+        promptLabel.snp.makeConstraints { make in
+            make.top.equalTo(self.snp.bottom).offset(5)
+            make.leading.equalToSuperview().inset(15)
+        }
+    }
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        bounds.insetBy(dx: 15, dy: 0)
+    }
+    
+    private func setComponentsTextColor(_ color: UIColor) {
+        textColor = color
+        promptLabel.textColor = color
+    }
+    
+    private func changePromptLabelText() {
+        if let text = text,
+           text.isEmpty,
+           promptLabel.text == promptText {
+            promptLabel.text = Strings.emptyLabelPromptText
+        } else if promptLabel.text != promptText {
+            promptLabel.text = promptText
+        }
+    }
+    
+    func shake() {
+        let animation = CABasicAnimation(keyPath: "position.x")
+        
+        animation.fromValue = NSValue(cgPoint: CGPoint(
+            x: self.center.x - 5,
+            y: self.center.y
+        ))
+        animation.toValue = NSValue(cgPoint: CGPoint(
+            x: self.center.x + 5,
+            y: self.center.y
+        ))
+        
+        animation.repeatCount = 2
+        animation.duration = 0.04
+        animation.autoreverses = true
+        
+        layer.add(animation, forKey: "position.x")
     }
 }

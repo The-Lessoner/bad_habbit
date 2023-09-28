@@ -86,7 +86,7 @@ final class CigarettesPerDayViewController: BaseViewController, CigarettesPerDay
         
         textField.delegate = self
         
-        textField.textAlignment = .center
+        textField.textAlignment = .left
         textField.font = Fonts.SFProDisplay.regular.font(size: 17)
         textField.keyboardType = .numberPad
         textField.attributedPlaceholder = NSAttributedString(
@@ -101,7 +101,6 @@ final class CigarettesPerDayViewController: BaseViewController, CigarettesPerDay
         view.addSubview(nextButton)
         
         nextButton.layer.cornerRadius = AppearanceConstants.ActionButton.cornerRadius
-        nextButton.isEnabled = false
         
         nextButton.setTitle(
             Strings.nextButtonTitle.uppercased(),
@@ -138,43 +137,31 @@ final class CigarettesPerDayViewController: BaseViewController, CigarettesPerDay
         }
     }
     
-    private func updateNextButton(isEnabled: Bool) {
-        if nextButton.isEnabled != isEnabled {
-            nextButton.isEnabled = isEnabled
-        }
-    }
-    
-    private func updateTextFieldAppearance(isNeedDisplayRedBottomBorder: Bool) {
-        textField.isNeedSetRedAppearance = isNeedDisplayRedBottomBorder
-    }
-    
     @objc
     private func nextButtonTapped() {
-        let isValid = presenter.isValidCigarettesCount(userInput: textField.text)
-        
-        if isValid {
+        if presenter.isValidCigarettesCount(userInput: textField.text!) {
             presenter.nextButtonTapped()
-        } else {
-            updateTextFieldAppearance(isNeedDisplayRedBottomBorder: true)
-            nextButton.isEnabled = false
+        } else if textField.isCorrectText {
+            textField.isCorrectText = false
+        } else if !textField.isCorrectText {
+            textField.shake()
         }
     }
 }
 
 extension CigarettesPerDayViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if self.textField.isNeedSetRedAppearance {
-            updateTextFieldAppearance(isNeedDisplayRedBottomBorder: false)
+        if !self.textField.isCorrectText {
+            self.textField.isCorrectText = true
         }
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if navigationController?.visibleViewController == self,
-           let textFieldText = textField.text,
-           !textFieldText.isEmpty {
-            updateNextButton(isEnabled: true)
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string.isEmpty || Int(string) != nil {
+            return true
         } else {
-            updateNextButton(isEnabled: false)
+            self.textField.shake()
+            return false
         }
     }
 }

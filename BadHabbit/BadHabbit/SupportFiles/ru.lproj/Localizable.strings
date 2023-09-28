@@ -11,6 +11,7 @@
 "nextButtonTitle" = "Далее";
 "startButtonTitle" = "НАЧАТЬ";
 "cigarettesCountPromptText" = "Минимальное числовое значение - 1, максимальное - 9999";
+"emptyLabelPromptText" = "Необходимо ввести значение";
 
 "signUpScreen.welcomeLabelText" = "ДОБРО ПОЖАЛОВАТЬ В";
 "signUpScreen.phraseLabelText" = "НЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nНЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nТУТ КАКАЯ-ТО ФРАЗА";

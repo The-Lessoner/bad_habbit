@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CigarettesPerDayScreenPresenterProtocol {
-    func isValidCigarettesCount(userInput: String?) -> Bool
+    func isValidCigarettesCount(userInput: String) -> Bool
     func nextButtonTapped()
 }
 
@@ -22,10 +22,8 @@ final class CigarettesPerDayScreenPresenter: CigarettesPerDayScreenPresenterProt
         self.router = router
     }
     
-    func isValidCigarettesCount(userInput: String?) -> Bool {
-        if let userInput = userInput,
-              !userInput.isEmpty,
-           let cigarettesCount = Int(userInput),
+    func isValidCigarettesCount(userInput: String) -> Bool {
+        if let cigarettesCount = Int(userInput),
            (1...9999).contains(cigarettesCount) {
             self.cigarettesCount = cigarettesCount
             return true
