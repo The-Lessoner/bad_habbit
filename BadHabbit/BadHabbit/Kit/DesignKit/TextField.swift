@@ -8,6 +8,7 @@
 import UIKit
 
 final class TextField: UITextField {
+    private let boundsXInset: CGFloat = 15.5
     private var promptText: String
     
     private lazy var lineLayer: CALayer = {
@@ -45,7 +46,6 @@ final class TextField: UITextField {
                 changePromptLabelText()
                 setComponentsTextColor(Assets.Colors.red.color)
                 shake()
-                
             }
         }
     }
@@ -73,7 +73,15 @@ final class TextField: UITextField {
     }
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {
-        bounds.insetBy(dx: 15, dy: 0)
+        bounds.insetBy(dx: boundsXInset, dy: 0)
+    }
+    
+    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        bounds.insetBy(dx: boundsXInset, dy: 0)
+    }
+    
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        bounds.insetBy(dx: boundsXInset, dy: 0)
     }
     
     private func setComponentsTextColor(_ color: UIColor) {

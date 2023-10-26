@@ -89,10 +89,13 @@ final class CigarettesPerDayViewController: BaseViewController, CigarettesPerDay
         textField.textAlignment = .left
         textField.font = Fonts.SFProDisplay.regular.font(size: 17)
         textField.keyboardType = .numberPad
+        
+        let placeholderFontSize: CGFloat = UIScreen.main.bounds.width > 390 ? 17 : 16
         textField.attributedPlaceholder = NSAttributedString(
             string: Strings.CigarettesPerDayScreen.textFieldPlaceHolderText,
             attributes: [
-                .foregroundColor: Assets.Colors.gray.color
+                .foregroundColor: Assets.Colors.gray.color,
+                .font: Fonts.SFProDisplay.regular.font(size: placeholderFontSize)
             ]
         )
     }
@@ -139,7 +142,9 @@ final class CigarettesPerDayViewController: BaseViewController, CigarettesPerDay
     
     @objc
     private func nextButtonTapped() {
-        if presenter.isValidCigarettesCount(userInput: textField.text!) {
+        if let text = textField.text,
+           let count = Int(text),
+           presenter.isValidCigarettesCount(count) {
             presenter.nextButtonTapped()
         } else if textField.isCorrectText {
             textField.isCorrectText = false
@@ -162,6 +167,14 @@ extension CigarettesPerDayViewController: UITextFieldDelegate {
         } else {
             self.textField.shake()
             return false
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let text = textField.text,
+        text.hasPrefix("0"),
+        let value = Int(text) {
+            textField.text = String(value)
         }
     }
 }

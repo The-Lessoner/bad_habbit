@@ -11,9 +11,14 @@ import UIKit
 final class StoriesAssembly {
     
     private let designKitAssembly: DesignKitAssembly
+    private let persistentKitAssembly: PersistentKitAssembly
     
-    init(designKitAssembly: DesignKitAssembly) {
+    init(
+        designKitAssembly: DesignKitAssembly,
+        persistentKitAssembly: PersistentKitAssembly
+    ) {
         self.designKitAssembly = designKitAssembly
+        self.persistentKitAssembly = persistentKitAssembly
     }
     
     var signUpScreen: StoryAssembly {
@@ -47,14 +52,15 @@ final class StoriesAssembly {
     var cigarettesPerDayScreen: StoryAssembly {
         CigarettesPerDayScreenAssembly(
             nextScreen: cigarettesInPackScreen,
-            globalCoordinator: designKitAssembly.globalCoordinator
+            globalCoordinator: designKitAssembly.globalCoordinator,
+            persistentContainer: persistentKitAssembly.persistentContainer
         )
     }
-    
     var cigarettesInPackScreen: StoryAssembly {
         CigarettesInPackScreenAssembly(
             nextScreen: emptyScreen,
-            globalCoordinator: designKitAssembly.globalCoordinator
+            globalCoordinator: designKitAssembly.globalCoordinator,
+            persistentContainer: persistentKitAssembly.persistentContainer
         )
     }
     

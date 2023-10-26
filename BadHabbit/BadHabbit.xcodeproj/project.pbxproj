@@ -26,11 +26,16 @@
 		6152CE862AC39CF900CF2643 /* CigarettesInPackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6152CE852AC39CF900CF2643 /* CigarettesInPackViewController.swift */; };
 		6194A0B02A6FB53B0006F570 /* LayoutConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6194A0AF2A6FB53B0006F570 /* LayoutConstants.swift */; };
 		61AE3EFF2A6DCC9D00B607E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61AE3F012A6DCC9D00B607E1 /* Localizable.strings */; };
+		61C65B662AC64096008E522C /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 61C65B642AC64096008E522C /* CoreDataModel.xcdatamodeld */; };
+		61C65B702AC6FE56008E522C /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C65B6F2AC6FE56008E522C /* PersistentContainer.swift */; };
+		61C65B722AC7006C008E522C /* PersistentKitAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C65B712AC7006C008E522C /* PersistentKitAssembly.swift */; };
 		61CEF96E2A67739600744ADA /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61CEF96D2A67739600744ADA /* SF-Pro-Display-Bold.otf */; };
 		61CEF9702A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61CEF96F2A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf */; };
 		61E5EF7D2A8D0A6600091EBA /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E5EF7A2A8D0A6600091EBA /* Assets.swift */; };
 		61E5EF7E2A8D0A6600091EBA /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E5EF7B2A8D0A6600091EBA /* Strings.swift */; };
 		61E5EF842A8D0CE300091EBA /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E5EF832A8D0CE300091EBA /* Fonts.swift */; };
+		61E729082AEAE5EA00EDB834 /* Smoking+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E729062AEAE5EA00EDB834 /* Smoking+CoreDataClass.swift */; };
+		61E729092AEAE5EA00EDB834 /* Smoking+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E729072AEAE5EA00EDB834 /* Smoking+CoreDataProperties.swift */; };
 		61EF1D4C2AA91E5F00031D88 /* AppearanceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EF1D4B2AA91E5F00031D88 /* AppearanceConstants.swift */; };
 		61EF63AC2A7297E00009218A /* SignUpScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EF63AB2A7297E00009218A /* SignUpScreenAssembly.swift */; };
 		61FD44C52AA6784C00080653 /* SignUpScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FD44C42AA6784C00080653 /* SignUpScreenCollectionViewCell.swift */; };
@@ -96,11 +101,16 @@
 		6152CE852AC39CF900CF2643 /* CigarettesInPackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CigarettesInPackViewController.swift; sourceTree = "<group>"; };
 		6194A0AF2A6FB53B0006F570 /* LayoutConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstants.swift; sourceTree = "<group>"; };
 		61AE3F022A6DCCAD00B607E1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		61C65B652AC64096008E522C /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		61C65B6F2AC6FE56008E522C /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
+		61C65B712AC7006C008E522C /* PersistentKitAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentKitAssembly.swift; sourceTree = "<group>"; };
 		61CEF96D2A67739600744ADA /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		61CEF96F2A6779EE00744ADA /* Inter-Regular_ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular_ExtraBold.ttf"; sourceTree = "<group>"; };
 		61E5EF7A2A8D0A6600091EBA /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		61E5EF7B2A8D0A6600091EBA /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		61E5EF832A8D0CE300091EBA /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		61E729062AEAE5EA00EDB834 /* Smoking+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Smoking+CoreDataClass.swift"; sourceTree = "<group>"; };
+		61E729072AEAE5EA00EDB834 /* Smoking+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Smoking+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		61EF1D4B2AA91E5F00031D88 /* AppearanceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceConstants.swift; sourceTree = "<group>"; };
 		61EF63AB2A7297E00009218A /* SignUpScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenAssembly.swift; sourceTree = "<group>"; };
 		61FD44C42AA6784C00080653 /* SignUpScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -222,6 +232,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		61E729022AEA7C2400EDB834 /* Smoking */ = {
+			isa = PBXGroup;
+			children = (
+				61E729062AEAE5EA00EDB834 /* Smoking+CoreDataClass.swift */,
+				61E729072AEAE5EA00EDB834 /* Smoking+CoreDataProperties.swift */,
+			);
+			path = Smoking;
+			sourceTree = "<group>";
+		};
 		7F8062058E6710BFF5E557EE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +259,7 @@
 				E5109B632A6AE6F7008B74D3 /* GlobalCoordinator */,
 				E5109B482A6AD94B008B74D3 /* Alerts */,
 				6194A0B12A6FB6330006F570 /* Models */,
+				F65BE6B72AA7EC730006FB92 /* Extentions */,
 				61448CC12A980BC6002CD090 /* ActionButton.swift */,
 				61194AE22A9DEE3200F32EFF /* BackgroundGradientView.swift */,
 				614584D22AB79D6B002E2F14 /* TextField.swift */,
@@ -350,6 +370,10 @@
 		E58D1BC22A1D001A00137CC6 /* PersistenceKit */ = {
 			isa = PBXGroup;
 			children = (
+				61C65B712AC7006C008E522C /* PersistentKitAssembly.swift */,
+				61C65B6F2AC6FE56008E522C /* PersistentContainer.swift */,
+				61C65B642AC64096008E522C /* CoreDataModel.xcdatamodeld */,
+				61E729022AEA7C2400EDB834 /* Smoking */,
 			);
 			path = PersistenceKit;
 			sourceTree = "<group>";
@@ -388,7 +412,6 @@
 			isa = PBXGroup;
 			children = (
 				E5109B472A6AD904008B74D3 /* DesignKit */,
-				F65BE6B72AA7EC730006FB92 /* Extentions */,
 				E58D1BC22A1D001A00137CC6 /* PersistenceKit */,
 			);
 			path = Kit;
@@ -661,6 +684,7 @@
 				61194AE32A9DEE3200F32EFF /* BackgroundGradientView.swift in Sources */,
 				E5109B532A6ADB4A008B74D3 /* CommonTypeAliases.swift in Sources */,
 				E5109B6E2A6D4733008B74D3 /* BaseViewController.swift in Sources */,
+				61C65B662AC64096008E522C /* CoreDataModel.xcdatamodeld in Sources */,
 				61EF1D4C2AA91E5F00031D88 /* AppearanceConstants.swift in Sources */,
 				6152CE822AC39CD900CF2643 /* CigarettesInPackScreenPresenter.swift in Sources */,
 				E59E8A372A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift in Sources */,
@@ -674,14 +698,17 @@
 				E59E8A392A790C7100ABD1DA /* DropDownViewPresenterConfig.swift in Sources */,
 				614584CD2AB79766002E2F14 /* CigarettesPerDayScreenPresenter.swift in Sources */,
 				E5109B652A6AE70D008B74D3 /* GlobalCoordinator.swift in Sources */,
+				61E729092AEAE5EA00EDB834 /* Smoking+CoreDataProperties.swift in Sources */,
 				614584CF2AB79905002E2F14 /* CigarettesPerDayScreenRouter.swift in Sources */,
 				E5109B4C2A6AD9A4008B74D3 /* DesignKitAssembly.swift in Sources */,
 				F6D4E22C2AB4CA5F003C3FDE /* WelcomeNameViewController.swift in Sources */,
 				E5109B692A6D4269008B74D3 /* FillingPersonalDataRouter.swift in Sources */,
 				61FD44C52AA6784C00080653 /* SignUpScreenCollectionViewCell.swift in Sources */,
 				614584D32AB79D6B002E2F14 /* TextField.swift in Sources */,
+				61C65B722AC7006C008E522C /* PersistentKitAssembly.swift in Sources */,
 				E5109B6B2A6D4337008B74D3 /* AppAssembly.swift in Sources */,
 				E5109B582A6ADEC1008B74D3 /* FillingPersonalDataAssembly.swift in Sources */,
+				61E729082AEAE5EA00EDB834 /* Smoking+CoreDataClass.swift in Sources */,
 				F65BE6B02AA7377C0006FB92 /* BreakHabitScreenRouter.swift in Sources */,
 				E5109B5C2A6ADF14008B74D3 /* FillingPersonalDataView.swift in Sources */,
 				F6D4E2262AB4C8F0003C3FDE /* WelcomeNameScreenAssembly.swift in Sources */,
@@ -697,6 +724,7 @@
 				F6D4E22A2AB4CA15003C3FDE /* WelcomeNameScreenRouter.swift in Sources */,
 				614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */,
 				6152CE842AC39CE500CF2643 /* CigarettesInPackScreenRouter.swift in Sources */,
+				61C65B702AC6FE56008E522C /* PersistentContainer.swift in Sources */,
 				F64555992A61743A0070947C /* SignInAppleViewController.swift in Sources */,
 				F64555E32A6E77670070947C /* SignInAppleRouter.swift in Sources */,
 				E58D1BAF2A1CFF2C00137CC6 /* SceneDelegate.swift in Sources */,
@@ -938,6 +966,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		61C65B642AC64096008E522C /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				61C65B652AC64096008E522C /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 61C65B652AC64096008E522C /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E58D1BA12A1CFF2C00137CC6 /* Project object */;
 }
