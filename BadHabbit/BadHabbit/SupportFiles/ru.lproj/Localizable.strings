@@ -10,7 +10,7 @@
 "backButtonTitle" = "Назад";
 "nextButtonTitle" = "Далее";
 "startButtonTitle" = "НАЧАТЬ";
-"cigarettesCountPromptText" = "Минимальное числовое значение - 1, максимальное - 9999";
+"cigarettesCountPromptText" = "Число от 1 до 9999";
 "emptyLabelPromptText" = "Необходимо ввести значение";
 
 "signUpScreen.welcomeLabelText" = "ДОБРО ПОЖАЛОВАТЬ В";
@@ -24,8 +24,8 @@
 
 "welcomeNameScreen.welcome" = "ДОБРО ПОЖАЛОВАТЬ,\n";
 
-"cigarettesPerDayScreen.titleText" = "Сигарет в день";
+"cigarettesPerDayScreen.titleText" = "Сигареты в день";
 "cigarettesPerDayScreen.textFieldPlaceHolderText" = "Введите количество потребляемых сигарет";
 
-"cigarettesInPackScreen.titleText" = "Cигарет в пачке";
+"cigarettesInPackScreen.titleText" = "Cигареты в пачке";
 "cigarettesInPackScreen.textFieldPlaceHolderText" = "Введите количество сигарет в пачке";
