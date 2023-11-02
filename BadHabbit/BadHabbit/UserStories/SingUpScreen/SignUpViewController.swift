@@ -128,7 +128,7 @@ final class SignUpViewController: BaseViewController, SignUpViewProtocol {
         startButton.isEnabled = false
         
         startButton.setTitle(
-            Strings.SignUpScreen.startButtonTitle.uppercased(),
+            Strings.startButtonTitle.uppercased(),
             for: .normal
         )
         

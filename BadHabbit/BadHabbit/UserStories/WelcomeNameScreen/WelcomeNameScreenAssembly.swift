@@ -19,7 +19,7 @@ final class WelcomeNameScreenAssembly: StoryAssembly {
 
     func assembleStory() -> UIViewController {
         let router = WelcomeNameScreenRouter(
-            emptyScreenAssembly: nextScreen,
+                        сigarettesPerDayScreenAssembly: nextScreen,
             globalCoordinator: globalCoordinator
         )
         let presenter = WelcomeNameScreenPresenter(router: router)

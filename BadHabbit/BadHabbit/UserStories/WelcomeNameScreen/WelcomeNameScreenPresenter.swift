@@ -23,6 +23,6 @@ final class WelcomeNameScreenPresenter: WelcomeNameScreenPresenterProtocol {
     }
 
     func startButtonTapped() {
-        router.presentEmptyScreen()
+        router.presentСigarettesPerDayScreen()
     }
 }

@@ -7,14 +7,25 @@
 */
 
 "appName" = "HABIT HERO";
+"backButtonTitle" = "Назад";
+"nextButtonTitle" = "Далее";
+"startButtonTitle" = "НАЧАТЬ";
+"cigarettesCountPromptText" = "Число от 1 до 9999";
+"emptyLabelPromptText" = "Необходимо ввести значение";
+
 "signUpScreen.welcomeLabelText" = "ДОБРО ПОЖАЛОВАТЬ В";
 "signUpScreen.phraseLabelText" = "НЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nНЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nТУТ КАКАЯ-ТО ФРАЗА";
-"signUpScreen.startButtonTitle" = "НАЧАТЬ";
 "signUpScreen.logoLabelText" = "ЛОГО";
-"backButtonTitle" = "Назад";
+
 "signInAppleScreen.authorizationButtonTitle" = "ВОЙТИ С APPLE";
+
 "breakHabitScreen.phraseLabelText" = "НЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nТУТ КАКАЯ-ТО ФРАЗА";
 "breakHabitScreen.startButtonTitle" = "ИЗБАВИТЬСЯ ОТ ПРИВЫЧКИ";
-"welcome" = "ДОБРО ПОЖАЛОВАТЬ,\n";
-"next" = "ДАЛЕЕ";
 
+"welcomeNameScreen.welcome" = "ДОБРО ПОЖАЛОВАТЬ,\n";
+
+"cigarettesPerDayScreen.titleText" = "Сигареты в день";
+"cigarettesPerDayScreen.textFieldPlaceHolderText" = "Введите количество потребляемых сигарет";
+
+"cigarettesInPackScreen.titleText" = "Cигареты в пачке";
+"cigarettesInPackScreen.textFieldPlaceHolderText" = "Введите количество сигарет в пачке";

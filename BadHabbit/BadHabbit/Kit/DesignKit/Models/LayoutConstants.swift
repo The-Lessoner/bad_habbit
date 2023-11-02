@@ -19,4 +19,9 @@ enum LayoutConstants {
     enum ImageLogo {
         static let size: CGFloat = 196
     }
+    
+    enum TextField {
+        static let height = 50
+        static let topInset = 30
+    }
 }

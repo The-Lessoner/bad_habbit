@@ -8,24 +8,24 @@
 import Foundation
 
 protocol WelcomeNameScreenRouterProtocol {
-    func presentEmptyScreen()
+    func presentСigarettesPerDayScreen()
 }
 
 final class WelcomeNameScreenRouter: WelcomeNameScreenRouterProtocol {
     
-    private let emptyScreenAssembly: StoryAssembly
+    private let сigarettesPerDayScreenAssembly: StoryAssembly
     private let globalCoordinator: IGlobalCoordinator
     
     init(
-        emptyScreenAssembly: StoryAssembly,
+        сigarettesPerDayScreenAssembly: StoryAssembly,
         globalCoordinator: IGlobalCoordinator
     ) {
-        self.emptyScreenAssembly = emptyScreenAssembly
+        self.сigarettesPerDayScreenAssembly = сigarettesPerDayScreenAssembly
         self.globalCoordinator = globalCoordinator
     }
     
-    func presentEmptyScreen() {
-        let vc = emptyScreenAssembly.assembleStory()
+    func presentСigarettesPerDayScreen() {
+        let vc = сigarettesPerDayScreenAssembly.assembleStory()
         globalCoordinator.pushViewController(vc)
     }
 }

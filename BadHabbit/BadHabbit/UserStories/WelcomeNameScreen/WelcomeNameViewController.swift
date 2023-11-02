@@ -47,13 +47,13 @@ extension WelcomeNameViewController {
         let userFirstName = presenter.userFirstName.uppercased()
         welcomeLabel.textColor = Assets.Colors.darkBlue.color
         welcomeLabel.font = Fonts.SFProDisplay.semibold.font(size: 32.0)
-        welcomeLabel.text = Strings.welcome.uppercased() + userFirstName + "!"
+        welcomeLabel.text = Strings.WelcomeNameScreen.welcome.uppercased() + userFirstName + "!"
         welcomeLabel.textAlignment = .center
         welcomeLabel.numberOfLines = 0
     }
 
     private func configureStartButton() {
-        let title = Strings.next.uppercased()
+        let title = Strings.nextButtonTitle.uppercased()
         startButton.setTitle(title, for: .normal)
         startButton.setTitleColor(.white, for: .normal)
         startButton.titleLabel?.font = Fonts.SFProDisplay.medium.font(size: 17)

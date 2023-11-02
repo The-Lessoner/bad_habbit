@@ -11,9 +11,14 @@ import UIKit
 final class StoriesAssembly {
     
     private let designKitAssembly: DesignKitAssembly
+    private let persistentKitAssembly: PersistentKitAssembly
     
-    init(designKitAssembly: DesignKitAssembly) {
+    init(
+        designKitAssembly: DesignKitAssembly,
+        persistentKitAssembly: PersistentKitAssembly
+    ) {
         self.designKitAssembly = designKitAssembly
+        self.persistentKitAssembly = persistentKitAssembly
     }
     
     var signUpScreen: StoryAssembly {
@@ -21,16 +26,6 @@ final class StoriesAssembly {
             nextScreen: signInScreen,
             globalCoordinator: designKitAssembly.globalCoordinator
         )
-    }
-    
-    var fillingPersonalData: StoryAssembly {
-        FillingPersonalDataAssembly(
-            alertAssembly: designKitAssembly.alertAssembly
-        )
-    }
-
-    var emptyScreen: StoryAssembly {
-        EmptyScreenAssembly()
     }
 
     var signInScreen: StoryAssembly {
@@ -49,8 +44,27 @@ final class StoriesAssembly {
 
     var welcomeNameScreen: StoryAssembly {
         WelcomeNameScreenAssembly(
-            nextScreen: self.emptyScreen,
+            nextScreen: cigarettesPerDayScreen,
             globalCoordinator: designKitAssembly.globalCoordinator
         )
+    }
+    
+    var cigarettesPerDayScreen: StoryAssembly {
+        CigarettesPerDayScreenAssembly(
+            nextScreen: cigarettesInPackScreen,
+            globalCoordinator: designKitAssembly.globalCoordinator,
+            persistentContainer: persistentKitAssembly.persistentContainer
+        )
+    }
+    var cigarettesInPackScreen: StoryAssembly {
+        CigarettesInPackScreenAssembly(
+            nextScreen: emptyScreen,
+            globalCoordinator: designKitAssembly.globalCoordinator,
+            persistentContainer: persistentKitAssembly.persistentContainer
+        )
+    }
+    
+    var emptyScreen: StoryAssembly {
+        EmptyScreenAssembly()
     }
 }
