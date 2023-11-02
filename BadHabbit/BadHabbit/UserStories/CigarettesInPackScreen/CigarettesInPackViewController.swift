@@ -11,6 +11,7 @@ protocol CigarettesInPackViewProtocol: AnyObject { }
 
 final class CigarettesInPackViewController: BaseViewController, CigarettesInPackViewProtocol {
     private let presenter: CigarettesInPackScreenPresenterProtocol
+    private let textFieldFormatter = NumberFormatter()
     
     private lazy var backgroundImageView = UIImageView()
     private lazy var startButton = ActionButton()
@@ -33,17 +34,18 @@ final class CigarettesInPackViewController: BaseViewController, CigarettesInPack
         super.viewDidLoad()
         
         setupUI()
+        setupTextFieldFormatter()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         title = Strings.CigarettesInPackScreen.titleText.uppercased()
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
+        
         title = nil
     }
     
@@ -112,7 +114,7 @@ final class CigarettesInPackViewController: BaseViewController, CigarettesInPack
             make.top.equalTo(view.snp.centerY)
             make.leading.trailing.bottom.equalToSuperview()
         }
-
+        
         startButton.snp.makeConstraints { make in
             make.height.equalTo(LayoutConstants.ActionButton.height)
             make.leading.equalTo(safeArea).inset(LayoutConstants.leadingInset)
@@ -126,6 +128,12 @@ final class CigarettesInPackViewController: BaseViewController, CigarettesInPack
             make.trailing.equalTo(safeArea).inset(LayoutConstants.trailingInset)
             make.top.equalTo(safeArea.snp.top).inset(LayoutConstants.TextField.topInset)
         }
+    }
+    
+    private func setupTextFieldFormatter() {
+        textFieldFormatter.usesGroupingSeparator = true
+        textFieldFormatter.numberStyle = .decimal
+        textFieldFormatter.groupingSeparator = " "
     }
     
     @objc
@@ -150,20 +158,43 @@ extension CigarettesInPackViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if string.isEmpty || Int(string) != nil {
-            return true
-        } else {
+        let inputValue = Int(string) ?? -1
+        
+        guard string.isEmpty || inputValue >= 0 else {
             self.textField.shake()
             return false
         }
+        
+        guard let text = textField.text else {
+            return true
+        }
+        
+        if text.isEmpty && inputValue == 0 {
+            return true
+        }
+        
+        let modifiedText = (text as NSString).replacingCharacters(in: range, with: string)
+        let modifiedTextWithoutGroupingSeparator = modifiedText.replacingOccurrences(of: textFieldFormatter.groupingSeparator, with: "")
+        
+        guard var сigarettesCount = Int(modifiedTextWithoutGroupingSeparator) else {
+            return true
+        }
+        
+        if !presenter.isValidCigarettesCount(сigarettesCount),
+           let truncatedNumber = Int(modifiedTextWithoutGroupingSeparator.prefix(4)) {
+            сigarettesCount = truncatedNumber
+        }
+        
+        textField.text = textFieldFormatter.string(from: сigarettesCount as NSNumber)
+        
+        return false
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let text = textField.text,
-        text.hasPrefix("0"),
-        let value = Int(text) {
+           text.hasPrefix("0"),
+           let value = Int(text) {
             textField.text = String(value)
         }
     }
-    
 }
