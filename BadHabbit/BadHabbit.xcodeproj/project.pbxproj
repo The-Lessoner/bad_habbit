@@ -49,6 +49,7 @@
 		E59E8A342A78E85400ABD1DA /* DropDownViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59E8A332A78E85400ABD1DA /* DropDownViewPresenter.swift */; };
 		E59E8A372A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59E8A362A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift */; };
 		E59E8A392A790C7100ABD1DA /* DropDownViewPresenterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59E8A382A790C7100ABD1DA /* DropDownViewPresenterConfig.swift */; };
+		F61221992AF1635800B29439 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F61221972AF1635800B29439 /* CoreDataModel.xcdatamodeld */; };
 		F61C94432A93F5260008FC96 /* SFProDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F61C94422A93F5250008FC96 /* SFProDisplay-Semibold.ttf */; };
 		F64555992A61743A0070947C /* SignInAppleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555982A61743A0070947C /* SignInAppleViewController.swift */; };
 		F64555E32A6E77670070947C /* SignInAppleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64555E22A6E77670070947C /* SignInAppleRouter.swift */; };
@@ -59,6 +60,8 @@
 		F65BE6B02AA7377C0006FB92 /* BreakHabitScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65BE6AF2AA7377C0006FB92 /* BreakHabitScreenRouter.swift */; };
 		F65BE6B22AA737900006FB92 /* BreakHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65BE6B12AA737900006FB92 /* BreakHabitViewController.swift */; };
 		F65BE6B62AA7DC270006FB92 /* UILabel+lineSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65BE6B52AA7DC270006FB92 /* UILabel+lineSpacing.swift */; };
+		F65E32272AF12F7E0060E805 /* PersistentKitAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65E32262AF12F7E0060E805 /* PersistentKitAssembly.swift */; };
+		F65E32292AF12FC30060E805 /* PersistantContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65E32282AF12FC30060E805 /* PersistantContainer.swift */; };
 		F6D4E2312AB86F18003C3FDE /* PriceForPackAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D4E2302AB86F18003C3FDE /* PriceForPackAssembly.swift */; };
 		F6D4E2332AB86F22003C3FDE /* PriceForPackScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D4E2322AB86F22003C3FDE /* PriceForPackScreenPresenter.swift */; };
 		F6D4E2352AB86F2A003C3FDE /* PriceForPackScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D4E2342AB86F2A003C3FDE /* PriceForPackScreenRouter.swift */; };
@@ -118,6 +121,7 @@
 		E59E8A362A790C3400ABD1DA /* DropDownViewPresenterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownViewPresenterAssembly.swift; sourceTree = "<group>"; };
 		E59E8A382A790C7100ABD1DA /* DropDownViewPresenterConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownViewPresenterConfig.swift; sourceTree = "<group>"; };
 		EF3B53352C012CD5791B3306 /* Pods_BadHabbit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BadHabbit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F61221982AF1635800B29439 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		F61C94422A93F5250008FC96 /* SFProDisplay-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Semibold.ttf"; sourceTree = "<group>"; };
 		F64555982A61743A0070947C /* SignInAppleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleViewController.swift; sourceTree = "<group>"; };
 		F64555E22A6E77670070947C /* SignInAppleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleRouter.swift; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 		F65BE6AF2AA7377C0006FB92 /* BreakHabitScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakHabitScreenRouter.swift; sourceTree = "<group>"; };
 		F65BE6B12AA737900006FB92 /* BreakHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakHabitViewController.swift; sourceTree = "<group>"; };
 		F65BE6B52AA7DC270006FB92 /* UILabel+lineSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+lineSpacing.swift"; sourceTree = "<group>"; };
+		F65E32262AF12F7E0060E805 /* PersistentKitAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentKitAssembly.swift; sourceTree = "<group>"; };
+		F65E32282AF12FC30060E805 /* PersistantContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistantContainer.swift; sourceTree = "<group>"; };
 		F6D4E2302AB86F18003C3FDE /* PriceForPackAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceForPackAssembly.swift; sourceTree = "<group>"; };
 		F6D4E2322AB86F22003C3FDE /* PriceForPackScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceForPackScreenPresenter.swift; sourceTree = "<group>"; };
 		F6D4E2342AB86F2A003C3FDE /* PriceForPackScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceForPackScreenRouter.swift; sourceTree = "<group>"; };
@@ -316,6 +322,10 @@
 		E58D1BC22A1D001A00137CC6 /* PersistenceKit */ = {
 			isa = PBXGroup;
 			children = (
+				F65E32262AF12F7E0060E805 /* PersistentKitAssembly.swift */,
+				F65E32282AF12FC30060E805 /* PersistantContainer.swift */,
+				F65E322D2AF14D9C0060E805 /* Smoking */,
+				F61221972AF1635800B29439 /* CoreDataModel.xcdatamodeld */,
 			);
 			path = PersistenceKit;
 			sourceTree = "<group>";
@@ -421,6 +431,13 @@
 				F6D4E2602ABC6711003C3FDE /* UITextField+textIndent.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		F65E322D2AF14D9C0060E805 /* Smoking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Smoking;
 			sourceTree = "<group>";
 		};
 		F6D4E22F2AB86E35003C3FDE /* PriceForPackScreen */ = {
@@ -650,8 +667,10 @@
 				614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */,
 				614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */,
 				F64555E72A6E780D0070947C /* SignInAppleAssembly.swift in Sources */,
+				F65E32292AF12FC30060E805 /* PersistantContainer.swift in Sources */,
 				F65BE6AC2AA737540006FB92 /* BreakHabitScreenAssembly.swift in Sources */,
 				F65BE6B22AA737900006FB92 /* BreakHabitViewController.swift in Sources */,
+				F65E32272AF12F7E0060E805 /* PersistentKitAssembly.swift in Sources */,
 				F6D4E25D2ABB3449003C3FDE /* MenuView.swift in Sources */,
 				E58D1BAD2A1CFF2C00137CC6 /* AppDelegate.swift in Sources */,
 				6194A0B02A6FB53B0006F570 /* LayoutConstants.swift in Sources */,
@@ -665,6 +684,7 @@
 				E5109B552A6ADC5C008B74D3 /* AlertPresenter.swift in Sources */,
 				E5109B4A2A6AD962008B74D3 /* AlertAssembly.swift in Sources */,
 				61E5EF842A8D0CE300091EBA /* Fonts.swift in Sources */,
+				F61221992AF1635800B29439 /* CoreDataModel.xcdatamodeld in Sources */,
 				F64555E52A6E77A70070947C /* SignInApplePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -893,6 +913,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F61221972AF1635800B29439 /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F61221982AF1635800B29439 /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = F61221982AF1635800B29439 /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E58D1BA12A1CFF2C00137CC6 /* Project object */;
 }

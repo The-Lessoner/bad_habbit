@@ -15,7 +15,10 @@ final class PriceForPackViewController: BaseViewController, PriceForPackViewProt
     private lazy var imageMountains = UIImageView(image: Assets.Images.mountains.image)
     private lazy var backgroundView = BackgroundGradientView()
     private lazy var startButton = ActionButton()
-    private lazy var priceValidatedTextField = ValidatedTextField()
+    private lazy var priceValidatedTextField: ValidatedTextField = {
+        let priceTextfield = ValidatedTextField(hintText: Strings.PriceForPack.PriceValidatedTextField.hintLabelText)
+        return priceTextfield
+    }()
     private lazy var currencyTextField = UITextField()
     private lazy var currencyMenuView = MenuView()
 
@@ -23,10 +26,9 @@ final class PriceForPackViewController: BaseViewController, PriceForPackViewProt
         view: currencyTextField,
         dropDownView: currencyMenuView
     )
-
-    private lazy var hintText = Strings.PriceForPack.PriceValidatedTextField.HintLabelText.valid
-    private let presenter: PriceForPackScreenPresenterProtocol
-
+    
+    private var presenter: PriceForPackScreenPresenterProtocol
+    
     init(presenter: PriceForPackScreenPresenterProtocol) {
         self.presenter = presenter
         super.init()
@@ -57,9 +59,6 @@ extension PriceForPackViewController {
 
     private func configurePriceValidatedTextField() {
         priceValidatedTextField.delegate = self
-        priceValidatedTextField.invalidHintText = Strings.PriceForPack.PriceValidatedTextField.HintLabelText.invalid
-        priceValidatedTextField.addBottomLine(color: Assets.Colors.purpleLight.color, height: 1)
-        priceValidatedTextField.showHint(message: hintText)
         priceValidatedTextField.placeholder = Strings.PriceForPack.pricePlaceholder
         priceValidatedTextField.indentLeft(size: AppearanceConstants.PriceValidatedTextField.indentLeft)
         priceValidatedTextField.indentRight(size: AppearanceConstants.PriceValidatedTextField.indentRight)
@@ -70,7 +69,7 @@ extension PriceForPackViewController {
         currencyTextField.delegate = self
         currencyTextField.textAlignment = .center
         currencyTextField.textColor = Assets.Colors.purpleLight.color
-        currencyTextField.addBottomLine(color: Assets.Colors.purpleLight.color, height: 1)
+        currencyPurpleAppearence()
     }
 
     private func configureTitleLabel() {
@@ -82,7 +81,6 @@ extension PriceForPackViewController {
 
     private func configureStartButton() {
         let title = Strings.next.uppercased()
-        startButton.isEnabled = false
         startButton.setTitle(title, for: .normal)
         startButton.setTitleColor(.white, for: .normal)
         startButton.setTitleColor(.black, for: .disabled)
@@ -140,22 +138,41 @@ extension PriceForPackViewController {
     @objc
     private func startButtonTapped() {
         let isValid = priceValidatedTextField.validateInput(minValue: 1, maxValue: 999999)
-        
-        if isValid {
-            presenter.startButtonTapped()
+        if let price = priceValidatedTextField.text?.replacingOccurrences(of: " ", with: ""),
+           let currency  = currencyTextField.text,
+           currency.isEmpty == false,
+           let priceForPack = Double(price),
+           isValid,
+           currencyTextField.text?.isEmpty == false {
+            presenter.startButtonTapped(price: priceForPack, currency: currency)
         } else {
-            startButton.isEnabled = false
+            if currencyTextField.text?.isEmpty == true {
+                currencyRedAppearence()
+            }
         }
     }
+    
+    func currencyRedAppearence() {
+        currencyTextField.addBottomLine(color: .red, height: 1)
+        currencyTextField.attributedPlaceholder = NSAttributedString(
+            string: Strings.PriceForPack.currencyPlaceholder,
+            attributes: [.foregroundColor: UIColor.red]
+        )    }
 
+    func currencyPurpleAppearence() {
+        currencyTextField.placeholder = Strings.PriceForPack.currencyPlaceholder
+        currencyTextField.addBottomLine(color: Assets.Colors.purpleLight.color, height: 1)
+    }
+    
     func currencyTextFieldTapped() {
+        currencyTextField.placeholder = nil
         let height = AppearanceConstants.CurrencyView.heightForRow * CGFloat(presenter.currenciesCount)
         currencyMenuPresenter.showDropDown(preferredSize: CGSize(width: UIView.noIntrinsicMetric, height: height), animated: true)
-
+        currencyPurpleAppearence()
         currencyMenuView.didSelectItem = {  [weak self] currency in
             DispatchQueue.main.async {
                 self?.currencyTextField.text = currency
-                self?.checkIfAllFieldsFull()
+                self?.currencyMenuPresenter.hideDropDown()
             }
         }
         view.endEditing(true)
@@ -163,32 +180,14 @@ extension PriceForPackViewController {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
-        checkIfAllFieldsFull()
-
         if priceValidatedTextField.text?.isEmpty == true {
             priceValidatedTextField.placeholder = Strings.PriceForPack.pricePlaceholder
-            priceValidatedTextField.showHint(message: hintText)
-        }
-    }
-
-    func checkIfAllFieldsFull() {
-        if priceValidatedTextField.text?.isEmpty == false && currencyTextField.text?.isEmpty == false {
-            startButton.isEnabled = true
         }
     }
 }
 
 extension PriceForPackViewController: UITextFieldDelegate {
-
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if textField == priceValidatedTextField {
-            let textCount = textField.text?.count ?? 0
-            if textCount >= 1 && currencyTextField.text != nil {
-                startButton.isEnabled = true
-            } else {
-                startButton.isEnabled = false
-            }
-        }
         if textField == currencyTextField {
             currencyTextFieldTapped()
             return false
@@ -197,21 +196,56 @@ extension PriceForPackViewController: UITextFieldDelegate {
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let inputValue = Int(string) ?? -1
         let newLength = (textField.text?.count ?? 0) + string.count - range.length
-        if newLength >= 1 {
-            priceValidatedTextField.hintLabel.text = ""
-        } else {
-            startButton.isEnabled = false
+        if newLength > 13 {
+            return false
+        }
+        
+        guard let currentText = textField.text else {
+            return true
         }
 
-        let currentText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
-        if let indentLeft = textField.leftView?.frame.width, let indentRight = textField.rightView?.frame.width {
-            let textWidth = textField.frame.width - indentLeft - indentRight
-            let textSize = (currentText as NSString).size(withAttributes: [.font: textField.font ?? UIFont.systemFont(ofSize: 17)])
-            if textSize.width > textWidth {
+        if currentText.isEmpty && inputValue == 0 {
+            return true
+        }
+        
+        let formatter = NumberFormatter()
+        
+        let modifiedText = (currentText as NSString).replacingCharacters(in: range, with: string)
+        let modifiedTextWithoutGroupingSeparator = modifiedText.replacingOccurrences(of: " ", with: "")
+        
+        formatter.numberStyle = .decimal
+        formatter.allowsFloats = true
+        formatter.maximumFractionDigits = 2
+        formatter.groupingSeparator = " "
+
+        if modifiedText.isEmpty {
+            textField.text = ""
+            return false
+        }
+        
+        if modifiedText.last == "." && !currentText.contains(".") {
+            return true
+        }
+        
+        let decimalSeparatorIndex = modifiedText.firstIndex(of: ".")
+        if let decimalSeparatorIndex = decimalSeparatorIndex, modifiedText[decimalSeparatorIndex..<modifiedText.endIndex].count > 3 {
+            return false
+        }
+        
+        if  let decimalNumber = Int(modifiedTextWithoutGroupingSeparator) {
+            let formattedNumber = formatter.string(from: NSNumber(value: decimalNumber))
+            textField.text = formattedNumber
+            return false
+        } else {
+            if  let decimalNumber = Double(modifiedTextWithoutGroupingSeparator) {
+                let formattedNumber = formatter.string(from: NSNumber(value: decimalNumber))
+                textField.text = formattedNumber
                 return false
             }
         }
-        return true
+        return false
     }
 }

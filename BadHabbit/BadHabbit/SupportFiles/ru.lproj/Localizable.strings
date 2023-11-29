@@ -16,8 +16,7 @@
 "breakHabitScreen.phraseLabelText" = "НЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nТУТ КАКАЯ-ТО ФРАЗА";
 "breakHabitScreen.startButtonTitle" = "ИЗБАВИТЬСЯ ОТ ПРИВЫЧКИ";
 "next" = "ДАЛЕЕ";
-"priceForPack.title" = "ЦЕНА ПАЧКИ СИГАРЕТ";
-"priceForPack.pricePlaceholder" = "Введите стоимость пачки";
+"priceForPack.title" = "СТОИМОСТЬ ПАЧКИ";
+"priceForPack.pricePlaceholder" = "Cтоимость пачки сигарет";
 "priceForPack.currencyPlaceholder" = "Валюта";
-"priceForPack.priceValidatedTextField.hintLabelText.invalid" = "Минимальное числовое значение - 1,\nмаксимальное - 999999";
-"priceForPack.priceValidatedTextField.hintLabelText.valid" = "Максимальное значение 999999";
+"priceForPack.priceValidatedTextField.hintLabelText" = "Максимальное значение 999 999";

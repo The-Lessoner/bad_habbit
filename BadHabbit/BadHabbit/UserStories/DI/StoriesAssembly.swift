@@ -11,9 +11,14 @@ import UIKit
 final class StoriesAssembly {
     
     private let designKitAssembly: DesignKitAssembly
-    
-    init(designKitAssembly: DesignKitAssembly) {
+    private let persistentKitAssembly: PersistentKitAssembly
+
+    init(
+        designKitAssembly: DesignKitAssembly,
+        persistentKitAssembly: PersistentKitAssembly
+    ) {
         self.designKitAssembly = designKitAssembly
+        self.persistentKitAssembly = persistentKitAssembly
     }
     
     var signUpScreen: StoryAssembly {
@@ -50,7 +55,8 @@ final class StoriesAssembly {
     var priceForPackScreen: StoryAssembly {
         PriceForPackScreenAssembly(
             nextScreen: self.emptyScreen,
-            globalCoordinator: designKitAssembly.globalCoordinator
+            globalCoordinator: designKitAssembly.globalCoordinator,
+            persistentContainer: persistentKitAssembly.persistentContainer
         )
     }
 }
