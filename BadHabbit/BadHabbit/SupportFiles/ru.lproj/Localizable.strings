@@ -15,6 +15,7 @@
 "signInAppleScreen.authorizationButtonTitle" = "ВОЙТИ С APPLE";
 "breakHabitScreen.phraseLabelText" = "НЕ ЗАПОЛНЯЮТ ПУСТОТУ, ОНИ ЕЕ СОЗДАЮТ! \nТУТ КАКАЯ-ТО ФРАЗА";
 "breakHabitScreen.startButtonTitle" = "ИЗБАВИТЬСЯ ОТ ПРИВЫЧКИ";
+"welcome" = "ДОБРО ПОЖАЛОВАТЬ,\n";
 "next" = "ДАЛЕЕ";
 "priceForPack.title" = "СТОИМОСТЬ ПАЧКИ";
 "priceForPack.pricePlaceholder" = "Cтоимость пачки сигарет";

@@ -47,13 +47,13 @@ final class StoriesAssembly {
 
     var breakHabitScreen: StoryAssembly {
         BreakHabitScreenAssembly(
-            nextScreen: self.priceForPackScreen,
+            nextScreen: self.welcomeNameScreen,
             globalCoordinator: designKitAssembly.globalCoordinator
         )
     }
 
-    var priceForPackScreen: StoryAssembly {
-        PriceForPackScreenAssembly(
+    var welcomeNameScreen: StoryAssembly {
+        WelcomeNameScreenAssembly(
             nextScreen: self.emptyScreen,
             globalCoordinator: designKitAssembly.globalCoordinator,
             persistentContainer: persistentKitAssembly.persistentContainer

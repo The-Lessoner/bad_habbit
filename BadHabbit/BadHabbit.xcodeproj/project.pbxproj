@@ -60,6 +60,11 @@
 		F65BE6B02AA7377C0006FB92 /* BreakHabitScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65BE6AF2AA7377C0006FB92 /* BreakHabitScreenRouter.swift */; };
 		F65BE6B22AA737900006FB92 /* BreakHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65BE6B12AA737900006FB92 /* BreakHabitViewController.swift */; };
 		F65BE6B62AA7DC270006FB92 /* UILabel+lineSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65BE6B52AA7DC270006FB92 /* UILabel+lineSpacing.swift */; };
+		F6D4E2262AB4C8F0003C3FDE /* WelcomeNameScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D4E2252AB4C8F0003C3FDE /* WelcomeNameScreenAssembly.swift */; };
+		F6D4E2282AB4C99E003C3FDE /* WelcomeNameScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D4E2272AB4C99E003C3FDE /* WelcomeNameScreenPresenter.swift */; };
+		F6D4E22A2AB4CA15003C3FDE /* WelcomeNameScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D4E2292AB4CA15003C3FDE /* WelcomeNameScreenRouter.swift */; };
+		F6D4E22C2AB4CA5F003C3FDE /* WelcomeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D4E22B2AB4CA5F003C3FDE /* WelcomeNameViewController.swift */; };
+		F6D4E22E2AB853EB003C3FDE /* MockUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D4E22D2AB853EA003C3FDE /* MockUser.swift */; };
 		F65E32272AF12F7E0060E805 /* PersistentKitAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65E32262AF12F7E0060E805 /* PersistentKitAssembly.swift */; };
 		F65E32292AF12FC30060E805 /* PersistantContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65E32282AF12FC30060E805 /* PersistantContainer.swift */; };
 		F6D4E2312AB86F18003C3FDE /* PriceForPackAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D4E2302AB86F18003C3FDE /* PriceForPackAssembly.swift */; };
@@ -132,6 +137,11 @@
 		F65BE6AF2AA7377C0006FB92 /* BreakHabitScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakHabitScreenRouter.swift; sourceTree = "<group>"; };
 		F65BE6B12AA737900006FB92 /* BreakHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakHabitViewController.swift; sourceTree = "<group>"; };
 		F65BE6B52AA7DC270006FB92 /* UILabel+lineSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+lineSpacing.swift"; sourceTree = "<group>"; };
+		F6D4E2252AB4C8F0003C3FDE /* WelcomeNameScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeNameScreenAssembly.swift; sourceTree = "<group>"; };
+		F6D4E2272AB4C99E003C3FDE /* WelcomeNameScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeNameScreenPresenter.swift; sourceTree = "<group>"; };
+		F6D4E2292AB4CA15003C3FDE /* WelcomeNameScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeNameScreenRouter.swift; sourceTree = "<group>"; };
+		F6D4E22B2AB4CA5F003C3FDE /* WelcomeNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeNameViewController.swift; sourceTree = "<group>"; };
+		F6D4E22D2AB853EA003C3FDE /* MockUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUser.swift; sourceTree = "<group>"; };
 		F65E32262AF12F7E0060E805 /* PersistentKitAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentKitAssembly.swift; sourceTree = "<group>"; };
 		F65E32282AF12FC30060E805 /* PersistantContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistantContainer.swift; sourceTree = "<group>"; };
 		F6D4E2302AB86F18003C3FDE /* PriceForPackAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceForPackAssembly.swift; sourceTree = "<group>"; };
@@ -189,6 +199,7 @@
 			children = (
 				6194A0AF2A6FB53B0006F570 /* LayoutConstants.swift */,
 				61EF1D4B2AA91E5F00031D88 /* AppearanceConstants.swift */,
+				F6D4E22D2AB853EA003C3FDE /* MockUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -352,6 +363,7 @@
 				614BA9412A6742F3004231A3 /* SingUpScreen */,
 				F64555972A6173F40070947C /* SingnInAppleScreen */,
 				F65BE6AA2AA737260006FB92 /* BreakHabitScreen */,
+				F6D4E2242AB4C2D3003C3FDE /* WelcomeNameScreen */,
 				F6D4E22F2AB86E35003C3FDE /* PriceForPackScreen */,
 				F6F3DA5F2A858E2900AC7A48 /* EmptyScreen */,
 			);
@@ -431,6 +443,17 @@
 				F6D4E2602ABC6711003C3FDE /* UITextField+textIndent.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		F6D4E2242AB4C2D3003C3FDE /* WelcomeNameScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F6D4E2252AB4C8F0003C3FDE /* WelcomeNameScreenAssembly.swift */,
+				F6D4E2272AB4C99E003C3FDE /* WelcomeNameScreenPresenter.swift */,
+				F6D4E2292AB4CA15003C3FDE /* WelcomeNameScreenRouter.swift */,
+				F6D4E22B2AB4CA5F003C3FDE /* WelcomeNameViewController.swift */,
+			);
+			path = WelcomeNameScreen;
 			sourceTree = "<group>";
 		};
 		F65E322D2AF14D9C0060E805 /* Smoking */ = {
@@ -630,12 +653,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D4E22E2AB853EB003C3FDE /* MockUser.swift in Sources */,
 				F6D4E2372AB86F32003C3FDE /* PriceForPackViewController.swift in Sources */,
 				61E5EF7E2A8D0A6600091EBA /* Strings.swift in Sources */,
 				E5109B5A2A6ADEFF008B74D3 /* FillingPersonalDataPresenter.swift in Sources */,
 				F6D4E2612ABC6711003C3FDE /* UITextField+textIndent.swift in Sources */,
 				F6F3DA5E2A858E0A00AC7A48 /* EmptyScreenAssembly.swift in Sources */,
 				E5109B672A6D3DAE008B74D3 /* CanPresentView.swift in Sources */,
+				F6D4E2282AB4C99E003C3FDE /* WelcomeNameScreenPresenter.swift in Sources */,
 				E5109B4E2A6ADA99008B74D3 /* AlertConfiguration.swift in Sources */,
 				61448CC22A980BC6002CD090 /* ActionButton.swift in Sources */,
 				E58D1BCC2A1D02E100137CC6 /* StoryAssembly.swift in Sources */,
@@ -656,6 +681,7 @@
 				E59E8A392A790C7100ABD1DA /* DropDownViewPresenterConfig.swift in Sources */,
 				E5109B652A6AE70D008B74D3 /* GlobalCoordinator.swift in Sources */,
 				E5109B4C2A6AD9A4008B74D3 /* DesignKitAssembly.swift in Sources */,
+				F6D4E22C2AB4CA5F003C3FDE /* WelcomeNameViewController.swift in Sources */,
 				E5109B692A6D4269008B74D3 /* FillingPersonalDataRouter.swift in Sources */,
 				61FD44C52AA6784C00080653 /* SignUpScreenCollectionViewCell.swift in Sources */,
 				E5109B6B2A6D4337008B74D3 /* AppAssembly.swift in Sources */,
@@ -664,6 +690,7 @@
 				F6D4E2332AB86F22003C3FDE /* PriceForPackScreenPresenter.swift in Sources */,
 				F6D4E2392AB86F8F003C3FDE /* ValidatedTextField.swift in Sources */,
 				E5109B5C2A6ADF14008B74D3 /* FillingPersonalDataView.swift in Sources */,
+				F6D4E2262AB4C8F0003C3FDE /* WelcomeNameScreenAssembly.swift in Sources */,
 				614717252A6F060100731065 /* SignUpScreenRouter.swift in Sources */,
 				614BA9432A674317004231A3 /* SignUpViewController.swift in Sources */,
 				F64555E72A6E780D0070947C /* SignInAppleAssembly.swift in Sources */,
@@ -676,6 +703,7 @@
 				6194A0B02A6FB53B0006F570 /* LayoutConstants.swift in Sources */,
 				61E5EF7D2A8D0A6600091EBA /* Assets.swift in Sources */,
 				61EF63AC2A7297E00009218A /* SignUpScreenAssembly.swift in Sources */,
+				F6D4E22A2AB4CA15003C3FDE /* WelcomeNameScreenRouter.swift in Sources */,
 				614717202A6EB92100731065 /* SignUpScreenPresenter.swift in Sources */,
 				F64555992A61743A0070947C /* SignInAppleViewController.swift in Sources */,
 				F64555E32A6E77670070947C /* SignInAppleRouter.swift in Sources */,
