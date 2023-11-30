@@ -54,6 +54,13 @@ final class StoriesAssembly {
 
     var welcomeNameScreen: StoryAssembly {
         WelcomeNameScreenAssembly(
+            nextScreen: self.priceForPackScreenAssembly,
+            globalCoordinator: designKitAssembly.globalCoordinator
+        )
+    }
+    
+    var priceForPackScreenAssembly: StoryAssembly {
+        PriceForPackScreenAssembly(
             nextScreen: self.emptyScreen,
             globalCoordinator: designKitAssembly.globalCoordinator,
             persistentContainer: persistentKitAssembly.persistentContainer
