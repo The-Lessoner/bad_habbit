@@ -180,13 +180,11 @@ extension PriceForPackViewController {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
-        if priceValidatedTextField.text?.isEmpty == true {
-            priceValidatedTextField.placeholder = Strings.PriceForPack.pricePlaceholder
-        }
     }
 }
 
 extension PriceForPackViewController: UITextFieldDelegate {
+
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == currencyTextField {
             currencyTextFieldTapped()
@@ -202,8 +200,8 @@ extension PriceForPackViewController: UITextFieldDelegate {
         if newLength > 13 {
             return false
         }
-        
-        guard let currentText = textField.text else {
+
+        guard let currentText = priceValidatedTextField.text else {
             return true
         }
 
@@ -215,17 +213,20 @@ extension PriceForPackViewController: UITextFieldDelegate {
         
         let modifiedText = (currentText as NSString).replacingCharacters(in: range, with: string)
         let modifiedTextWithoutGroupingSeparator = modifiedText.replacingOccurrences(of: " ", with: "")
-        
+
+        if modifiedText.isEmpty {
+            priceValidatedTextField.text = ""
+            priceValidatedTextField.placeholder = Strings.PriceForPack.pricePlaceholder
+            return false
+        } else {
+            priceValidatedTextField.placeholder = nil
+        }
+
         formatter.numberStyle = .decimal
         formatter.allowsFloats = true
         formatter.maximumFractionDigits = 2
         formatter.groupingSeparator = " "
 
-        if modifiedText.isEmpty {
-            textField.text = ""
-            return false
-        }
-        
         if modifiedText.last == "." && !currentText.contains(".") {
             return true
         }

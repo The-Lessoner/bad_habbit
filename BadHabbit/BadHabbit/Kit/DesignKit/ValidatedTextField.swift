@@ -73,7 +73,6 @@ final class ValidatedTextField: UITextField {
 
     @objc private func textFieldEditingDidBegin() {
         setAppereance(isValid: true)
-        placeholder = ""
     }
 
     func validateInput(minValue: Double = 0, maxValue: Double = 0) -> Bool {

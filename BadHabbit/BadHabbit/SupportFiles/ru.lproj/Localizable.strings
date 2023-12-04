@@ -17,7 +17,7 @@
 "breakHabitScreen.startButtonTitle" = "ИЗБАВИТЬСЯ ОТ ПРИВЫЧКИ";
 "welcome" = "ДОБРО ПОЖАЛОВАТЬ,\n";
 "next" = "ДАЛЕЕ";
-"priceForPack.title" = "СТОИМОСТЬ ПАЧКИ";
+"priceForPack.title" = "ЗАТРАТЫ";
 "priceForPack.pricePlaceholder" = "Cтоимость пачки сигарет";
 "priceForPack.currencyPlaceholder" = "Валюта";
-"priceForPack.priceValidatedTextField.hintLabelText" = "Максимальное значение 999 999";
+"priceForPack.priceValidatedTextField.hintLabelText" = "Введите от 1 до 999 999";
