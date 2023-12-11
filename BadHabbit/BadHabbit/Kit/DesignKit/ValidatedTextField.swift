@@ -56,28 +56,13 @@ final class ValidatedTextField: UITextField {
         self.resignFirstResponder()
     }
 
-    @objc private func textFieldEditingChanged() {
-
-        guard let text = self.text, let decimalNumber = Double(text) else { return }
-
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        numberFormatter.maximumFractionDigits = 2
-
-        if let formattedNumber = numberFormatter.string(from: NSNumber(value: decimalNumber)) {
-            self.text = formattedNumber
-        } else {
-                print("Failed to format number")
-        }
-    }
-
     @objc private func textFieldEditingDidBegin() {
         setAppereance(isValid: true)
     }
 
     func validateInput(minValue: Double = 0, maxValue: Double = 0) -> Bool {
         if let text {
-            guard  let value = Double(text.replacingOccurrences(of: " ", with: "")) else {
+            guard  let value = Double(text.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: ",", with: ".")) else {
                 setAppereance(isValid: false)
                 return false
             }
@@ -139,9 +124,9 @@ final class ValidatedTextField: UITextField {
     }
 
     override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
-            if action == #selector(UIResponderStandardEditActions.paste(_:)) {
-                return false
-            }
-            return super.canPerformAction(action, withSender: sender)
+        if action == #selector(UIResponderStandardEditActions.paste(_:)) {
+            return false
         }
+        return super.canPerformAction(action, withSender: sender)
+    }
 }

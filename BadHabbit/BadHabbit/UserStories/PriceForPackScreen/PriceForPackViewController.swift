@@ -26,9 +26,18 @@ final class PriceForPackViewController: BaseViewController, PriceForPackViewProt
         view: currencyTextField,
         dropDownView: currencyMenuView
     )
-    
+
+    let formatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.allowsFloats = true
+        formatter.maximumFractionDigits = 2
+        formatter.groupingSeparator = " "
+        return formatter
+    }()
+
     private var presenter: PriceForPackScreenPresenterProtocol
-    
+
     init(presenter: PriceForPackScreenPresenterProtocol) {
         self.presenter = presenter
         super.init()
@@ -69,6 +78,8 @@ extension PriceForPackViewController {
         currencyTextField.delegate = self
         currencyTextField.textAlignment = .center
         currencyTextField.textColor = Assets.Colors.purpleLight.color
+        currencyTextField.placeholder = Strings.PriceForPack.currencyPlaceholder
+        currencyTextField.addTarget(self, action: #selector(currencyTextFieldClean), for: .allTouchEvents)
         currencyPurpleAppearence()
     }
 
@@ -138,10 +149,11 @@ extension PriceForPackViewController {
     @objc
     private func startButtonTapped() {
         let isValid = priceValidatedTextField.validateInput(minValue: 1, maxValue: 999999)
-        if let price = priceValidatedTextField.text?.replacingOccurrences(of: " ", with: ""),
+
+        if let priceText = priceValidatedTextField.text?.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: ",", with: "."),
            let currency  = currencyTextField.text,
            currency.isEmpty == false,
-           let priceForPack = Double(price),
+           let priceForPack = Double(priceText),
            isValid,
            currencyTextField.text?.isEmpty == false {
             presenter.startButtonTapped(price: priceForPack, currency: currency)
@@ -151,24 +163,28 @@ extension PriceForPackViewController {
             }
         }
     }
-    
+
+    @objc func currencyTextFieldClean() {
+        currencyTextField.placeholder = nil
+        currencyTextField.text = nil
+    }
+
     func currencyRedAppearence() {
         currencyTextField.addBottomLine(color: .red, height: 1)
         currencyTextField.attributedPlaceholder = NSAttributedString(
             string: Strings.PriceForPack.currencyPlaceholder,
             attributes: [.foregroundColor: UIColor.red]
-        )    }
+        )
+    }
 
     func currencyPurpleAppearence() {
-        currencyTextField.placeholder = Strings.PriceForPack.currencyPlaceholder
         currencyTextField.addBottomLine(color: Assets.Colors.purpleLight.color, height: 1)
     }
-    
+
     func currencyTextFieldTapped() {
-        currencyTextField.placeholder = nil
+        currencyPurpleAppearence()
         let height = AppearanceConstants.CurrencyView.heightForRow * CGFloat(presenter.currenciesCount)
         currencyMenuPresenter.showDropDown(preferredSize: CGSize(width: UIView.noIntrinsicMetric, height: height), animated: true)
-        currencyPurpleAppearence()
         currencyMenuView.didSelectItem = {  [weak self] currency in
             DispatchQueue.main.async {
                 self?.currencyTextField.text = currency
@@ -194,8 +210,7 @@ extension PriceForPackViewController: UITextFieldDelegate {
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        let inputValue = Int(string) ?? -1
+
         let newLength = (textField.text?.count ?? 0) + string.count - range.length
         if newLength > 13 {
             return false
@@ -205,12 +220,6 @@ extension PriceForPackViewController: UITextFieldDelegate {
             return true
         }
 
-        if currentText.isEmpty && inputValue == 0 {
-            return true
-        }
-        
-        let formatter = NumberFormatter()
-        
         let modifiedText = (currentText as NSString).replacingCharacters(in: range, with: string)
         let modifiedTextWithoutGroupingSeparator = modifiedText.replacingOccurrences(of: " ", with: "")
 
@@ -222,30 +231,28 @@ extension PriceForPackViewController: UITextFieldDelegate {
             priceValidatedTextField.placeholder = nil
         }
 
-        formatter.numberStyle = .decimal
-        formatter.allowsFloats = true
-        formatter.maximumFractionDigits = 2
-        formatter.groupingSeparator = " "
-
-        if modifiedText.last == "." && !currentText.contains(".") {
+        let decimalSeparator = (Locale.current.decimalSeparator == ".") ? "." : ","
+        if string == "," || string == "." {
+            if currentText.contains(decimalSeparator) {
+                return false
+            }
             return true
         }
-        
-        let decimalSeparatorIndex = modifiedText.firstIndex(of: ".")
-        if let decimalSeparatorIndex = decimalSeparatorIndex, modifiedText[decimalSeparatorIndex..<modifiedText.endIndex].count > 3 {
+
+        if string.isEmpty {
+            return true
+        }
+
+        let decimalSeparatorIndex = modifiedText.firstIndex(of: Character(decimalSeparator))
+
+        if let decimalSeparatorIndex = decimalSeparatorIndex, modifiedText[decimalSeparatorIndex...].count > 3 {
             return false
         }
-        
-        if  let decimalNumber = Int(modifiedTextWithoutGroupingSeparator) {
+
+        if let decimalNumber = formatter.number(from: modifiedTextWithoutGroupingSeparator)?.doubleValue {
             let formattedNumber = formatter.string(from: NSNumber(value: decimalNumber))
             textField.text = formattedNumber
             return false
-        } else {
-            if  let decimalNumber = Double(modifiedTextWithoutGroupingSeparator) {
-                let formattedNumber = formatter.string(from: NSNumber(value: decimalNumber))
-                textField.text = formattedNumber
-                return false
-            }
         }
         return false
     }
