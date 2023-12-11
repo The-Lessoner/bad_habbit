@@ -14,15 +14,26 @@ final class AppAssembly {
         window: window
     )
     
-    private(set) lazy var storiesAssembly = StoriesAssembly(
-        designKitAssembly: designKitAssembly
+    private(set) lazy var persistenceKitAssembly = PersistentKitAssembly(
+        persistentContainerName: persistentContainerName
     )
-    
+
+    private(set) lazy var storiesAssembly = StoriesAssembly(
+        designKitAssembly: designKitAssembly,
+        persistentKitAssembly: persistenceKitAssembly
+    )
+
     private let application: UIApplication
     private let window: UIWindow
-    
-    init(application: UIApplication, window: UIWindow) {
+    private let persistentContainerName: String
+
+    init(
+        application: UIApplication,
+        window: UIWindow,
+        persistentContainerName: String
+    ) {
         self.application = application
         self.window = window
+        self.persistentContainerName = persistentContainerName
     }
 }
